@@ -33,4 +33,4 @@
  - [[Coding Guidelines|Coding Guide]]
  - [[Selenium UI Testing|Web Test With Selenium]]
  - [[Database Tricks]]
-- ChangeLog
+- [[Change Log]]
