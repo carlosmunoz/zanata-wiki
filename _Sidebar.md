@@ -3,7 +3,7 @@
 - [[Introduction]]
 - [[Translator Guide|TranslatorGuide]]
  - [[Getting Started|GettingStarted]]
-  - [[Creating a New Account and Signing In|TranslatorsNewAccount]]
+  - [[Creating a New Account and Signing In|Translators-New-Account]]
   - [[Joining a Language Team|JoinLanguageTeam]]
  - [[Contributing Translations|ContributingTranslations]]
   - [[Opening a Translation Project|OpeningTranslationProject]]
