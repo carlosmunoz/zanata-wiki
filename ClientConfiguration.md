@@ -5,6 +5,7 @@
 In general, Zanata clients should get their configuration from user config, project config and command line args (or similar).
 
 Command line arguments should override values found in the user/project config files.  Project config should override values found in the user config (if they overlap).  The user config in the user's home directory are used for any values which haven't been supplied elsewhere.  In other words values are taken in order from:
+
 1. Command line (or similar, eg maven pom)
 1. Zanata project configuration (zanata.xml)
 1. Zanata user configuration (zanata.ini)
@@ -19,6 +20,7 @@ File location: `$HOME/.config/zanata.ini` (under a user's home directory)
 This file contains the user's general preferences and credentials for Zanata servers.
 
 Java/Maven/Python Example:
+
     [defaults]
     debug = false
     #errors = true
@@ -60,6 +62,7 @@ File location: `./zanata.xml` (in a project's base directory)
 This file might be checked into a version control system along with the source files.  It tells clients which Zanata server the project is linked to, and which project/version within that server.
 
 Example:
+
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <config xmlns="http://zanata.org/namespace/config/">
         <url>http://localhost:8080/zanata/</url> 
