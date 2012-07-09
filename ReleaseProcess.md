@@ -30,18 +30,23 @@ Make sure you have the latest version (head) from the repository, and that you a
 NB: Make sure you use the correct version numbers and tags!
 
 Test run:
+
     $ mvn release:prepare -Dresume=false -DdryRun=true -Darguments='-DskipTests -Dgwt.compiler.skip'
     What is the release version for "Zanata Root POM"? (org.zanata:root) 1.1: : 1.2-alpha-2
     What is SCM release tag or label for "Zanata Root POM"? (org.zanata:root) root-1.1: : zanata-1.2-alpha-2
     What is the new development version for "Zanata Root POM"? (org.zanata:root) 1.2-SNAPSHOT: : 1.2-SNAPSHOT
+
 Hit ^C if you get sick of waiting...
 
 The real thing:
+
     $ mvn release:prepare -Dresume=false -Darguments='-Dgwt.validateOnly'
     What is the release version for "Zanata Root POM"? (org.zanata:root) 1.1: : 1.2-alpha-2
     What is SCM release tag or label for "Zanata Root POM"? (org.zanata:root) root-1.1: : zanata-1.2-alpha-2
     What is the new development version for "Zanata Root POM"? (org.zanata:root) 1.2-SNAPSHOT: : 1.2-SNAPSHOT
+
 Wait while the build is performed.  
+
     git push; git push --tags
 
 
@@ -52,26 +57,28 @@ Now go to Hudson and tell it to build the tag you just created.  Make sure the M
 (Remember to fill in version x.y)
 
 Prerelease:
-`$ git co `**x.y** (branch name)
 
-`$ mvn release:prepare -Dresume=false -Darguments='-Dgwt.validateOnly' -DreleaseVersion=`**x.y-alpha-z** `-Dtag=`**zanata-x.y-alpha-z** `-DdevelopmentVersion=`**x.y-SNAPSHOT**
+ * $ git co **x.y** (branch name)
 
-`$ git push; git push --tags`
+ * $ mvn release:prepare -Dresume=false -Darguments='-Dgwt.validateOnly' -DreleaseVersion=**x.y-alpha-z** -Dtag=**zanata-x.y-alpha-z** -DdevelopmentVersion=**x.y-SNAPSHOT**
+
+ * $ git push; git push --tags
 
 GA release:
-`$ git co `**x.y**
 
-`$ mvn release:prepare -Dresume=false -Darguments='-Dgwt.validateOnly' -DreleaseVersion=`**x.y** `-Dtag=`**zanata-x.y** `-DdevelopmentVersion=`**x.y.1-SNAPSHOT**
+ * $ git co **x.y**
 
-`$ git push; git push --tags`
+ * $ mvn release:prepare -Dresume=false -Darguments='-Dgwt.validateOnly' -DreleaseVersion=**x.y** -Dtag=**zanata-x.y** -DdevelopmentVersion=**x.y.1-SNAPSHOT**
+
+ * $ git push; git push --tags
 
 Point/maintenance release:
-`$ hg co `**x.y**
 
-`$ mvn release:prepare -Dresume=false -Darguments='-Dgwt.validateOnly' -DreleaseVersion=`**x.y.z** `-Dtag=`**zanata-x.y.z** `-DdevelopmentVersion=`**x.y.(z+1)-SNAPSHOT**
+ * $ hg co **x.y**
 
-`$ git push; git push --tags`
+ * $ mvn release:prepare -Dresume=false -Darguments='-Dgwt.validateOnly' -DreleaseVersion=**x.y.z** -Dtag=**zanata-x.y.z** -DdevelopmentVersion=**x.y.(z+1)-SNAPSHOT**
 
+ * $ git push; git push --tags
 
 
 Now go to Jenkins and tell it to build the tag you just created.  Make sure the Maven deployment is successful; tell it to re-deploy if it fails.
