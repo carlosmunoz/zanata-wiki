@@ -7,6 +7,7 @@
 The Projects page of your translation site will list all projects available for translation. All translators who have joined a Language Team can open these projects and translate them in the language of each respective team.
 
 To open a project:
+
 1. Click on the Projects menu option on the top menu
 1. Click the title of a project you wish to translate
 
@@ -29,4 +30,4 @@ Each iteration also has a progress bar for each language. Each progress bar show
 
 ## Open an Iteration for Translation
 
-A translator wishing to contribute to a project translation needs to click the "Translate" link for the desired iteration and language. This takes the translator to the web-based Translation Workspace (!WebTrans), which is covered in the next section.
+A translator wishing to contribute to a project translation needs to click the "Translate" link for the desired iteration and language. This takes the translator to the web-based Translation Workspace (WebTrans), which is covered in the next section.
