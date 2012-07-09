@@ -4,7 +4,7 @@
 
 The recommended distribution of Eclipse for Zanata development is the [Eclipse IDE for Java EE Developers (Helios/3.6)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/heliosr).
 
-To install Eclipse, download the distribution and unzip it to a location such as {{{$HOME/apps/eclipse-jee}}}
+To install Eclipse, download the distribution and unzip it to a location such as `$HOME/apps/eclipse-jee`
 
 ## Recommended Plugins
 
@@ -30,12 +30,12 @@ To install Eclipse, download the distribution and unzip it to a location such as
 
 ## Configuration
 
-- Code formatting profile for Zanata is available in the source repository under {{{server/zanata-war/eclipse}}}
+- Code formatting profile for Zanata is available in the source repository under `server/zanata-war/eclipse`
 - You can import this file using the Import button in Window/Preferences: [[img/eclipse_code_formatter_sml.png]]
 - Make sure the "Seam" profile is selected.
 - This shows how to activate automatic code formatting in Preferences: [[img/eclipse_format_on_save_sml.png]]
-- The classpath variable {{{M2_REPO}}} should be set up to point to your local maven repository (typially {{{$HOME/.m2/repository}}}). This is done through Window > Preferences > Classpath variables
-- Look at the information in [[Working With Maven]] for how to generate an eclipse configuration for Zanata. Then, in Eclipse, select {{{File -> Import -> Existing Projects}}} and select the Zanata checkout directory.
+- The classpath variable `M2_REPO` should be set up to point to your local maven repository (typically `$HOME/.m2/repository`). This is done through Window > Preferences > Classpath variables
+- Look at the information in [[Working With Maven]] for how to generate an eclipse configuration for Zanata. Then, in Eclipse, select `File -> Import -> Existing Projects` and select the Zanata checkout directory.
 
 ### String Substitution variables
 
@@ -93,23 +93,23 @@ By default, Eclipse uses quite large fonts on Fedora. To override this and let E
     class "GtkToolbar" style "eclin2"
     class "GtkPaned" style "eclin2"
 
-You can then run Eclipse through {{{GTK2_RC_FILES=$HOME/.eclipse.gtkrc:$GTK2_RC_FILES $HOME/apps/eclipse-jee/eclipse}}}
+You can then run Eclipse through `GTK2_RC_FILES=$HOME/.eclipse.gtkrc:$GTK2_RC_FILES $HOME/apps/eclipse-jee/eclipse`
 
-You can create a launcher for Eclipse by creating a shell scripts such as {{{$HOME/bin/eclipse-jee.sh}}} with the contents:
+You can create a launcher for Eclipse by creating a shell scripts such as `$HOME/bin/eclipse-jee.sh` with the contents:
     #!/bin/sh
     GTK2_RC_FILES=$HOME/.eclipse.gtkrc:$GTK2_RC_FILES $HOME/apps/eclipse-jee/eclipse
 
 Make this file executable by executing
     chmod +x $HOME/bin/eclipse-jee.sh
 
-You might want to add {{{$HOME/bin}}} to your {{{PATH}}} variable. To do this, you can as the root user create a file such as {{{/etc/profile.d/home.sh}}} with the contents:
+You might want to add `$HOME/bin` to your `PATH` variable. To do this, you can as the root user create a file such as `/etc/profile.d/home.sh` with the contents:
     export PATH=$PATH:$HOME/bin
 
 To activate the new profile settings you will have to restart your console session.
 
 ## Creating a launch icon on Fedora
 
-Create a file {{{eclipse-jee.desktop}}} in {{{/usr/local/share/applications/}}} with the following contents: 
+Create a file `eclipse-jee.desktop` in `/usr/local/share/applications/` with the following contents: 
 
     [Desktop Entry]
     Encoding=UTF-8
