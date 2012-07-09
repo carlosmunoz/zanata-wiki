@@ -36,8 +36,8 @@ This step should be performed by only administrators or project maintainers.
 
 ## Import contents
 
-This step should be performed by only administrators `[project maintainers, _not yet supported_`](`or)`.
-Currently only command line importing is supported.
+This step should be performed by only administrators or project maintainers.
+Currently only command line importing is supported [ see also POT upload feature].
 
 - From a maven/publican project
 - From a publican project
