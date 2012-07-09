@@ -1,0 +1,6 @@
+- [[Getting Started|Getting Started]]
+- [[Translators New Account|Creating a New Account and Signing In]]
+- [[Join Language Team|Joining a Language Team]]
+- [[Contributing Translations|Contributing Translations]]
+- [[Opening Translation Project|Opening a Translation Project]]
+- [[Keyboard Shortcuts|WebTrans Keyboard Shortcuts]]
