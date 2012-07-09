@@ -52,7 +52,8 @@ You will need to create some variables in Window/Preferences/Run/Debug/String Su
 
 ## Nicer fonts and GTK style on Fedora
 
-By default, Eclipse uses quite large fonts on Fedora. To override this and let Eclipse use a neater GTK theme, create a file {{{$HOME/.eclipse.gtkrc}}} with the following contents
+By default, Eclipse uses quite large fonts on Fedora. To override this and let Eclipse use a neater GTK theme, create a file `$HOME/.eclipse.gtkrc` with the following contents
+
     style "eclin" {
     GtkButton::default_border={1,1,1,1}
     GtkButton::default_outside_border={1,1,1,1}
