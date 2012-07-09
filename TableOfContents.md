@@ -1,36 +1,37 @@
 # Table of Contents for Google Documentation Reader
 
 - [[Introduction]]
-- [[Translator Guide|Translator Guide]]
-- [[Getting Started|Getting Started]]
-- [[Translators New Account|Creating a New Account and Signing In]]
-- [[Join Language Team|Joining a Language Team]]
-- [[Contributing Translations|Contributing Translations]]
-- [[Opening Translation Project|Opening a Translation Project]]
-- [[Keyboard Shortcuts|WebTrans Keyboard Shortcuts]]
-- [[Installation Guide|Installation Guide]]
-- [- [[Integration Guide|Integration Guide]]
-- Clients
-- 99ba280e28562e876aa8e7fec503e8ff
-- a98baea26feefc39120e1570df5a8d72
-- [[Zanata Maven Integration|Maven Integration]]
-- [[Zanata Java Client|Java command line client (unsupported!)]]
-- [[Zanata Python Library|Python Library]]
-- [RestApiV1 REST API](JAASAuthentication])
-- [Projects](RestProjectsV1)
-- [Translation Resources](RestTranslationResourcesV1)
-- [[Rest Api Terminology|Terminology]]
-- [[Rest Extensions|Extensions]]
-- [Integrator FAQ](IntegratorFAQ)
-- [[Developer Guide|Developer Guide]]
-- [[Git Hub Setup|GitHub configuration]]
-- [[Database Setup|Database configuration]]
-- [JBoss AS configuration](JBossSetup)
-- [[Working With Maven|Working with Maven]]
-- [[Release Process|Release Process]]
-- [[Eclipse Setup|Eclipse configuration]]
-- [[Dev Mode|GWT DevMode]]
-- [[Coding Guide|Coding Guidelines]]
-- [[Web Test With Selenium|Selenium UI Testing]]
-- DatabaseTricks
+- [[TranslatorGuide|Translator Guide]]
+ - [[GettingStarted|Getting Started]]
+  - [[TranslatorsNewAccount|Creating a New Account and Signing In]]
+  - [[JoinLanguageTeam|Joining a Language Team]]
+ - [[ContributingTranslations|Contributing Translations]]
+  - [[OpeningTranslationProject|Opening a Translation Project]]
+ - [[KeyboardShortcuts|WebTrans Keyboard Shortcuts]]
+- [[InstallationGuide|Installation Guide]]
+ - [[JAASAuthentication|JAAS Authentication]]
+- [[IntegrationGuide|Integration Guide]]
+ - Clients
+  - [[ClientConfiguration|Client Configuration Files]]
+  - [[ZanataPythonClient|Python Client]]
+  - [[ZanataMavenIntegration|Maven Integration]]
+  - [[ZanataJavaClient|Java command line client (unsupported!)]]
+ - [[ZanataPythonLibrary|Python Library]]
+ - [[RestApiV1|REST API]]
+  - [[RestProjectsV1|Projects]]
+  - [[RestTranslationResourcesV1|Translation Resources]]
+  - [[RestApiTerminology|Terminology]]
+  - [[RestExtensions|Extensions]]
+ - [IntegratorFAQ](IntegratorFAQ)
+- [[DeveloperGuide|Developer Guide]]
+ - [[GitHubSetup|GitHub configuration]]
+ - [[DatabaseSetup|Database configuration]]
+ - [[JBossSetup|JBoss AS configuration]]
+ - [[WorkingWithMaven|Working with Maven]]
+ - [[ReleaseProcess|Release Process]]
+ - [[EclipseSetup|Eclipse configuration]]
+ - [[DevMode|GWT DevMode]]
+ - [[CodingGuide|Coding Guidelines]]
+ - [[WebTestWithSelenium|Selenium UI Testing]]
+ - DatabaseTricks
 - ChangeLog
