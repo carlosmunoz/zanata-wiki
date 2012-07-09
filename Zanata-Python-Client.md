@@ -15,9 +15,9 @@ Currently, the external dependency for the zanata-python-client is a library nam
 # Configuration
 
 After you install the zanata-python-client, you need to create a global configuration file `$USER_HOME/.config/zanata.ini` that contain user-specific configuration. 
-python-client uses the same configuration files as the zanata maven client, for details see http://code.google.com/p/flies/wiki/ClientConfiguration. You can manually specify the location of user configuration file with command line option '--user-config', 
+python-client uses the same configuration files as the zanata maven client, for details see [[Client Configuration]]. You can manually specify the location of user configuration file with command line option '--user-config', 
 
-For each project, you also have to write a project-specific configuration file named zanata.xml, which is the same zanata.xml used by the zanata maven client, for details see http://code.google.com/p/flies/wiki/ClientConfiguration. You can set the path of project configuration file with command line option '--project-config'.
+For each project, you also have to write a project-specific configuration file named zanata.xml, which is the same zanata.xml used by the zanata maven client, for details see [[Client Configuration]]. You can set the path of project configuration file with command line option '--project-config'.
 
 You can also specify the URL of the zanata server with the command line opition '--url'. There are also command line options '--username' for user name and '--apikey' for api key of user.
 
