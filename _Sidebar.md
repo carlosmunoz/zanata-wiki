@@ -1,4 +1,4 @@
-# Table of Contents for Zanata wiki
+# Zanata wiki
 
 - [[Introduction]]
 - [[Translator Guide|TranslatorGuide]]
