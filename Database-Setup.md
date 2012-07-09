@@ -43,4 +43,4 @@
 
 # Setup for Exploded WAR deployment
 
-For deployment of an exploded war, !MySql username and password should be updated in $USER_HOME/.m2/settings.xml as described in [JBoss Setup](http://code.google.com/p/flies/wiki/JBossSetup)
+For deployment of an exploded war, !MySql username and password should be updated in $USER_HOME/.m2/settings.xml as described in [[JBoss Setup]]
