@@ -14,6 +14,7 @@
  * Clients
   - [[Client Configuration Files|Client Configuration]]
   - [[Python Client|Zanata Python Client]]
+  - [[Python Client Trouble Shooting|python client trouble shooting]
   - [[Maven Integration|Zanata Maven Integration]]
   - [[Java command line client (unsupported!)|Zanata Java Client]]
  * [[Python Library|Zanata Python Library]]
