@@ -5,6 +5,7 @@
 # Delete an empty project by ID
 
 To delete an empty project 'myprojectid' by ID:
+
     mysql> delete HProject_Maintainer
     from HProject, HProject_Maintainer
     where HProject.slug='myprojectid' and HProject.id=HProject_Maintainer.projectId;
@@ -18,6 +19,7 @@ To delete an empty project 'myprojectid' by ID:
 # DANGER: Delete project with translations
 
 To delete project 'TEST1' by ID (ignoring HDocumentHistory, HTextFlowHistory, HProject_Locale, HProjectIteration_Locale, HPoHeader, HPotEntryData, HSimpleComment):
+
     mysql> delete HTextFlowTargetHistory
     from HProject, HProjectIteration, HDocument, HTextFlow, HTextFlowTarget, HTextFlowTargetHistory
     where HProject.slug='TEST1' and HProject.id=HProjectIteration.project_id
