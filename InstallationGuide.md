@@ -16,6 +16,7 @@
 - copy `zanata.war` to `/opt/jboss-ewp-5.1/jboss-as-web/server/default/deploy`
 
 Example datasource - filename `zanata-ds.xml`, goes in `/opt/jboss-ewp-5.1/jboss-as-web/server/default/deploy`
+
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE datasources
         PUBLIC "-//JBoss//DTD JBOSS JCA Config 1.5//EN"
@@ -41,6 +42,7 @@ Make sure the datasource points to the database you created above, with the corr
 a. unzip zanata.war to zanata-war
 
 b.
+
     classpath=$(echo zanata-war/WEB-INF/lib/*.jar | sed 's/ /:/g')':\
     zanata-war/WEB-INF/classes/:\
     /opt/jboss-ewp-5.1/jboss-as-web/server/default/lib/mysql-connector-java.jar:\
