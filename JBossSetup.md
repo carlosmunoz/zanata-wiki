@@ -4,7 +4,7 @@
 
 You can use either JBoss AS 4.2.3 from jboss.org (no longer tested), or JBoss EWP 5. JBoss AS is available for download from [jboss.org](http://www.jboss.org/jbossas/downloads.html)(choose jboss-4.2.3.GA.zip)
 
-Download and unzip JBossAS to a location of your choice. We will refer to this location as {{{$JBOSS_HOME}}}.
+Download and unzip JBossAS to a location of your choice. We will refer to this location as `$JBOSS_HOME`.
 
 # JBoss Configuration
 
@@ -18,15 +18,17 @@ Edit your copy of jboss/bin/run.conf (run.conf.bat for Windows) like so:
     -Dsun.rmi.dgc.server.gcInterval=3600000 -XX:+UseConcMarkSweepGC -XX:+CMSPermGenSweepingEnabled 
     -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512m -Xverify:none"
 
-# = Enabling Remote Debugging
+# Enabling Remote Debugging
 
-To enable debugging your JBoss application, uncomment the following {{{JAVA_OPTS}}} line in {{{$JBOSS_HOME/bin/run.conf}}}
+To enable debugging your JBoss application, uncomment the following `JAVA_OPTS` line in `$JBOSS_HOME/bin/run.conf`
+
     # Sample JPDA settings for remote socket debugging
     #JAVA_OPTS="$JAVA_OPTS -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
 
 ## Configuring Zanata to deploy to JBoss AS
 
-Edit your {{{$USER_HOME/.m2/settings.xml}}} and ensure the {{{as.deploy}}} property points to your JBoss installation (for example, assuming jboss EWP 5.0 is installed in ~/apps/jboss-ewp-5.0). If {{{$USER_HOME/.m2/settings.xml}}} does not exist, you can copy the default template from {{{$M2_HOME/conf/settings.xml}}}. Edit the {{{mysql.user}}} and {{{mysql.password}}} properties to match your !MySql settings.
+Edit your `$USER_HOME/.m2/settings.xml` and ensure the `as.deploy` property points to your JBoss installation (for example, assuming jboss EWP 5.0 is installed in ~/apps/jboss-ewp-5.0). If `$USER_HOME/.m2/settings.xml` does not exist, you can copy the default template from `$M2_HOME/conf/settings.xml`. Edit the `mysql.user` and `mysql.password` properties to match your MySql settings.
+
     <profile>
       <id>default</id>
       <activation>  
@@ -41,6 +43,7 @@ Edit your {{{$USER_HOME/.m2/settings.xml}}} and ensure the {{{as.deploy}}} prope
     </profile>
 
 Here is a complete sample of .m2/settings.xml:
+
     <settings xmlns="http://maven.apache.org/POM/4.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -91,43 +94,45 @@ Here is a complete sample of .m2/settings.xml:
 
 ## Datasource
 
-MySQL username and password from settings.xml (see above) are used in $JBOSS_HOME/server/default/deploy/zanata-ds.xml, which is copied from zanata/server/zanata-war/src/main/resources-jboss when deploying an exploded war. The structure of zanata-ds.xml is shown here for reference.
- {{{
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE datasources
-    PUBLIC "-//JBoss//DTD JBOSS JCA Config 1.5//EN"
-    "http://www.jboss.org/j2ee/dtd/jboss-ds_1_5.dtd">
-<datasources>
-    <local-tx-datasource>
-        <jndi-name>zanataDatasource</jndi-name>
-        <connection-url>jdbc:mysql://localhost:3306/zanata?characterEncoding=UTF-8</connection-url>
-        <driver-class>com.mysql.jdbc.Driver</driver-class>
-        <check-valid-connection-sql>select 1 from dual</check-valid-connection-sql>
-        <user-name>${mysql.user}</user-name>
-        <password>${mysql.password}</password>
-    </local-tx-datasource>
-</datasources>
-}}}
+MySQL username and password from settings.xml (see above) are used in `$JBOSS_HOME/server/default/deploy/zanata-ds.xml`, which is copied from `zanata/server/zanata-war/src/main/resources-jboss` when deploying an exploded war. The structure of `zanata-ds.xml` is shown here for reference.
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE datasources
+        PUBLIC "-//JBoss//DTD JBOSS JCA Config 1.5//EN"
+        "http://www.jboss.org/j2ee/dtd/jboss-ds_1_5.dtd">
+    <datasources>
+        <local-tx-datasource>
+            <jndi-name>zanataDatasource</jndi-name>
+            <connection-url>jdbc:mysql://localhost:3306/zanata?characterEncoding=UTF-8</connection-url>
+            <driver-class>com.mysql.jdbc.Driver</driver-class>
+            <check-valid-connection-sql>select 1 from dual</check-valid-connection-sql>
+            <user-name>${mysql.user}</user-name>
+            <password>${mysql.password}</password>
+        </local-tx-datasource>
+    </datasources>
+
 
  
 
-Note: you could take a reference in [and setting up environment manually. 
+Refer to http://community.jboss.org/wiki/SetUpAMysqlDatasource if you want to set up a datasource yourself. 
 
 # Running JBoss
 
-You start JBoss by running {{{$JBOSS_HOME/bin/run.sh}}} ({{{$JBOSS_HOME/bin/run.bat}}} on Windows) from the command line . You stop JBoss by entering {{{CTRL+c}}}.
+You start JBoss by running `$JBOSS_HOME/bin/run.sh` (`$JBOSS_HOME/bin/run.bat` on Windows) from the command line . You stop JBoss by entering `CTRL+c`.
 
 ## Building and Deploying (Zanata 1.5+)
 
 Run the following command for a full zanata build:
-1068529a9048dae4b2546c716f57a355
+
+    mvn clean install
 
 To deploy to an exploded war directory and deploy zanata-ds.xml to your jboss directory (see config and datasource sections above), run:
-887205ecc8eea9b9f66c8dffd90a65fc
+    mvn -Pexplode -DinternalAuth -DskipTests clean package
 
 Hint: for quicker builds, enable the profile `nogwt` (_don't compile for GWT, handy when using DevMode_), `firefox` (_compile GWT for Firefox only_) or `chrome` (_compile GWT for Chrome/WebKit only_).  For instance:
 
-355826f030c0536786ce3a719fcb5c61
+    mvn -Pexplode,chrome -DinternalAuth -DskipTests clean package
+
 
 ### Multiple Authentication schemes (Zanata 1.5+)
 
@@ -140,10 +145,10 @@ The default profile will build multiple war files for each authentication mechan
   <tr><td>`kerberos`</td><td>Kerberos</td><td>zanata-{version}-kerberos.war</td></tr>
   <tr><td>`jaas`</td><td>Pure JAAS</td><td>zanata-{version}-jaas.war</td></tr>
   <tr><td>`autotest`</td><td>Internal Authentication + H2 (Used for testing only)</td><td>zanata-{version}-autotest.war</td></tr>
-  <tr><td>_(`-DinternalAuth`)_</td><td>Internal Authentication</td><td>zanata-{version}-internal.war</td></tr>
+  <tr><td>`-DinternalAuth`</td><td>Internal Authentication</td><td>zanata-{version}-internal.war</td></tr>
 </table>
 
-See also [JAASAuthentication](http://community.jboss.org/wiki/SetUpAMysqlDatasource]).
+See also [[JAASAuthentication]].
 
 
 ## Building and Deploying (Zanata 1.4)
@@ -174,6 +179,6 @@ See also [JAASAuthentication].
 
 ## If deployment to local JBoss server failed, what should I do?
 
-Firstly, you should stop the running JBoss by entering {{{CTRL+C}}}. Check if the JBoss is still in memory with {{{ps -A |grep run.sh}}}. If it is, you can terminate the process with {{{pkill run.sh}}} and kill the java with the pid right smaller than run.sh. (Ed: what??)
+Firstly, you should stop the running JBoss by entering `CTRL+C`. Check if the JBoss is still in memory with `ps -A |grep run.sh`. If it is, you can terminate the process with `pkill run.sh` and kill the java with the pid right smaller than run.sh. (Ed: what??)
 
-If deployment still failes after restarting JBoss, you can manually remove the previous deployment with {{{rm -rf $JBOSS_HOME/server/default/deploy/zanata*}}} (replace $JBOSS_HOME with location of your JBoss).
+If deployment still failes after restarting JBoss, you can manually remove the previous deployment with `rm -rf $JBOSS_HOME/server/default/deploy/zanata*` (replace `$JBOSS_HOME` with location of your JBoss).
