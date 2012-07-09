@@ -1,7 +1,8 @@
 # Building a web test case with selenium.
 
 Table of contents
-<wiki:toc max_depth="3" />
+'[[_TOC_]]
+
 
 # Introduction
 
