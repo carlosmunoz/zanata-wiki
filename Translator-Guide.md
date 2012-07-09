@@ -1,5 +1,5 @@
 - [[Getting Started|Getting Started]]
-- [[Translators New Account|Creating a New Account and Signing In]]
+- [[Translators New Account|Translators-New-Account]]
 - [[Join Language Team|Joining a Language Team]]
 - [[Contributing Translations|Contributing Translations]]
 - [[Opening Translation Project|Opening a Translation Project]]
