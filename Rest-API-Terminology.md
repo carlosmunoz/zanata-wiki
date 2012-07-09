@@ -5,8 +5,8 @@ These DTOs all provide different views of a document (HDocument in our domain mo
 <table>
   <tr><td>XML element</td><td>Java DTO type</td><td>Description</td></tr>
   <tr><td>resource-meta</td><td>ResourceMeta</td><td>document:  metadata and Extensions only, no content</td></tr>
-  <tr><td>resource</td><td>Resource</td><td>source document: source text [metadata and Extensions</td></tr>
-  <tr><td>translations</td><td>TranslationsResource</td><td>translated document: target text [99de59dc9103452f353b31bb6ad54aa1](f5ce20d2d0f1f8b8af787fcb5ba3c7f6],) and Extensions, but not the source document metadata</td></tr>
+  <tr><td>resource</td><td>Resource</td><td>source document: source text (TextFlows), metadata and Extensions</td></tr>
+  <tr><td>translations</td><td>TranslationsResource</td><td>translated document: target text (TextFlowTargets) and Extensions, but not the source document metadata</td></tr>
 </table>
 
 Supported extensions for PUT/POST operations:
