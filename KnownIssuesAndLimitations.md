@@ -2,9 +2,7 @@
 
 # Introduction
 
-# Flies Server
-
-- Flies should be able to re-use translations in many cases, but doesn't.  (eg: migrating from version 1.0 of a project to version 1.1)
+# Zanata Server
 
 # REST API
 
