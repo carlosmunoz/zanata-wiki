@@ -18,10 +18,14 @@ We use `$JBOSS_HOME` for JBoss AS installation directory,
 and `$FLIES_SRC` for the flies source codes checkout from the mercurial repository. 
 
 1. Install jbossas, which is mainly installed in /var/lib/jbossas
+
        yum install jbossas
+
 1. cd $FLIES_SRC
 1. Make sure following maven build succeed.
+
     mvn clean install -Pnogwt,jboss4 -DskipTests=true
+
 1. sudo cp flies-war/target/classes/flies-ds.xml $JBOSS_HOME/server/default/deploy; sudo chown jboss:jboss $JBOSS_HOME/server/default/deploy/flies-ds.xml
 1. sudo unzip flies-war/target/flies.war -d $JBOSS_HOME/server/default/deploy/flies.war; sudo chown -R jboss:jboss $JBOSS_HOME/server/default/deploy/flies.war
 1. sudo cp ~/.m2/repository/com/h2database/h2/1.2.134/h2-1.2.134.jar $JBOSS_HOME/server/default/lib/; sudo chown -R jboss:jboss $JBOSS_HOME/server/default/lib/
@@ -29,11 +33,14 @@ and `$FLIES_SRC` for the flies source codes checkout from the mercurial reposito
 # Run
 
 You may either run the jboss as service:
+
     service jbossas start  
+
 You may encounter error message, but flies may still be up and running at.
 http://localhost:8080/flies
 
 Or, run as normal command:
+
     $JBOSS_HOME/bin/run.sh
 
 The flies instance should be run at 
