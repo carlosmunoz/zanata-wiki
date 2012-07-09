@@ -3,13 +3,12 @@
 # Introduction
 
 Core workflow describes sequences of important operations.
-Flies is not releasable without these workflow working.
 
 # Project handling
 
 Assume we have a project <code>ProjX</code> to be translated.
 ProjX might either be [publican](http://fedoraproject.org/wiki/DocsProject/Publican) documentation,
-*a maven project, or a package with conventional po pot files (but not yet)*.
+a Maven project, or a software package with conventional po pot files.
 
 ## Create a project
 
@@ -85,7 +84,7 @@ User should then receive the activation email, click on the embedded link and re
 
 ## Email confirmation
 
-On flies server: After receiving registration application, 
+On Zanata server: After receiving registration application, 
 a confirmation mail is sent to user-specified mail account
 with the correct activation URL.
 
@@ -93,7 +92,7 @@ On the mailbox of the user: The confirmation mail is received,
 with the correct activation URL.
 
 The account should be activated after the user clicks the activation URL.
-The user can now sign in the flies server.
+The user can now sign in the Zanata server.
 
 ## Join/Leave Language Team
 
