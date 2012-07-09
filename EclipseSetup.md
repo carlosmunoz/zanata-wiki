@@ -31,9 +31,9 @@ To install Eclipse, download the distribution and unzip it to a location such as
 ## Configuration
 
 - Code formatting profile for Zanata is available in the source repository under {{{server/zanata-war/eclipse}}}
-- You can import this file using the Import button in Window/Preferences: http://wiki.flies.googlecode.com/hg/img/eclipse_code_formatter_sml.png
+- You can import this file using the Import button in Window/Preferences: [[img/eclipse_code_formatter_sml.png]]
 - Make sure the "Seam" profile is selected.
-- This shows how to activate automatic code formatting in Preferences: http://wiki.flies.googlecode.com/hg/img/eclipse_format_on_save_sml.png
+- This shows how to activate automatic code formatting in Preferences: [[img/eclipse_format_on_save_sml.png]]
 - The classpath variable {{{M2_REPO}}} should be set up to point to your local maven repository (typially {{{$HOME/.m2/repository}}}). This is done through Window > Preferences > Classpath variables
 - Look at the information in [[Working With Maven]] for how to generate an eclipse configuration for Zanata. Then, in Eclipse, select {{{File -> Import -> Existing Projects}}} and select the Zanata checkout directory.
 
