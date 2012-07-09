@@ -19,10 +19,13 @@ Note that these URLs are under the Base URL.  See [RestApiV1].
 ### Example (json)
 
 **Request:**
+
     GET /projects/
     Host: www.example.com
     Accept: application/json
+
 **Response:**
+
     HTTP/1.1 200 OK
     Content-Type: application/json
     Content-Length: 1445
@@ -41,10 +44,13 @@ Note that these URLs are under the Base URL.  See [RestApiV1].
 ### Example (XML)
 
 **Request:**
+
     GET /projects/
     Host: www.example.com
     Accept: application/vnd.flies.projects+xml
+
 **Response:**
+
     HTTP/1.1 200 OK
     Content-Type: application/vnd.flies.projects+xml
     Content-Length: 1445
@@ -69,10 +75,13 @@ Note that these URLs are under the Base URL.  See [RestApiV1].
 ## Retrieving a Project
 
 **Request:**
+
     GET /projects/p/{project_id}
     Host: www.example.com
     Accept: application/json
+
 **Response:**
+
     HTTP/1.1 200 OK
     Content-Type: application/json
     Content-Length: 1445
@@ -88,9 +97,11 @@ Note that these URLs are under the Base URL.  See [RestApiV1].
                        'summary':'blah','links':[]}]"
         "links":[]
     }
+
 ## Create / Updating a Project
 
 **Request:**
+
     PUT /projects/p/{project_id}
     Host: www.example.com
     Accept: application/json
@@ -101,7 +112,9 @@ Note that these URLs are under the Base URL.  See [RestApiV1].
         "id" : "sample-project",
         "description" : "An example Project",
     }
+
 **Response:**
+
     HTTP/1.1 201 OK
 
 # Working with Project Iterations
@@ -132,4 +145,4 @@ Note that these URLs are under the Base URL.  See [RestApiV1].
 
 ## Create/Update a Project Iteration
 
-PUT /projects/p/{project}/iterations/i/{iteration}
+    PUT /projects/p/{project}/iterations/i/{iteration}
