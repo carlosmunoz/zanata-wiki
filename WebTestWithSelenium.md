@@ -1,6 +1,7 @@
 # Building a web test case with selenium.
 
 Table of contents
+
 '[[_TOC_]]
 
 
