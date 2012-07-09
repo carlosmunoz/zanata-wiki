@@ -3,6 +3,7 @@
 # Introduction
 
 The zanata plugin provides several goals under the zanata: prefix. For example:
+
     mvn zanata:help
     mvn zanata:listremote
     mvn zanata:putuser
@@ -12,6 +13,7 @@ The zanata plugin provides several goals under the zanata: prefix. For example:
     mvn zanata:publican-pull
 
 To activate the "zanata:" prefix, you should create/edit your Maven project's pom.xml like this:
+
     <project>
     ...
        <build>
@@ -148,7 +150,7 @@ for instance, here's a complete sample pom.xml you can use:
 
 or you can just use the long version:
 
-`mvn org.zanata:zanata-maven-plugin:help`
+    mvn org.zanata:zanata-maven-plugin:help
 
 
 # Details
@@ -180,13 +182,15 @@ Note: Maven 2.2 does **not** support overriding pom configuration with system pr
 The pom configuration parameters are in camelCase.  Note: When specifying these values as system properties from the command line, you will need to prepend "zanata." to the key.  
 
 For example, in the pom:
+
        <configuration>
           <importPo>true</importPo>
           <srcDir>.</srcDir>
        </configuration>
+
 and the command-line equivalent:
 
-`mvn zanata:publican-push -Dzanata.importPo -Dzanata.srcDir=.`
+    mvn zanata:publican-push -Dzanata.importPo -Dzanata.srcDir=.
 
 
 NB: the commands `listremote`, `putuser`, `putproject` and `putversion` are experimental, and subject to significant change.  (For instance, the names of their system properties are currently quite different from the camel case parameter names.)
@@ -195,10 +199,13 @@ General information about Maven plugin configuration can be found [here](http://
  
 
 The command
-`mvn zanata:help`
+
+    mvn zanata:help
+
 will give an overview of the goals which are available in the plugin.
 
-`mvn zanata:help -Ddetail=true`
+    mvn zanata:help -Ddetail=true
+
 lists all goals and their parameters.
 
 # Reference Guide
