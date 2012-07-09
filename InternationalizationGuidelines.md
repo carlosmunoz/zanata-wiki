@@ -2,11 +2,11 @@
 
 # Introduction
 
-The purpose of this document is to provide readers brief understandings on workflow of internationalization for Flies Project.
+The purpose of this document is to provide readers brief understandings on workflow of internationalization for Zanata Project.
 
 The readers are expected to have general knowledge of internationalization about JBoss Seam, Google Web Toolkit (GWT), Java Server Faces (JSF) and Java. It might requires the readers to read further on relevant documentations that are mostly available on the Internet.
 
-After reading this document, the reader are expected to be able to internationalize Flies and make it ready for localization process.
+After reading this document, the reader are expected to be able to internationalize Zanata and make it ready for localization process.
 
 # Details
 
@@ -36,7 +36,7 @@ Here are the steps of internationalization on Flies (GWT):
 
 ## JSF
 
-Here are the steps of internationalization on Flies (JSF):
+Here are the steps of internationalization on Zanata (JSF):
 
 - Read [Seam Internationalization Documentation](http://docs.jboss.org/seam/2.2.1.CR1/reference/en-US/html/i18n.html) thoughtfully.
 - Before adding a new locale, there is a need to create a widget for user to change locale. Besides, you can still test for setting locale by adding "&locale=en" (or other locales) at the end of the URL input field of your browser during browse of JSF pages.
@@ -54,8 +54,8 @@ Here are the steps of internationalization on Flies (JSF):
           <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
        </application>
 - Open the .xhtml JSF files and locate strings. Sometimes they are between tags, but sometimes they are sitting as values within the tags of buttons or other widgets.
-- Replace the strings with #{messages{{{[Pick an unique key for each of the strings.
-- Create/modify messages{{{*}}}.properties files in src/resources/. The messages.properties as fallback might not be there, so you could clone from English one messages_en.properties.
+- Replace the strings with `#{messages['stringKey']}`. Pick an unique key for each of the strings.
+- Create/modify messages*.properties files in src/resources/. The messages.properties as fallback might not be there, so you could clone from English one messages_en.properties.
 - Create translations by adding a line in .properties files:
     stringKey=Translated string.
 - Build and deploy to server for testing, from my development environment I run after I have started my application server for deployment:
@@ -65,10 +65,10 @@ Here are the steps of internationalization on Flies (JSF):
 
 Once GWT and JSF are internationalized, the localization process is ready to commence. The translators will be working on .properties files in the following directories and files::
 
-- JSF UI: src/resources/messages{{{*}}}.properties
-- GWT UI: src/resources/{{{[name of the packages of Java messages files]('stringKey']}}}}.)}}}
+- JSF UI: src/resources/messages*.properties
+- GWT UI: src/resources/`[name of the packages of Java messages files]`
 
-***{{{**}}} For the .properties files, the key should not be spaced. Otherwise, it will not be linked by JSF files.**
+ - **For the .properties files, the key should not be spaced. Otherwise, it will not be linked by JSF files.**
 
 # References
 
