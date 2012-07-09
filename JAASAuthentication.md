@@ -5,9 +5,13 @@
 1. Edit `zanata.war/WEB-INF/classes/META-INF/components.xml` to deactivate internalauthentication and enable your preferred module.
 1. Specify your preferred login module in `$JBOSS_HOME/server/<profile>/conf/login-config.xml`.  You will need an application-policy with the name `"zanata"`.
 1. After first login, you will need to make yourself an admin in the database:
+
     mysql> insert into HAccountMembership(accountId, memberOf) values((select id from HAccount where username = 'myusername'), (select id from HAccountRole where name = 'admin'));
+
 - Check current membership using:
+
     mysql> SELECT r.name FROM HAccountRole AS r, HAccountMembership AS m WHERE m.accountId = (SELECT id FROM HAccount WHERE username = 'myusername') AND m.memberOf = r.id;
+
 1. **SECURITY**: Zanata versions < 1.4 automatically create an internal user `admin` which must be disabled or deleted for security. To disable, visit the page `Administration/Manage Users` (as an administrator), click `Edit` on the line for `admin`, deselect `Account enabled`, then `Save`.
 
 # Examples
@@ -17,6 +21,7 @@
 eg DatabaseServerLoginModule (you'll need to deploy a datasource too)
 
 login-config.xml:
+
       <application-policy name="zanata">
         <authentication>
             <login-module
@@ -42,6 +47,7 @@ A kerberos keytab should be obtanined for HTTP and the server where the applicat
 **Add a SPNEGO authenticator to JBoss**
 
 In `$JBOSS_HOME/server/<profile>/deployers/jbossweb.deployer/META-INF/war-deployers-jboss-beans.xml`, remove SECURITY_DOMAIN if present, and add the following entry under the authenticators' section:
+
          <entry>
              <key>SPNEGO</key>
              <value>org.jboss.security.negotiation.NegotiationWithBasicFallbackAuthenticator</value>
@@ -59,6 +65,7 @@ Make sure you use OpenJDK, not Oracle/Sun JDK, unless you have the [appropriate 
 **Application Descriptors**
 
 login-config.xml:
+
       <application-policy name="zanata">
         <authentication>
           <login-module code="org.jboss.security.negotiation.spnego.SPNEGOLoginModule" flag="optional">
@@ -97,6 +104,7 @@ Make sure both the spnego-users.properties and spnego-roles.properties are empty
 ## Fedora Account System (OpenID)
 
 login-config.xml:
+
       <application-policy name="zanata">
          <authentication>
            <login-module code="org.zanata.security.OpenIdLoginModule"
