@@ -1,4 +1,4 @@
-# Table of Contents for Google Documentation Reader
+# Table of Contents for Zanata wiki
 
 - [[Introduction]]
 - [[Translator Guide|TranslatorGuide]]
