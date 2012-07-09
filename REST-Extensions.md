@@ -4,11 +4,12 @@
 
 Available Extension Object: `PoHeader` (extension: `gettext`)
 
-Field: String comment
-Field: List(`HeaderEntry`) entries
+    Field: String comment
+    Field: List(`HeaderEntry`) entries
 
 For example:
 `ResourceMeta` with `PoHeader` extension(comment and entries)
+
     {"name":"id",
     "contentType":"text/plain",
     "lang":"en-US",
@@ -17,6 +18,7 @@ For example:
     "type":"FILE"}
 
 for example, the `getttext` header for file id.pot
+
     # comment_value
     msgid ""
     msgstr ""
@@ -30,18 +32,19 @@ Available Extension Objects:`PotEntryHeader` (extension: `gettext`) and `SimpleC
 
 `PotEntryHeader`
 
-Field:String context
-Field:List(String) flags
-Field:List(String) references
+    Field:String context
+    Field:List(String) flags
+    Field:List(String) references
 
 `SimpleComment`
 
-Field:String value
-Field:String space(preserved)
+    Field:String value
+    Field:String space(preserved)
 
 For example:
 
 `TextFlow` with `SimpleComment`(value="extracted comment" and space="preserve") and `PotEntryHeader`(context="context_value" and reference=[and flags=["java-format"]("fff"]))
+
     {"lang":"en-US",
     "content":"ttff",
     "extensions":[{"object-type":"comment","value":"extracted comment","space":"preserve"},
@@ -58,6 +61,7 @@ in the pot file:
     msgstr ""
 
 and in the corresponding ja.po file
+
     # translator comment (see TextFlowTarget/SimpleComment below)
     #. extracted comment
     #, context_value
@@ -72,11 +76,12 @@ Available Extension Object:`SimpleComment` (extension: comment)
 
 `SimpleComment`
 
-Field:String value
-Field:String space(preserved)
+    Field:String value
+    Field:String space(preserved)
 
 For example:
 `TextFlowTarget` with `SimpleComment`
+
     {"state":"Approved",
     "translator":{"email":"id","name":"name"},
     "content":"some translation",
@@ -95,12 +100,13 @@ For example:
 
 Available Extension Object:`PoTargetHeader` (extension: `gettext`)
 
-Field: String comment
-Field: List(`HeaderEntry`) entries
+    Field: String comment
+    Field: List(`HeaderEntry`) entries
 
 For example:
 
 `TranslationsResource` with `PoTargetHeader`()
+
     {"extensions":[{"object-type":"po-target-header",
     "comment":"target header comment",
     "entries":[{"key":"ht","value":"vt1"},{"key":"th2","value":"tv2"}]}],
