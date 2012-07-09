@@ -1,8 +1,8 @@
 # Zanata wiki
 
 - [[Introduction]]
-- [[Translator Guide|TranslatorGuide]]
- - [[Getting Started|GettingStarted]]
+- [[Translator Guide]]
+ - [[Getting Started]]
   - [[Creating a New Account and Signing In|Translators-New-Account]]
   - [[Joining a Language Team|JoinLanguageTeam]]
  - [[Contributing Translations|ContributingTranslations]]
