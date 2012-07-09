@@ -33,4 +33,4 @@ instructions on how to get started.
 # Communicate
 
 - The #Zanata IRC channel is on freenode: [http://webchat.freenode.net/?channels=zanata]
-- The project page is here: http://code.google.com/p/flies
+- The project page is here: http://zanata.org/
