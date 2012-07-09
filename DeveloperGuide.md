@@ -11,11 +11,10 @@
 
 # Zanata Developer Setup Guide
 
-See menu on left for detail.
 
 1. install JDK 1.6 (see above)
-1. [install git](GitHubSetup#Install_GIT)
-1. [[Git Hub Setup|get Zanata source]]
+1. install git
+1. get Zanata source [[GitHubSetup]]
 1. [install Maven](WorkingWithMaven#Installing_Maven_on_Fedora)
 1. [install MySQL client and server](DatabaseSetup#Install_MySQL)
 1. [create database: zanata](DatabaseSetup#Setup_for_Zanata)
