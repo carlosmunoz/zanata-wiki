@@ -1,4 +1,4 @@
-# Demonstration of working on publican standardized document sources with Flies.
+# Demonstration of working on publican standardized document sources with Zanata.
 
 # Introduction
 
