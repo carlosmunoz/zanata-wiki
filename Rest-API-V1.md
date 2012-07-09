@@ -9,6 +9,7 @@ The Base URL for all REST resources in this API is `/seam/resource/restv1/`.
 REST requests are authenticated using `X-Auth-User` and `X-Auth-Token` headers. These correspond to the Flies user name and API Key. Within the Flies web interface, the API Key can be retrieved and re-generated from the *My Profile* page.
 
 **Example:**
+
     GET /projects HTTP/1.1
     Host: www.example.com
     Accept: application/json
