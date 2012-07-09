@@ -44,7 +44,7 @@ zanata COMMAND `[ARGS](https://github.com/zanata/zanata-python-client])` `[COMMA
 
 ## Working within a single container (i.e. project iteration)
 
-These commands would take settings from the local {{{zanata.xml}}} or you could use the {{{--project}}} and {{{--project-version}}} parameters.
+These commands would take settings from the local `zanata.xml` or you could use the `--project` and `--project-version` parameters.
 
 ### Create a Project Version
 
