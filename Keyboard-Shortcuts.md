@@ -1,6 +1,12 @@
 # List of keyboard shortcuts.
 
 <wiki:toc max_depth="2" />
+# Global
+<table>
+  <tr><td>**Shortcut**</td><td>**Action**</td><td>**Context**</td><td>**Comment**</td></tr>
+  <tr><td>`Alt+Y`</td><td>Show all available keyboard shortcuts</td><td>Global</td><td>The list changes depending on the available shortcuts for the current view.</td></tr>
+</table>
+
 # Translation Table
 
 <table>
