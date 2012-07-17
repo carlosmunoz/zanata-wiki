@@ -31,26 +31,26 @@ The resource with same name already exists on server side.
 ## 500 Internal Server Error
 An internal error has happened on the Zanata server; please notify the server admin to check the log. 
   1. The version 1.3.5 of zanata-python-client have a bug in query parameters, when use it against zanata server 1.6.1 and 1.7.0. the client will report 500 error. please add an option --noskeleton as a workaround. This issue is fixed in version 1.3.7 and later version.
-  2. When commit a big glossary file to zanata server 1.6.x, the server will transaction timeout and return a 500 error to user, this issue is fixed both in 1.7.0 of zanata and latest zanata-python-client (1.3.8)
+  2. When pushing a big glossary file to zanata server 1.6.x, the server transaction will time out and return a 500 error to user, this issue is fixed both in 1.7.0 of zanata and latest zanata-python-client (1.3.8)
 
 ## 503 Service Unavailable
 The service is temporarily unavailable on the server.  Please try the operation again shortly.
 
-# Errors of third part library 
+# Errors in third party libraries
 
-## Errors of python-httplib2 
-### SSL certificates error
+## Errors in python-httplib2 
+### SSL certificate error
 httplib2 performs verification of SSL certificates as of version 0.7.x and thus often https connections that used to work are now failing because of a failure in verifying certificates.
-  1. the python client have add a option in version 1.3.7 to disable verification of certificates: --disable-ssl-cert
-  2. python-httplib2 0.7.4-4 have fixed issue with https://translate.zanata.org, please update the python-httplib2 to 0.7.4-4
-  3. For internal server, if needed, please add certificates to /usr/lib/python2.7/site-packages/httplib2/cacerts.txt
+  1. the python client added an option in version 1.3.7 to disable verification of certificates: `--disable-ssl-cert`
+  2. python-httplib2 0.7.4-4 fixes an issue with https://translate.zanata.org; please update python-httplib2 to 0.7.4-4
+  3. For self-signed servers, please add certificates to /usr/lib/python2.7/site-packages/httplib2/cacerts.txt
 
 Reference:
 * 0.7.x can't verify wildcard certificates: http://code.google.com/p/httplib2/issues/detail?id=202
 * Failed to retrieve the certificate if it has 'subjectAltName' but no 'dns': http://code.google.com/p/httplib2/issues/detail?id=208
 
 ### MemoryError
-This happens when processing a big file, python-httplib2 will report this error when loading the big file to memory. The python client in latest version(version 1.3.8) have changed to use StringIO to processing big file.   
+This happens when processing a big file; python-httplib2 will report this error when loading the big file to memory. The python client in latest version(version 1.3.8) has changed to use StringIO to enable processing of big files.   
 
 ## Errors of python-polib
 ### Syntax error
@@ -60,6 +60,6 @@ python-polib will check the format of po file.
   python-polib will treat it as syntax error. This issue is addressed in python-polib 1.0, the python-polib will ignore obsolete previous msgid in po file. please take reference from https://bitbucket.org/izi/polib/issue/28/ioerror-on-reading-obsolete-previous-msgid
 
 ## Other errors and warnings 
-* The URL mismatch between zanata.xml and zanata.ini
+* URL mismatch between zanata.xml and zanata.ini
 
-  The URL in zanata.xml and zanata.ini have to strict identical, otherwise, the zanata-python-client will warn user to specify the username and apikey in zanata.ini or by options, since the python-client use the URL to retrieve the username and apikey. This error message is a bit of confusing sometime, so please check the URL carefully. The python client will also revise the error later. 
+  The URL in zanata.xml and zanata.ini have to be strictly identical, otherwise, the zanata-python-client will warn user to specify the username and apikey in zanata.ini or by options, since the python-client uses the URL to retrieve the username and apikey. This error message is a bit confusing sometimes, so please check the URL carefully. The python client will also revise the error later. 
