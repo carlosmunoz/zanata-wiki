@@ -1,6 +1,9 @@
 # Release process for Zanata
 
-# Creating a maintenance branch
+# Branching before a release (stabilisation branch)
+This branch will only accept bug-fixes leading up to a release.  After the release, it becomes the maintenance branch for that release.
+
+## Creating a stabilisation branch
 
 TODO: try http://maven.apache.org/plugins/maven-release-plugin/examples/branch.html to automate this
 
@@ -18,7 +21,18 @@ After the branch for Zanata x.y is created, that branch should be the only place
     $ git push
     $ git push origin integration/master x.y
 
-# Release process
+# Branching after a release (maintenance branch)
+NB: don't do this if you created a stabilisation branch before the release.  Just start using the stabilisation branch as a maintenance branch.
+
+Check out the commit which came just before `[maven-release-plugin]`'s first commit, eg
+
+    git checkout <commit>
+    git checkout -b <branch-name>
+    git push origin <branch-name>
+
+
+
+# Release process (OLD information - use Jenkins for automated releases)
 
 Make sure you have the latest version (head) from the repository, and that you are **in the correct branch**.  
 
@@ -50,7 +64,7 @@ Wait while the build is performed.
     git push; git push --tags
 
 
-Now go to Hudson and tell it to build the tag you just created.  Make sure the Maven deployment is successful; tell it to re-deploy if it fails.
+Now go to Jenkins and tell it to build the tag you just created.  Make sure the Maven deployment is successful; tell it to re-deploy if it fails.
 
 ## Non-interactive release
 
