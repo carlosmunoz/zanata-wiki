@@ -4,7 +4,7 @@
 
 - JBoss EWP 5.1 (currently 5.1.2)
 - MySQL5/InnoDB
-- `zanata.war` (see the [Downloads](http://code.google.com/p/flies/downloads/list) page.  The internalauth version lets users register as users in the Zanata database. The JAAS version can integrate with an existing authentication system, but you will need to configure JAAS yourself.)
+- `zanata.war` (see the [Downloads](https://github.com/zanata/zanata/downloads) page.  The internalauth version lets users register as users in the Zanata database. The JAAS version can integrate with an existing authentication system, but you will need to configure JAAS yourself.)
 - a datasource xml files with the jndi-name "zanataDatasource"
 
 # Installation
