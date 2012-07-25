@@ -2,8 +2,16 @@
 
 # Introduction
 
-1. Edit `zanata.war/WEB-INF/classes/META-INF/components.xml` to deactivate internalauthentication and enable your preferred module.
+From version 2.0 onwards, Zanata will always use JAAS as the authentication mechanism.
+
+1. (**Only for Zanata 1.7 and below**) Edit `zanata.war/WEB-INF/classes/META-INF/components.xml` to deactivate internalauthentication and enable your preferred module.
 1. Specify your preferred login module in `$JBOSS_HOME/server/<profile>/conf/login-config.xml`.  You will need an application-policy with the name `"zanata"`.
+1. (**Only for Zanata 2.0 and above**) Make sure there is a `zanata.properties` file in the `$JBOSS_HOME/server/<profile>/conf` directory. This file must have the following properties:
+
+      `zanata.security.auth.type = INTERNAL`
+
+Accepted values are: INTERNAL, JAAS, FEDORA_OPENID, KERBEROS
+
 1. After first login, you will need to make yourself an admin in the database:
 
     mysql> insert into HAccountMembership(accountId, memberOf) values((select id from HAccount where username = 'myusername'), (select id from HAccountRole where name = 'admin'));
@@ -16,7 +24,24 @@
 
 # Examples
 
+## Internal Authentication
+
+Make sure zanata.properties has the authentication type set to the value `INTERNAL`
+
+login-config.xml
+
+      <application-policy name="zanata">
+         <authentication>
+            <login-module
+               code="org.jboss.seam.security.jaas.SeamLoginModule"
+               flag="required">
+            </login-module>
+         </authentication>
+      </application-policy>
+
 ## Pure JAAS
+
+Make sure zanata.properties has the authentication type set to the value `JAAS`
 
 eg DatabaseServerLoginModule (you'll need to deploy a datasource too)
 
@@ -38,6 +63,8 @@ login-config.xml:
     
 
 ## Kerberos/SPNEGO
+
+Make sure zanata.properties has the authentication type set to the value `KERBEROS`
 
 **Configure Kerberos**
 
@@ -101,7 +128,26 @@ login-config.xml:
 The principal and keyTab attributes in the example above should be replaced with appropriate values for the principal as stored in the keytab and the location of the keytab file.
 Make sure both the spnego-users.properties and spnego-roles.properties are empty files under `$JBOSS_HOME/server/<profile>/deploy/conf`.
 
+web.xml 
+
+(This can be done either on the war file's web.xml or the JBOSS web.xml located at `$JBOSS_HOME/server/<profile>/deployers/jbossweb.deployer/web.xml`)
+
+      <security-constraint>
+         <web-resource-collection>
+            <web-resource-name>sign in</web-resource-name>
+            <url-pattern>/account/*</url-pattern>
+         </web-resource-collection>
+         <auth-constraint>
+            <role-name>*</role-name>
+         </auth-constraint>
+      </security-constraint>
+      <login-config>
+         <auth-method>SPNEGO</auth-method>
+      </login-config>
+
 ## Fedora Account System (OpenID)
+
+Make sure zanata.properties has the authentication type set to the value `FEDORA_OPENID`
 
 login-config.xml:
 
