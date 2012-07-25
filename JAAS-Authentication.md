@@ -6,7 +6,7 @@ From version 2.0 onwards, Zanata will always use JAAS as the authentication mech
 
 1. (**Only for Zanata 1.7 and below**) Edit `zanata.war/WEB-INF/classes/META-INF/components.xml` to deactivate internalauthentication and enable your preferred module.
 1. Specify your preferred login module in `$JBOSS_HOME/server/<profile>/conf/login-config.xml`.  You will need an application-policy with the name `"zanata"`.
-1. (**Only for Zanata 2.0 and above**) Make sure there is a `zanata.properties` file in the `$JBOSS_HOME/server/<profile>/conf` directory so that the it is found the application's classpath. This file must have the following properties:
+1. (**Only for Zanata 2.0 and above**) Make sure there is a `zanata.properties` file in the `$JBOSS_HOME/server/<profile>/conf` directory so that it is found in the application's classpath. This file must have the following properties:
 
       `zanata.security.auth.type = INTERNAL`
 
