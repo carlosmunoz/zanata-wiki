@@ -42,9 +42,8 @@ The service is temporarily unavailable on the server.  Please try the operation 
 ### SSL certificate error
 httplib2 performs verification of SSL certificates as of version 0.7.x and thus often https connections that used to work are now failing because of a failure in verifying certificates.
   1. the python client added an option in version 1.3.7 to disable verification of certificates: `--disable-ssl-cert`
-  2. python-httplib2 0.7.4-4 fixes an issue with https://translate.zanata.org; please update python-httplib2 to 0.7.4-4
+  2. For Fedora and RHEL, please update to python-httplib2-0.7.4-5 which fixes the issue with SSL authentication. For other distros please see http://code.google.com/p/httplib2/issues/detail?id=208 to produce appropriate patch.
   3. For self-signed servers, please add certificates to /etc/ssl/certs/ca-bundle.crt
-  4. For RedHat internal server, python-httplib2 0.7.4-4 still have SSL issue, please use `--disable-ssl-cert` and wait for the update of python-httplib2
 
 Reference:
 * 0.7.x can't verify wildcard certificates: http://code.google.com/p/httplib2/issues/detail?id=202
