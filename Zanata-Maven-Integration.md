@@ -21,7 +21,7 @@ To activate the "zanata:" prefix, you should create/edit your Maven project's po
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.5.0</version>
+                <version>1.7.1</version>
              </plugin>
           </plugins>
        </build>
@@ -91,7 +91,7 @@ for instance, here's a complete sample pom.xml you can use:
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.5.0</version>
+                <version>1.7.1</version>
                 <configuration>
                    <srcDir>.</srcDir>
                 </configuration>
@@ -170,7 +170,7 @@ Note: Maven 2.2 does **not** support overriding pom configuration with system pr
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.5.0</version>
+                <version>1.7.1</version>
                 <configuration>
                    <srcDir>${zanata.srcDir}</srcDir>
                 </configuration>
