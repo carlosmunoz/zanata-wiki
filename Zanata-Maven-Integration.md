@@ -1,4 +1,4 @@
-# Using the maven plugin for Zanata integration
+# Using the Maven plugin for Zanata integration
 
 # Introduction
 
@@ -12,6 +12,18 @@ The zanata plugin provides several goals under the zanata: prefix. For example:
     mvn zanata:push
     mvn zanata:pull
 
+# Installing Apache Maven
+
+For F14/F15: `yum install maven2`
+
+For F16+: `yum install maven`
+
+For RHEL5/6, put this repo in /etc/yum.repos.d: http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo and then: `yum install apache-maven`
+
+The above packages provide the executable 'mvn' which can invoke zanata-maven-plugin.
+
+
+# Activating the plugin
 To activate the "zanata:" prefix, you should create/edit your Maven project's pom.xml like this:
 
     <project>
@@ -86,7 +98,7 @@ for instance, here's a complete sample pom.xml you can use:
     </project>
 
 
-or you can just use the long version:
+or you can just use the long version (NB this will only work if your settings.xml activates the jboss repository, or you have already downloaded the plugin):
 
     mvn org.zanata:zanata-maven-plugin:help
 
