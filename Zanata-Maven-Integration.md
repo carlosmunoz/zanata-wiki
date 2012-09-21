@@ -9,70 +9,39 @@ The zanata plugin provides several goals under the zanata: prefix. For example:
     mvn zanata:putuser
     mvn zanata:putproject
     mvn zanata:putversion
-    mvn zanata:publican-push
-    mvn zanata:publican-pull
+    mvn zanata:push
+    mvn zanata:pull
 
 To activate the "zanata:" prefix, you should create/edit your Maven project's pom.xml like this:
 
     <project>
     ...
-       <build>
-          <plugins>
-             <plugin>
-                <groupId>org.zanata</groupId>
-                <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.7.1</version>
-             </plugin>
-          </plugins>
-       </build>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.zanata</groupId>
+            <artifactId>zanata-maven-plugin</artifactId>
+            <version>1.7.1</version>
+          </plugin>
+        </plugins>
+      </build>
     ...
-       <!-- NB: this is not needed if you have the jboss 'public' repository group enabled -->
-       <pluginRepositories>
-          <pluginRepository>
-             <id>zanata-cloudbees-release</id>
-             <name>zanata-cloudbees-release</name>
-             <url>http://repository-zanata.forge.cloudbees.com/release/</url>
-             <releases>
-                <enabled>true</enabled>
-             </releases>
-             <snapshots>
-                <enabled>false</enabled>
-             </snapshots>
-          </pluginRepository>
-          <pluginRepository>
-             <id>zanata-cloudbees-snapshot</id>
-             <name>zanata-cloudbees-snapshot</name>
-             <url>http://repository-zanata.forge.cloudbees.com/snapshot/</url>
-             <releases>
-                <enabled>false</enabled>
-             </releases>
-             <snapshots>
-                <enabled>true</enabled>
-             </snapshots>
-          </pluginRepository>
-          <pluginRepository>
-             <id>jboss-releases</id>
-             <name>jboss-releases</name>
-             <url>http://repository.jboss.org/nexus/content/repositories/releases/</url>
-             <releases>
-                <enabled>true</enabled>
-             </releases>
-             <snapshots>
-                <enabled>false</enabled>
-             </snapshots>
-          </pluginRepository>
-          <pluginRepository>
-             <id>jboss-thirdparty-releases</id>
-             <name>jboss-thirdparty-releases</name>
-             <url>http://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
-             <releases>
-                <enabled>true</enabled>
-             </releases>
-             <snapshots>
-                <enabled>false</enabled>
-             </snapshots>
-          </pluginRepository>
-       </pluginRepositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>jboss-public-repository-group</id>
+          <name>JBoss Public Repository Group</name>
+          <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
     ...
     </project>
 
@@ -98,50 +67,19 @@ for instance, here's a complete sample pom.xml you can use:
              </plugin>
           </plugins>
        </build>
-       <!-- NB: this is not needed if you have the jboss 'public' repository group enabled -->
        <pluginRepositories>
           <pluginRepository>
-             <id>zanata-cloudbees-release</id>
-             <name>zanata-cloudbees-release</name>
-             <url>http://repository-zanata.forge.cloudbees.com/release/</url>
+             <id>jboss-public-repository-group</id>
+             <name>JBoss Public Repository Group</name>
+             <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+             <layout>default</layout>
              <releases>
                 <enabled>true</enabled>
-             </releases>
-             <snapshots>
-                <enabled>false</enabled>
-             </snapshots>
-          </pluginRepository>
-          <pluginRepository>
-             <id>zanata-cloudbees-snapshot</id>
-             <name>zanata-cloudbees-snapshot</name>
-             <url>http://repository-zanata.forge.cloudbees.com/snapshot/</url>
-             <releases>
-                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
              </releases>
              <snapshots>
                 <enabled>true</enabled>
-             </snapshots>
-          </pluginRepository>
-          <pluginRepository>
-             <id>jboss-releases</id>
-             <name>jboss-releases</name>
-             <url>http://repository.jboss.org/nexus/content/repositories/releases/</url>
-             <releases>
-                <enabled>true</enabled>
-             </releases>
-             <snapshots>
-                <enabled>false</enabled>
-             </snapshots>
-          </pluginRepository>
-          <pluginRepository>
-             <id>jboss-thirdparty-releases</id>
-             <name>jboss-thirdparty-releases</name>
-             <url>http://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
-             <releases>
-                <enabled>true</enabled>
-             </releases>
-             <snapshots>
-                <enabled>false</enabled>
+                <updatePolicy>daily</updatePolicy>
              </snapshots>
           </pluginRepository>
        </pluginRepositories>
