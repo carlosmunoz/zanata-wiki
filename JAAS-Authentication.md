@@ -8,9 +8,14 @@ From version 2.0 onwards, Zanata will always use JAAS as the authentication mech
 1. Specify your preferred login module in `$JBOSS_HOME/server/<profile>/conf/login-config.xml`.  You will need an application-policy with the name `"zanata"`.
 1. (**Only for Zanata 2.0 and above**) Make sure there is a `zanata.properties` file in the `$JBOSS_HOME/server/<profile>/conf` directory so that it is found in the application's classpath. This file must have the following properties:
 
-      `zanata.security.auth.type = INTERNAL`
+      `zanata.security.auth.policy.<authtype> = <policy-name>`
 
-Accepted values are: INTERNAL, JAAS, FEDORA_OPENID, KERBEROS
+... where `<authtype>` is the authentication type enabled for the Zanata instance.
+Accepted values are: INTERNAL, JAAS, OPENID, KERBEROS
+
+... and `<policy-name>` is the authentication policy name as defined in login-config.xml (see sections below).
+
+In most cases, only a single authentication mechanism should be active at any given time, and Zanata will refuse to start if these settings are incorrect. However, the INTERNAL and OPENID mechanisms can be enabled simultaneously in the latest Zanata release (2.0+).
 
 1. After first login, you will need to make yourself an admin in the database:
 
@@ -21,6 +26,12 @@ Accepted values are: INTERNAL, JAAS, FEDORA_OPENID, KERBEROS
     mysql> SELECT r.name FROM HAccountRole AS r, HAccountMembership AS m WHERE m.accountId = (SELECT id FROM HAccount WHERE username = 'myusername') AND m.memberOf = r.id;
 
 1. **SECURITY**: Zanata versions < 1.4 automatically create an internal user `admin` which must be disabled or deleted for security. To disable, visit the page `Administration/Manage Users` (as an administrator), click `Edit` on the line for `admin`, deselect `Account enabled`, then `Save`.
+
+(**Only for Zanata 2.0 and above**) It is possible to define admin users in the zanata.properties file:
+
+      `zanata.security.admin.users = user1,user2`
+
+The property above must contain a comma-separated list of user names. Zanata will check that these users have administrator privileges every time they log in, or in case the user doesn't yet exist, when they are created. This feature is recommended for the first time Zanata is started, and to avoid being locked out of the system at any time. However it is not meant to be used to manage admin users system wide.
 
 # Examples
 
