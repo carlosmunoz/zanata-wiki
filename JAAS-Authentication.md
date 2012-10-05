@@ -37,7 +37,7 @@ The property above must contain a comma-separated list of user names. Zanata wil
 
 ## Internal Authentication
 
-Make sure zanata.properties has the authentication type set to the value `INTERNAL`
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.INTERNAL=zanata` (Note the value of the property matches the application policy name below).
 
 login-config.xml
 
@@ -52,7 +52,7 @@ login-config.xml
 
 ## Pure JAAS
 
-Make sure zanata.properties has the authentication type set to the value `JAAS`
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.JAAS=zanata` (Note the value of the property matches the application policy name below).
 
 eg DatabaseServerLoginModule (you'll need to deploy a datasource too)
 
@@ -75,7 +75,7 @@ login-config.xml:
 
 ## Kerberos/SPNEGO
 
-Make sure zanata.properties has the authentication type set to the value `KERBEROS`
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.KERBEROS=zanata` (Note the value of the property matches the application policy name below).
 
 **Configure Kerberos**
 
@@ -156,9 +156,9 @@ web.xml
          <auth-method>SPNEGO</auth-method>
       </login-config>
 
-## Fedora Account System (OpenID)
+## OpenID
 
-Make sure zanata.properties has the authentication type set to the value `FEDORA_OPENID`
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.OPENID=zanata` (Note the value of the property matches the application policy name below).
 
 login-config.xml:
 
