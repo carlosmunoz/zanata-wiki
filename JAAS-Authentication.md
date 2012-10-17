@@ -33,6 +33,10 @@ In most cases, only a single authentication mechanism should be active at any gi
 
 The property above must contain a comma-separated list of user names. Zanata will check that these users have administrator privileges every time they log in, or in case the user doesn't yet exist, when they are created. This feature is recommended for the first time Zanata is started, and to avoid being locked out of the system at any time. However it is not meant to be used to manage admin users system wide.
 
+Use the 'register' page to add the admin users, with user names exactly matching the names in the zanata.properties file. The accounts will have to be activated using the activation links in the activation emails sent during the registration process before login is possible. If there is an issue with delivery of activation emails, accounts can be activated manually using:
+
+    mysql> UPDATE HAccount SET enabled = true WHERE username = 'myusername';
+
 # Examples
 
 ## Internal Authentication
