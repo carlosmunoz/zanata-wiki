@@ -22,6 +22,7 @@
   - [[Projects|REST Projects V1]]
   - [[Terminology|Rest API Terminology]]
   - [[Extensions|REST Extensions]]
+  - [[Raw Document API|Raw File REST API]]
  * [[IntegratorFAQ|Integrator FAQ]]
 - [[Developer Guide|Developer Guide]]
  * [[GitHub configuration|GitHub Setup]]
