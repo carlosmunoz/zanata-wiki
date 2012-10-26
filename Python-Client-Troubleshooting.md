@@ -16,6 +16,8 @@ The request cannot be fulfilled due to bad syntax of JSON object sending to serv
 ## 401 Unauthorized 
 The operation is not authorized, The user need to check user name and apikey used for Zanata server. Normally, the username and apikey are located in zanata.ini. Or the user can specify the username and apikey with options --username and --apikey
 
+This error can also occur when pushing translations for a locale which has not been enabled on the server, or for the selected project.
+
 ## 403 Forbidden
 The user do not have permission to access the resources on the Zanata server. please log on to the server, and check that the language is enabled and check if you have join the language group.
 
