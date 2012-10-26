@@ -33,27 +33,10 @@ To activate the "zanata:" prefix, you should create/edit your Maven project's po
           <plugin>
             <groupId>org.zanata</groupId>
             <artifactId>zanata-maven-plugin</artifactId>
-            <version>1.7.1</version>
+            <version>1.7.4</version>
           </plugin>
         </plugins>
       </build>
-    ...
-      <pluginRepositories>
-        <pluginRepository>
-          <id>jboss-public-repository-group</id>
-          <name>JBoss Public Repository Group</name>
-          <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-          <layout>default</layout>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
-          </snapshots>
-        </pluginRepository>
-      </pluginRepositories>
     ...
     </project>
 
@@ -72,33 +55,17 @@ for instance, here's a complete sample pom.xml you can use:
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.7.1</version>
+                <version>1.7.4</version>
                 <configuration>
                    <srcDir>.</srcDir>
                 </configuration>
              </plugin>
           </plugins>
        </build>
-       <pluginRepositories>
-          <pluginRepository>
-             <id>jboss-public-repository-group</id>
-             <name>JBoss Public Repository Group</name>
-             <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-             <layout>default</layout>
-             <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-             </releases>
-             <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-             </snapshots>
-          </pluginRepository>
-       </pluginRepositories>
     </project>
 
 
-or you can just use the long version (NB this will only work if your settings.xml activates the jboss repository, or you have already downloaded the plugin):
+or you can just use the long version:
 
     mvn org.zanata:zanata-maven-plugin:help
 
@@ -120,7 +87,7 @@ Note: Maven 2.2 does **not** support overriding pom configuration with system pr
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.7.1</version>
+                <version>1.7.4</version>
                 <configuration>
                    <srcDir>${zanata.srcDir}</srcDir>
                 </configuration>
