@@ -20,19 +20,25 @@ _Open Document Formula (*.odf) and Open Document Database (*.odb) may also work,
 ## Known issues
 As this is an experimental feature, there are several issues that should be considered when using this feature:
 
-Issue: For most supported formats, the position of paragraphs is used to identify text flows. If a revised source document is uploaded that has a paragraph added or removed (except if it is at the end of the document), any translations from the position of the paragraph onward will be moved to a different text flow and marked as fuzzy.
+### Uploading modified versions of existing documents can cause translation misalignment
+For most supported formats, the position of paragraphs is used to identify text flows. If a revised source document is uploaded that has a paragraph added or removed (except if it is at the end of the document), any translations from the position of the paragraph onward will be moved to a different text flow and marked as fuzzy.
 
-Workaround: Upload new versions of a document with a different name, then use Copy-trans or Translation Memory to copy translations to matching text flows.
+_**Workaround:** Upload new versions of a document with a different name, then use Copy-trans or Translation Memory to copy translations to matching text flows._
 
+### .po offline translations cannot be uploaded properly
+For most supported formats, translating offline as po will not work. When uploading a downloaded po file, warnings will be shown since Zanata cannot match the translations to the source text flows. This is related to a difference in how text flows are identified in different file formats.
 
-Issue: For most supported formats, translating offline as po will not work. When uploading a downloaded po file, warnings will be shown since Zanata cannot match the translations to the source text flows.
+_**Workaround:** Enter translations in the Zanata web editor, or download and translate the document in the original format._
 
-Workaround: Enter translations in the Zanata web editor, or download and translate the document in the original format.
+### Offline translations in the original format must have exactly the layout of the source document
+Offline translation in the original document format will work properly if paragraphs are not rearranged at all. If any paragraphs are added, split or removed, text flows after the affected paragraph will be associated with the wrong source string.
 
+_**Workaround:** Do not change the number of paragraphs or rearrange any paragraphs when doing offline translation. A more reliable solution is to use the web translation editor instead of translating offline._
 
+### Source strings in translated documents will be uploaded as translations
+If a translation document is uplaoded that is only partially translated, any source strings that are still in the document will be treated as approved translations.
 
-??? known issue ??? - offline translation as original format will usually work but don't add paragraphs to text documents (see above), and source translations that are still in the document may be treated as approved translations.
-   recommendation is to translate the document in Zanata, or fully translate the document before upload.
+_**Workaround:** Only upload translation documents that are completely translated. Alternatively, enter translations in the web translation editor to avoid the issue entirely._
 
 
 ## Instructions for Web Interface
