@@ -53,22 +53,33 @@ The dialogue for uploading a source document is similar for both upload methods,
 The uploaded file name is only used for new documents, and will be ignored when replacing an existing document.
 
 ### Downloading Source through Web Interface
-Source documents can be downloaded from the same page on which they are uploaded (the Source Documents page, see previous section). Look in the 'Download' column in the document table for a link labeled with the raw document file extension. All documents have a .pot download link, but documents with raw data will also have another link indicating the original document type (in this case .odt).
+Source documents can be downloaded from the same page on which they are uploaded (the Source Documents page, see previous section). Look in the 'Download' column in the document table for a link labeled with the raw document file extension. All documents have a .pot download link, but documents with raw data will have another link indicating the original document type (in this case .odt).
 
 
 ### Uploading Translations through Web Interface
+Translated documents are uploaded from the 'Documents' page for the relevant locale. Navigate to a project-version and click the icon in the 'Documents' column on the row for the locale of choice. Translated documents should be of the same file format as the raw source document, which is reflected in the document name and the raw download link.
 
+To upload a translated version of a document, locate the document in the summary table and click the 'Upload' icon under the 'Actions' column. A popup is shown with the name of the document at the top and a button to select the translated version of the document. It is recommended to keep the 'Merge?' option selected to avoid losing existing translations.
+
+Please be aware of the current issues with raw translation upload. See 'Known Issues' on this page.
 
 ### Downloading Translations through Web Interface
+Translated documents can be downloaded from the 'Documents' page for the relevant locale (see previous section). Look in the 'Download' column in the document table for the link labeled with the raw document file extension. All documents have a .po download link, but documents with raw data will have another link indicating the original document type (in this case .odt).
 
+The raw download link will generate a translated document that has the structure of the raw source document, but with source strings replaced with _Approved_ translations for the locale if they are available. For any text flow that does not have an approved translation in Zanata, no substitution is made so the source text will remain.
+
+It is also possible to generate a preview document that has both _Approved_ and _Fuzzy/Needs Review_ translations. Currently there is no link for this 'preview' functionality, so the URL must be modified manually. To do so, copy the normal download link and paste it to the browser address bar, find the part of the URL with '/baked?' and insert 'half-' to make that part '/half-baked?'. Navigate to the modified URL (usually by pressing _Enter_) to download the preview document.
 
 ## Instructions for Maven Client
+To use 'push' and 'pull' commands with the Zanata Maven Plugin, set the project type to 'raw'. See the detailed help for push and pull commands for additional details.
+
 ### Uploading with Maven Client
+Check Maven Plugin help for 'push' command.
+
 ### Downloading with Maven Client
+Check Maven Plugin help for 'pull' command.
 
 
-
-Note about inline tags like <g> etc. (basically leave them as they are).
-Note about images, spreadsheet components, etc. that may be confusing.
-
-preview with fuzzies: note that link is not yet provided. Copy URL from download page and change "baked" to "half-baked".
+## Tips for Translating 'Raw' Documents
+### Inline Tags
+Some parts of raw documents are not intended for direct translation. These are converted to xml-style inline tags such as "<g1><g2></g2></g1>" in the place of the image in the example document. It is recommended that these tags be included in translations with no modifications. The "XML/HTML tags" validator can help detect accidental changes to inline tags. If unsure, you can also download a preview document to ensure that there are no errors or layout problems associated with treatment of tags - see last paragraph of "Downloading Translations through Web Interface"
