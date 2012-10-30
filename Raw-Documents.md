@@ -43,14 +43,31 @@ _**Workaround:** Only upload translation documents that are completely translate
 
 ## Instructions for Web Interface
 The following instructions assume you have signed in to the Zanata website and have appropriate permissions for the relevant project or locale. If this is not the case, you will not see the buttons or icons referred to in the instructions.
+
+For illustration, I will use a sample .odt document as shown here:
+![Sample document used in examples](http://zanata.org/images/screenshots/raw-files/sample-document.png)
  
 ### Uploading Source through Web Interface
 Source documents are uploaded from the new 'Source Documents' page. Navigate to a project-version and look on the right under 'Actions' for the button labeled 'Source Documents'.
 
+![Source Documents button](http://zanata.org/images/screenshots/raw-files/source-documents-button.png)
+
+
 There are 2 methods to upload a source document. To upload a new document, use the 'Upload Document' button under 'Actions' on the right. To upload a new version of an existing document, locate the document in the summary table and click the 'Upload' link in the right-hand column.
+
+![Source Upload button](http://zanata.org/images/screenshots/raw-files/source-upload-button.png)
+
 
 The dialogue for uploading a source document is similar for both upload methods, with an additional text box for 'path' when uploading a new document. Select the document to be uploaded, ensuring that it has the appropriate file extension as shown in Supported Formats above. For new documents, enter a path or leave the path field blank to have the document at the top level of the project in Zanata. If the document name and path are the same as an existing document in the table, the uploaded document will replace the existing document.
 The uploaded file name is only used for new documents, and will be ignored when replacing an existing document.
+
+![Source Upload button](http://zanata.org/images/screenshots/raw-files/source-upload-dialog.png)
+
+
+Documents will appear in the document table upon successful upload:
+![Source Upload button](http://zanata.org/images/screenshots/raw-files/source-upload-success.png)
+
+
 
 ### Downloading Source through Web Interface
 Source documents can be downloaded from the same page on which they are uploaded (the Source Documents page, see previous section). Look in the 'Download' column in the document table for a link labeled with the raw document file extension. All documents have a .pot download link, but documents with raw data will have another link indicating the original document type (in this case .odt).
