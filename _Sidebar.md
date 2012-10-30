@@ -3,6 +3,7 @@
 - [[Home]]
 - [[New in 2.0]]
  * [[Raw Documents]]
+ * [[Open ID]]
 - [[Translator Guide]]
  * [[Getting Started]]
   - [[Creating a New Account and Signing In|Translators-New-Account]]
