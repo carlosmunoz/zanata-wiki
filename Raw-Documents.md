@@ -84,4 +84,4 @@ Check Maven Plugin help for 'pull' command.
 ### Inline Tags
 Some parts of raw documents are not intended for direct translation. These are converted to xml-style inline tags such as "<g1><g2></g2></g1>" in the place of the image in the example document. It is recommended that these tags be included in translations with no modifications. The "XML/HTML tags" validator can help detect accidental changes to inline tags. If unsure, you can also download a preview document to ensure that there are no errors or layout problems associated with treatment of tags - see last paragraph of "Downloading Translations through Web Interface"
 
-[[/images/screenshots/raw-files/inline-tags-validation.png]]
+![XML/HTML validator works for inline tags](http://zanata.org/images/screenshots/raw-files/inline-tags-validation.png)
