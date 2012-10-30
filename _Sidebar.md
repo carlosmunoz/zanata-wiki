@@ -1,6 +1,7 @@
 # Zanata wiki
 
 - [[Home]]
+- [[New in 2.0]]
 - [[Translator Guide]]
  * [[Getting Started]]
   - [[Creating a New Account and Signing In|Translators-New-Account]]
