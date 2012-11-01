@@ -10,6 +10,18 @@ A few other bugs/features have also been fixed/implemented along:
 We have re-implement the translation editor from front to back to have better user experience and easier maintainability.
 ![new editor UI](http://zanata.org/images/screenshots/editor/2.0_new_editor.png)
 
+#### Changes apart from apparent
+* Switching between editor, documents list and project wide search and replace are now located on the left as tabs
+* Notification messages, workspace users, users options and validation options are located on the right. When click on one it will expand, and click on the same icon will collapse
+* New options:
+    * Number of messages for each page in editor is now configurable
+
+    ![page size](http://zanata.org/images/screenshots/editor/2.0_page_size_and_others.png)
+
+    * Show System error option. If checked, when there is an unexpected error happening in your browser, you will be able to see it and this information is very helpful for us to troubleshoot the root cause
+
+    ![system error](http://zanata.org/images/screenshots/editor/2.0_show_system_errors.png)
+
 ### Note
 
 We use [Code Mirror](codemirror.net) library to perform syntax highlighting. However the library comes with a "feature":
