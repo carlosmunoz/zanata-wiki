@@ -5,6 +5,7 @@
  * [[Raw Documents]]
  * [[Open ID]]
  * [[Translation History]]
+ * [[New Translation Editor]]
 - [[Translator Guide]]
  * [[Getting Started]]
   - [[Creating a New Account and Signing In|Translators-New-Account]]
