@@ -7,7 +7,7 @@ A few other bugs/features have also been fixed/implemented along:
 
 ### New UI and back end
 
-We have re-implement the translation editor from front to back to have better user experience and easier maintainability.
+We have re-implement the translation editor from front to back to have better user experience and easier maintainability. [View labeled diagram here](http://zanata.org/images/screenshots/editor/2.0_new_editor_labeled.svg)
 ![new editor UI](http://zanata.org/images/screenshots/editor/2.0_new_editor.png)
 
 #### Changes apart from apparent
