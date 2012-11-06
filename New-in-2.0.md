@@ -2,4 +2,4 @@
 - [[Open ID|Open ID]]
 - [[Translation History|Translation History]]
 - [[New Translation Editor|New-Translation Editor]]
-- [[Glossary upload|Glossary upload]]
+- [[Glossary management|Glossary management]]
