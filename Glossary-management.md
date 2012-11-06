@@ -13,3 +13,6 @@ Currently glossary upload supports CSV and Po file format.
 ![Glossary upload csv](http://zanata.org/images/screenshots/glossary/glossary-upload-csv.png)
 
 ### Glossary term management in translation editor 
+Glossary term and comment can now be managed from within Zanata workspace. 
+
+![Glossary edit](http://zanata.org/images/screenshots/glossary/glossary-edit.png)
