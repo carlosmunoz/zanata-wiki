@@ -24,7 +24,11 @@ The above packages provide the executable 'mvn' which can invoke zanata-maven-pl
 
 
 # Activating the plugin
+Note that zanata-maven-plugin 2.0.0 requires Zanata server 2.0+.  If you need to connect to Zanata 1.6/1.7, use 1.7.5 instead.
+
 To activate the "zanata:" prefix, you should create/edit your Maven project's pom.xml like this:
+
+For Zanata 1.6/1.7 servers:
 
     <project>
     ...
@@ -33,7 +37,22 @@ To activate the "zanata:" prefix, you should create/edit your Maven project's po
           <plugin>
             <groupId>org.zanata</groupId>
             <artifactId>zanata-maven-plugin</artifactId>
-            <version>1.7.4</version>
+            <version>1.7.5</version>
+          </plugin>
+        </plugins>
+      </build>
+    ...
+    </project>
+
+For better performance with Zanata 2.x servers:
+    <project>
+    ...
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.zanata</groupId>
+            <artifactId>zanata-maven-plugin</artifactId>
+            <version>2.0.0</version>
           </plugin>
         </plugins>
       </build>
@@ -55,7 +74,10 @@ for instance, here's a complete sample pom.xml you can use:
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.7.4</version>
+                <version>1.7.5</version>
+                <!-- for better performance with Zanata 2.0 servers:
+                <version>2.0.0</version>
+                -->
                 <configuration>
                    <srcDir>.</srcDir>
                 </configuration>
@@ -87,7 +109,7 @@ Note: Maven 2.2 does **not** support overriding pom configuration with system pr
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>1.7.4</version>
+                <version>1.7.5</version>
                 <configuration>
                    <srcDir>${zanata.srcDir}</srcDir>
                 </configuration>
