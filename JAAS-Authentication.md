@@ -11,11 +11,11 @@ From version 2.0 onwards, Zanata will always use JAAS as the authentication mech
       `zanata.security.auth.policy.<authtype> = <policy-name>`
 
 ... where `<authtype>` is the authentication type enabled for the Zanata instance.
-Accepted values are: INTERNAL, JAAS, OPENID, KERBEROS
+Accepted values are: internal, jaas, openid, kerberos
 
 ... and `<policy-name>` is the authentication policy name as defined in login-config.xml (see sections below).
 
-In most cases, only a single authentication mechanism should be active at any given time, and Zanata will refuse to start if these settings are incorrect. However, the INTERNAL and OPENID mechanisms can be enabled simultaneously in the latest Zanata release (2.0+).
+In most cases, only a single authentication mechanism should be active at any given time, and Zanata will refuse to start if these settings are incorrect. However, the 'internal' and 'openid' mechanisms can be enabled simultaneously in the latest Zanata release (2.0+).
 
 1. After first login, you will need to make yourself an admin in the database:
 
@@ -41,7 +41,7 @@ Use the 'register' page to add the admin users, with user names exactly matching
 
 ## Internal Authentication
 
-Make sure zanata.properties has the authentication property `zanata.security.auth.policy.INTERNAL=zanata` (Note the value of the property matches the application policy name below).
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.internal=zanata` (Note the value of the property matches the application policy name below).
 
 login-config.xml
 
@@ -56,7 +56,7 @@ login-config.xml
 
 ## Pure JAAS
 
-Make sure zanata.properties has the authentication property `zanata.security.auth.policy.JAAS=zanata` (Note the value of the property matches the application policy name below).
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.jaas=zanata` (Note the value of the property matches the application policy name below).
 
 eg DatabaseServerLoginModule (you'll need to deploy a datasource too)
 
@@ -79,7 +79,7 @@ login-config.xml:
 
 ## Kerberos/SPNEGO
 
-Make sure zanata.properties has the authentication property `zanata.security.auth.policy.KERBEROS=zanata` (Note the value of the property matches the application policy name below).
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.kerberos=zanata` (Note the value of the property matches the application policy name below).
 
 **Configure Kerberos**
 
@@ -162,7 +162,7 @@ web.xml
 
 ## OpenID
 
-Make sure zanata.properties has the authentication property `zanata.security.auth.policy.OPENID=zanata` (Note the value of the property matches the application policy name below).
+Make sure zanata.properties has the authentication property `zanata.security.auth.policy.openid=zanata` (Note the value of the property matches the application policy name below).
 
 login-config.xml:
 
