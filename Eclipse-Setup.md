@@ -10,7 +10,7 @@ To install Eclipse, download the distribution and unzip it to a location such as
 
 - [Google Eclipse Plugin](http://code.google.com/eclipse/) ([3.7 update site](http://dl.google.com/eclipse/plugin/3.7))
 - Google Plugin for Eclipse
-- Google Web Toolkit SDK 2.4.0
+- Google Web Toolkit SDK 2.5.0
 - [Git plugin](https://git.wiki.kernel.org/index.php/EclipsePlugin) ([update site](http://download.eclipse.org/egit/updates))
 - [TestNG plugin](http://testng.org/doc/download.html) ([update site](http://beust.com/eclipse))
 - [Project Lombok](http://projectlombok.org/index.html) (click Download, then run `java -jar lombok.jar` to modify your `eclipse.ini`)
