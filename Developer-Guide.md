@@ -28,3 +28,7 @@
 1. [prepare zanata for eclipse import](Eclipse-Setup#Import_Zanata_Project)
 1. import zanata into eclipse
 1. [configure Eclipse](Eclipse-Setup#Configuration)
+
+
+# Zanata Architecture Overview
+![Architecture overview](http://zanata.org/images/diagrams/zanata-1.7-architecture-overview.svg)
