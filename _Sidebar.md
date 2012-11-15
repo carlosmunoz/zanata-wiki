@@ -6,6 +6,7 @@
  * [[Open ID]]
  * [[Translation History]]
  * [[New Translation Editor]]
+ * [[Role Assignment Rules]]
 - [[Translator Guide]]
  * [[Getting Started]]
   - [[Creating a New Account and Signing In|Translators-New-Account]]
