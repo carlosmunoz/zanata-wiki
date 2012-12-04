@@ -75,7 +75,7 @@ Example:
         </locales>
     </config>
 
-This file also specifies that the local publican PO directory "ja-JP" will be mapped to the server-side BCP47 locale "ja", and also specifies that the "zh-CN" directory will be trivially mapped to "zh-CN" on the server.
+This file also specifies that the local publican PO directory "ja-JP" will be mapped to the server-side BCP47 locale "ja", and also specifies that the "zh-CN" directory will be mapped to "zh-Hanz" on the server.
 
 
 URLs in project configuration should be matched against the [servers] defined in zanata.ini, so that the user's credentials can be used.
