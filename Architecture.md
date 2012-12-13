@@ -17,7 +17,7 @@ The Translation Editor is where the core translation work happens in Zanata. It 
 The REST API is used by the clients, but also by some page components internally. We aim eventually to have all page and editor operations go through the REST API to ensure that it is fully expressive of Zanata's functionality, and the migration to this architecture is ongoing. The API uses RESTEasy and other libraries, and shares some components with the Maven Plugin and Command-Line Client.
 
 ## Persistence
-
+Zanata uses Hibernate for persistence.
 
 
 
