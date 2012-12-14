@@ -12,7 +12,16 @@ This repository simply holds the parent pom inherited by other Zanata modules.
 This repository describes the REST API presented by a Zanata. It also provides data transfer objects and a service stub that can be used by client applications to easily interact with a Zanata server.
 
 ## zanata-common
+This repository contains adapters for some of the file types consumed and produced by Zanata, as well as a few utility classes that are required by both client and server components.
+
 ## zanata
+This repository holds Zanata's main data model and server components, and holds the majority of Zanata's source code.
+
 ## zanata-client
+This repository holds most of Zanata's client code, including the Zanata Maven Plugin and ZanataJ, but not the python client.
+
 ## zanata-python-client
+This repository holds the end-of-life Zanata python client, which is to be superseded by ZanataJ.
+
 ## zanataj
+This repository contains deployment scripts, but none of the application code, for ZanataJ. The application code for ZanataJ can be found in zanata-client/zanata-cli
