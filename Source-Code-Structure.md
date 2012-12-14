@@ -10,7 +10,7 @@ At the time of writing there are 15 repositories under the Zanata group on githu
 This repository simply holds the parent pom inherited by other Zanata modules.
 
 ## zanata-api
-This repository describes the REST API presented by a Zanata. It also provides data transfer objects and a service stub that can be used by client applications to easily interact with a Zanata server.
+This repository describes the REST API presented by a Zanata server. It also provides data transfer objects and a service stub that can be used by client applications to easily interact with a Zanata server.
 
 ## zanata-common
 This repository contains adapters for some of the file types consumed and produced by Zanata, as well as a few utility classes that are required by both client and server components.
