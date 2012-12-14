@@ -41,4 +41,7 @@
  * [[Coding Guidelines|Coding Guide]]
  * [[Selenium UI Testing|Web Test With Selenium]]
  * [[Database Tricks]]
+- Zanata Structure (for developers)
+ * [[Architecture]]
+ * [[Source-Code-Structure]]
 - [[Change Log]]
