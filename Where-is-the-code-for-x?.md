@@ -46,7 +46,7 @@ For repository locations, see [[Repositories]].
  <td>zanata</td>
  <td>zanata-war</td>
  <td>src/main/webapp and various packages</td>
- <td>xhtml pages that use Seam components. Seam components are referred to like #{componentName.methodName}, which refers to a class ComponentName or with annotation @Name("componentName"). An understanding of Seam is very helpful in understanding this code. See http://www.seamframework.org/ or any introductory Seam book.</td>
+ <td>xhtml pages that use Seam components. Seam components are referred to like #{componentName.methodName}, which refers to a class ComponentName or with annotation @Name("componentName"). An understanding of Seam is very helpful in understanding this code. See [[Seam Framework|http://www.seamframework.org/]] or any introductory Seam book.</td>
 </tr>
 
 <tr>
