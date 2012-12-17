@@ -43,7 +43,7 @@ Zanata has a number of projects (in the Eclipse IDE sense) located in several re
 # Location of Code for Selected Features
 Use this table to find the main packages containing code for the feature of interest. Package prefix "org.zanata" is shortened to "o.z" for brevity.
 
-<table style="table-layout:fixed;">
+<table style="width:640px; table-layout:fixed;">
 
 <tr>
  <th>Feature</th>
