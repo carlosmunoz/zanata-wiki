@@ -13,6 +13,8 @@ The "Project Pages" refers to all the web pages presented by Zanata except the T
 ## Translation Editor (Webtrans)
 The Translation Editor is where the core translation work happens in Zanata. It allows translators to navigate through the documents of a project and enter or change translations, and provides a translation memory, search functionality, history viewing, chat, filters and more. It is built with GWT, so it is a JavaScript application compiled from Java source code and currently uses GWT-RPC to communicate with the server.
 
+See: [[Webtrans Architecture]]
+
 ## REST API
 The REST API is used by the clients, but also by some page components internally. We aim eventually to have all page and editor operations go through the REST API to ensure that it is fully expressive of Zanata's functionality, and the migration to this architecture is ongoing. The API uses RESTEasy and other libraries, and shares some components with the Maven Plugin and Command-Line Client.
 
