@@ -43,5 +43,5 @@
  * [[Database Tricks]]
 - Zanata Structure (for developers)
  * [[Architecture]]
- * [[Source-Code-Structure]]
+ * [[Repositories]]
 - [[Change Log]]
