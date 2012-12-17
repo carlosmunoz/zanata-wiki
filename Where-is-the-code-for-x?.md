@@ -1,5 +1,6 @@
 Purpose: locate the code for a component or feature of Zanata.
 
+# Project Locations
 Zanata has a number of projects (in the Eclipse IDE sense) located in several repositories. Use this table to find which repository a project is in. For repository locations, see [[Repositories]].
 <table>
  <tr>
@@ -38,6 +39,9 @@ Zanata has a number of projects (in the Eclipse IDE sense) located in several re
  <tr><td>zanata-rest-client</td></tr>
 </table>
 
+
+# Location of Code for Selected Features
+Use this table to find the main packages containing code for the feature of interest.
 
 <table>
 
@@ -83,11 +87,15 @@ Zanata has a number of projects (in the Eclipse IDE sense) located in several re
 </tr>
 
 <tr>
- <td></td>
- <td></td>
- <td></td>
- <td></td>
- <td></td>
+ <td rowspan="2">Maven Plugin</td>
+ <td>zanata-maven-plugin</td>
+ <td>org.zanata.maven</td>
+ <td>Bindings of Zanata commands to Maven mojos. See [[Maven - Guide to Developing Java Plugins|http://maven.apache.org/guides/plugin/guide-java-plugin-development.html]]</td>
+</tr>
+<tr>
+ <td>zanata-client-commands</td>
+ <td>org.zanata.client.commands</td>
+ <td>Fundamental client command logic. This code performs the main work of the Maven Plugin (and other clients).</td>
 </tr>
 
 </table>
