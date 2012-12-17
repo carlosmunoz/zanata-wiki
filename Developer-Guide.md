@@ -31,5 +31,5 @@
 
 
 # Zanata Architecture Overview
-See [[Architecture]] and [[Source-Code-Structure]]
+See [[Architecture]]
 ![Architecture overview](http://zanata.org/images/diagrams/zanata-1.7-architecture-overview.svg)
