@@ -1,5 +1,43 @@
 Purpose: locate the code for a component or feature of Zanata.
-For repository locations, see [[Repositories]].
+
+Zanata has a number of projects (in the Eclipse IDE sense) located in several repositories. Use this table to find which repository a project is in. For repository locations, see [[Repositories]].
+<table>
+ <tr>
+  <th>Repository</th>
+  <th>Projects</th>
+ </tr>
+ <tr>
+  <td>zanata-parent</td>
+  <td>no projects, parent pom for other projects</td>
+ </tr>
+ <tr>
+  <td>zanata-api</td>
+  <td>zanata-common-api</td>
+ </tr>
+ <tr>
+  <td rowspan="5">zanata-common</td>
+  <td>zanata-adapter-glossary</td>
+ </tr>
+ <tr><td>zanata-adapter-po</td></tr>
+ <tr><td>zanata-adapter-properties</td></tr>
+ <tr><td>zanata-adapter-xliff</td></tr>
+ <tr><td>zanata-common-util</td></tr>
+ <tr>
+  <td rowspan="3">zanata</td>
+  <td>functional-test</td>
+ </tr>
+ <tr><td>zanata-model</td></tr>
+ <tr><td>zanata-war</td></tr>
+ <tr>
+  <td rowspan="5">zanata-client</td>
+  <td>zanata-client-ant-po</td>
+ </tr>
+ <tr><td>zanata-client-ant-properties</td></tr>
+ <tr><td>zanata-client-commands</td></tr>
+ <tr><td>zanata-maven-plugin</td></tr>
+ <tr><td>zanata-rest-client</td></tr>
+</table>
+
 
 <table>
 
