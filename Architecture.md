@@ -1,4 +1,4 @@
-Zanata is made up of many components that use various frameworks and are spread across several repositories. This section aims to give an overview of the major components that make up Zanata. To find the source code related to a component, see [[SourceCodeStructure]].
+Zanata is made up of many components that use various frameworks and are spread across several repositories. This section aims to give an overview of the major components that make up Zanata. To find the source code related to a component, see [[Repositories]].
 
 # Overview
 The server makes up the majority of Zanata's code and functionality, including the web editor and all database access code. Clients use the REST API to upload and download documents to and from the server, as well as some other less frequent operations.
