@@ -41,7 +41,7 @@ Zanata has a number of projects (in the Eclipse IDE sense) located in several re
 
 
 # Location of Code for Selected Features
-Use this table to find the main packages containing code for the feature of interest.
+Use this table to find the main packages containing code for the feature of interest. Package prefix "org.zanata" is shortened to "o.z" for brevity.
 
 <table>
 
@@ -55,27 +55,27 @@ Use this table to find the main packages containing code for the feature of inte
 <tr>
  <td>Webtrans (translation editor)</td>
  <td>zanata-war</td>
- <td>org.zanata.webtrans</td>
+ <td>o.z.webtrans</td>
  <td>Uses [[GWT|https://developers.google.com/web-toolkit/]].</td>
 </tr>
 
 <tr>
  <td rowspan="4">REST API methods</td>
  <td rowspan="3">zanata-common-api</td>
- <td>org.zanata.rest.client</td>
+ <td>o.z.rest.client</td>
  <td>Client interfaces for REST endpoints.</td>
 </tr>
 <tr>
- <td>org.zanata.rest.dto</td>
+ <td>o.z.rest.dto</td>
  <td>Objects transferred by REST methods.</td>
 </tr>
 <tr>
- <td>org.zanata.rest.service</td>
+ <td>o.z.rest.service</td>
  <td>REST method interfaces.</td>
 </tr>
 <tr>
  <td rowspan="1">zanata</td>
- <td>org.zanata.rest.service</td>
+ <td>o.z.rest.service</td>
  <td>Concrete implementations of REST methods.</td>
 </tr>
 
@@ -89,38 +89,38 @@ Use this table to find the main packages containing code for the feature of inte
 <tr>
  <td rowspan="2">Maven Plugin</td>
  <td>zanata-maven-plugin</td>
- <td>org.zanata.maven</td>
+ <td>o.z.maven</td>
  <td>Bindings of Zanata commands to Maven mojos. See [[Maven - Guide to Developing Java Plugins|http://maven.apache.org/guides/plugin/guide-java-plugin-development.html]]</td>
 </tr>
 <tr>
  <td>zanata-client-commands</td>
- <td>org.zanata.client.commands</td>
+ <td>o.z.client.commands</td>
  <td>Fundamental client command logic. This code performs the main work of the Maven Plugin (and other clients).</td>
 </tr>
 
 <tr>
  <td rowspan="4">TM (Translation Memory)</td>
  <td rowspan="4">zanata</td>
- <td>org.zanata.webtrans.client</td>
+ <td>o.z.webtrans.client</td>
  <td>Client-side logic (*.presenter.TransMemoryPresenter) and display (*.view.TransMemoryView)</td>
 </tr>
 <tr>
- <td>org.zanata.webtrans.shared.rpc</td>
+ <td>o.z.webtrans.shared.rpc</td>
  <td>Descriptor for gwt-rpc method for fetching TM results.</td>
 </tr>
 <tr>
- <td>org.zanata.webtrans.server.rpc</td>
+ <td>o.z.webtrans.server.rpc</td>
  <td>Concrete implementation for gwt-rpc method for fetching TM results.</td>
 </tr>
 <tr>
- <td>org.zanata.dao</td>
+ <td>o.z.dao</td>
  <td>Core logic for retrieving TM matches is found in TextFlowDAO.</td>
 </tr>
 
 <tr>
  <td>Validators</td>
  <td>zanata</td>
- <td>org.zanata.webtrans.shared.validation</td>
+ <td>o.z.webtrans.shared.validation</td>
  <td></td>
 </tr>
 
