@@ -117,4 +117,12 @@ Use this table to find the main packages containing code for the feature of inte
  <td>Core logic for retrieving TM matches is found in TextFlowDAO.</td>
 </tr>
 
+<tr>
+ <td>Validators</td>
+ <td>zanata</td>
+ <td>org.zanata.webtrans.shared.validation</td>
+ <td></td>
+</tr>
+
+
 </table>
