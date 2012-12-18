@@ -8,6 +8,12 @@ As well as core GWT libraries, webtrans also uses [[gwt-dispatch|http://code.goo
 
 
 # Model-View-Presenter Pattern (MVP)
-Webtrans uses the MVP software pattern for most of its client-side functionality. 
+Webtrans uses the MVP software pattern for most of its client-side functionality. In MVP, the Presenter is the main controlling component and performs all interactions with the model, with the view being a lightweight display component with as little control and data manipulation logic as possible.
+
+Zanata uses the gwt-presenter library to handle the connections between the components of MVP. The diagram below illustrates how MVP is approached in Zanata.
 
 ![MVP in Webtrans](http://zanata.org/images/diagrams/zanata-2.0-architecture-webtrans-mvp.svg)
+
+For each part of Webtrans there is a Presenter component, a Display interface, and a View component that implements the Display interface. These components usually share a prefix, and use the component type as a suffix, e.g. the document list is handled by DocumentListPresenter, DocumentListDisplay and DocumentListView. In some cases the Display interface is defined within the presenter class, e.g. the project-wide search page is handled by SearchResultsPresenter, SearchResultsPresenter.Display and SearchResultsView. These components are associated with each other in org.zanata.webtrans.client.gin.WebTransClientModule, and the View is injected in the Presenter's constructor.
+
+The Model part of MVP in Webtrans consists largely of calls to the server (using gwt-rpc) to retrieve data, and client-side caches of this data in the form of fields in the presenter.
