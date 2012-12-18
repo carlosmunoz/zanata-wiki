@@ -27,3 +27,7 @@ The diagram below illustrates how gwt-rpc is used in Zanata.
 A gwt-rpc call requires a Result, an Action, an Action Handler and an Async Callback, all with appropriate relationships. e.g. retrieval of a list of documents requires GetDocumentListResult (implements DispatchResult), GetDocumentList (extends AbstractWorkspaceAction<GetDocumentListResult>), GetDocumentListHandler (extends AbstractActionHandler<GetDocumentList, GetDocumentListResult>), and an anonymous callback object (new AsyncCallback<GetDocumentListResult>() {...}).
 
 In a Presenter class, Action and AsyncCallback objects are instantiated and passed as arguments to the execute(...) method of an injected org.zanata.webtrans.client.rpc.CachingDispatchAsync (Dispatcher). The Dispatcher handles communication with the server, invocation of the appropriate ActionHandler on the server (specified in the @ActionHandlerFor(...) annotation in the ActionHandler) and invocation of the onSuccess(...) or onFailure(...) method of the AsyncCallback.
+
+# Presenter and View Relationships
+
+Webtrans consists of a nested set of Presenters, and a similarly nested set of Views. Its entry point is org.zanata.webtrans.client.Application, retrieves the top-level view (AppView) and adds it to the page. Other views are nested within AppView as shown in the diagram below.
