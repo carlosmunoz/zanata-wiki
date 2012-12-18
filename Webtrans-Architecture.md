@@ -36,6 +36,6 @@ Webtrans consists of a nested set of Presenters, and a similarly nested set of V
 
 The diagrams below show the arrangement of views in the UI on the main UI tabs (doclist, editor, search).
 
-[[Webtrans Views (doclist)|http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-doclist.svg]]
-[[Webtrans Views (editor)|http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-editor.svg]]
+[[Webtrans Views (doclist)|http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-doclist.svg]] | 
+[[Webtrans Views (editor)|http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-editor.svg]] | 
 [[Webtrans Views (search)|http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-search.svg]]
