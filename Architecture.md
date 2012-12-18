@@ -2,7 +2,7 @@ Zanata is made up of many components that use various frameworks and are spread 
 
 # Overview
 The server makes up the majority of Zanata's code and functionality, including the web editor and all database access code. Clients use the REST API to upload and download documents to and from the server, as well as some other less frequent operations.
-![Architecture overview](http://zanata.org/images/diagrams/zanata-1.7-architecture-overview.svg)
+![Architecture overview](http://zanata.org/images/diagrams/zanata-2.0-architecture-overview.svg)
 
 # Server
 The server can be broadly divided into the Project Pages, the Translation Editor, the REST API, and persistence. It is based on the Seam Framework, developed against JBoss and uses Hibernate, Hibernate Search, JSF, RichFaces, RESTEasy, Drools, Okapi Framework, GWT and more.
