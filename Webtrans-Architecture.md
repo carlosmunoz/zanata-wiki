@@ -33,3 +33,8 @@ In a Presenter class, Action and AsyncCallback objects are instantiated and pass
 Webtrans consists of a nested set of Presenters, and a similarly nested set of Views. Its entry point is org.zanata.webtrans.client.Application, retrieves the top-level view (AppView) and adds it to the page. Other views are nested within AppView as shown in the diagram below.
 
 ![Webtrans View/Presenter hierarchy](http://zanata.org/images/diagrams/zanata-2.0-webtrans-hierarchy.svg)
+
+The diagrams below show the arrangement of views in the UI on the main UI tabs (doclist, editor, search).
+
+[[Webtrans Views (doclist)|http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-doclist.svg]]
+
