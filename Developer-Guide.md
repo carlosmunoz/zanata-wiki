@@ -32,4 +32,4 @@
 
 # Zanata Architecture Overview
 See [[Architecture]]
-![Architecture overview](http://zanata.org/images/diagrams/zanata-1.7-architecture-overview.svg)
+![Architecture overview](http://zanata.org/images/diagrams/zanata-2.0-architecture-overview.svg)
