@@ -17,3 +17,13 @@ Zanata uses the gwt-presenter library to handle the connections between the comp
 For each part of Webtrans there is a Presenter component, a Display interface, and a View component that implements the Display interface. These components usually share a prefix, and use the component type as a suffix, e.g. the document list is handled by DocumentListPresenter, DocumentListDisplay and DocumentListView. In some cases the Display interface is defined within the presenter class, e.g. the project-wide search page is handled by SearchResultsPresenter, SearchResultsPresenter.Display and SearchResultsView. These components are associated with each other in org.zanata.webtrans.client.gin.WebTransClientModule, allowing the View to be injected in the Presenter's constructor.
 
 The Model part of MVP in Webtrans consists largely of calls to the server (using gwt-rpc) to retrieve data, and client-side caches of this data in the form of fields in the presenter. e.g. the document list is retrieved using the GetDocumentList RPC method (in this case initiated in Application.java), and stored in DocumentListPresenter as the HashMap 'idsByPath'.
+
+# GWT-RPC
+
+The diagram below illustrates how gwt-rpc is used in Zanata.
+
+![GWT RPC in Webtrans](http://zanata.org/images/diagrams/zanata-2.0-architecture-webtrans-rpc.svg)
+
+A gwt-rpc call requires a Result, an Action, an Action Handler and an Async Callback, all with appropriate relationships. e.g. retrieval of a list of documents requires GetDocumentListResult (implements DispatchResult), GetDocumentList (extends AbstractWorkspaceAction<GetDocumentListResult>), GetDocumentListHandler (extends AbstractActionHandler<GetDocumentList, GetDocumentListResult>), and an anonymous callback object (new AsyncCallback<GetDocumentListResult>() {...}).
+
+In a Presenter class, Action and AsyncCallback objects are instantiated and passed as arguments to the execute(...) method of an injected org.zanata.webtrans.client.rpc.CachingDispatchAsync (Dispatcher). The Dispatcher handles communication with the server, invocation of the appropriate ActionHandler on the server (specified in the @ActionHandlerFor(...) annotation in the ActionHandler) and invocation of the onSuccess(...) or onFailure(...) method of the AsyncCallback.
