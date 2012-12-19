@@ -1,4 +1,4 @@
-The Translation Editor (Webtrans) is a GWT application that uses . It is distributed from a Zanata server and runs in a browser (Chrome and Firefox are targeted specifically), and uses GWT-RPC to communicate with the server.
+The Translation Editor (Webtrans) is a GWT application. It is distributed from a Zanata server and runs in a browser (Chrome and Firefox are targeted specifically), and uses GWT-RPC to communicate with the server.
 
 The GWT SDK is required to develop this component.
 
