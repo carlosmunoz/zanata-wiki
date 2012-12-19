@@ -35,8 +35,8 @@ Webtrans consists of a nested set of Presenters, and a similarly nested set of V
 
 The diagrams below show the arrangement of views in the Webtrans UI on the main UI tabs (doclist, editor, search).
 
-[![Webtrans Views (doclist)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-doclist-thumb.png)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-doclist.svg "Click to view full size")
+[![Webtrans Views (doclist)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-doclist-small.png)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-doclist.svg "Click to view full size")
 
-[![Webtrans Views (editor)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-editor-thumb.png)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-editor.svg "Click to view full size")
+[![Webtrans Views (editor)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-editor-small.png)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-editor.svg "Click to view full size")
 
-[![Webtrans Views (search)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-search-thumb.png)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-search.svg "Click to view full size")
+[![Webtrans Views (search)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-search-small.png)](http://zanata.org/images/diagrams/zanata-2.0-webtrans-views-search.svg "Click to view full size")
