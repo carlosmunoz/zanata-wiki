@@ -6,7 +6,6 @@ The GWT SDK is required to develop this component.
 
 As well as core GWT libraries, webtrans also uses [[gwt-dispatch|http://code.google.com/p/gwt-dispatch/]], [[google-guice|http://code.google.com/p/google-guice/]], [[gwt-presenter|http://code.google.com/p/gwt-presenter/]], [[gwteventservice|http://code.google.com/p/gwteventservice/]] and [[gwt-log|http://code.google.com/p/gwt-log/]].
 
-
 # Model-View-Presenter Pattern (MVP)
 Webtrans uses the MVP software pattern for most of its client-side functionality. In MVP, the Presenter is the main controlling component and performs all interactions with the model, with the view being a lightweight display component with as little control and data manipulation logic as possible.
 
