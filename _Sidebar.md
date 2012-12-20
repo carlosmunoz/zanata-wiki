@@ -44,6 +44,7 @@
 - Zanata Structure (for developers)
  * [[Architecture]]
      - [[Webtrans Architecture]]
+     - [[Project Pages Architecture]]
  * [[Repositories]]
  * [[Where is the code for X?]]
 - [[Change Log]]
