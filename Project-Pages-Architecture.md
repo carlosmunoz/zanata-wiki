@@ -22,6 +22,7 @@ Zanata's project pages are based on a template found at /zanata-war/src/main/web
 
     <ui:composition ... template="../WEB-INF/layout/template.xhtml">
 
+
 # Page flow and extra parameters (pages.xml)
 In Seam, page transitions, parameters, etc. are defined in "pages.xml"
 
@@ -33,4 +34,31 @@ Search "project/home" in "/zanata-war/src/main/webapp/WEB-INF/pages.xml"
       <action execute="#{breadcrumbs.addLocation('', 'Projects')}"/>
     </page>
 
-This page is fairly simple, with just the breadcrumbs location defined in pages.xml.
+This example page is fairly simple, with just the breadcrumbs location defined in pages.xml.
+
+
+# Seam Components and EL
+Seam components are Java classes that can be referenced in Seam pages using Expression Language (EL). A few usages of EL to refer to Seam Components are shown in the following example:
+
+Continuing with the project list example, we can find the code that specifies that the project list table should be rendered and where to retrieve the data:
+
+    <rich:dataTable id="projectList" 
+                    rows="#{projectAction.pageSize}"
+                    value="#{projectAction.projectPagedListDataModel}"
+                    var="project">
+        <rich:column width="270px" sortBy="#{project.name}">
+            <f:facet name="header">#{messages['jsf.ProjectName']}</f:facet>
+            <s:link id="project" styleClass="table_link" value="#{project.name}"  propagation="none"
+                             view="/project/project.xhtml" rendered="#{project.status == 'ACTIVE'}"> 
+                <f:param name="slug" value="#{project.slug}"/>
+            </s:link>
+            ...
+        </rich:column>
+        <rich:column width="270px">
+            <f:facet name="header">#{messages['jsf.Description']}</f:facet>
+            <h:outputText value="#{project.description}" />
+        </rich:column>
+        ...
+    </rich:dataTable> 
+
+Notice expressions such as #{projectAction.pageSize}, #{project.name} and #{messages['jsf.Description']}
