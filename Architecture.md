@@ -10,6 +10,8 @@ The server can be broadly divided into the Project Pages, the Translation Editor
 ## Project Pages
 The "Project Pages" refers to all the web pages presented by Zanata except the Translation Editor (which is separated here because its structure is very different from the others). The Project Pages allow users to authenticate, join language teams, find, create and interact with projects, upload and download documents and configuration files, and to launch the Translation Editor. The project pages use JSF and RichFaces for display.
 
+See: [[Project Pages Architecture]]
+
 ## Translation Editor (Webtrans)
 The Translation Editor is where the core translation work happens in Zanata. It allows translators to navigate through the documents of a project and enter or change translations, and provides a translation memory, search functionality, history viewing, chat, filters and more. It is built with GWT, so it is a JavaScript application compiled from Java source code and currently uses GWT-RPC to communicate with the server.
 
