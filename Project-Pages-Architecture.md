@@ -10,10 +10,10 @@ e.g. for the project list on zanata.org, the URL is "https://translate.zanata.or
 
 /zanata-war/src/main/webapp/WEB-INF/urlrewrite.xml
 
-  <rule>
-    <from casesensitive="true">^/project/list(.+)?$</from>
-    <to last="true">/project/home.seam$1</to>
-  </rule>
+    <rule>
+      <from casesensitive="true">^/project/list(.+)?$</from>
+      <to last="true">/project/home.seam</to>
+    </rule>
 
 This rule is taking the "/project/list" path and directing it to "/project/home.seam". Seam replaces the file extension of each page with ".seam", so "/project/home.seam" correlates to "/project/home.xhtml". Project pages are located in the "zanata" repository (See [[Repositories]]) under "/zanata-war/src/main/webapp/", so the page is found at "/zanata-war/src/main/webapp/project/home.xhtml"
 
@@ -24,9 +24,9 @@ In Seam, page transitions, parameters, etc. are defined in "pages.xml"
 e.g. for the project list
 Search "project/home" in "/zanata-war/src/main/webapp/WEB-INF/pages.xml"
 
-  <page view-id="/project/home.xhtml">
-    <action execute="#{breadcrumbs.clear}"/>
-  	<action execute="#{breadcrumbs.addLocation('', 'Projects')}"/>
-  </page>
+    <page view-id="/project/home.xhtml">
+      <action execute="#{breadcrumbs.clear}"/>
+      <action execute="#{breadcrumbs.addLocation('', 'Projects')}"/>
+    </page>
 
 This page is fairly simple, with just the breadcrumbs location defined in pages.xml.
