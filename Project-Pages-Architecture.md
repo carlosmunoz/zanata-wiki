@@ -17,6 +17,10 @@ e.g. for the project list on zanata.org, the URL is "https://translate.zanata.or
 
 This rule is taking the "/project/list" path and directing it to "/project/home.seam". Seam replaces the file extension of each page with ".seam", so "/project/home.seam" correlates to "/project/home.xhtml". Project pages are located in the "zanata" repository (See [[Repositories]]) under "/zanata-war/src/main/webapp/", so the page is found at "/zanata-war/src/main/webapp/project/home.xhtml"
 
+# Template
+Zanata's project pages are based on a template found at /zanata-war/src/main/webapp/WEB-INF/layout/template.xhtml. The template is included near the top of each document in the ui:composition element, as shown here:
+
+    <ui:composition ... template="../WEB-INF/layout/template.xhtml">
 
 # Page flow and extra parameters (pages.xml)
 In Seam, page transitions, parameters, etc. are defined in "pages.xml"
