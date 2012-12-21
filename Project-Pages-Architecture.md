@@ -10,17 +10,21 @@ e.g. for the project list on zanata.org, the URL is "https://translate.zanata.or
 
 /zanata-war/src/main/webapp/WEB-INF/urlrewrite.xml
 
-    <rule>
-      <from casesensitive="true">^/project/list(.+)?$</from>
-      <to last="true">/project/home.seam</to>
-    </rule>
+```xml
+  <rule>
+    <from casesensitive="true">^/project/list(.+)?$</from>
+    <to last="true">/project/home.seam</to>
+  </rule>
+```
 
 This rule is taking the "/project/list" path and directing it to "/project/home.seam". Seam replaces the file extension of each page with ".seam", so "/project/home.seam" correlates to "/project/home.xhtml". Project pages are located in the "zanata" repository (See [[Repositories]]) under "/zanata-war/src/main/webapp/", so the page is found at "/zanata-war/src/main/webapp/project/home.xhtml"
 
 # Template
 Zanata's project pages are based on a template found at /zanata-war/src/main/webapp/WEB-INF/layout/template.xhtml. The template is included near the top of each document in the ui:composition element, as shown here:
 
-    <ui:composition ... template="../WEB-INF/layout/template.xhtml">
+```xml
+  <ui:composition ... template="../WEB-INF/layout/template.xhtml">
+```
 
 
 # Page flow and extra parameters (pages.xml)
@@ -29,10 +33,12 @@ In Seam, page transitions, parameters, etc. are defined in "pages.xml"
 e.g. for the project list
 Search "project/home" in "/zanata-war/src/main/webapp/WEB-INF/pages.xml"
 
-    <page view-id="/project/home.xhtml">
-      <action execute="#{breadcrumbs.clear}"/>
-      <action execute="#{breadcrumbs.addLocation('', 'Projects')}"/>
-    </page>
+```xml
+  <page view-id="/project/home.xhtml">
+    <action execute="#{breadcrumbs.clear}"/>
+    <action execute="#{breadcrumbs.addLocation('', 'Projects')}"/>
+  </page>
+```
 
 This example page is fairly simple, with just the breadcrumbs location defined in pages.xml.
 
@@ -42,23 +48,25 @@ Seam components are Java classes that can be referenced in Seam pages using Expr
 
 Continuing with the project list example, we can find the code that specifies that the project list table should be rendered and where to retrieve the data:
 
-    <rich:dataTable id="projectList" 
-                    rows="#{projectAction.pageSize}"
-                    value="#{projectAction.projectPagedListDataModel}"
-                    var="project">
-        <rich:column width="270px" sortBy="#{project.name}">
-            <f:facet name="header">#{messages['jsf.ProjectName']}</f:facet>
-            <s:link id="project" styleClass="table_link" value="#{project.name}"  propagation="none"
-                             view="/project/project.xhtml" rendered="#{project.status == 'ACTIVE'}"> 
-                <f:param name="slug" value="#{project.slug}"/>
-            </s:link>
-            ...
-        </rich:column>
-        <rich:column width="270px">
-            <f:facet name="header">#{messages['jsf.Description']}</f:facet>
-            <h:outputText value="#{project.description}" />
-        </rich:column>
-        ...
-    </rich:dataTable> 
+```xml
+  <rich:dataTable id="projectList" 
+                  rows="#{projectAction.pageSize}"
+                  value="#{projectAction.projectPagedListDataModel}"
+                  var="project">
+      <rich:column width="270px" sortBy="#{project.name}">
+          <f:facet name="header">#{messages['jsf.ProjectName']}</f:facet>
+          <s:link id="project" styleClass="table_link" value="#{project.name}"  propagation="none"
+                           view="/project/project.xhtml" rendered="#{project.status == 'ACTIVE'}"> 
+              <f:param name="slug" value="#{project.slug}"/>
+          </s:link>
+          ...
+      </rich:column>
+      <rich:column width="270px">
+          <f:facet name="header">#{messages['jsf.Description']}</f:facet>
+          <h:outputText value="#{project.description}" />
+      </rich:column>
+      ...
+  </rich:dataTable> 
+```
 
 Notice expressions such as #{projectAction.pageSize}, #{project.name} and #{messages['jsf.Description']}
