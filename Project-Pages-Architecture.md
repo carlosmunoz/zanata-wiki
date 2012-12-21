@@ -1,14 +1,12 @@
 Zanata's project pages use Seam components, JSF and RichFaces.
 
 e.g. project/list
-built from xhtml page: /zanata-war/src/main/webapp/project/home.xhtml
+built from xhtml page: ```/zanata-war/src/main/webapp/project/home.xhtml```
 
 # URL Rewriting
-Each project page is defined as an xhtml page, but is mapped to a URL that does not end with .xhtml. To figure out which xhtml page maps to a particular page on the website, find the rewrite rule in urlrewrite.xml as follows:
+Each project page is defined as an xhtml page, but is mapped to a URL that does not end with ```.xhtml```. To figure out which xhtml page maps to a particular page on the website, find the rewrite rule in ```urlrewrite.xml``` as follows:
 
-e.g. for the project list on zanata.org, the URL is "https://translate.zanata.org/zanata/project/list". Remove the server prefix (https://translate.zanata.org/zanata) leaving the local path of the page, "project/list". Search for the local path in urlrewrite.xml to find the rule:
-
-/zanata-war/src/main/webapp/WEB-INF/urlrewrite.xml
+e.g. for the project list on zanata.org, the URL is ```https://translate.zanata.org/zanata/project/list```. Remove the server prefix (```https://translate.zanata.org/zanata```) leaving the local path of the page, ```project/list```. Search for the local path in ```urlrewrite.xml``` (```/zanata-war/src/main/webapp/WEB-INF/urlrewrite.xml```) to find the rule:
 
 ```xml
   <rule>
@@ -17,7 +15,7 @@ e.g. for the project list on zanata.org, the URL is "https://translate.zanata.or
   </rule>
 ```
 
-This rule is taking the "/project/list" path and directing it to "/project/home.seam". Seam replaces the file extension of each page with ".seam", so "/project/home.seam" correlates to "/project/home.xhtml". Project pages are located in the "zanata" repository (See [[Repositories]]) under "/zanata-war/src/main/webapp/", so the page is found at "/zanata-war/src/main/webapp/project/home.xhtml"
+This rule is taking the ```/project/list``` path and directing it to ```/project/home.seam```. Seam replaces the file extension of each page with ```.seam```, so ```/project/home.seam``` correlates to ```/project/home.xhtml```. Project pages are located in the "zanata" repository (See [[Repositories]]) under ```/zanata-war/src/main/webapp/```, so the page is found at ```/zanata-war/src/main/webapp/project/home.xhtml```.
 
 # Template
 Zanata's project pages are based on a template found at /zanata-war/src/main/webapp/WEB-INF/layout/template.xhtml. The template is included near the top of each document in the ui:composition element, as shown here:
@@ -71,4 +69,4 @@ Continuing with the project list example, we can find the code that specifies th
   </rich:dataTable> 
 ```
 
-Notice expressions such as #{projectAction.pageSize}, #{project.name} and #{messages['jsf.Description']}
+Notice expressions such as `#{projectAction.pageSize}`, `#{project.name}` and `#{messages['jsf.Description']}`
