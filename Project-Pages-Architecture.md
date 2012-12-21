@@ -55,8 +55,10 @@ Continuing with the project list example, we can find the code that specifies th
                   var="project">
       <rich:column width="270px" sortBy="#{project.name}">
           <f:facet name="header">#{messages['jsf.ProjectName']}</f:facet>
-          <s:link id="project" styleClass="table_link" value="#{project.name}"  propagation="none"
-                           view="/project/project.xhtml" rendered="#{project.status == 'ACTIVE'}"> 
+          <s:link id="project" styleClass="table_link"
+                  value="#{project.name}" propagation="none"
+                  view="/project/project.xhtml"
+                  rendered="#{project.status == 'ACTIVE'}"> 
               <f:param name="slug" value="#{project.slug}"/>
           </s:link>
           ...
