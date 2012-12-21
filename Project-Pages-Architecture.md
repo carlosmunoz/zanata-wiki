@@ -69,7 +69,9 @@ Continuing with the project list example, we can find the code in ```/project/ho
   </rich:dataTable> 
 ```
 
-Notice expressions such as `#{projectAction.pageSize}`, `#{project.name}` and `#{messages['jsf.Description']}` which all use EL and refer to seam components. Seam components are defined by annotating a class with ```@Name```.
+Notice expressions such as `#{projectAction.pageSize}`, `#{project.name}` and `#{messages['jsf.Description']}` which all use EL and refer to seam components. These EL expressions give the return value from ProjectAction.getPageSize(), the return value of HProject.getName() for each project shown on the page, and a text string from ```zanata-war/src/main/resources/messages.properties```, respectively.
+
+Seam components are Java classes that have a component name defined by a ```@Name``` annotation.
 
 e.g. the ```projectAction``` seam component is defined in ```/zanata-war/src/main/java/org/zanata/action/ProjectAction.java``` by the annotation ```@Name("projectAction")```
 
