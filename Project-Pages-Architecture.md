@@ -1,7 +1,6 @@
-Zanata's project pages use Seam components, JSF and RichFaces.
+Zanata's project pages use Seam components, JSF and RichFaces. The code that contributes to the rendering of a single page is often spread across a number of layout and code files. Most pages are based on a template, have transitions and additional parameters defined in a configuration file, and retrieve values from several Java classes (Seam components), as well as localized text strings defined in a properties file. Due to URL rewriting and nesting of page components, locating the code for a specific page can take a few steps.
 
-e.g. project/list
-built from xhtml page: ```/zanata-war/src/main/webapp/project/home.xhtml```
+The examples below are all based around the project list page at ```<server>/project/list```, which is built from xhtml page ```/zanata-war/src/main/webapp/project/home.xhtml```
 
 # URL Rewriting
 Each project page is defined as an xhtml page, but is mapped to a URL that does not end with ```.xhtml```. To figure out which xhtml page maps to a particular page on the website, find the rewrite rule in ```urlrewrite.xml``` as follows:
