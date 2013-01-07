@@ -42,9 +42,26 @@ https://issues.sonatype.org/browse/OSSRH-3983
 
     # change maven.repo.local as appropriate, but best not to use your normal work repo 
     git pull
-    mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo release:clean release:prepare release:perform &&
+    mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
+      release:clean release:prepare release:perform &&
     # close and release on OSSRH
     mvn nexus:staging-close nexus:staging-release \
       -Dnexus.automaticDiscovery -Dnexus.groupId=org.zanata \
+      -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+
+## Releasing Tennera ##
+    cd tennera; git pull
+    mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
+      release:clean release:prepare release:perform &&
+    mvn nexus:staging-close nexus:staging-release \
+      -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.tennera \
+      -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+
+## Releasing OpenProps ##
+    cd openprops; git pull
+    mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
+      release:clean release:prepare release:perform &&
+    mvn nexus:staging-close nexus:staging-release \
+      -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.openprops \
       -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
 
