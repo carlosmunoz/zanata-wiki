@@ -10,9 +10,13 @@ Interface methods are annotated with a HTTP method type (e.g. `@HEAD`, `@GET`, `
 
 # Server-Side Implementation
 
-Implementation on the server (usually *Service) in zanata under
-/zanata-war/src/main/java/org/zanata/rest/service
+Each Resource Interface has a concrete implementation in the server, responsible for handling the actual REST method calls. Implementations are found in repository `zanata`, project `zanata-war` under `/src/main/java/org/zanata/rest/service` and are named `*Service` (e.g. `ProjectService`).
 
-Client-side resource interface, usually I*Resource in zanata-api-master /zanata-common-api/src/main/java/org/zanata/rest/client which is used by clients via ZanataProxyFactory to easily refer to REST endpoints in client code.
+The URI path for each method (or the entire implementation class) is specified with `@Path` annotations in the implementation. For example, `ProjectService` class is annotated with `@Path(ProjectService.SERVICE_PATH)`, `SERVICE_PATH` is a string which describes a path of `/projects/p/<projectSlug>` from the base server rest path.
 
-e.g. org.zanata.rest.client.ZanataProxyFactory.getProject(String proj)
+
+# Client-Side Resource Interfaces
+
+Each Resource Interface is extended to make a client-side interface used by RESTEasy to create proxy methods. Client-side interfaces are found in repository `zanata-api`, project `zanata-common-api` under `/src/main/java/org/zanata/rest/client`, and are usually named `I*Resource` (e.g. `IProjectResource`).
+
+Client-side interfaces are used by `ZanataProxyFactory` to create proxy methods used by Zanata clients, e.g. `org.zanata.rest.client.ZanataProxyFactory.getProject(String proj)`. `ZanataProxyFactory` is in repository `zanata-client`, project `zanata-rest-client` under `/src/main/java/org/zanata/rest/client`.
