@@ -2,6 +2,8 @@ The REST API uses RESTEasy and other libraries, and shares some components with 
 
 Each REST endpoint is mapped to one or more methods in a Java class. This page will use the project endpoint as an example.
 
+![Major REST architecture components](http://zanata.org/images/diagrams/zanata-2.0-architecture-rest.svg)
+
 # Resource Interfaces
 
 Each endpoint usually has an interface that describes the REST methods that are available at that endpoint, but some interfaces describe methods for multiple related endpoints. These interfaces are located in repository `zanata-api`, project `zanata-common-api` under `/src/main/java/org/zanata/rest/service` and are named `*Resource` (e.g. `ProjectResource`)
