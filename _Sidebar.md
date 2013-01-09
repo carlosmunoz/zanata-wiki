@@ -43,9 +43,9 @@
  * [[Database Tricks]]
 - Zanata Structure (for developers)
  * [[Architecture]]
+     - [[Project Pages Architecture]]
      - [[Webtrans Architecture]]
      - [[REST API Architecture]]
-     - [[Project Pages Architecture]]
  * [[Repositories]]
  * [[Where is the code for X?]]
 - [[Change Log]]
