@@ -31,11 +31,19 @@ See: [[Persistence Architecture]]
 
 # Clients
 
+The Command-Line Client and Maven plugin invoke the same set of commands, acting as wrappers to provide different methods of invocation and argument handling.
+
+See: [[Client Command Architecture]]
+
 ## Maven Plugin
 The Zanata Maven Plugin uses the Maven Plugin API to implement a plugin that can be incorporated into Maven workflows or used as a standalone command-line application (but still requiring a working Maven installation). The plugin uses various libraries including RESTEasy, JAX-RS, JAXB and so on.
 
-## Python Client (end-of-life)
-The Zanata Python Client is the only major component of Zanata that is not Java-based. As a result, it uses a completely separate code-base. It accesses the same REST API as the other clients, but does not use RESTEasy or Zanata's API library. Because a separate code-base adds unnecessary maintenance effort and more opportunity for bugs to arise, the Python Client is being phased out, to be replaced by a Java-based Command Line Client.
+See [[Maven Plugin Architecture]]
 
 ## Command-Line Client (in development)
 The Command-Line Client shares much of its code with the Maven Plugin, but is intended to work as a standalone application without the need for installation of Maven.
+
+See [[Command Line Client Architecture]]
+
+## Python Client (end-of-life)
+The Zanata Python Client is the only major component of Zanata that is not Java-based. As a result, it uses a completely separate code-base. It accesses the same REST API as the other clients, but does not use RESTEasy or Zanata's API library. Because a separate code-base adds unnecessary maintenance effort and more opportunity for bugs to arise, the Python Client is being phased out, to be replaced by a Java-based Command Line Client.
