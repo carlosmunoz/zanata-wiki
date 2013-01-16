@@ -10,7 +10,7 @@ Maven Plugin commands are implemented as Mojos. There is a Mojo for each availab
 The Zanata Maven Plugin is made up of several classes found in repository `zanata-client` project `zanata-maven-plugin`, in package `org.zanata.maven`. These classes use Command classes found in project `zanata-client-commands` in package `org.zanata.client.commands`, which generally also use code in project `zanata-rest-client` and `zanata-common-api` (in repository `zanata-api`).
 
 ## Control Flow
-The Maven Plugin framework handles processing of parameters from .pom or the command line, and calls `execute()`. In `execute()`, a Command object is instantiated, given the Mojo as its Options implementation, and the command is run.
+The Maven Plugin framework handles processing of parameters from pom.xml or the command line, and calls `execute()`. In `execute()`, a Command object is instantiated, given the Mojo as its Options implementation, and the command is run.
 
 ## Parameters
 Parameters are defined with annotations as described in [Maven: The Complete Reference 11.5. Mojo Parameters](http://www.sonatype.com/books/mvnref-book/reference/writing-plugins-sect-mojo-params.html).
