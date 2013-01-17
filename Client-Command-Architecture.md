@@ -9,5 +9,8 @@ Commands are concrete implementations, whereas Options are interfaces that have 
 
 ![Hierarchy of ZanataCommand classes](http://zanata.org/images/diagrams/zanata-2.0-client-commands-hierarchy.png)
 
+
+The `BasicOptions` hierarchy looks complex as it describes 3 overlapping hierarchies. There is a hierarchy of interfaces, a hierarchy under `ConfigurableMojo` and a hierarchy under `ConfigurableOptionsImpl`. All 3 of these hierarchies follow the same pattern, and members of the latter 2 make up the leaf nodes of the former.
+
 ![Hierarchy of BasicOptions interfaces and classes](http://zanata.org/images/diagrams/zanata-2.0-client-options-hierarchy.png)
 
