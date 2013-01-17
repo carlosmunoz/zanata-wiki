@@ -12,3 +12,5 @@ The repository `zanataj` does not contain any of the actual client code. `zanata
 The Ivy script invokes `org.zanata.client.ZanataClient.main()`.`ZanataClient.main()` is responsible for ensuring that a valid command name has been entered, and causing valid commands to be run.
 
 `ZanataClient` has Options objects mapped against command name, which are fed to `org.zanata.client.commands.ArgsUtil.process(...)` where the remaining command line parameters are processed and the Command object is instantiated and run. `ArgsUtil` is in project `zanata-client-commands` in repository `zanata-client`.
+
+![Command-Line Client Flow of Control](http://zanata.org/images/diagrams/zanata-2.0-architecture-client-zanataj.svg)
