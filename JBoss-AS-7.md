@@ -1,5 +1,4 @@
-# JBoss AS 7 deployment (Not working yet, under development)
-
+(Not working yet, under development)
 # Deployment:
 ## Create module for external Zanata settings
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
