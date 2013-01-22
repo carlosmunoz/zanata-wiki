@@ -34,6 +34,7 @@
  * [[GitHub configuration|GitHub Setup]]
  * [[Database configuration|Database Setup]]
  * [[JBoss AS configuration|JBoss Setup]]
+ * [[JBoss AS 7|JBoss AS 7]]
  * [[Working with Maven|Working With Maven]]
  * [[Release Process|Release Process]]
  * [[Eclipse configuration|Eclipse Setup]]

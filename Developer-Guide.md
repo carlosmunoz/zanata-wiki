@@ -1,5 +1,8 @@
 # Zanata Developer Guide
 
+ * [[JBoss AS 7|JBoss AS 7]]
+
+
 # Development tools
 
 - Java Development Kit (JDK) 1.6 - yum install java-1.6.0-openjdk-devel
