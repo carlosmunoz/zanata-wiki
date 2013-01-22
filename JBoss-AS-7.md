@@ -51,4 +51,4 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
 ### Rationale
 Apparently it is possible, but not recommended, to run Seam 2.2 apps on AS 7, by packaging Hibernate 3.x with the application.  However, we want to upgrade Hibernate and Hibernate Search, so we need to upgrade to Seam 2.3...
 
-Seam 2.3 (as of Final) requires JSF 2 (early alphas may have worked with JSF 1, but no more).  For now, we are trying to use RichFaces 3.3.3's JSF 2 support, but it is not working yet.
+Seam 2.3 requires JSF 2 (early Seam 2.3 alphas may have worked with JSF 1, but this changed before Final).  For now, we are trying to use RichFaces 3.3.3's JSF 2 support.
