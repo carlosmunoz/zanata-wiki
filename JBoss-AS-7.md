@@ -1,5 +1,6 @@
 (Not working yet, under development)
-# Deployment:
+
+# Preparation:
 ## Create module for external Zanata settings
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
 
@@ -46,6 +47,14 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
 
 ## Configure security domain `zanata.internal` in standalone.xml
  * TODO
+
+# Building and deploying:
+
+    git checkout seam230final
+    mvn install -DskipTests -Pnogwt
+    cp zanata-war/target/zanata-2.2-SNAPSHOT.war $JBOSS7_HOME/standalone/deployments/zanata.war
+
+
 
 ### Rationale
 Apparently it is possible, but not recommended, to run Seam 2.2 apps on AS 7, by packaging Hibernate 3.x with the application.  However, we want to upgrade Hibernate and Hibernate Search, so we need to upgrade to Seam 2.3...
