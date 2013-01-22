@@ -1,0 +1,54 @@
+# JBoss AS 7 deployment (Not working yet, under development)
+
+# Deployment:
+## Create module for external Zanata settings
+Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
+        <resources>
+            <resource-root path="."/>
+        </resources>
+    </module>
+Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties` (modify &lt;myusername&gt; to suit):
+
+    zanata.security.auth.policy.internal = zanata.internal
+    zanata.security.admin.users = <myusername>
+## Make JavaMelody work on AS7
+Modify the file `$JBOSS7_HOME/modules/sun/jdk/main/module.xml` to insert 
+
+        <path name="com/sun/management"/>
+immediately after
+
+    <paths>
+
+## Create a datasource for Zanata (you can use the CLI if you prefer):
+Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to suit):
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!-- http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd -->
+    <!--
+    Using this datasource:
+    1. create a jboss module for mysql-connector and activate it using jboss-cli.sh
+    2. save this datasource as JBOSS_HOME/standalone/deployments/zanata-ds.xml
+    See http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html
+    -->
+    <datasources>
+      <datasource jndi-name="java:zanataDatasource"
+        enabled="true" use-java-context="true" pool-name="zanataDatasource">
+        <connection-url>jdbc:mysql://localhost:3306/zanata?characterEncoding=UTF-8</connection-url>
+        <driver>mysql-5-driver</driver>
+        <security>
+           <user-name>root</user-name>
+           <password></password>
+        </security>
+      </datasource>
+    </datasources>
+
+## Configure security domain `zanata.internal` in standalone.xml
+ * TODO
+
+### Rationale
+Apparently it is possible, but not recommended, to run Seam 2.2 apps on AS 7, by packaging Hibernate 3.x with the application.  However, we want to upgrade Hibernate and Hibernate Search, so we need to upgrade to Seam 2.3...
+
+Seam 2.3 (as of Final) requires JSF 2 (early alphas may have worked with JSF 1, but no more).  For now, we are trying to use RichFaces 3.3.3's JSF 2 support, but it is not working yet.
