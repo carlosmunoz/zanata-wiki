@@ -1,5 +1,7 @@
 Zanata uses Hibernate for persistence. Hibernate provides Object-Relational Mapping (ORM), mapping database tables to Java objects and greatly reducing the amount of SQL required for persistence. These objects ("Entities") are used for most server code, but data is converted into Data Transfer Objects (DTOs) before being sent to webtrans or over the REST interface.
 
+After reading this page, see the [[Persistence to Project Pages Code Example]]
+
 
 ![Persistence Architecture](http://zanata.org/images/diagrams/zanata-2.0-architecture-persistence.svg)
 

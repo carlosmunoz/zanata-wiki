@@ -48,6 +48,7 @@
      - [[Webtrans Architecture]]
      - [[REST API Architecture]]
      - [[Persistence Architecture]]
+         * [[Persistence to Project Pages Code Example]]
      - [[Client Command Architecture]]
      - [[Maven Plugin Architecture]]
      - [[Command Line Client Architecture]]
