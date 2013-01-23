@@ -22,6 +22,9 @@ immediately after
 
     <paths>
 
+## Create a JBoss Module for the MySQL driver
+See http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html "Create and install the database driver"
+
 ## Create a datasource for Zanata (you can use the CLI if you prefer):
 Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to suit):
 
