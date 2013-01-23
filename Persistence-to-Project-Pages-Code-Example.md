@@ -68,7 +68,7 @@ Actual UI change:
             <ui:define name="label">#{messages['jsf.SourceUrlHumanReadable']}</ui:define>
             <h:inputText id="humanViewableSourceUrl" required="false"
                          value="#{projectHome.instance.sourceViewURL}" style="width:400px;"/>
-            <s:span styleClass="icon-info-circle-2 input_help" id="slugHelp">
+            <s:span styleClass="icon-info-circle-2 input_help" id="humanSourceUrlHelp">
                 <rich:toolTip>
                    <em><code>#{messages['jsf.SourceUrlHumanReadableExample']}</code></em>
                 </rich:toolTip>
