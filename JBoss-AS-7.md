@@ -51,11 +51,15 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
 
 ## Configure security domain `zanata.internal` in standalone.xml
  * TODO
-                 <security-domain name="zanata">
-                     <authentication>
-                         <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
-                     </authentication>
-                 </security-domain>
+ * https://community.jboss.org/wiki/JBossAS7SecurityDomainModel
+ * use jboss-cli, but it should probably look like this:
+
+    <security-domain name="zanata">
+        <authentication>
+            <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
+        </authentication>
+    </security-domain>
+
 
 
 
