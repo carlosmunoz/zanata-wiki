@@ -14,6 +14,7 @@ Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties
 
     zanata.security.auth.policy.internal = zanata.internal
     zanata.security.admin.users = <myusername>
+
 ## Make JavaMelody work on AS7
 Modify the file `$JBOSS7_HOME/modules/sun/jdk/main/module.xml` to insert 
 
@@ -22,7 +23,7 @@ immediately after
 
     <paths>
 
-## Create a JBoss Module for the MySQL driver
+## Install MySQL driver
 See http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html "Create and install the database driver"
 
 ## Create a datasource for Zanata (you can use the CLI if you prefer):
@@ -50,6 +51,13 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
 
 ## Configure security domain `zanata.internal` in standalone.xml
  * TODO
+                 <security-domain name="zanata">
+                     <authentication>
+                         <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
+                     </authentication>
+                 </security-domain>
+
+
 
 # Building and deploying:
 
@@ -57,6 +65,10 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
     mvn install -DskipTests -Pnogwt
     cp zanata-war/target/zanata-2.2-SNAPSHOT.war $JBOSS7_HOME/standalone/deployments/zanata.war
 
+# Other things that might help
+In `bin/standalone.conf`:
+ * To increase memory for classes, change -XX:MaxPermSize=256m to -XX:MaxPermSize=512m
+ * To enable debugging, uncomment `JAVA_OPTS="$JAVA_OPTS -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"`
 
 
 ### Rationale
