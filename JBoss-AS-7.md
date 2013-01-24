@@ -7,7 +7,7 @@ Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
 $ cd $JBOSS7_HOME
 $ mkdir -p modules/org/zanata/settings/main
 $ $EDITOR modules/org/zanata/settings/main/module.xml
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
     <resources>
@@ -30,11 +30,30 @@ immediately after
 <paths>
 ```
 ## Install MySQL driver
-See http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html "Create and install the database driver"
+```sh
+$ sudo yum install mysql-connector-java
+$ cd $JBOSS7_HOME
+$ mkdir -p modules/mysql/main
+$ ln -s /usr/share/java/mysql-connector-java.jar modules/mysql/main
+$ $EDITOR modules/mysql/main/module.xml
+```
+```xml
+<module xmlns="urn:jboss:module:1.1" name="mysql">
+    <resources>
+        <resource-root path="mysql-connector-java.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+    </dependencies>
+</module>
+```
+
+Reference: http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html
 
 ## Create a datasource for Zanata (you can use the CLI if you prefer):
 Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to suit):
-```
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <!-- http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd -->
     <!--
@@ -60,7 +79,7 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
  * https://community.jboss.org/wiki/JBossAS7SecurityDomainModel
  * use jboss-cli, but it should probably look like this:
 
-```
+```xml
     <security-domain name="zanata.internal">
         <authentication>
             <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
