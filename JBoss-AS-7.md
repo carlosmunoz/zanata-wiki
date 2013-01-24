@@ -3,32 +3,34 @@
 # Preparation:
 ## Create module for external Zanata settings
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
-
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
         <resources>
             <resource-root path="."/>
         </resources>
     </module>
+```
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties` (modify &lt;myusername&gt; to suit):
-
+```
     zanata.security.auth.policy.internal = zanata.internal
     zanata.security.admin.users = <myusername>
-
+```
 ## Make JavaMelody work on AS7
 Modify the file `$JBOSS7_HOME/modules/sun/jdk/main/module.xml` to insert 
-
-        <path name="com/sun/management"/>
+```xml
+<path name="com/sun/management"/>
+```
 immediately after
-
-    <paths>
-
+```xml
+<paths>
+```
 ## Install MySQL driver
 See http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html "Create and install the database driver"
 
 ## Create a datasource for Zanata (you can use the CLI if you prefer):
 Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to suit):
-
+```
     <?xml version="1.0" encoding="UTF-8"?>
     <!-- http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd -->
     <!--
@@ -48,27 +50,28 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
         </security>
       </datasource>
     </datasources>
-
+```
 ## Configure security domain `zanata.internal` in standalone.xml
  * TODO
  * https://community.jboss.org/wiki/JBossAS7SecurityDomainModel
  * use jboss-cli, but it should probably look like this:
 
+```
     <security-domain name="zanata">
         <authentication>
             <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
         </authentication>
     </security-domain>
-
+```
 
 
 
 # Building and deploying:
-
-    git checkout seam230final
-    mvn install -DskipTests -Pnogwt
-    cp zanata-war/target/zanata-2.2-SNAPSHOT.war $JBOSS7_HOME/standalone/deployments/zanata.war
-
+```sh
+$ git checkout seam230final
+$ mvn install -DskipTests -Pnogwt
+$ cp zanata-war/target/zanata-2.2-SNAPSHOT.war $JBOSS7_HOME/standalone/deployments/zanata.war
+```
 # Other things that might help
 In `bin/standalone.conf`:
  * To increase memory for classes, change -XX:MaxPermSize=256m to -XX:MaxPermSize=512m
