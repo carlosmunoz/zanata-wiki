@@ -85,7 +85,7 @@ $ $EDITOR standalone/configuration/standalone.xml
 ...
             <security-domains>
 ...
-                <security-domain name="zanata.internal">
+                <security-domain name="zanata">
                     <authentication>
                         <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
                     </authentication>
