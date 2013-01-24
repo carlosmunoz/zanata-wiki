@@ -51,7 +51,7 @@ $ $EDITOR modules/mysql/main/module.xml
 
 Reference: http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html
 
-## Create a datasource for Zanata (you can use the CLI if you prefer):
+## Create a datasource for Zanata:
 Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to suit):
 ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -77,16 +77,26 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
 ## Configure security domain `zanata.internal` in standalone.xml
  * TODO
  * https://community.jboss.org/wiki/JBossAS7SecurityDomainModel
- * use jboss-cli, but it should probably look like this:
-
-```xml
-    <security-domain name="zanata.internal">
-        <authentication>
-            <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
-        </authentication>
-    </security-domain>
+ * edit `standalone.xml`:
+```sh
+$ $EDITOR standalone/configuration/standalone.xml
 ```
-
+```xml
+...
+            <security-domains>
+...
+                <security-domain name="zanata.internal">
+                    <authentication>
+                        <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
+                    </authentication>
+                </security-domain>
+            </security-domains>
+...
+```
+If jboss is running, tell it to apply the change with:
+```sh
+$ ./jboss-cli.sh -c :reload
+```
 
 
 # Building and deploying:
