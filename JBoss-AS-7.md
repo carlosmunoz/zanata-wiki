@@ -57,7 +57,7 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
  * use jboss-cli, but it should probably look like this:
 
 ```
-    <security-domain name="zanata">
+    <security-domain name="zanata.internal">
         <authentication>
             <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
         </authentication>
