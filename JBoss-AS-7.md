@@ -3,18 +3,22 @@
 # Preparation:
 ## Create module for external Zanata settings
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
+```sh
+$ cd $JBOSS7_HOME
+$ mkdir -p modules/org/zanata/settings/main
+$ $EDITOR modules/org/zanata/settings/main/module.xml
 ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
-        <resources>
-            <resource-root path="."/>
-        </resources>
-    </module>
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
+    <resources>
+        <resource-root path="."/>
+    </resources>
+</module>
 ```
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties` (modify &lt;myusername&gt; to suit):
 ```
-    zanata.security.auth.policy.internal = zanata.internal
-    zanata.security.admin.users = <myusername>
+zanata.security.auth.policy.internal = zanata.internal
+zanata.security.admin.users = <myusername>
 ```
 ## Make JavaMelody work on AS7
 Modify the file `$JBOSS7_HOME/modules/sun/jdk/main/module.xml` to insert 
