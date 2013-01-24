@@ -90,6 +90,7 @@ $ $EDITOR standalone/configuration/standalone.xml
                         <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
                     </authentication>
                 </security-domain>
+...
             </security-domains>
 ...
 ```
