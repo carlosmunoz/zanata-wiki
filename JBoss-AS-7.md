@@ -7,6 +7,8 @@ Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
 $ cd $JBOSS7_HOME
 $ mkdir -p modules/org/zanata/settings/main
 $ $EDITOR modules/org/zanata/settings/main/module.xml
+```
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
@@ -50,14 +52,14 @@ $ $EDITOR modules/mysql/main/module.xml
 ```
 
 start standalone server
-```
-bin/standalone.sh  
+```sh
+$ bin/standalone.sh  
 ```
 
 connect with command line interface and add the driver
-```
-bin/jboss-cli.sh --connect  
-/subsystem=datasources/jdbc-driver=mysql-5-driver:add(driver-name=mysql-5-driver, driver-class-name=com.mysql.jdbc.Driver, driver-module-name=mysql)
+```sh
+$ bin/jboss-cli.sh --connect  
+$ /subsystem=datasources/jdbc-driver=mysql-5-driver:add(driver-name=mysql-5-driver, driver-class-name=com.mysql.jdbc.Driver, driver-module-name=mysql)
 ```
 
 Reference: http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html
