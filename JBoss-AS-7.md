@@ -49,6 +49,17 @@ $ $EDITOR modules/mysql/main/module.xml
 </module>
 ```
 
+start standalone server
+```
+bin/standalone.sh  
+```
+
+connect with command line interface and add the driver
+```
+bin/jboss-cli.sh --connect  
+/subsystem=datasources/jdbc-driver=mysql-5-driver:add(driver-name=mysql-5-driver, driver-class-name=com.mysql.jdbc.Driver, driver-module-name=mysql)
+```
+
 Reference: http://jaitechwriteups.blogspot.com.au/2012/02/jboss-as-710final-thunder-released-java.html
 
 ## Create a datasource for Zanata:
