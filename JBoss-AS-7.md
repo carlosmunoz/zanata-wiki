@@ -18,7 +18,7 @@ $ $EDITOR modules/org/zanata/settings/main/module.xml
 </module>
 ```
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties` (modify &lt;myusername&gt; to suit):
-```
+```properties
 zanata.security.auth.policy.internal = zanata.internal
 zanata.security.admin.users = <myusername>
 ```
