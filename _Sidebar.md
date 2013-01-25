@@ -17,6 +17,7 @@
 - [[Installation Guide]]
  * [[JAAS Authentication]]
 - [[Integration Guide]]
+ * [[Project Types]]
  * Clients
      - [[Client Configuration Files|Client Configuration]]
      - [[Python Client|Zanata Python Client]]
