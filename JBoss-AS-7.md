@@ -98,12 +98,8 @@ $ cp zanata-war/target/zanata-2.2-SNAPSHOT.war $JBOSS7_HOME/standalone/deploymen
 ```
 # Other things that might help
 In `bin/standalone.conf`:
- * To increase memory for classes, change -XX:MaxPermSize=256m to -XX:MaxPermSize=512m
+ * To increase memory for classes (and multiple redeployments), change -XX:MaxPermSize=256m to -XX:MaxPermSize=512m
  * To enable debugging, uncomment `JAVA_OPTS="$JAVA_OPTS -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"`
- * To fix the [problem where most of the logging is missing](http://stackoverflow.com/questions/12670415/log4j-doesnt-log-anything-under-jboss-6-eap), add this line:
+ * To fix the [EAP 6 problem where most of the logging is missing](http://stackoverflow.com/questions/12670415/log4j-doesnt-log-anything-under-jboss-6-eap), add this line:
 
     JAVA_OPTS="$JAVA_OPTS -Dorg.jboss.as.logging.per-deployment=false"
-
-
-### Rationale
-Apparently it is possible, but not recommended, to run Seam 2.2 apps on AS 7, by packaging Hibernate 3.x with the application.  However, we want to upgrade Hibernate and Hibernate Search, so we need to upgrade to Seam 2.3.  
