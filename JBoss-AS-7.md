@@ -19,7 +19,7 @@ $ $EDITOR modules/org/zanata/settings/main/module.xml
 ```
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties` (modify &lt;myusername&gt; to suit):
 ```properties
-zanata.security.auth.policy.internal = zanata
+zanata.security.auth.policy.internal = zanata.internal
 zanata.security.admin.users = <myusername>
 ```
 ## Make JavaMelody work on AS7
@@ -76,6 +76,11 @@ $ $EDITOR standalone/configuration/standalone.xml
             <security-domains>
 ...
                 <security-domain name="zanata">
+                    <authentication>
+                        <login-module code="org.zanata.security.ZanataCentralLoginModule" flag="required"/>
+                    </authentication>
+                </security-domain>
+                <security-domain name="zanata.internal">
                     <authentication>
                         <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
                     </authentication>
