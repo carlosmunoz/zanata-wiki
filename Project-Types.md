@@ -10,4 +10,4 @@ Valid values for project type are:
  * Utf8Properties - handles non-standard java properties files that use UTF-8 encoding, and do not use unicode escape characters.
  * Xliff - (not actively supported)
  * Xml - (not actively supported)
- * Raw - an experimental project type that provides limited support for plain-text, LibreOffice and DTD files. Source files must be under a separate directory to translation files. The behaviour of this project type is subject to change without notice while it is in experimental state.
+ * File (previously Raw) - an experimental project type that provides limited support for plain-text, LibreOffice and DTD files. Source files must be under a separate directory to translation files. The behaviour of this project type is subject to change without notice while it is in experimental state.
