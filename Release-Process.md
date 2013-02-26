@@ -14,8 +14,8 @@ Note: This applies to api, client and server.  The other modules don't have rele
 
 Make sure you have the latest version (head) from the repository, and that you are **in the correct branch**.  
 
+    $ git checkout integration/master # (git checkout release OR legacy if releasing from a branch)
     $ git pull
-    $ git co master (git checkout release OR legacy if releasing from a branch)
 
 ## Interactive release (for parent, api, client, common, not server)
 
