@@ -23,7 +23,7 @@
      - [[Python Client|Zanata Python Client]]
      - [[Python Client Troubleshooting|Python Client Troubleshooting]]
      - [[Maven Integration|Zanata Maven Integration]]
-     - [[Java command line client (unsupported!)|Zanata Java Client]]
+     - [[Java command line client (available as Zip/Tar!)|Zanata Java Client]]
  * [[Python Library|Zanata Python Library]]
  * [[REST API|Rest API V1]]
      - [[Projects|REST Projects V1]]
