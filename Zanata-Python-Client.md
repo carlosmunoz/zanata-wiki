@@ -1,3 +1,4 @@
+*(No longer supported! Switch to Maven client or the new java client)*
 # Python client for working with Zanata
 
 # Introduction
