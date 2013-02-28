@@ -8,7 +8,7 @@ Note: This applies to api, client and server.  The other modules don't have rele
     git fetch
     git checkout legacy && git merge origin/release
     git checkout release && git merge origin/master
-    update versions in master's pom files (possibly use the maven versions plugin?)
+    update versions in master's pom files (possibly use the maven versions plugin: mvn release:update-versions -DautoVersionSubmodules=true)
 
 # Release process for modules (except zanata-server)
 
@@ -64,4 +64,3 @@ https://issues.sonatype.org/browse/OSSRH-3983
     mvn nexus:staging-close nexus:staging-release \
       -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.openprops \
       -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
-
