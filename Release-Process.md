@@ -52,6 +52,7 @@ https://issues.sonatype.org/browse/OSSRH-3983
 ## Releasing Tennera (JGettext) ##
     cd tennera; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
+      -Dgpg.useagent \
       release:clean release:prepare release:perform &&
     mvn nexus:staging-close nexus:staging-release \
       -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.tennera \
@@ -60,6 +61,7 @@ https://issues.sonatype.org/browse/OSSRH-3983
 ## Releasing OpenProps ##
     cd openprops; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
+      -Dgpg.useagent \
       release:clean release:prepare release:perform &&
     mvn nexus:staging-close nexus:staging-release \
       -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.openprops \
