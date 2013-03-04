@@ -49,7 +49,7 @@ https://issues.sonatype.org/browse/OSSRH-3983
       -Dnexus.automaticDiscovery -Dnexus.groupId=org.zanata \
       -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
 
-## Releasing Tennera ##
+## Releasing Tennera (JGettext) ##
     cd tennera; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       release:clean release:prepare release:perform &&
