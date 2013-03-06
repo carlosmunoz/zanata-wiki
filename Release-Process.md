@@ -37,6 +37,8 @@ NB: Make sure you use the correct version numbers and tags!
 
 You will need a GPG key, and you will need the GPG agent running.  You may want to tell the GPG agent to sign without asking temporarily, or else it will ask you over and over.  
 
+See [how to create GPG keys](http://fedoraproject.org/wiki/Creating_GPG_Keys).
+
 You will also need an OSSRH login which has been enabled for the groupId org.zanata.   https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide
 
 Create an account at https://issues.sonatype.org/ and then sflaniga can request to have you added to the org.zanata group.
