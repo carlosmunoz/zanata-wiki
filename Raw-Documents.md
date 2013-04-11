@@ -42,23 +42,24 @@ If you upload a document that is only partially translated, any source strings i
 _**Workaround:** Only upload translation documents that are completely translated. Alternatively, enter translations in the Zanata web editor to avoid the issue entirely._
 
 
-## Instructions for Web Interface
+## Using the Zanata Web Interface
 The following instructions assume you have signed in to the Zanata website and have appropriate permissions for the relevant project or locale. If this is not the case, you will not see the buttons or icons referred to in the instructions.
 
-For illustration, I will use a sample .odt document and a translated version as shown here:
+For illustration purposes, these instructions use a sample .odt document and a translated version as shown here:
 ![Sample document used in examples](http://zanata.org/images/screenshots/raw-files/sample-document.png)
 ![Sample translated document used in examples](http://zanata.org/images/screenshots/raw-files/sample-document-trans.png)
 
 
 
 
-### Uploading Source through Web Interface
-Source documents are uploaded from the new 'Source Documents' page. Navigate to a project-version and look on the right under 'Actions' for the button labeled 'Source Documents'.
+### Uploading Source Documents Using the Web Interface
+Use the 'Source Documents' page to upload new source documents. Navigate to a project-version and click 'Source Documents' in the 'Actions' box.
 
 ![Source Documents button](http://zanata.org/images/screenshots/raw-files/source-documents-button.png)
 
 
-There are 2 methods to upload a source document. To upload a new document, use the 'Upload Document' button under 'Actions' on the right. To upload a new version of an existing document, locate the document in the summary table and click the 'Upload' link in the right-hand column.
+* To upload a new document, use the 'Upload Document' button in the 'Actions' box.
+* To upload a new version of an existing document, locate the document in the summary table and click the 'Upload' link in the right-hand column.
 
 ![Source Upload button](http://zanata.org/images/screenshots/raw-files/source-upload-button.png)
 
