@@ -1,9 +1,9 @@
-# Raw Document Upload and Download
+# Uploading and Downloading Raw Documents
 
-In 2.0 an _experimental_ new feature has been added to enable upload and download of some new types of documents.
+In Zanata 2.0 an _experimental_ new feature was added to enable uploading and downloading additional types of documents.
 
 TODO link to other pages
-The new feature adds upload and download of documents through the website, the REST interface, and with the Maven Plugin.
+This new feature provides the ability to upload and download documents using the website, the REST interface, or the Maven Plugin.
 
 ## Supported Formats
 Supported formats include:
@@ -15,30 +15,31 @@ Supported formats include:
   * Open Document Spreadsheet (*.ods, *.fods)
   * Open Document Graphics (*.odg, *.fodg)
 
-_Open Document Formula (*.odf) and Open Document Database (*.odb) may also work, but have not been tested._
+_Open Document Formula (*.odf) and Open Document Database (*.odb) formats may also work, but have not been tested._
 
-## Known issues
-As this is an experimental feature, there are several issues that should be considered when using this feature:
+## Known Issues
+This is an experimental feature, and several issues exist that should be considered when using this feature:
 
-### Uploading modified versions of existing documents can cause translation misalignment
-For most supported formats, the position of paragraphs is used to identify text flows. If a revised source document is uploaded that has a paragraph added or removed (except if it is at the end of the document), any translations from the position of the paragraph onward will be moved to a different text flow and marked as fuzzy.
+### Translation Misalignment
+Uploading modified versions of existing documents can cause translation misalignment.
+For most supported formats, the position of paragraphs is used to identify text flows. If a revised source document is uploaded, one that has a paragraph added or removed (except if it is at the end of the document), then any translations from the position of the paragraph onward will be moved to a different text flow and marked as fuzzy.
 
-_**Workaround:** Upload new versions of a document with a different name, then use Copy-trans or Translation Memory to copy translations to matching text flows._
+_**Workaround:** Upload new versions of a document with a different name, and then use Copy-trans or Translation Memory to copy translations to matching text flows._
 
-### .po offline translations cannot be uploaded properly
-For most supported formats, translating offline as po will not work. When uploading a downloaded po file, warnings will be shown since Zanata cannot match the translations to the source text flows. This is related to a difference in how text flows are identified in different file formats.
+### Offline Translation of .po Files Not Supported
+For most supported formats, offline translation of .po files will not work. When uploading a downloaded .po file, Zanata displays warnings that it cannot match the translations to the source text flows. This is related to a difference in how text flows are identified in different file formats.
 
-_**Workaround:** Enter translations in the Zanata web editor, or download and translate the document in the original format._
+_**Workaround:** Use the Zanata web editor to perform the translations, or download and translate the document in the original format._
 
-### Offline translations in the original format must have exactly the layout of the source document
-Offline translation in the original document format will work properly if paragraphs are not rearranged at all. If any paragraphs are added, split or removed, text flows after the affected paragraph will be associated with the wrong source string.
+### Offline Translation in the Original Document Format Only Partially Supported
+Offline translation in the original document format must have exactly the same layout of the source document. These offline translations will work properly if paragraphs are not rearranged at all. If any paragraphs are added, split or removed, text flows after the affected paragraph will be associated with the wrong source string.
 
-_**Workaround:** Do not change the number of paragraphs or rearrange any paragraphs when doing offline translation. A more reliable solution is to use the web translation editor instead of translating offline._
+_**Workaround:** Do not change the number of paragraphs or rearrange any paragraphs when doing offline translation. A more reliable solution is to use the Zanata web editor instead of translating offline._
 
-### Source strings in translated documents will be uploaded as translations
-If a translation document is uplaoded that is only partially translated, any source strings that are still in the document will be treated as approved translations.
+### Source Strings in Translated Documents Are Uploaded as Translations
+If you upload a document that is only partially translated, any source strings in the document are treated as approved translations.
 
-_**Workaround:** Only upload translation documents that are completely translated. Alternatively, enter translations in the web translation editor to avoid the issue entirely._
+_**Workaround:** Only upload translation documents that are completely translated. Alternatively, enter translations in the Zanata web editor to avoid the issue entirely._
 
 
 ## Instructions for Web Interface
