@@ -2,7 +2,6 @@
 
 In Zanata 2.0 an _experimental_ new feature was added to enable uploading and downloading additional types of documents.
 
-TODO link to other pages
 This new feature provides the ability to upload and download documents using the website, the REST interface, or the Maven Plugin.
 
 ## Supported Formats
