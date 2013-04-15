@@ -2,7 +2,7 @@
 
 In Zanata 2.0 an _experimental_ new feature was added to enable uploading and downloading additional types of documents.
 
-This new feature provides the ability to upload and download documents using the website, the REST interface, or the Maven Plugin.
+This new feature provides the ability to upload and download documents using the website, the REST interface, the CLI client or the Maven Plugin.
 
 ## Supported Formats
 Supported formats include:
@@ -25,10 +25,10 @@ For most supported formats, the position of paragraphs is used to identify text 
 
 _**Workaround:** Upload new versions of a document with a different name, and then use Copy-trans or Translation Memory to copy translations to matching text flows._
 
-### Offline Translation of .po Files Not Supported
-For most supported formats, offline translation of .po files will not work. When uploading a downloaded .po file, Zanata displays warnings that it cannot match the translations to the source text flows. This is related to a difference in how text flows are identified in different file formats.
+### Offline Translation of .po Files ~~Not~~ Supported
+~~For most supported formats, offline translation of .po files will not work. When uploading a downloaded .po file, Zanata displays warnings that it cannot match the translations to the source text flows. This is related to a difference in how text flows are identified in different file formats.~~ Offline translation in po format is now supported using 'offlinepo' project type. .po files downloaded from the website as a zip or from a download link will automatically use this format when the maintainer sets the project type to 'File'
 
-_**Workaround:** Use the Zanata web editor to perform the translations, or download and translate the document in the original format._
+_**Workaround:** ~~Use the Zanata web editor to perform the translations, or download and translate the document in the original format.~~ navigate to a project-version on the website, view the documents page for the locale that you want to translate, then download a zip or config file from that page - these will automatically have the project type set to 'offlinepo', which will work with the java-cli client or the maven plugin._
 
 ### Offline Translation in the Original Document Format Only Partially Supported
 Offline translation in the original document format must have exactly the same layout of the source document. These offline translations will work properly if paragraphs are not rearranged at all. If any paragraphs are added, split or removed, text flows after the affected paragraph will be associated with the wrong source string.
