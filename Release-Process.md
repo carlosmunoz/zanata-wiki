@@ -53,24 +53,31 @@ https://issues.sonatype.org/browse/OSSRH-3983
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       release:clean release:prepare release:perform &&
     # close and release on OSSRH
-    mvn nexus:staging-close nexus:staging-release \
-      -Dnexus.automaticDiscovery -Dnexus.groupId=org.zanata \
-      -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+
+    # obsolete: mvn nexus:staging-close nexus:staging-release \
+    #  -Dnexus.automaticDiscovery -Dnexus.groupId=org.zanata \
+    #  -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+    # untested alternative:
+    mvn nexus-staging:close nexus-staging:release
 
 ## Releasing Tennera (JGettext) ##
     cd tennera; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       -Dgpg.useagent \
       release:clean release:prepare release:perform &&
-    mvn nexus:staging-close nexus:staging-release \
-      -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.tennera \
-      -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+    # obsolete: mvn nexus:staging-close nexus:staging-release \
+    #  -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.tennera \
+    #  -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+    # untested alternative:
+    mvn nexus-staging:close nexus-staging:release
 
 ## Releasing OpenProps ##
     cd openprops; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       -Dgpg.useagent \
       release:clean release:prepare release:perform &&
-    mvn nexus:staging-close nexus:staging-release \
-      -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.openprops \
-      -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+    # obsolete: mvn nexus:staging-close nexus:staging-release \
+    #  -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.openprops \
+    #  -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
+    # untested alternative:
+    mvn nexus-staging:close nexus-staging:release
