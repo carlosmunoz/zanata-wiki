@@ -48,6 +48,25 @@ https://issues.sonatype.org/browse/OSSRH-3982
 https://issues.sonatype.org/browse/OSSRH-3983
 
 
+You will need to add your sonatype credentials to `~/.m2/settings.xml`.  First you should create a user token, to avoid putting your actual username and password in the file.  Visit https://oss.sonatype.org/index.html#profile and select User Token from the dropdown list, then Access User Token.  Once you have that, put it into `~/.m2/settings.xml`:
+
+	<servers>
+		<server>
+			<id>sonatype-nexus-snapshots</id>
+			<!-- token for myRealUsername	-->
+			<username>myTokenUsername</username>
+			<password>myTokenPassword</password>
+		</server>
+		<server>
+			<id>sonatype-nexus-staging</id>
+			<!-- token for myRealUsername	-->
+			<username>myTokenUsername</username>
+			<password>myTokenPassword</password>
+		</server>
+	</servers>
+
+Then you should be able to make the release:
+
     # change maven.repo.local as appropriate, but best not to use your normal work repo 
     git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
