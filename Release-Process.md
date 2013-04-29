@@ -77,7 +77,8 @@ Then you should be able to make the release:
     #  -Dnexus.automaticDiscovery -Dnexus.groupId=org.zanata \
     #  -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
     # untested alternative:
-    mvn nexus-staging:release -Psonatype-oss-release -DaltStagingDirectory=target/checkout/target/nexus-staging
+    mvn nexus-staging:release -Psonatype-oss-release \
+        -DaltStagingDirectory=target/checkout/target/nexus-staging
 
 ## Releasing Tennera (JGettext) ##
     cd tennera; git pull
