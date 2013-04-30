@@ -9,7 +9,18 @@ To translate offline:
    - if the project type is not set, you should see "Config File" and "Download All Files" under "Actions", but they will be disabled - the project maintainer needs to set the project type before you can continue with these instructions
    - otherwise, the Config File and "Download All Files" links should be enabled
  1. If the links are enabled, choose one of the following:-
-   - If you want to translate a single file, use the .po link for that file in the table (this will be disabled under the same conditions that the config and zip are disabled).
-   - If you want to use one of the clients to download files for translation, click the config file link and save zanata.xml to the directory you will work in. This will work with the Java CLI client or the Maven Plugin.
-   - If you want a zip containing a config file and all the documents, use the Download All Files link, save the zip and extract to the desired location.
+   - If you want to translate a single file, use the .po link for that file in the table (this will be disabled under the same conditions that the config and zip are disabled). After translation, use the "upload" link in the "Actions" column next to the same document.
+   - If you want a zip containing a config file and all the documents, see "Zip Download" below.
+   - If you want to use one of the clients, see "Download with Client" below.
 
+## Zip Download
+ - Use the Download All Files link, save the zip and extract to the desired location.
+ - 
+
+## Download with Client
+
+
+
+
+ to download files for translation, click the config file link and save zanata.xml to the directory you will work in. This will work with the Java CLI client or the Maven Plugin.
+   - , .
