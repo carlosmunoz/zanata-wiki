@@ -1,6 +1,7 @@
 # Zanata wiki
 
 - [[Home]]
+- [[New in 2.3]]
 - [[New in 2.0]]
  * [[Raw Documents]]
  * [[Open ID]]
