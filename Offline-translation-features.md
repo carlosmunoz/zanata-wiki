@@ -1,7 +1,7 @@
 These features address an issue that was preventing projects that did not originally use .po format from being translated offline as .po files. Documents could be downloaded as .po but would not work properly during upload (see [[bug 870876 | https://bugzilla.redhat.com/show_bug.cgi?id=870876]]).
 
 To translate offline:
- 1. navigate to the project-version of interest, e.g. https://translate.zanata.org/zanata/iteration/view/zanata-server/master?cid=119182
+ 1. navigate to the project-version of interest, e.g. https://translate.zanata.org/zanata/iteration/view/zanata-server/master
  1. make sure you are signed in
  1. find your language in the table, and click the page icon in the "Documents" column, which goes to something like https://translate.zanata.org/zanata/iteration/files/zanata-server/master/en-GB
  1. At this stage you may see one of a few things:
