@@ -16,12 +16,12 @@ To translate offline:
 ## Zip Download
  1. Use the Download All Files link, save the zip and extract to the desired location. The zip contains a config file that will be set to use project type 'offlinepo' if it is needed, and po files will use a special mapping if necessary.
  1. Translate .po files as normal.
- 1. Use the Java client or Maven Plugin to push the translated files back to the server.
+ 1. Use the [[Java Client | Zanata-Java-Client]] or [[Maven Plugin | Zanata-Maven-Integration]] to push the translated files back to the server.
    - Documents may also be uploaded individually using the "Upload" action in the table on the Documents page.
 
 
 ## Download with Client
  1. Click the Config File link and save zanata.xml to the directory you will work in. The config file will be set to use project type 'offlinepo' if it is needed.
- 1. Use the 'pull' command with Java client or Maven Plugin. This will download .po files.
+ 1. Use the 'pull' command with [[Java Client | Zanata-Java-Client]] or [[Maven Plugin | Zanata-Maven-Integration]]. This will download .po files.
  1. Translate .po files as normal.
  1. Use the 'push' command to upload translations. You should use push type 'trans'.
