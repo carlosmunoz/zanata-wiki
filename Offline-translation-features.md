@@ -5,7 +5,7 @@ To translate offline:
  1. make sure you are signed in
  1. find your language in the table, and click the page icon in the "Documents" column, which goes to something like https://translate.zanata.org/zanata/iteration/files/zanata-server/master/en-GB
  1. At this stage you may see one of a few things:
-   - if the new version hasn't deployed yet, there will be no link for config file under "Actions" and the remainder of these instructions are probably not useful
+   - if the Zanata server has not yet updated to 2.3, there will be no link for config file under "Actions" and the remainder of these instructions are probably not useful
    - if the project type is not set, you should see "Config File" and "Download All Files" under "Actions", but they will be disabled - the project maintainer needs to set the project type before you can continue with these instructions
    - otherwise, the Config File and "Download All Files" links should be enabled
  1. If the links are enabled, choose one of the following:-
