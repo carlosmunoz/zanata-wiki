@@ -7,15 +7,18 @@ Note: This applies to api, client and server.  The other modules don't have rele
 Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
 
 # Merging master to release and release to legacy
+
     git fetch
-    git checkout legacy && git reset --hard origin/release
-    git checkout release && git reset --hard origin/master
+    git checkout legacy
+    git merge origin/release --ff-only --quiet
+    git checkout release
+    git merge origin/master --ff-only --quiet
     git checkout integration/master
-    # update versions in master's pom files (possibly use the maven versions plugin or
-    # mvn release:update-versions -DautoVersionSubmodules=true), eg:
-    # mvn versions:set -DnewVersion=2.3-SNAPSHOT
-    git ci pom.xml */pom.xml -m "prepare for next development iteration"
+    mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=${developmentVersion}
+    git commit pom.xml */pom.xml -m "prepare for next development iteration"
+    # push all the changes back to the server
     git push origin legacy release integration/master
+
 
 # Release process for modules (except zanata-server)
 
