@@ -12,10 +12,10 @@ Quick Summary Note for building RPM
 ---
     #yum install fedora-packager rpm-build koji fedpkg rpmlint rpmdevtools
 
-edit you ~/.rpmmacros so following lines(change to your name and email) are included:
+edit you ~/.rpmmacros so following lines (change accordingly) are included:
 
     %home %(echo $HOME)
-    %packager Patrick Huang <pahuang@redhat.com>
+    %packager First Last <name@yourmail.com>
     %vendor Red Hat, Inc.
 
 create you build structure under home
