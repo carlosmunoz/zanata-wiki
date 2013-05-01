@@ -37,7 +37,7 @@ build it locally
 or build source rpm and then let koji build it in other platform(i.e. f19, rawhide)
 
     $rpmbuild -bs SPECS/myspec.spec 
-    $#this should output something like "/home/cloud-user/rpmbuild/SRPMS/myspec-1.0-1.fc17.src.rpm"
+    $#this should output something like "Wrote /home/cloud-user/rpmbuild/SRPMS/myspec-1.0-1.fc17.src.rpm"
     $koji build --scratch f19 SRPMS/myspec-1.0-1.fc17.src.rpm
 
 ### Using mock to build chain of packages
