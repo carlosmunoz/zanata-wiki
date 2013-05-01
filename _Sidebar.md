@@ -25,7 +25,8 @@
      - [[Python Client Troubleshooting|Python Client Troubleshooting]]
      - [[Maven Integration|Zanata Maven Integration]]
      - [[Java command line client (available as Zip/Tar!)|Zanata Java Client]]
-     - [[Java client in Fedora | Java client in Fedora]]
+     - Java client in Fedora
+       * [[Status update as of 1 May 2013|Fedora package status]]
  * [[Python Library|Zanata Python Library]]
  * [[REST API|Rest API V1]]
      - [[Projects|REST Projects V1]]
