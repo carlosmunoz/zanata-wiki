@@ -89,5 +89,7 @@ Summary note for new package review
     * Create New Update -> enter package name (name-version-release.platform, i.e. zanata-api-2.2.0-6.fc18. Or you can type and let the ajax load it), choose new package, choose testing, then copy paste description as note and input review bug number.
     * Wait for it to pass testing (generally 7 days).
     * Once testing request is ok in bodhi, open the request and click *Mark as Stable*.
+
 #### Hint
-If package A depend on B and B is still in testing, in bolhi, click on Buildroot Overrides and submit a request. Fill in B as package that are in testing, note says why you want override, expiry day can be set to B's expected go stable date or a bit over, then submit. You can then build in koji for A
+* You can not submit review request if the package being build depend on another under review package.
+* If package A depend on B and B is still in testing, in bolhi, click on Buildroot Overrides and submit a request. Fill in B as package that are in testing, note says why you want override, expiry day can be set to B's expected go stable date or a bit over, then submit. You can then build in koji for A.
