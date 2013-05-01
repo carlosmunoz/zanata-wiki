@@ -26,6 +26,7 @@
      - [[Maven Integration|Zanata Maven Integration]]
      - [[Java command line client (available as Zip/Tar!)|Zanata Java Client]]
      - Java client in Fedora
+           - [[Fedora Packaging Guide|Fedora packaging Guide]]
            - [[Status update as of 1 May 2013|Fedora package status]]
  * [[Python Library|Zanata Python Library]]
  * [[REST API|Rest API V1]]
