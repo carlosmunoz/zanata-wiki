@@ -1,7 +1,6 @@
  - [[Bookmarking Messages]]: individual rows within a document can now be bookmarked
  - [[Offline Translation Features]]: non-po projects can now be translated offline
  - Alphabetical Project List: project list is now sorted alphabetically by default (see [[bug 727826 | https://bugzilla.redhat.com/show_bug.cgi?id=727826]])
- - Filtered document list no longer shows an empty page when the number of pages is reduced by translating (see [[bug 947832 | https://bugzilla.redhat.com/show_bug.cgi?id=947832]])
  - [[Validation Features]]: validation can now be run on multiple documents
  - Persistent validation warnings: validation warnings no longer disappear when changing page
- - Translating while filtering: a blank page is no longer shown when a filtered set of strings is made shorter by user activity before changing page, such as when entering approved translations while filtering for untranslated entries strings
+ - Translating while filtering: filtered document list no longer shows an empty page when the number of pages is reduced by translating (see [[bug 947832 | https://bugzilla.redhat.com/show_bug.cgi?id=947832]])
