@@ -1,6 +1,6 @@
- - Individual rows within a document can now be bookmarked (see [[Bookmarking Messages]])
- - Non-po projects can now be translated offline (see [[Offline Translation Features]])
- - Project list is now sorted alphabetically by default (see [[bug 727826 | https://bugzilla.redhat.com/show_bug.cgi?id=727826]])
+ - [[Bookmarking Messages]]: individual rows within a document can now be bookmarked
+ - [[Offline Translation Features]]: non-po projects can now be translated offline
+ - Alphabetical Project List: project list is now sorted alphabetically by default (see [[bug 727826 | https://bugzilla.redhat.com/show_bug.cgi?id=727826]])
  - Filtered document list no longer shows an empty page when the number of pages is reduced by translating (see [[bug 947832 | https://bugzilla.redhat.com/show_bug.cgi?id=947832]])
 
 
