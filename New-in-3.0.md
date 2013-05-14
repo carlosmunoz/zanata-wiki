@@ -1,0 +1,2 @@
+- InDesign support
+- AS7 support
