@@ -1,2 +1,1 @@
-- InDesign support
-- AS7 support
+- Release notes for 3.0
