@@ -1,4 +1,4 @@
-(Not working yet, under development)
+Download link: http://www.jboss.org/jbossas/downloads
 
 # Preparation:
 ## Create module for external Zanata settings
