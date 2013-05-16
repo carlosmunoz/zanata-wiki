@@ -1,4 +1,4 @@
-Download link: http://www.jboss.org/jbossas/downloads
+Download link: EAP6
 
 # Preparation:
 ## Create module for external Zanata settings
