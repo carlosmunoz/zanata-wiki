@@ -23,7 +23,7 @@ zanata.security.auth.policy.internal = zanata.internal
 zanata.security.admin.users = <myusername>
 ```
 ## Make JavaMelody work on AS7
-Modify the file `$JBOSS7_HOME/modules/system.layers/base/sun/jdk/main/module.xml` to insert 
+Modify the file `$JBOSS7_HOME/modules/system/layers/base/sun/jdk/main/module.xml` to insert 
 ```xml
 <path name="com/sun/management"/>
 ```
