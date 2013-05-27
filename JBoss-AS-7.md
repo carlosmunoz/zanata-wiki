@@ -10,13 +10,17 @@ Replace the hibernate files labeled as 4.2.0.RC1 with their equivalent ones for 
 
 For developers on RHEL, you can install EAP 6.1 by typing the following command on the terminal:
 
-`$ yum -y groupinstall "jboss-eap6"`
+```sh
+$ yum -y groupinstall "jboss-eap6"
+```
 
 This way of installing will place Jboss files under /usr/share/jbossas (and others at /etc/jbossas)
 
 You can start EAP by typing the following command on a terminal:
 
-`$ service jbossas start`
+```sh
+$ service jbossas start
+```
 
 # Preparation:
 ## Create module for external Zanata settings
