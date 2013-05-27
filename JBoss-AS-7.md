@@ -1,4 +1,22 @@
-Download link: EAP6
+## EAP 6.1 Alpha
+
+EAP 6 Alphas are freely distributed. Download a copy at [jboss.org](http://www.jboss.org/jbossas/downloads). Once finished, extract the archive's contents. This location will be referenced as JBOSS7_HOME throughout the rest of the document.
+
+EAP 6.1 Alpha contains the wrong hibernate libraries for Zanata development. Download hibernate 4.2.0.Final from [hibernate.org](www.hibernate.org) and replace Jboss hibernate libraries with these. In EAP 6.1, the hibernate module libraries are located at /usr/share/jbossas/modules/system/layers/base/org/hibernate/main
+
+Replace the hibernate files labeled as 4.2.0.RC1 with their equivalent ones for 4.2.0.Final.
+
+## EAP 6.1
+
+For developers on RHEL, you can install EAP 6.1 by typing the following command on the terminal:
+
+`$ yum -y groupinstall "jboss-eap6"`
+
+This way of installing will place Jboss files under /usr/share/jbossas (and others at /etc/jbossas)
+
+You can start EAP by typing the following command on a terminal:
+
+`$ service jbossas start`
 
 # Preparation:
 ## Create module for external Zanata settings
@@ -93,6 +111,8 @@ If jboss is running, tell it to apply the change with:
 ```sh
 $ ./jboss-cli.sh -c :reload
 ```
+
+The code snippet above is specific to internal authentication.
 
 
 # Building and deploying:
