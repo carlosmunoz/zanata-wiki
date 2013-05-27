@@ -118,6 +118,9 @@ $ ./jboss-cli.sh -c :reload
 
 The code snippet above is specific to internal authentication.
 
+# Running Integration Tests
+
+To run integration tests (`mvn integration-test` or `mvn verify`), a fresh instance of AS 7 is required. Modify the `arquillian.xml` file in `zanata-server`. The `jbossHome` property should point to the location of this new AS7 instance. The integration tests will deploy all needed files, start and stop the instance. Alternatively, this property may be removed and the JBOSS_HOME environment variable may be used.
 
 # Building and deploying:
 ```sh
