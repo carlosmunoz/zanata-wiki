@@ -1,0 +1,1 @@
+Custom parameters allow adjustments to how an uploaded document is processed. The available adjustments vary depending on the document type. This page will list available parameters for some commonly used document types.
