@@ -16,7 +16,10 @@ $ wget http://yum.engineering.redhat.com/pub/yum/repo_files/rhel6-jboss-eap-6.re
 $ yum install jbossas-appclient jbossas-bundles jbossas-core jbossas-domain jbossas-hornetq-native jbossas-jbossweb-native jbossas-modules-eap jbossas-product-eap jbossas-standalone jbossas-welcome-content-eap
 ```
 
-This way of installing will place Jboss files under /usr/share/jbossas (and others at /etc/jbossas)
+This way of installing will place Jboss files under 
+* /usr/share/jbossas
+* /etc/jbossas
+* /var/lib/jbossas
 
 You can start EAP by typing the following command on a terminal:
 
