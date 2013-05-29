@@ -17,9 +17,9 @@ $ yum install jbossas-appclient jbossas-bundles jbossas-core jbossas-domain jbos
 ```
 
 This way of installing will place Jboss files under 
-* /usr/share/jbossas
+* /usr/share/jbossas (JBOSS_HOME)
 * /etc/jbossas
-* /var/lib/jbossas
+* /var/lib/jbossas (shortcuts in /usr/share/jbossas)
 
 You can start EAP by typing the following command on a terminal:
 
