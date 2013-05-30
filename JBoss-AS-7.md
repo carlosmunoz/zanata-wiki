@@ -11,9 +11,7 @@ Replace the hibernate files labeled as 4.2.0.RC1 with their equivalent ones for 
 For developers on RHEL, you can install EAP 6.1 by typing the following command on the terminal:
 
 ```sh
-$ cd /etc/yum.repos.d
-$ wget http://yum.engineering.redhat.com/pub/yum/repo_files/rhel6-jboss-eap-6.repo
-$ yum install jbossas-appclient jbossas-bundles jbossas-core jbossas-domain jbossas-hornetq-native jbossas-jbossweb-native jbossas-modules-eap jbossas-product-eap jbossas-standalone jbossas-welcome-content-eap
+$ yum -y groupinstall "jboss-eap6"
 ```
 
 This way of installing will place Jboss files under 
