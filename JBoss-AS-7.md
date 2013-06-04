@@ -8,7 +8,7 @@ Replace the Hibernate files labeled as 4.2.0.RC1 with their equivalent ones for 
 
 ## JBoss EAP 6.1
 
-For developers on RHEL, you can install JBoss EAP 6.1 by typing the following command on the terminal:
+For developers on Red Hat Enterprise Linux, you can install JBoss EAP 6.1 by typing the following command on the terminal:
 
 ```sh
 $ yum -y groupinstall "jboss-eap6"
