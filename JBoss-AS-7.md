@@ -1,14 +1,14 @@
-## EAP 6.1 Alpha
+## Red Hat JBoss Enterprise Application Platform 6.1 Alpha
 
-EAP 6 Alphas are freely distributed. Download a copy at [jboss.org](http://www.jboss.org/jbossas/downloads). Once finished, extract the archive's contents. This location will be referenced as JBOSS7_HOME throughout the rest of the document.
+Red Hat JBoss Enterprise Application Platform 6 Alpha versions are freely distributed. Download a copy at [jboss.org](http://www.jboss.org/jbossas/downloads). Once finished, extract the archive's contents. This location will be referenced as JBOSS7_HOME throughout the rest of the document.
 
-EAP 6.1 Alpha contains the wrong hibernate libraries for Zanata development. Download hibernate 4.2.0.Final from [hibernate.org](www.hibernate.org) and replace Jboss hibernate libraries with these. In EAP 6.1, the hibernate module libraries are located at /usr/share/jbossas/modules/system/layers/base/org/hibernate/main
+JBoss EAP 6.1 Alpha contains the wrong Hibernate libraries for Zanata development. Download Hibernate 4.2.0.Final from [hibernate.org](www.hibernate.org) and replace Jboss hibernate libraries with these. In JBoss EAP 6.1, the Hibernate module libraries are located at /usr/share/jbossas/modules/system/layers/base/org/hibernate/main
 
-Replace the hibernate files labeled as 4.2.0.RC1 with their equivalent ones for 4.2.0.Final.
+Replace the Hibernate files labeled as 4.2.0.RC1 with their equivalent ones for 4.2.0.Final.
 
-## EAP 6.1
+## JBoss EAP 6.1
 
-For developers on RHEL, you can install EAP 6.1 by typing the following command on the terminal:
+For developers on RHEL, you can install JBoss EAP 6.1 by typing the following command on the terminal:
 
 ```sh
 $ yum -y groupinstall "jboss-eap6"
@@ -19,7 +19,7 @@ This way of installing will place Jboss files under
 * /etc/jbossas
 * /var/lib/jbossas (shortcuts in /usr/share/jbossas)
 
-You can start EAP by typing the following command on a terminal:
+You can start JBoss EAP by typing the following command on a terminal:
 
 ```sh
 $ service jbossas start
@@ -135,6 +135,6 @@ $ cp zanata-war/target/zanata-2.2-SNAPSHOT.war $JBOSS7_HOME/standalone/deploymen
 In `bin/standalone.conf`:
  * To increase memory for classes (and multiple redeployments), change -XX:MaxPermSize=256m to -XX:MaxPermSize=512m
  * To enable debugging, uncomment `JAVA_OPTS="$JAVA_OPTS -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"`
- * To fix the [EAP 6 problem where most of the logging is missing](http://stackoverflow.com/questions/12670415/log4j-doesnt-log-anything-under-jboss-6-eap), add this line:
+ * To fix the [JBoss EAP 6 problem where most of the logging is missing](http://stackoverflow.com/questions/12670415/log4j-doesnt-log-anything-under-jboss-6-eap), add this line:
 
     JAVA_OPTS="$JAVA_OPTS -Dorg.jboss.as.logging.per-deployment=false"
