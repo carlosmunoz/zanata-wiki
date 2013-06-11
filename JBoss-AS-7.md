@@ -128,7 +128,7 @@ To run integration tests (`mvn integration-test` or `mvn verify`), a fresh insta
 # Building and deploying:
 ```sh
 $ git checkout seam230final
-$ mvn install -DskipTests -Pnogwt
+$ mvn clean install -DskipTests -Pnogwt
 $ cp zanata-war/target/zanata-2.2-SNAPSHOT.war $JBOSS7_HOME/standalone/deployments/zanata.war
 ```
 # Other things that might help
