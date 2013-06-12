@@ -65,6 +65,8 @@ Use the 'Source Documents' page to upload new source documents. Navigate to a pr
 
 The dialogue for uploading a source document is similar for both upload methods, with an additional text box for 'path' when uploading a new document. Select the document to be uploaded, ensuring that it has the appropriate file extension as shown in Supported Formats above. For new documents, enter a path or leave the path field blank to have the document at the top level of the project in Zanata. If the document name and path are the same as an existing document in the table, the uploaded document will replace the existing document.
 The uploaded file name is only used for new documents, and will be ignored when replacing an existing document.
+You can also specify a set of custom parsing parameters that will affect how the source document is parsed after upload. This is an advanced feature. For more information, see [[Custom Document Parameters]].
+
 
 ![Source Upload dialogue](http://zanata.org/images/screenshots/raw-files/source-upload-dialog.png)
 
