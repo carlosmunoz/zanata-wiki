@@ -13,6 +13,7 @@ Supported formats include:
   * Open Document Presentation (*.odp, *.fodp)
   * Open Document Spreadsheet (*.ods, *.fods)
   * Open Document Graphics (*.odg, *.fodg)
+* InDesign Markup Language (*.idml)
 
 _Open Document Formula (*.odf) and Open Document Database (*.odb) formats may also work, but have not been tested._
 
