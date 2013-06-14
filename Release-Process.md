@@ -44,6 +44,7 @@ You will need a GPG key, and you will need the GPG agent running.  You may want 
 See [how to create GPG keys](http://fedoraproject.org/wiki/Creating_GPG_Keys).
 
 You can test your GPG agent with this:
+
     gpg --clearsign < /dev/null
     gpg --clearsign < /dev/null
 
