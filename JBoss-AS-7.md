@@ -12,6 +12,9 @@ For developers on Red Hat Enterprise Linux, you can install JBoss EAP 6.1 by typ
 
 ```sh
 $ yum -y groupinstall "jboss-eap6"
+# or:
+$ yum -y install jbossas-standalone
+
 ```
 
 This way of installing will place Jboss files under 
