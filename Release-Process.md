@@ -91,6 +91,8 @@ Then you should be able to make the release:
     mvn nexus-staging:release -Psonatype-oss-release \
         -DaltStagingDirectory=target/checkout/target/nexus-staging
 
+You can also close and release in Nexus here: https://oss.sonatype.org/index.html#stagingRepositories
+
 ## Releasing Tennera (JGettext) ##
     cd tennera; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
