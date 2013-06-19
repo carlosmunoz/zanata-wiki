@@ -47,6 +47,7 @@
  * [[GWT DevMode|DevMode]]
  * [[Coding Guidelines|Coding Guide]]
  * [[Selenium UI Testing|Web Test With Selenium]]
+ * [[Selenium Web Driver Automated Tests]]
  * [[Database Tricks]]
 - Zanata Structure (for developers)
  * [[Architecture]]
