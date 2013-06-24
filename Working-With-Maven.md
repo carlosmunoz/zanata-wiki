@@ -51,6 +51,7 @@ After restarting your console-session, you should now be able to run `mvn`.
 - `-Dgwt.compiler.skip` - another (more standard) way of skipping GWT compilation
 - `-Dtest=MyTest` - runs only tests which match `*MyTest*`; useful for re-running a unit test
 - `-Dit.test=MyTest` - runs only tests which match `*MyTest*`; useful for re-running an integration test
+- `-Darquillian.jboss.home=/my/jboss` - When running integration tests, tells maven where to find the jboss server to use.
 
 # Common Commands
 
@@ -58,32 +59,18 @@ After restarting your console-session, you should now be able to run `mvn`.
 
     mvn -Peclipse,dev,nogwt -DskipTests=true install eclipse:clean eclipse:eclipse
 
-### Deploy to local JBoss server
-
-(is this still working like this?)
-
-    mvn -Pjboss5 package jboss:deploy
-
-or
-
-    mvn -Pjboss5 package jboss:redeploy
-
 ### Exploded deployment to local JBoss server
 
-    mvn -Pjboss5,explode -DskipTests package
+    mvn -Pexplode -DskipTests package
 
 or more commonly one of these (disable GWT compilation; enable debug and testdata):
 
-    mvn -Pjboss5,explode,nogwt,dev -DskipTests package
-    mvn -Denv=dev -Pchrome -DskipTests package
-
-### Undeploy from JBoss server
-
-    mvn -Pjboss5 jboss:undeploy
+    mvn -Pexplode,nogwt -DskipTests package
+    mvn -Pchrome -DskipTests package
 
 ### Run integration tests
 
-    mvn -Pjboss4,nogwt verify
+    mvn -Pnogwt -Darquillian.jboss.home=/my/jboss verify
 
 ## Using the JBoss.org Maven Repositories (optional reading)
 
