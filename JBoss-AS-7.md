@@ -101,6 +101,12 @@ $ $EDITOR standalone/configuration/standalone.xml
 ```
 ```xml
 ...
+            </extensions>
+            <system-properties>
+	         <property name="javamelody.storage-directory" value="${user.home}/stats"/>
+    	         <property name="hibernate.search.default.indexBase" value="${user.home}/indexes"/>
+            </system-properties>
+...
             <security-domains>
 ...
                 <security-domain name="zanata">
