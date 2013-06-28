@@ -27,7 +27,7 @@ We want our test become our documentation.
     * concordion specifications
 * src/test/resources/setup.properties
     * this file is the properties file being used in WebDriverFactory. It will be filtered by maven.
-* src/test/resources/zanata.ini
+* src/test/resources/zanata-user-config/*.ini
     * zanata config file used by tests. It will be filtered by maven.
 * sample-projects
     * sample projects that are used to test zanata client server interaction. zanata.xml and pom.xml will be filtered by maven.
@@ -35,24 +35,21 @@ We want our test become our documentation.
     * everything else under this are files needed to setup a JBoss EAP6(AS7) instance for Zanata. See pom.xml under cargo maven plugin.
 
 ### How to run it
-It assumes a zanata-h2-{version}.war exists in server/zanata-war/target. So assuming you are at zanata server module top level folder.
+It assumes a zanata-{version}.war exists in server/zanata-war/target. So assuming you are at zanata server module top level folder.
 
     $ls -d */
     functional-test/  zanata-dist/  zanata-model/  zanata-war/
-    $mvn clean package -Pfirefox,useH2 -DskipTests
+    $mvn clean package -Pfirefox -DskipTests
     ... BUILD SUCCESS
     $find zanata-war/target -type f -name "zanata*.war"
-    zanata-war/target/zanata-h2-{version}.war
+    zanata-war/target/zanata-{version}.war
 
 **-Pfirefox** will only build GWT code to work with firefox. Replace it with -Pchrome will build for chrome
-
-**useH2** this maven profile will build a war with H2 database module enabled in jboss-structure-deployment.xml packaged inside the war. 
-You will get zanata-h2-{version}.war with this profile. This is needed since we use H2 as database in functional test
 
 **-DskipTests** skip all unit tests for faster build time :)
 
     $cd functional-test
-    $mvn integration-test -Dfunctional-test
+    $mvn verify -Dfunctional-test
 
 You will then watch firefox pops up and magic happens.
 ### Command line arguments
@@ -65,16 +62,16 @@ Firefox (my current version 17) occasionally will hang at random. Chrome seems t
 But unlike firefox, chrome requires a [chromedriver](http://code.google.com/p/selenium/wiki/ChromeDriver) in your system. You can download one (match your chrome version) from [here](http://code.google.com/p/chromedriver/downloads/list).
 
     $cd zanata-war
-    $mvn clean pakcage -Pchrome,useH2 -DskipTests
+    $mvn clean pakcage -Pchrome -DskipTests
     $cd ../functional-test
-    $mvn integration-test -Dfunctional-test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=/path/to/chromedriver -Dwebdriver.chrome.bin=/path/to/google-chrome
+    $mvn verify -Dfunctional-test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=/path/to/chromedriver -Dwebdriver.chrome.bin=/path/to/google-chrome
 
 ### How to run individual test in my IDE
 
-This assumes you have a **zanata-h2-{version}.war** already build and you are currently under **functional-test** folder.
+This assumes you have a **zanata-{version}.war** already build and you are currently under **functional-test** folder.
 
     $mvn integration-test -Dfunctional-test -Dcargo.wait
     $ ...
     $[INFO] Press Ctrl-C to stop the container...
 
-Now JBoss is running and zanata is deployed. But database is empty with no users in it. There is a helper class ManualRunHelper you can run as unit test in your IDE to inject two users into the database(same script being used by sql-maven-plugin in pre-integration-test phase). You will then be able to use admin/admin or translator/translator to log in (default localhost instance: http://localhost:9898/zanata). You can now run tests in IDE.
+Now JBoss is running and zanata is deployed. You can now run tests in IDE.
