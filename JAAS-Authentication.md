@@ -2,21 +2,18 @@
 
 # Introduction
 
-## Create module for external Zanata settings
-Create the file `$JBOSS_HOME/modules/org/zanata/settings/main/module.xml`:
+## Configure Zanata security 
+Open `$JBOSS_HOME/standalone/configuration/standalone.xml` and look for the `naming` subsystem. Add the following sections to the `bindings` section:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
-    <resources>
-        <resource-root path="."/>
-    </resources>
-</module>
-```
-Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties` (modify &lt;myusername&gt; to suit):
-```properties
-zanata.security.auth.policy.<authtype> = <policy-name>
-zanata.security.admin.users = <myusername>
+<subsystem xmlns="urn:jboss:domain:naming:1.3">
+    ...
+    <bindings>
+        <simple name="java:global/zanata/security/auth-policy-names/<aythtype>" value="<policy-name>"/>
+        <simple name="java:global/zanata/security/admin-users" value="<list of usernames>"/>
+    </bindings>
+    ...
+</subsystem>
 ```
 
 ... where `<authtype>` is the authentication type enabled for the Zanata instance.
@@ -26,7 +23,7 @@ Accepted values are: internal, jaas, openid, kerberos
 
 In most cases, only a single authentication mechanism should be active at any given time, and Zanata will refuse to start if these settings are incorrect. However, the 'internal' and 'openid' mechanisms can be enabled simultaneously.
 
-1. After first login, you will be able to make yourself an admin in the database by running hte follwing database scripts:
+1. After first login, you will be able to make yourself an admin in the database by running the following database scripts:
 
 ```sql
  insert into HAccountMembership(accountId, memberOf) values((select id from HAccount where username = 'myusername'), (select id from HAccountRole where name = 'admin'));
