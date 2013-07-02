@@ -23,6 +23,14 @@ Accepted values are: internal, jaas, openid, kerberos
 
 In most cases, only a single authentication mechanism should be active at any given time, and Zanata will refuse to start if these settings are incorrect. However, the 'internal' and 'openid' mechanisms can be enabled simultaneously.
 
+The `java:global/zanata/security/admin-users` property above must contain a comma-separated list of user names. Zanata will check that these users have administrator privileges every time they log in, or in case the user doesn't yet exist, when they are created. This feature is recommended for the first time Zanata is started, and to avoid being locked out of the system at any time. However it is not meant to be used to manage admin users system wide.
+
+Use the 'register' page to add the admin users, with user names exactly matching the names in the zanata.properties file. The accounts will have to be activated using the activation links in the activation emails sent during the registration process before login is possible. If there is an issue with delivery of activation emails, accounts can be activated manually using:
+
+```sql
+UPDATE HAccount SET enabled = true WHERE username = 'myusername';
+```
+
 1. After first login, you will be able to make yourself an admin in the database by running the following database scripts:
 
 ```sql
@@ -33,20 +41,6 @@ In most cases, only a single authentication mechanism should be active at any gi
 
 ```sql
 SELECT r.name FROM HAccountRole AS r, HAccountMembership AS m WHERE m.accountId = (SELECT id FROM HAccount WHERE username = 'myusername') AND m.memberOf = r.id;
-```
-
-2. It is possible to define admin users in the zanata.properties file:
-
-```properties
-zanata.security.admin.users = user1,user2
-```
-
-The property above must contain a comma-separated list of user names. Zanata will check that these users have administrator privileges every time they log in, or in case the user doesn't yet exist, when they are created. This feature is recommended for the first time Zanata is started, and to avoid being locked out of the system at any time. However it is not meant to be used to manage admin users system wide.
-
-Use the 'register' page to add the admin users, with user names exactly matching the names in the zanata.properties file. The accounts will have to be activated using the activation links in the activation emails sent during the registration process before login is possible. If there is an issue with delivery of activation emails, accounts can be activated manually using:
-
-```sql
-UPDATE HAccount SET enabled = true WHERE username = 'myusername';
 ```
 
 # Examples
