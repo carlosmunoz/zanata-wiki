@@ -62,7 +62,7 @@ Firefox (my current version 17) occasionally will hang at random. Chrome seems t
 But unlike firefox, chrome requires a [chromedriver](http://code.google.com/p/selenium/wiki/ChromeDriver) in your system. You can download one (match your chrome version) from [here](http://code.google.com/p/chromedriver/downloads/list).
 
     $cd zanata-war
-    $mvn clean pakcage -Pchrome -DskipTests
+    $mvn clean package -Pchrome -DskipTests
     $cd ../functional-test
     $mvn verify -Dfunctional-test -Dwebdriver.type=chrome -Dwebdriver.chrome.driver=/path/to/chromedriver -Dwebdriver.chrome.bin=/path/to/google-chrome
 
