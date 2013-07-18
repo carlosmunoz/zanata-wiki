@@ -1,16 +1,24 @@
 1. [Introduction](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#introduction)
-2. [Glossaries](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
-3. [Prepare](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
-4. [Structure](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
-5. [Creating Tests](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
-6. [...](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
+2. [Glossary](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#glossary)
+3. [Prepare](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#prepare)
+  * [Packages](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#packages)
+4. [Structure](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#structure)
+  * [File naming convention](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#file-naming-convention)
+5. [Creating Tests](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#creating-tests)
+  * [A Basic Test](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#a-basic-test)
+  * [Test Suites](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#test-suites)
+  * [Ignoring Tests](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#ignoring-tests)
+  * [Expected Fail](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#expected-fail)
+  * [Data Based Testing](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#data-based-testing)
+  * [Lastly](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#lastly)
+
 
 # Introduction
 
 [Selenium](http://seleniumhq.org/) is a suite of tools which automates testing of web applications.
 Refer http://seleniumhq.org/docs/ for further documentation.
 
-# Glossaries
+# Glossary
 
 - Test Case/Method/Function: An encapsulated test that
   - Indicates an intent
@@ -23,7 +31,7 @@ Refer http://seleniumhq.org/docs/ for further documentation.
 - Test Root: The directory that contains all the tests, and test category definitions.
   - By default, it is at the subdirectory `functional-tests/src/test/java/org/zanata/`.
 
-# Prepare the test system
+# Prepare
 Get up and running [here](https://github.com/zanata/zanata-server/wiki/Selenium-Web-Driver-Automated-Tests)
 
 ## Packages
@@ -66,9 +74,7 @@ This is how tests/suites/categories should be named. These files exist in the fu
 
 # Creating Tests
 
-## JUnit Selenium Tests
-
-### A Basic Test
+## A Basic Test
 Here's an example of a simple test file.
 ```java
 package org.zanata.feature.myfeature;
@@ -116,7 +122,7 @@ public class MyFullTest
 ```
 Simple, elegant, easy to read. A Test interacts with a Page (MyPage.java) to perform some actions and verify a result.
 
-### Test Suites
+## Test Suites
 Make sure to add your test to the appropriate suites, or it won't be run!
   * Feature Level Suite (right next to the test file)
 ```java
@@ -145,7 +151,7 @@ public class AggregateTestSuite {
 }
 ```
 
-### Ignoring (Skip) Tests
+## Ignoring Tests
 Sometimes you want to ignore a test in test runs, but you don't want to:
 - throw it away
 - have it sit forever in a block comment
@@ -168,7 +174,7 @@ import org.junit.Ignore;
    }
 ```
 
-### Broken Tests/Features
+## Expected Fail
 It's often good to have a test that fails, in order to indicate how a feature _should_ work, but not interrupt test runs. Having a test pass unexpectedly means something was fixed and should be recorded as such, and the test reverted to an expected pass.
 ```java
    /*
@@ -187,7 +193,7 @@ It's often good to have a test that fails, in order to indicate how a feature _s
 }
 ```
 
-### Data Based Testing (Theories)
+## Data Based Testing
 If a test has many possible inputs, say a field has some form of validation, don't use a for loop!
 Use the (albeit experimental) Theories package.
 ```java
@@ -215,7 +221,7 @@ public class invalidInputTest {
 ```
 This will run the same test, using all of the DataPoints in the class. For readability, I suggest having data based tests in their own class, to prevent "pollution" of other test classes (due to the nature of the static DataPoints).
 
-## Lastly...
+## Lastly
 Tests ~~should~~ must be
 - Self contained, do NOT rely on the results of other tests
 - Free of all condition block, no `for`s, `while`s, `if`s, buts or maybes.
