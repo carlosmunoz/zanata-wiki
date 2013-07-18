@@ -46,8 +46,8 @@
  * [[Eclipse configuration|Eclipse Setup]]
  * [[GWT DevMode|DevMode]]
  * [[Coding Guidelines|Coding Guide]]
- * [[(OLD) Selenium UI Testing|Web Test With Selenium]]
  * [[Selenium Web Driver Automated Tests]]
+ * [[Writing Selenium Tests|Web Test With Selenium]]
  * [[Database Tricks]]
 - Zanata Structure (for developers)
  * [[Architecture]]

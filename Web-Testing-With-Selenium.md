@@ -1,15 +1,14 @@
-# Building a web test case with selenium.
-
-Table of contents
-
-'[[_TOC_]]
-
+1. [Introduction](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#introduction)
+2. [Glossaries](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
+3. [Prepare](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
+4. [Structure](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
+5. [Creating Tests](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
+6. [...](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#)
 
 # Introduction
 
 [Selenium](http://seleniumhq.org/) is a suite of tools which automates testing of web applications.
 Refer http://seleniumhq.org/docs/ for further documentation.
-
 
 # Glossaries
 
