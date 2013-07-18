@@ -2,7 +2,7 @@
 2. [Glossary](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#glossary)
 3. [Prepare](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#prepare)
   * [Packages](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#packages)
-4. [Structure](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#structure)
+4. [Structure](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#functional-test-structure)
   * [File naming convention](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#file-naming-convention)
 5. [Creating Tests](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#creating-tests)
   * [A Basic Test](https://github.com/zanata/zanata-server/wiki/Web-Testing-With-Selenium#a-basic-test)
