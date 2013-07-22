@@ -34,7 +34,6 @@ After restarting your console-session, you should now be able to run `mvn`.
 
 # Maven Profiles used with Zanata (zanata-war)
 
-- `jboss4` - Profile with settings for jboss4 - also needed for integration tests
 - `explode` - Enables exploded deployment during the 'package' phase
 - `dev` - Activates common development settings (enable debug, import test data)
 - `mysql` - Activates settings for using mysql as the datasource (H2 is the default)
@@ -42,8 +41,6 @@ After restarting your console-session, you should now be able to run `mvn`.
 - `nogwt` - Skips GWT compilation (for use with DevMode)
 - `chrome` - speeds up GWT compilation by targeting Safari/Chrome browsers only
 - `firefox` - speeds up GWT compilation by targeting Mozilla browsers only
-- `internalauthentication` - Use internal authentication (JAAS authentication is default)
-- `zanata-test` - Generate zanata-test.war instead of zanata.war
 
 # Useful command-line options
 
