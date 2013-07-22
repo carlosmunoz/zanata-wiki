@@ -35,6 +35,7 @@ After restarting your console-session, you should now be able to run `mvn`.
 # Maven Profiles used with Zanata (zanata-war)
 
 - `explode` - Enables exploded deployment during the 'package' phase
+- `replace-static` - Replace exploded deployment *without* triggering a redeployment. Useful when you are just changing xhtml or similar static content.
 - `dev` - Activates common development settings (enable debug, import test data)
 - `mysql` - Activates settings for using mysql as the datasource (H2 is the default)
 - `eclipse` - Activates common development settings for eclipse
