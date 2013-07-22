@@ -16,9 +16,9 @@ At the time of writing, there are 4 Fedora platform we need to support: f17, f18
     openprops       +   +   +   +
     jgettext        +   +   +   +
     opencsv         +   +   +   +
-    zanata-api      ?   ?   +   +
-    zanata-common   -   -   -   -
-    zanata-client   -   -   -   -      
+    zanata-api      +   +   +   +
+    zanata-common   -   -   +   +
+    zanata-client   -   -   +   +      
 **Notion** +: in stable ?: in testing -: need review
 
 #### Bugzilla for new package review
@@ -28,4 +28,4 @@ At the time of writing, there are 4 Fedora platform we need to support: f17, f18
 * opencsv       - existing package
 * zanata-api    - [924513](https://bugzilla.redhat.com/show_bug.cgi?id=924513)
 * zanata-common - [958006](https://bugzilla.redhat.com/show_bug.cgi?id=958006)
-* zanata-client          
+* zanata-client - [962256](https://bugzilla.redhat.com/show_bug.cgi?id=962256)         
