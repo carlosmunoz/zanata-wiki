@@ -29,7 +29,7 @@ $ service jbossas start
 ```
 
 # Preparation:
-## Create module for external Zanata settings
+## Create module for external Zanata settings (This is obsolete. TODO fix it and add new JNDI configuration)
 Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
 ```sh
 $ cd $JBOSS7_HOME
