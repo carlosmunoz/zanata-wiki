@@ -29,27 +29,19 @@ $ service jbossas start
 ```
 
 # Preparation:
-## Create module for external Zanata settings (This is obsolete. TODO fix it and add new JNDI configuration)
-Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/module.xml`:
-```sh
-$ cd $JBOSS7_HOME
-$ mkdir -p modules/org/zanata/settings/main
-$ $EDITOR modules/org/zanata/settings/main/module.xml
+## Add JNDI entries for `zanata` in standalone.xml
+Search `subsystem xmlns="urn:jboss:domain:naming:1.3"` and add bindings as following. Adjust the value accordingly.
+```xml
+<subsystem xmlns="urn:jboss:domain:naming:1.3">
+    <bindings>
+        <simple name="java:global/zanata/security/auth-policy-names/internal" value="zanata.internal"/>
+        <simple name="java:global/zanata/security/admin-users" value="admin"/>
+        <simple name="java:global/zanata/email/default-from-address" value="no-reply@zanata.org"/>
+    </bindings>
+    <remote-naming/>
+</subsystem>
 ```
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<module xmlns="urn:jboss:module:1.1" name="org.zanata.settings">
-    <resources>
-        <resource-root path="."/>
-    </resources>
-</module>
-```
-Create the file `$JBOSS7_HOME/modules/org/zanata/settings/main/zanata.properties` (modify &lt;myusername&gt; to suit):
-```properties
-zanata.security.auth.policy.internal = zanata.internal
-zanata.security.admin.users = <myusername>
-```
 ## Make JavaMelody work on AS7
 Modify the file `$JBOSS7_HOME/modules/system/layers/base/sun/jdk/main/module.xml` to insert 
 ```xml
