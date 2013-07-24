@@ -41,6 +41,7 @@ Search `subsystem xmlns="urn:jboss:domain:naming:1.3"` and add bindings as follo
     <remote-naming/>
 </subsystem>
 ```
+Optional entries that can be defined in JNDI please refer to source org.zanata.config.JndiBackedConfig.
 
 ## Make JavaMelody work on AS7
 Modify the file `$JBOSS7_HOME/modules/system/layers/base/sun/jdk/main/module.xml` to insert 
