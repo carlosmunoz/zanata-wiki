@@ -1,0 +1,22 @@
+
+Bugzilla: https://bugzilla.redhat.com/show_bug.cgi?id=909042[909042] - RFE: Zanata server supports JBoss EAP 6.1.0 and Hibernate 4.x
+
+== Test conditions
+With JBoss Enterprise Application Platform (JBoss eap) 6.1.0 and Hibernate 4.x,
+
+ . Installation instruction exists and is accurate. 
+ . zanata 3.0 can be installed.
+ . Main use cases should be functional.
+ .. A user can create projects.
+ .. A user can create versions on project he/she maintains.
+ .. A project maintainer can upload a source file .
+ .. A project maintainer can push source files with clients.
+ .. A user can upload translation files to the joined languages.
+ .. A user can push translation files to the joined languages.
+ .. A user can enter and save translation messages to the  joined languages.
+ .. A user can download a translation file of any languages.
+ .. A user can pull translation files of any languages with client.
+ .. A user can search a string in source and translation messages.
+ .. A user can search a string in project names.
+ .. A user can search a string in document names.
+ . Installation instruction 
