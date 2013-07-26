@@ -61,4 +61,5 @@
      - [[Command Line Client Architecture]]
  * [[Repositories]]
  * [[Where is the code for X?]]
+- [[Testing]]
 - [[Change Log]]
