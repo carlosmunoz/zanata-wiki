@@ -53,15 +53,16 @@ b.
     --url='jdbc:mysql://localhost:3306/zanata?characterEncoding=UTF-8' \
     update
 
-NB: You will need to adjust the filenames, and provide the username/password of a database user with the ability to create tables and triggers.  
+NB: You will need to adjust the filenames, and provide the username/password of a database user with the ability to create tables and triggers.
 
+Also see [[Document Storage Directory]] for how to specify the required parameter for the document storage directory on the liquibase command line.
 
 # Configuration
-
+- configure document storage location before server startup: see [[Document Storage Directory]]
 - visit `http://hostname.example.com/zanata/`
 - Internal Authentication: just log in as `admin`/`admin`
 - choose a secure password for admin (menu: My Profile / Change Password)
-- JAAS/Kerberos: log in once to create an account, then use the `mysql` command line  to grant yourself the role `admin`.  See [JAASAuthentication].
+- JAAS/Kerberos: log in once to create an account, then use the `mysql` command line  to grant yourself the role `admin`.  See [[JAAS Authentication]].
 - modify server configuration (menu: Administration / Server Configuration)
 - set server URL, eg to `http://hostname.example.com/zanata`
 - set the Admin Email address for email validation messages, eg `noreply@example.com` - don't forget to test this!
