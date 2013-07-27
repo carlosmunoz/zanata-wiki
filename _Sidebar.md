@@ -18,6 +18,7 @@
  * [[WebTrans Keyboard Shortcuts|Keyboard Shortcuts]]
 - [[Installation Guide]]
  * [[JAAS Authentication]]
+ * [[Document Storage Directory]]
 - [[Integration Guide]]
  * [[Project Types]]
  * Clients
