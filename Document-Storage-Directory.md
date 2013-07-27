@@ -6,7 +6,7 @@ Since files were previously stored as BLOBs in the database, there is a migratio
 ## Configuring the Directory (JNDI)
 The path for document storage should be bound to JNDI name ```java:global/zanata/files/document-storage-directory```
 
-### Detail
+### Detailed Procedure
 Open `$JBOSS_HOME/standalone/configuration/standalone.xml` and look for the `naming` subsystem. Add the following section to the `bindings` section:
 
 ```xml
