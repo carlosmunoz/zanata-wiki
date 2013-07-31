@@ -1,4 +1,4 @@
-# Installation guide for Flies.
+# Installation guide on JBoss EWP 5.1.
 (This is out of date)
 # Requirements
 
