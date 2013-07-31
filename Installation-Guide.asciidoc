@@ -1,0 +1,196 @@
+This document shows the steps to install Zanata-3.0 on JBoss Enterprise Application Platform (EAP) 6.1.0, MySQL, and Red Hat Enterprise Linux (RHEL) 6.4. Please make corresponding changes for other configuration.
+
+== Preparation
+=== JBoss EAP
+You can obtain JBoss EAP from the yum repositories from RHN, or download from http://www.jboss.org/jbossas/downloads/[JBoss Application Server 7]
+
+==== With yum repositories:
+[source,sh]
+----
+sudo yum groupinstall jboss-eap6
+----
+JBoss files will be installed to following directories:
+----
+/usr/share/jbossas    # <1>
+/etc/jbossas          # <2>
+/var/lib/jbossas      # <3>
+----
+<1> JBOSS_HOME
+<2> Configuration setting
+<3> Should be home directory for user `jboss`.
+
+To start JBoss EAP:
+[source,sh]
+----
+sudo service jbossas start
+----
+==== From http://www.jboss.org/jbossas/downloads/[JBoss Application Server 7]
+ 1. Download EAP 6.1.0 and Corresponding Quick starts 
+ 2. Follow the instruction of Quick starts
+
+=== MySQL
+Install MySQL server and client:
+[source,sh]
+----
+sudo yum install mysql mysql-server
+----
+
+=== MySQL driver
+Install MySQL java connector:
+[source,sh]
+----
+sudo yum install mysql-connector-java
+ln -s /usr/share/java/mysql-connector-java-`rpm -q --qf "%{version}\n" mysql-connector-java`.jar /etc/jbossas/deployments/mysql-connector-java.jar
+----
+
+== Installation
+=== Create Zanata database
+Create a UTF8 encoding database for Zanata.
+[source,SQL]
+----
+CREATE DATABASE zanata /**!40100 DEFAULT CHARACTER SET utf8 **/; 
+----
+
+=== Install zanata.war
+Download zanata.war, then copy it to `/etc/jbossas/deployments/zanata.war`. Such as:
+[source,sh]
+----
+cp zanata-<version>.war /etc/jbossas/deployments/zanata.war
+----
+
+=== Configure JBoss
+==== Add JNDI in standalone.xml
+In `/etc/jbossas/standalone/standalone.xml`, search subsystem `xmlns="urn:jboss:domain:naming:1.3"` and add bindings as following. Adjust the value accordingly. 
+[source,xml]
+----
+<subsystem xmlns="urn:jboss:domain:naming:1.3">
+    <bindings>
+        <simple name="java:global/zanata/security/auth-policy-names/internal" value="zanata.internal"/>
+        <simple name="java:global/zanata/security/admin-users" value="admin"/>
+        <simple name="java:global/zanata/email/default-from-address" value="no-reply@zanata.org"/>
+    </bindings>
+    <remote-naming/>
+</subsystem>
+----
+Optional entries that can be defined in JNDI please refer to source https://github.com/zanata/zanata-server/blob/master/zanata-war/src/main/java/org/zanata/config/JndiBackedConfig.java[org.zanata.config.JndiBackedConfig].
+
+==== Add data source 
+This can be easily done with JBoss administration console:
+
+. Login with administrator role
+. Click *Profiles* on the top tabs.
+. Expand *Subsystems* on the left panel.
+. Expand *Datasources* on the left panel.
+. Add datasource
+.. Click *Add*
+.. Type `zanataDatasource` in *Name*
+.. Type `java:jboss/datasources/zanataDatasource` in *JNDI*
+.. Click *Next*
+.. Select *mysql* as driver.
+.. Click *Next*. The data under *Attributes* should be filled accordingly.
+. Edit *Connection*
+.. Click *Connection*
+.. Click *Edit*
+.. Type `jdbc:mysql://localhost:3306/zanata?characterEncoding=UTF-8` in *Connection URL*.
+.. Click *Save*
+. Enable zanataDatasource:
+.. Select `zanataDatasource` in Table *Available Datasources*
+.. Click *Enable*
+. Test datasource
+.. Click *Connection*
+.. Click *Test Connection*
+
+You can also achieve the same by editing `standalone.xml`:
+
+In `/etc/jbossas/standalone/standalone.xml`, search subsystem `<datasources>` and inserts the following after that tag:
+[source,xml]
+<datasource jta="false" jndi-name="java:jboss/datasources/zanataDatasource" pool-name="zanataDatasource" enabled="true" use-java-context="true" use-ccm="false">
+    <connection-url>jdbc:mysql://localhost:3306/zanata?characterEncoding=UTF-8</connection-url>
+    <driver-class>com.mysql.jdbc.Driver</driver-class>
+    <driver>mysql-connector-java.jar</driver>
+    <security>
+        <user-name>USER</user-name>  <!-- <1> -->
+        <password>PASS</password>  <!-- <2> -->
+    </security>
+    <validation>
+        <validate-on-match>false</validate-on-match>
+        <background-validation>false</background-validation>
+    </validation>
+    <statement>
+        <share-prepared-statements>false</share-prepared-statements>
+    </statement>
+</datasource>
+
+<1> Replace `USER` with your username.
+<2> Replace `PASS` with your password.
+
+
+==== Make JavaMelody Work (Optional)
+Modify the file `/usr/share/jbossas/modules/system/layers/base/sun/jdk/main/module.xml` to insert
+[source,xml]
+<path name="com/sun/management"/>
+
+immediately after
+
+[source,xml]
+<paths>
+
+In `/etc/jbossas/standalone/standalone.xml`, search `<system-properties>`,
+and provides:
+
+[source,xml]
+<system-properties>
+    <property name="javamelody.storage-directory" value="${user.home}/stats"/>
+    <property name="hibernate.search.default.indexBase" value="${user.home}/indexes"/>
+</system-properties>
+
+==== Configure security domain zanata in `standalone.xml` for Internal Authentication (TODO)
+See https://community.jboss.org/wiki/JBossAS7SecurityDomainModel as reference.
+
+In `/etc/jbossas/standalone/standalone.xml`, search `<security-domains>`, and provides:
+
+[source,xml]
+<security-domains>
+...
+    <security-domain name="zanata">
+        <authentication>
+            <login-module code="org.zanata.security.ZanataCentralLoginModule" flag="required"/>
+        </authentication>
+    </security-domain>
+    <security-domain name="zanata.internal">
+        <authentication>
+            <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
+        </authentication>
+    </security-domain>
+...
+</security-domains>
+
+To apply the change when JBoss is running:
+
+[source,sh]
+sudo /usr/share/jbossas/jboss-cli.sh -c :reload
+
+== Other things that might help
+=== `bin/standalone.conf`
+ * To increase memory for classes (and multiple redeployments), change `-XX:MaxPermSize=256m` to 
+----
+-XX:MaxPermSize=512m
+----
+ * To enable debugging, uncomment 
+----
+JAVA_OPTS="$JAVA_OPTS -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
+----
+
+ * To fix the JBoss EAP 6 problem where most of the logging is missing, add this line:
+----
+JAVA_OPTS="$JAVA_OPTS -Dorg.jboss.as.logging.per-deployment=false"
+----
+
+=== JBoss Administration Console (Optional)
+ . To create an JBoss Admin user, run following command and follow the instruction:
+[source,sh]
+/usr/share/jbossas/bin/add-user.sh
+
+ . To login the JBoss Administration Console, use the following URL:
+[source]
+http://<Host>:9990/
