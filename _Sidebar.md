@@ -17,6 +17,7 @@
      - [[Opening a Translation Project]]
  * [[WebTrans Keyboard Shortcuts|Keyboard Shortcuts]]
 - [[Installation Guide]]
+ * [[Installation Guide for JBoss EWP 5.1 (Deprecated)]]
  * [[JAAS Authentication]]
  * [[Document Storage Directory]]
 - [[Integration Guide]]
