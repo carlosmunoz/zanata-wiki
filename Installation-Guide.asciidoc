@@ -1,6 +1,7 @@
 :numbered:
 :toc2:
 :standaloneXml: /etc/jbossas/standalone/standalone.xml
+:deploymentsDir: /etc/jbossas/deployments/
 
 This document shows the steps to install Zanata-3.0 on JBoss Enterprise Application Platform (EAP) 6.1.0, MySQL, and Red Hat Enterprise Linux (RHEL) 6.4. Please make corresponding changes for other configuration.
 
@@ -41,6 +42,7 @@ sudo yum install mysql mysql-server
 
 === MySQL driver
 Install MySQL java connector:
+
 [source,sh]
 ----
 sudo yum install mysql-connector-java
@@ -57,6 +59,10 @@ CREATE DATABASE zanata /**!40100 DEFAULT CHARACTER SET utf8 **/;
 Download zanata.war, then copy it to `/etc/jbossas/deployments/zanata.war`. Such as:
 [source,sh]
 cp zanata-<version>.war /etc/jbossas/deployments/zanata.war
+
+[NOTE]
+By default, the filename of the war file in {deploymentsDir} determine the URL of your zanata server.
+In other word, if your war file is +zanata-3.0.war+, your zanata server URL is +http://<zanataHost>:8080/zanata-3.0+
 
 === Configure JBoss
 ==== Add JNDI in standalone.xml
@@ -168,6 +174,23 @@ To apply the change when JBoss is running:
 
 [source,sh]
 sudo /usr/share/jbossas/jboss-cli.sh -c :reload
+
+== Run Zanata Server
+Start the zanata server by either start or restart the jbossas services:
+
+[source,sh]
+sudo service jbossas start
+
+or
+
+[source,sh]
+sudo service jbossas restart
+
+If zanata server start successfully, Zanata server home page is at:
+----
+http://<zanataHost>:8080/zanata
+----
+
 
 == Other things that might help
 === `bin/standalone.conf`
