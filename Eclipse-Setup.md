@@ -14,7 +14,7 @@ To install Eclipse, download the distribution and unzip it to a location such as
 - [Git plugin](https://git.wiki.kernel.org/index.php/EclipsePlugin) ([update site](http://download.eclipse.org/egit/updates))
 - [TestNG plugin](http://testng.org/doc/download.html) ([update site](http://beust.com/eclipse))
 - [Project Lombok](http://projectlombok.org/index.html) (click Download, then run `java -jar lombok.jar` to modify your `eclipse.ini`)
-- [Maven Integration for Eclipse](http://eclipse.org/m2e/download/) (Note: you may need to install [Eclipse GEF](http://download.eclipse.org/tools/gef/updates/releases/) first)
+- Maven Integration for Eclipse, available in the default update site for your version of eclipse (e.g. http://download.eclipse.org/releases/indigo)  (Note: you may need to install [Eclipse GEF](http://download.eclipse.org/tools/gef/updates/releases/) first)
 
 ## Optional Plugins
 
