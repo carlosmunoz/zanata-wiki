@@ -1,5 +1,4 @@
 This page lists documents for testing, such as requirements, test conditions, decision tables, and so on.
 
 == Request For Enhancement (RFE)
-=== Dependencies
  * link:JBoss-EAP-6.1.0-Support[JBoss EAP 6.1.0 Support]
