@@ -1,0 +1,70 @@
+
+
+|====
+"Current State","State In TM","String Similarity","Mismatch Detected","Mismatch Resolution",Copy,"Final State"
+Untranslated,Untranslated,,-,-,No,Untranslated
+Untranslated,Fuzzy,-,-,-,No,Untranslated
+Untranslated,Rejected,-,-,-,No,Untranslated
+Untranslated,Translated,Different,-,-,No,Untranslated
+Untranslated,Translated,Similar,TRUE,Discard,No,Untranslated
+Untranslated,Translated,Similar,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Untranslated,Translated,Similar,TRUE,"As Translated",Yes,Fuzzy
+Untranslated,Translated,Similar,FALSE,-,Yes,Fuzzy
+Untranslated,Translated,1,TRUE,Discard,No,Untranslated
+Untranslated,Translated,1,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Untranslated,Translated,1,TRUE,"As Translated",Yes,Translated
+Untranslated,Translated,1,FALSE,-,Yes,Translated
+Untranslated,Approved,Different,-,-,No,Untranslated
+Untranslated,Approved,Similar,TRUE,Discard,No,Untranslated
+Untranslated,Approved,Similar,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Untranslated,Approved,Similar,TRUE,"As Translated",Yes,Fuzzy
+Untranslated,Approved,Similar,FALSE,-,Yes,Fuzzy
+Untranslated,Approved,1,TRUE,Discard,No,Untranslated
+Untranslated,Approved,1,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Untranslated,Approved,1,TRUE,"As Translated",Yes,Translated
+Untranslated,Approved,1,FALSE,-,Yes,Translated
+Translated,-,,-,-,No,Translated
+Rejected,Untranslated,-,-,-,No,Rejected
+Rejected,Fuzzy,-,-,-,No,Rejected
+Rejected,Reject,-,-,-,No,Rejected
+Rejected,Translated,Different,-,-,No,Rejected
+Rejected,Translated,Similar,TRUE,Discard,No,Rejected
+Rejected,Translated,Similar,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Rejected,Translated,Similar,TRUE,"As Translated",Yes,Fuzzy
+Rejected,Translated,Similar,FALSE,-,Yes,Fuzzy
+Rejected,Translated,1,TRUE,Discard,No,Rejected
+Rejected,Translated,1,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Rejected,Translated,1,TRUE,"As Translated",Yes,Fuzzy
+Rejected,Translated,1,FALSE,-,Yes,Fuzzy
+Rejected,Approved,Different,-,-,No,Rejected
+Rejected,Approved,Similar,TRUE,Discard,No,Rejected
+Rejected,Approved,Similar,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Rejected,Approved,Similar,TRUE,"As Translated",Yes,Fuzzy
+Rejected,Approved,Similar,FALSE,-,Yes,Fuzzy
+Rejected,Approved,1,TRUE,Discard,No,Rejected
+Rejected,Approved,1,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Rejected,Approved,1,TRUE,"As Translated",Yes,Translated
+Rejected,Approved,1,FALSE,-,Yes,Translated
+Fuzzy,Untranslated,-,-,-,No,Fuzzy
+Fuzzy,Fuzzy,-,-,-,No,Fuzzy
+Fuzzy,Reject,-,-,-,No,Fuzzy
+Fuzzy,Translated,Different,-,-,No,Fuzzy
+Fuzzy,Translated,Similar,TRUE,Discard,No,Fuzzy
+Fuzzy,Translated,Similar,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Fuzzy,Translated,Similar,TRUE,"As Translated",Yes,Fuzzy
+Fuzzy,Translated,Similar,FALSE,-,Yes,Fuzzy
+Fuzzy,Translated,1,TRUE,Discard,No,Fuzzy
+Fuzzy,Translated,1,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Fuzzy,Translated,1,TRUE,"As Translated",Yes,Translated
+Fuzzy,Translated,1,FALSE,-,Yes,Translated
+Fuzzy,Approved,Different,-,-,No,Fuzzy
+Fuzzy,Approved,Similar,TRUE,Discard,No,Fuzzy
+Fuzzy,Approved,Similar,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Fuzzy,Approved,Similar,TRUE,"As Translated",Yes,Fuzzy
+Fuzzy,Approved,Similar,FALSE,-,Yes,Fuzzy
+Fuzzy,Approved,1,TRUE,Discard,No,Fuzzy
+Fuzzy,Approved,1,TRUE,"Down to Fuzzy",Yes,Fuzzy
+Fuzzy,Approved,1,TRUE,"As Translated",Yes,Translated
+Fuzzy,Approved,1,FALSE,-,Yes,Translated
+Approved,-,,-,-,No,Approved
+|====
