@@ -2,43 +2,44 @@ The behavior should be similar to client pull, that is, don't overwrite unless e
 
 We nolonger copy approved states.
 
-[format="csv",frame="topbot",options="header,strong"]
-[cols="6"]
+[format="csv",frame="topbot",options="header"]
+[cols="4*,s,s"]
 |====
-Current State,State (Other Version),Mismatch Detected,Mismatch Resolution,Final State,CopyTrans
-Untranslated,Untranslated,-,-,Untranslated,No
-Untranslated,Fuzzy,-,-,Untranslated,No
-Untranslated,Rejected,-,-,Untranslated,No
-Untranslated,Translated,Yes,Discard,Untranslated,No
-Untranslated,Translated,Yes,Down to Fuzzy,Fuzzy,Yes
-Untranslated,Translated,Yes,As Translated,Translated,Yes
-Untranslated,Translated,No,-,Translated,Yes
-Untranslated,Approved,Yes,Discard,Untranslated,No
-Untranslated,Approved,Yes,Down to Fuzzy,Fuzzy,Yes
-Untranslated,Approved,Yes,As Translated,Translated,Yes
-Untranslated,Approved,No,-,Approved,Yes
-Fuzzy,Untranslated,-,-,Fuzzy,No
-Fuzzy,Fuzzy,-,-,Fuzzy,No
-Fuzzy,Reject,-,-,Fuzzy,No
-Fuzzy,Translated,Yes,Discard,Fuzzy,No
-Fuzzy,Translated,Yes,Down to Fuzzy,Fuzzy,Yes
-Fuzzy,Translated,Yes,As Translated,Translated,Yes
-Fuzzy,Translated,No,-,Translated,Yes
-Fuzzy,Approved,Yes,Discard,Fuzzy,No
-Fuzzy,Approved,Yes,Down to Fuzzy,Fuzzy,Yes
-Fuzzy,Approved,Yes,As Translated,Translated,Yes
-Fuzzy,Approved,No,-,Approved,Yes
-Reject,Untranslated,-,-,Reject,No
-Reject,Fuzzy,-,-,Reject,No
-Reject,Reject,-,-,Reject,No
-Reject,Translated,Yes,Discard,Reject,No
-Reject,Translated,Yes,Down to Fuzzy,Fuzzy,Yes
-Reject,Translated,Yes,As Translated,Translated,Yes
-Reject,Translated,No,-,Translated,Yes
-Reject,Approved,Yes,Discard,Reject,No
-Reject,Approved,Yes,Down to Fuzzy,Fuzzy,Yes
-Reject,Approved,Yes,As Translated,Translated,Yes
-Reject,Approved,No,-,Approved,Yes
-Traslated,-,-,-,Translated,No
-Approved,-,-,-,Approved,No
+Current State,State (Other Version),Mismatch Detected,Mismatch Resolution,CopyTrans,Final State
+Untranslated,Untranslated,-,-,No,Untranslated
+Untranslated,Fuzzy,-,-,No,Untranslated
+Untranslated,Rejected,-,-,No,Untranslated
+Untranslated,Translated,Yes,Discard,No,Untranslated
+Untranslated,Translated,Yes,Down to Fuzzy,Yes,Fuzzy
+Untranslated,Translated,Yes,As Translated,Yes,Translated
+Untranslated,Translated,No,-,Yes,Translated
+Untranslated,Approved,Yes,Discard,No,Untranslated
+Untranslated,Approved,Yes,Down to Fuzzy,Yes,Fuzzy
+Untranslated,Approved,Yes,As Translated,Yes,Translated
+Untranslated,Approved,No,-,Yes,Approved
+Fuzzy,Untranslated,-,-,No,Fuzzy
+Fuzzy,Fuzzy,-,-,No,Fuzzy
+Fuzzy,Reject,-,-,No,Fuzzy
+Fuzzy,Translated,Yes,Discard,No,Fuzzy
+Fuzzy,Translated,Yes,Down to Fuzzy,Yes,Fuzzy
+Fuzzy,Translated,Yes,As Translated,Yes,Translated
+Fuzzy,Translated,No,-,Yes,Translated
+Fuzzy,Approved,Yes,Discard,No,Fuzzy
+Fuzzy,Approved,Yes,Down to Fuzzy,Yes,Fuzzy
+Fuzzy,Approved,Yes,As Translated,Yes,Translated
+Fuzzy,Approved,No,-,Yes,Approved
+Reject,Untranslated,-,-,No,Reject
+Reject,Fuzzy,-,-,No,Reject
+Reject,Reject,-,-,No,Reject
+Reject,Translated,Yes,Discard,No,Reject
+Reject,Translated,Yes,Down to Fuzzy,Yes,Fuzzy
+Reject,Translated,Yes,As Translated,Yes,Translated
+Reject,Translated,No,-,Yes,Translated
+Reject,Approved,Yes,Discard,No,Reject
+Reject,Approved,Yes,Down to Fuzzy,Yes,Fuzzy
+Reject,Approved,Yes,As Translated,Yes,Translated
+Reject,Approved,No,-,Yes,Approved
+Traslated,-,-,-,No,Translated
+Approved,-,-,-,No,Approved
 |====
+
