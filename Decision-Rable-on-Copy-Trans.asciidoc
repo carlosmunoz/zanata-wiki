@@ -1,0 +1,44 @@
+The behavior should be similar to client pull, that is, don't overwrite unless either completed (Translated or Approved) or the current state is untranslated.
+
+We nolonger copy approved states.
+
+[format="csv",frame="topbot",options="header,strong"]
+[cols="6"]
+|====
+Current State,State (Other Version),Mismatch Detected,Mismatch Resolution,Final State,CopyTrans
+Untranslated,Untranslated,-,-,Untranslated,No
+Untranslated,Fuzzy,-,-,Untranslated,No
+Untranslated,Rejected,-,-,Untranslated,No
+Untranslated,Translated,Yes,Discard,Untranslated,No
+Untranslated,Translated,Yes,Down to Fuzzy,Fuzzy,Yes
+Untranslated,Translated,Yes,As Translated,Translated,Yes
+Untranslated,Translated,No,-,Translated,Yes
+Untranslated,Approved,Yes,Discard,Untranslated,No
+Untranslated,Approved,Yes,Down to Fuzzy,Fuzzy,Yes
+Untranslated,Approved,Yes,As Translated,Translated,Yes
+Untranslated,Approved,No,-,Approved,Yes
+Fuzzy,Untranslated,-,-,Fuzzy,No
+Fuzzy,Fuzzy,-,-,Fuzzy,No
+Fuzzy,Reject,-,-,Fuzzy,No
+Fuzzy,Translated,Yes,Discard,Fuzzy,No
+Fuzzy,Translated,Yes,Down to Fuzzy,Fuzzy,Yes
+Fuzzy,Translated,Yes,As Translated,Translated,Yes
+Fuzzy,Translated,No,-,Translated,Yes
+Fuzzy,Approved,Yes,Discard,Fuzzy,No
+Fuzzy,Approved,Yes,Down to Fuzzy,Fuzzy,Yes
+Fuzzy,Approved,Yes,As Translated,Translated,Yes
+Fuzzy,Approved,No,-,Approved,Yes
+Reject,Untranslated,-,-,Reject,No
+Reject,Fuzzy,-,-,Reject,No
+Reject,Reject,-,-,Reject,No
+Reject,Translated,Yes,Discard,Reject,No
+Reject,Translated,Yes,Down to Fuzzy,Fuzzy,Yes
+Reject,Translated,Yes,As Translated,Translated,Yes
+Reject,Translated,No,-,Translated,Yes
+Reject,Approved,Yes,Discard,Reject,No
+Reject,Approved,Yes,Down to Fuzzy,Fuzzy,Yes
+Reject,Approved,Yes,As Translated,Translated,Yes
+Reject,Approved,No,-,Approved,Yes
+Traslated,-,-,-,Translated,No
+Approved,-,-,-,Approved,No
+|====
