@@ -50,15 +50,17 @@ ln -s /usr/share/java/mysql-connector-java-`rpm -q --qf "%{version}\n" mysql-con
 ----
 
 === Virus scanner
-Zanata is tested with clamav's virus scanner (clamd/clamdscan)
+Zanata is tested with clamav's virus scanner (`clamd`/`clamdscan`).  If clam is not installed, a warning will be logged when files are uploaded.  If clam is installed but `clamd` is not running, Zanata may reject all uploaded files (depending on file type).  To install clam:
 ----
 sudo yum install clamd
 sudo chkconfig clamd on
 sudo service clamd start
-
 ----
 
-You should probably also set up freshclam to run at least once per day, to keep virus definitions up to date.
+You should probably also ensure freshclam is set to run at least once per day, to keep virus definitions up to date.  The clam package will probably do this for you, but you can check by looking for `/etc/cron.daily/freshclam`
+
+To override the default behaviour above, you can set the system property `virusScanner` when running the server.  `DISABLED` means no virus scanning will be performed; all files will be assumed safe.  Any other value will be treated as the name of a virus scanner command: the command will be called with the name of a file to scan.
+
 
 == Installation
 === Create Zanata database
