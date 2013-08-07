@@ -49,6 +49,17 @@ sudo yum install mysql-connector-java
 ln -s /usr/share/java/mysql-connector-java-`rpm -q --qf "%{version}\n" mysql-connector-java`.jar /etc/jbossas/deployments/mysql-connector-java.jar
 ----
 
+=== Virus scanner
+Zanata is tested with clamav's virus scanner (clamd/clamdscan)
+----
+sudo yum install clamd
+sudo chkconfig clamd on
+sudo service clamd start
+
+----
+
+You should probably also set up freshclam to run at least once per day, to keep virus definitions up to date.
+
 == Installation
 === Create Zanata database
 Create a UTF8 encoding database for Zanata.
