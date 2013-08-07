@@ -3,3 +3,4 @@ that is, the user with review role can approve or rejected translation messages.
 
 == Decision Tables
  * link:Decision-Table-on-Copy-Trans[Decision Table on Copy Trans]
+ * link:Decision-Table-on-Translation-Memory[Decision Table on Translation Memory]
