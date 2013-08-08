@@ -1,0 +1,15 @@
+Decision Table for Pull to File format that supports Fuzzy (i.e. .po download)
+
+[format="csv",frame="topbot",options="header"]
+[cols="2*,s,s"]
+|====
+"State On Server","Option: Only Include Reviewed Translation","Include in File?","Set Fuzzy Flag"
+Untranslated,-,No,No
+Fuzzy,On,No,No
+Fuzzy,Off,Yes,Yes
+Rejected,On,No,No
+Rejected,Off,Yes,Yes
+Translated,On,No,No
+Translated,Off,Yes,No
+Approved,-,Yes,No
+|====
