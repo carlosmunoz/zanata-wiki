@@ -27,10 +27,15 @@ that is, the user with review role can approve or rejected translation messages.
  ** Rejected messages are downloaded as Fuzzy.
  ** Rejected messages in ZIP are downloaded as Fuzzy.
 
-=== Statistic Views
+=== Completed and Incomplete Translation
  * Completed is defined as either
  ** Approved+Translated, if review is enabled, or
- ** Translated, if review is disabled, or
+ ** Translated, if review is disabled
+ * Incomplete is defined as either:
+ ** Rejected+Fuzzy+Untranslated, if review is enabled
+ ** Fuzzy+Untranslated, if review is disabled,
+
+=== Statistic Views
 
 ==== Project Version View
  * A column *Statistic* shows and each language team has its own progress bar.
@@ -46,7 +51,27 @@ that is, the user with review role can approve or rejected translation messages.
  *** If review is enabled, a table contains 5 states (Approved, Translated, Rejected, Fuzzy and Untranslated) and their counts are shown.
  *** If review is disabled, a table contains 3 states (Translated, Fuzzy and Untranslated) and their counts are shown.
  * A column *Complete* shows and each document has its own the count of Completed.
- * A column *Incomplete* shows and each document has its owns the count of Incomplete (Total-Complete).
+ * A column *Incomplete* shows and each document has its owns the count of Incomplete.
+
+=== Translation Editing View
+==== Filtering
+ * User can toggle the filter *Completed*.
+ ** User can toggle the sub-filter *Approved*.
+ ** User can toggle the sub-filter *Translated*.
+ * User can toggle the filter *Incomplete*.
+ ** User can toggle the sub-filter *Approved*.
+ ** User can toggle the sub-filter *Translated*.
+ * After filters toggled, the search results are updated as:
+ ** Union of checked filters, if at least one filter is checked.
+ ** All translated messages, if none of the filters are checked.
+
+==== Active Row
+ * Translator actions: Clear translation message, Change translation messages, Copy Source Messages, *Save as Fuzzy* and *Save as Translated*.
+ ** Only translator role can perform translator actions.
+ * Reviewer actions: *Save as Approved* and *Save as Rejected* are only shown when:
+ ** Review is enabled.
+ ** The user has reviewer mode.
+ ** Only Reviewer role can perform review actions.
 
 === Client push/upload 
  * Only project maintainers can push/upload source files.
@@ -70,9 +95,6 @@ that is, the user with review role can approve or rejected translation messages.
    For the use cases where the 
 link:Decision-Table-on-Pull-With-Fuzzy[Decision Table on Pull as File Format That Support Fuzzy]
 and link:Decision-Table-on-Pull-Without-Fuzzy[Decision Table on Pull as File Format That Does Not Support Fuzzy] are not suitable.
-
-== Test Conditions
- * Verify 
 
 == Decision Tables
  * link:Decision-Table-on-Push[Decision Table on Push]
