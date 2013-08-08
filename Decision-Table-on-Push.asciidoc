@@ -1,0 +1,26 @@
+Decision Table for Push with Merge=auto
+
+[format="csv",frame="topbot",options="header"]
+[cols="3*,s,s"]
+|====
+"State in File","State stored in server database","In translation history","Server Update","Final State"
+Fuzzy,Untranslated,-,Yes,Fuzzy
+Fuzzy,Fuzzy,Yes,No,Fuzzy
+Fuzzy,Fuzzy,No,Yes,Fuzzy
+Fuzzy,Rejected,-,No,Rejected
+Fuzzy,Translated,-,No,Translated
+Fuzzy,Approved,-,No,Approved
+Translated,Untranslated,-,Yes,Translated
+Translated,Fuzzy,-,Yes,Translated
+Translated,Reject,Yes,No,Reject
+Translated,Reject,No,Yes,Translated
+Translated,Translated,Yes,No,Translated
+Translated,Translated,No,Yes,Translated
+Translated,Approved,Yes,No,Approved
+Translated,Approved,No,Yes,Translated
+Untranslated,Untranslated,-,No,Untranslated
+Untranslated,Fuzzy,-,No,Untranslated
+Untranslated,Rejected,-,No,Rejected
+Untranslated,Translated,-,No,Translated
+Untranslated,Approved,-,No,Approved
+|====
