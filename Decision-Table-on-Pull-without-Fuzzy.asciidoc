@@ -1,0 +1,17 @@
+Decision Table for Pull to File format that does not support Fuzzy (i.e. odt or properties download)
+
+[format="csv",frame="topbot",options="header"]
+[cols="3*,s"]
+|====
+"State On Server","Option: Treat Fuzzy As Translated","Option: Only Include Approved Translation","Include in File?"
+Untranslated,-,-,No
+Fuzzy,-,On,No
+Fuzzy,On,Off,Yes
+Fuzzy,Off,-,No
+Rejected,-,On,No
+Rejected,On,Off,Yes
+Rejected,Off,-,No
+Translated,-,On,No
+Translated,-,Off,Yes
+Approved,-,-,Yes
+|====
