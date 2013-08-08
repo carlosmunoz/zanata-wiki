@@ -73,12 +73,13 @@ that is, the user with review role can approve or rejected translation messages.
  ** The user has reviewer mode.
  ** Only Reviewer role can perform review actions.
 
-=== Client push/upload 
+=== Client
+==== Push and Upload 
  * Only project maintainers can push/upload source files.
  * Only translator role can push/upload translation files.
  * With merge=auto, link:Decision-Table-on-Push[Decision Table on Push] defines the behavior of whether server translation string and state should be updated.
 
-=== Client pull/download
+==== Pull and Download
  * Only user role can pull/download source files.
  * Only translator role can push/upload translation files.
  * link:Decision-Table-on-Pull-With-Fuzzy[Decision Table on Pull as File Format That Support Fuzzy] defines the behavior when outputting to a file format that support fuzzy.
