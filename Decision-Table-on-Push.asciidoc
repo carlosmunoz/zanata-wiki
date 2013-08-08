@@ -3,7 +3,7 @@ Decision Table for Push with Merge=auto
 [format="csv",frame="topbot",options="header"]
 [cols="3*,s,s"]
 |====
-"State in File","State stored in server database","In translation history","Server Update","Final State"
+"State in File","State Stored in server Database","In Translation History","Server Update","Final State"
 Fuzzy,Untranslated,-,Yes,Fuzzy
 Fuzzy,Fuzzy,Yes,No,Fuzzy
 Fuzzy,Fuzzy,No,Yes,Fuzzy
