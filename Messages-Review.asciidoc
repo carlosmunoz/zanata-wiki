@@ -5,17 +5,48 @@ that is, the user with review role can approve or rejected translation messages.
 
 == Test Basis
  * Only translator role can edit the translation message and change the state to Untranslated, Fuzzy, Translated.
- * Only reviewer role can Approve or Reject a translation message.
+ * Only reviewer role can Approve or Reject a non empty translation message.
  * Project maintainers has both translator and reviewer role.
 
-=== Enable/Disable Review Feature
- * Disable is the default.
- * After toggle from disable to enable: 
- ** Review UIs (The UI that reviewer role can access) should be shown.
- * After toggle from enable to disable:
- ** Review UIs should be hidden. (i.e. reviewer role can nolonger approve or reject)
- ** Approved messages are treated as Translated.
- ** Rejected messages are treated as Fuzzy.
+=== How to Appoint or Dismiss a reviewer role
+ * Only a Language Coordinator can appoint or dismiss a reviewer role for that language.
+ * A reviewer can be appointed or dismissed in the Team member management view.
+
+=== How to Enable or Disable Review for a Project Version
+ * Only a Project Maintainer can enable or disable the review feature.
+ * The review feature can be enabled or disabled in Project Version Editing View.
+ * The default is disable.
+
+==== After review feature is disabled, what happened to existing approved and rejected messages?
+ * Approved messages are treated as Translated.
+ ** Approved messages are Pulled as Translated.
+ ** Approved messages are Downloaded as Translated.
+ ** Approved messages in ZIP are Downloaded as Translated.
+ * Rejected messages are treated as Fuzzy.
+ ** Rejected messages are pulled as Fuzzy.
+ ** Rejected messages are downloaded as Fuzzy.
+ ** Rejected messages in ZIP are downloaded as Fuzzy.
+
+=== Statistic Views
+ * Completed is defined as either
+ ** Approved+Translated, if review is enabled, or
+ ** Translated, if review is disabled, or
+
+==== Project Version View
+ * A column *Statistic* shows and each language team has its own progress bar.
+ ** Progress bar shows percent completed, defined as Completed/Total
+ ** Tool tip of the progress bar shows a table contains the states and corresponding counts.
+ *** If review is enabled, a table contains 5 states (Approved, Translated, Rejected, Fuzzy and Untranslated) and their counts are shown.
+ *** If review is disabled, a table contains 3 states (Translated, Fuzzy and Untranslated) and their counts are shown.
+
+==== Document List View
+ * A column *Statistic* shows and each document has its own progress bar.
+ ** Progress bar shows percent completed, defined as Completed/Total
+ ** Tool tip of the progress bar shows a table contains the states and corresponding counts.
+ *** If review is enabled, a table contains 5 states (Approved, Translated, Rejected, Fuzzy and Untranslated) and their counts are shown.
+ *** If review is disabled, a table contains 3 states (Translated, Fuzzy and Untranslated) and their counts are shown.
+ * A column *Complete* shows and each document has its own the count of Completed.
+ * A column *Incomplete* shows and each document has its owns the count of Incomplete (Total-Complete).
 
 === Client push/upload 
  * Only project maintainers can push/upload source files.
