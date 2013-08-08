@@ -4,9 +4,19 @@ This is about https://bugzilla.redhat.com/show_bug.cgi?id=953734[Bug 953734 - RF
 that is, the user with review role can approve or rejected translation messages.
 
 == Test Basis
- * Only translator role can edit the translation message and change the state to Untranslated, Fuzzy, Translated
+ * Only translator role can edit the translation message and change the state to Untranslated, Fuzzy, Translated.
  * Only reviewer role can Approve or Reject a translation message.
  * Project maintainers has both translator and reviewer role.
+
+=== Enable/Disable Review Feature
+ * Disable is the default.
+ * After toggle from disable to enable: 
+ ** Review UIs (The UI that reviewer role can access) should be shown.
+ * After toggle from enable to disable:
+ ** Review UIs should be hidden. (i.e. reviewer role can nolonger approve or reject)
+ ** Approved messages are treated as Translated.
+ ** Rejected messages are treated as Fuzzy.
+
 === Client push/upload 
  * Only project maintainers can push/upload source files.
  * Only translator role can push/upload translation files.
@@ -18,7 +28,7 @@ that is, the user with review role can approve or rejected translation messages.
  * link:Decision-Table-on-Pull-With-Fuzzy[Decision Table on Pull as File Format That Support Fuzzy] defines the behavior when outputting to a file format that support fuzzy.
  * link:Decision-Table-on-Pull-Without-Fuzzy[Decision Table on Pull as File Format That Does Not Support Fuzzy] defines the behavior when outputting to a file format that does not support fuzzy.
 
-===  Data migration from Zanata version prior 3.0.0 (Exclusive)
+=== Data migration from Zanata version prior 3.0.0 (Exclusive)
  * Existing projects do not enable review feature by default.
  * Existing users do not get the reviewer role by default.
 
