@@ -42,7 +42,8 @@ You will need to add your sonatype credentials to `~/.m2/settings.xml`.  First y
 Then you should be able to make the release:
 
 Make sure you have the latest version (head) from the repository, and that you are **in the correct branch**.  
-    $ git checkout integration/master # (git checkout release OR legacy if releasing from a branch)
+
+    git checkout integration/master # (git checkout release OR legacy if releasing from a branch)
 
     # change maven.repo.local as appropriate, but best not to use your normal work repo 
     git pull
