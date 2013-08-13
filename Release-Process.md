@@ -1,43 +1,6 @@
 # Release process for Zanata
 
-# Branch management after a release
-
-Note: This applies to api, client and server.  The other modules don't have release or legacy branches.
-
-Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
-
-# Merging master to release and release to legacy
-
-    git fetch
-    git checkout legacy
-    git merge origin/release --ff-only --quiet
-    git checkout release
-    git merge origin/master --ff-only --quiet
-    git checkout integration/master
-    mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=${developmentVersion}
-    git commit pom.xml */pom.xml -m "prepare for next development iteration"
-    # push all the changes back to the server
-    git push origin legacy release integration/master
-
-
-# Release process for modules (except zanata-server)
-
-Make sure you have the latest version (head) from the repository, and that you are **in the correct branch**.  
-
-    $ git checkout integration/master # (git checkout release OR legacy if releasing from a branch)
-    $ git pull
-
-## Interactive release (for parent, api, client, common, not server)
-
-NB: Make sure you use the correct version numbers and tags!
-
-    $ mvn release:prepare -Dresume=false
-    What is the release version for "Zanata Root POM"? (org.zanata:root) 1.1: : 
-    What is SCM release tag or label for "Zanata Root POM"? (org.zanata:root) root-1.1: : 
-    What is the new development version for "Zanata Root POM"? (org.zanata:root) 1.2-SNAPSHOT: : 
-
-
-## Release and deploy to Maven Central ##
+# Release and deploy modules to Maven Central (not zanata-server) ##
 
 You will need a GPG key, and you will need the GPG agent running.  You may want to tell the GPG agent to sign without asking temporarily, or else it will ask you over and over.  
 
@@ -78,30 +41,25 @@ You will need to add your sonatype credentials to `~/.m2/settings.xml`.  First y
 
 Then you should be able to make the release:
 
+Make sure you have the latest version (head) from the repository, and that you are **in the correct branch**.  
+    $ git checkout integration/master # (git checkout release OR legacy if releasing from a branch)
+
     # change maven.repo.local as appropriate, but best not to use your normal work repo 
     git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       release:clean release:prepare release:perform &&
     # close and release on OSSRH
-
-    # obsolete: mvn nexus:staging-close nexus:staging-release \
-    #  -Dnexus.automaticDiscovery -Dnexus.groupId=org.zanata \
-    #  -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
-    # untested alternative:
     mvn nexus-staging:release -Psonatype-oss-release \
         -DaltStagingDirectory=target/checkout/target/nexus-staging
 
-You can also close and release in Nexus here: https://oss.sonatype.org/index.html#stagingRepositories
+Note that the release process might work, but nexus-staging:release fail.  If so, you will need to release the repo manually.  
+You can release manually in Nexus here: https://oss.sonatype.org/index.html#stagingRepositories
 
 ## Releasing Tennera (JGettext) ##
     cd tennera; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       -Dgpg.useagent \
       release:clean release:prepare release:perform &&
-    # obsolete: mvn nexus:staging-close nexus:staging-release \
-    #  -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.tennera \
-    #  -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
-    # untested alternative:
     mvn nexus-staging:close nexus-staging:release
 
 ## Releasing OpenProps ##
@@ -109,8 +67,24 @@ You can also close and release in Nexus here: https://oss.sonatype.org/index.htm
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       -Dgpg.useagent \
       release:clean release:prepare release:perform &&
-    # obsolete: mvn nexus:staging-close nexus:staging-release \
-    #  -Dnexus.automaticDiscovery -Dnexus.groupId=org.fedorahosted.openprops \
-    #  -DtargetRepositoryId=releases -Dnexus.promote.autoSelectOverride
-    # untested alternative:
     mvn nexus-staging:close nexus-staging:release
+
+# Branch management after a release
+
+Note: This applies to api, client and server.  Common and Parent don't have release or legacy branches.
+
+Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
+
+# Merging master to release and release to legacy
+
+    git fetch
+    git checkout legacy
+    git merge origin/release --ff-only --quiet
+    git checkout release
+    git merge origin/master --ff-only --quiet
+    git checkout integration/master
+    mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=${developmentVersion}
+    git commit pom.xml */pom.xml -m "prepare for next development iteration"
+    # push all the changes back to the server
+    git push origin legacy release integration/master
+
