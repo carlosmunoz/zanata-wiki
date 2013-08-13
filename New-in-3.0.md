@@ -1,2 +1,3 @@
 - [[Custom Document Parameters]]
-- TMX import and export
+- Import and export translation memories as TMX (admin users)
+- Translation Memory queries now include matches from imported translation memories
