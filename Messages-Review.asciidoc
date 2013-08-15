@@ -17,7 +17,11 @@ that is, the user with review role can approve or rejected translation messages.
  * The review feature can be enabled or disabled in Project Version Editing View.
  * The default is disable.
 
-==== After review feature is disabled, what happened to existing approved and rejected messages?
+==== On disabling review feature, what happened to existing approved and rejected messages?
+ * Cannot approve messages.
+ * Existing approved messages stays approved.
+ * Cannot reject messages.
+ * Existing rejected messages stays rejected.
  * Approved messages are treated as Translated.
  ** Approved messages are Pulled as Translated.
  ** Approved messages are Downloaded as Translated.
