@@ -77,7 +77,7 @@ Note: This applies to api, client and server.  Common and Parent don't have rele
 Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
 
 # Merging master to release (for API, Client)
-# NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT
+**NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
     git fetch
     git checkout release
@@ -91,7 +91,7 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
     git push origin release integration/master
 
 # Merging master to release and release to legacy (for Server)
-# NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT
+**NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
     git fetch
     git checkout legacy
