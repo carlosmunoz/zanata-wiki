@@ -76,7 +76,19 @@ Note: This applies to api, client and server.  Common and Parent don't have rele
 
 Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
 
-# Merging master to release and release to legacy
+# Merging master to release (for API, Client)
+
+    git fetch
+    git checkout release
+    git merge origin/master --ff-only --quiet
+    git checkout integration/master
+    git merge origin/integration/master --ff-only --quiet
+    mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=${developmentVersion}
+    git commit pom.xml */pom.xml -m "prepare for next development iteration"
+    # push all the changes back to the server
+    git push origin release integration/master
+
+# Merging master to release and release to legacy (for Server)
 
     git fetch
     git checkout legacy
@@ -84,8 +96,8 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
     git checkout release
     git merge origin/master --ff-only --quiet
     git checkout integration/master
+    git merge origin/integration/master --ff-only --quiet
     mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=${developmentVersion}
     git commit pom.xml */pom.xml -m "prepare for next development iteration"
     # push all the changes back to the server
     git push origin legacy release integration/master
-
