@@ -72,10 +72,9 @@ that is, the user with review role can approve or rejected translation messages.
 ==== Active Row
  * Translator actions: Clear translation message, Change translation messages, Copy Source Messages, *Save as Fuzzy* and *Save as Translated*.
  ** Only translator role can perform translator actions.
- * Reviewer actions: *Save as Approved* and *Save as Rejected* are only shown when:
- ** Review is enabled.
- ** The user has reviewer mode.
+ * Reviewer actions: *Save as Approved* and *Save as Rejected*
  ** Only Reviewer role can perform review actions.
+ ** Review actions are only activated when Review Feature is enabled.
 
 === Client
 ==== Push and Upload 
