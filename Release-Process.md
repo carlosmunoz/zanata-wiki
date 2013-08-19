@@ -90,7 +90,7 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
     # push all the changes back to the server
     git push origin release integration/master
 
-# Merging master to release and release to legacy (for Server)
+# Merging release to legacy and master to release (for Server)
 **NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
     git fetch
