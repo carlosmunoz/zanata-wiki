@@ -93,6 +93,8 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
 # Merging release to legacy and master to release (for Server)
 **NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
+You may need to perform a similar operation with the branches in [zanata-deploy](https://github.com/zanata/zanata-deploy/).
+
     git fetch
     git checkout legacy
     git merge origin/legacy --ff-only --quiet
