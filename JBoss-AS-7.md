@@ -104,7 +104,7 @@ $ $EDITOR standalone/configuration/standalone.xml
 These properties should be set to the location where Zanata will store system statistics, and search indexes respectively.
 
 ## Configure security domain `zanata` in standalone.xml
-See [[JAASAuthentication]]
+See [[JAAS-Authentication]]
 
 If jboss is running, tell it to apply the change with:
 ```sh
