@@ -85,14 +85,14 @@ Create the file `$JBOSS7_HOME/standalone/deployments/zanata-ds.xml` (modify to s
       </datasource>
     </datasources>
 ```
-## Configure security domain `zanata` in standalone.xml
- * TODO
- * https://community.jboss.org/wiki/JBossAS7SecurityDomainModel
- * edit `standalone.xml`:
-```sh
+
+## Configure zanata properties in `standalone.xml`
+```ssh
 $ $EDITOR standalone/configuration/standalone.xml
 ```
 ```xml
+...
+            <extensions>
 ...
             </extensions>
             <system-properties>
@@ -100,22 +100,12 @@ $ $EDITOR standalone/configuration/standalone.xml
     	         <property name="hibernate.search.default.indexBase" value="${user.home}/indexes"/>
             </system-properties>
 ...
-            <security-domains>
-...
-                <security-domain name="zanata">
-                    <authentication>
-                        <login-module code="org.zanata.security.ZanataCentralLoginModule" flag="required"/>
-                    </authentication>
-                </security-domain>
-                <security-domain name="zanata.internal">
-                    <authentication>
-                        <login-module code="org.jboss.seam.security.jaas.SeamLoginModule" flag="required"/>
-                    </authentication>
-                </security-domain>
-...
-            </security-domains>
-...
 ```
+These properties should be set to the location where Zanata will store system statistics, and search indexes respectively.
+
+## Configure security domain `zanata` in standalone.xml
+See [[JAASAuthentication]]
+
 If jboss is running, tell it to apply the change with:
 ```sh
 $ ./jboss-cli.sh -c :reload
