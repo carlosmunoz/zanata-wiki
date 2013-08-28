@@ -1,6 +1,6 @@
-# Java command line client (now available as zip/tar distribution!)
+# Java command line client (now available in Fedora 19 or as zip/tar dist!)
 
-## Java command line client (now available as zip/tar distribution!)
+## Java command line client (now available in Fedora 19 or as zip/tar dist!)
 
 Example command lines:
     $ zanata-cli --help
@@ -52,4 +52,4 @@ This will source the auto completion script in current shell session. You will t
 Note: bash completion script can be put under /etc/bash_completion.d/, then it will be available to all bash session all the time(no need to source it every time). BUT, this script is generated at build time. As zip distribution, it's up to you to manage the installation and update. Once we have RPM ready, it will all be handled automatically.
 
 ## Available as RPM package
-We are working on getting it into Fedora first. All the dependent packages are either in review or ready for review state. 
+    #yum install zanata-client

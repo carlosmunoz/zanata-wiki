@@ -27,7 +27,7 @@
      - [[Python Client (No longer supported!)|Zanata Python Client]]
      - [[Python Client Troubleshooting|Python Client Troubleshooting]]
      - [[Maven Integration|Zanata Maven Integration]]
-     - [[Java command line client (available as Zip/Tar!)|Zanata Java Client]]
+     - [[Java command line client |Zanata Java Client]]
      - Java client in Fedora
            - [[Fedora Packaging Guide|Fedora packaging Guide]]
            - [[Status update|Fedora package status]]
