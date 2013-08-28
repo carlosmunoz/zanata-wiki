@@ -30,14 +30,12 @@
 # Setup for Zanata
 
 - Create a database in MySQL, named **zanata**, make sure you enable utf8 support when creating the database:
-
-      CREATE DATABASE zanata /*!40100 DEFAULT CHARACTER SET utf8 */;
+`CREATE DATABASE zanata /*!40100 DEFAULT CHARACTER SET utf8 */;`
 
 - Start the MySQL database by running `/etc/init.d/mysqld start` from the command line
 
 - To package Zanata build with MySQL database, use maven profile `mysql` during build.
-
-    mvn -Pmysql clean install
+`mvn -Pmysql clean install`
 
 # Setup for Exploded WAR deployment
 
