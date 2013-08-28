@@ -8,17 +8,14 @@
             |--zanata-parent
 **Note** opencsv is already in Fedora but was maintained by a community user. It was built by ant hence missing pom file in Fedora and causing maven build difficulty. Previous owner decided to release ownership of the package and we(pahuang) took it over and change it to build by maven.
 #### Status update (as of 1 May 2013)
-At the time of writing, there are 4 Fedora platform we need to support: f17, f18, f19, rawhide
+At the time of writing, there are 4 Fedora platform we need to support: f18, f19, f20, rawhide
 
 ---
-                    f17 f18 f19 rawhide
-    zanata-parent   +   +   +   +       
-    openprops       +   +   +   +
-    jgettext        +   +   +   +
-    opencsv         +   +   +   +
-    zanata-api      +   +   +   +
-    zanata-common   -   -   +   +
-    zanata-client   -   -   +   +      
+            zanata-parent   openprops   jgettext    opencsv zanata-api  zanata-common   zanata-client
+    f18     +               +           +           +       +           +               +
+    f19     +               +           +           +       +           +               + 
+    f20     +               +           +           +       +           +                  
+    rawhide +               +           +           +       +           +                      
 **Notion** +: in stable ?: in testing -: need review
 
 #### Bugzilla for new package review
