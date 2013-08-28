@@ -1,6 +1,6 @@
-# Java command line client (now available in Fedora 19 or as zip/tar dist!)
+# Java command line client (now available in Fedora or as zip/tar dist!)
 
-## Java command line client (now available in Fedora 19 or as zip/tar dist!)
+## Java command line client (now available in Fedora or as zip/tar dist!)
 
 Example command lines:
     $ zanata-cli --help
