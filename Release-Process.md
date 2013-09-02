@@ -72,11 +72,11 @@ You can release manually in Nexus here: https://oss.sonatype.org/index.html#stag
 
 # Branch management after a release
 
-Note: This applies to api, client and server.  Common and Parent don't have release or legacy branches.
+Note: This applies to api, common, client and server. Parent don't have release or legacy branches.
 
 Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
 
-# Merging master to release (for API, Client)
+# Merging master to release (for API, common, Client). Only needed when you want to start a new x.y release.
 **NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
     git fetch
