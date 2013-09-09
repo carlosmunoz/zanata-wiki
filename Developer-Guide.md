@@ -16,21 +16,23 @@
 
 NB: Please don't reformat existing files: we want to do them all at once to keep the history manageable.
 
-NO TABS!
+General:
+* NO TABS!
+* line width: 80 (allows side-by-side diffs)
 
 Java, Groovy code:
 * 4 space indent
 * cuddle braces
 
+JavaScript code:
+* 2 space indent
+* cuddle braces
+
 XML/XHTML/CSS/XML:
-* line width: 72 
 * 2 space indent
 * format comments, but don't join lines
 * insert whitespace before closing empty end-tags
 
-JavaScript code:
-* 2 space indent
-* cuddle braces
 
 TODO: find some existing Eclipse code formatter profiles and link to them.
 
