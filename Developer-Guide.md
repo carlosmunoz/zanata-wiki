@@ -7,10 +7,24 @@
 
 - Java Development Kit (JDK) 1.6 - yum install java-1.6.0-openjdk-devel
 - GIT - Source code repository
-- Eclipse IDE for J2EE (Helios/3.6)
+- Eclipse IDE for J2EE (Kepler 4.2)
 - MySQL database
-- JBoss AS
-- Maven v2.X - v3
+- JBoss AS 7.2 (EAP 6.1)
+- Maven v3
+
+# Code style (for new files)
+
+NB: Please don't reformat existing files: we want to do them all at once to keep the history manageable.
+
+Java, Groovy code:  4 space indent, cuddle braces
+
+XML/XHTML/CSS/XML:  2 space indent
+
+JavaScript code:  2 space indent, cuddle braces 
+
+NO TABS!
+
+TODO: find some existing Eclipse code formatter profiles and link to them.
 
 # Zanata Developer Setup Guide
 
