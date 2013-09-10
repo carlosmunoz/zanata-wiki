@@ -1,12 +1,8 @@
-# Introduction to the Zanata project
+*Note: we are refreshing Zanata's user documentation. You can preview the new documentation at [New Zanata Help Preview](http://zanata.org/new/help/). The new documentation is for translators, reviewers and maintainers using Zanata - documentation for development of Zanata itself will stay on this wiki.*
 
-# Welcome to Zanata
+# Welcome to the Zanata project
 
-Zanata is an open source, web-based Translation Management System developed by Red Hat and community contributors. It allows translators to translate
-documentation and software online using a web browser. It
-is written in Java and uses modern web technologies like
-JBoss, Seam, GWT, Hibernate, and a REST API.  It currently
-supports translation of DocBook/Publican documentation via gettext PO
+Zanata is an open source, web-based Translation Management System developed by Red Hat and community contributors. It allows translators to translate documentation and software online using a web browser. It is written in Java and uses modern web technologies like JBoss, Seam, GWT, Hibernate, and a REST API.  It currently supports translation of DocBook/Publican documentation via gettext PO
 files, and translation of software projects via PO files or Java Properties files.  Projects can be pushed to and pulled from a
 Zanata server using a Maven plugin or a Python client.
 
