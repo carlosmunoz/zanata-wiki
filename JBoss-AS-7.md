@@ -30,12 +30,14 @@ $ service jbossas start
 
 # Preparation:
 ## Add JNDI entries for `zanata` in standalone.xml
-Search `subsystem xmlns="urn:jboss:domain:naming:1.3"` and add bindings as following. Adjust the value accordingly.
+Search `subsystem xmlns="urn:jboss:domain:naming:1.3"` and add bindings as following. Adjust the paths/emails accordingly.
+
 ```xml
 <subsystem xmlns="urn:jboss:domain:naming:1.3">
     <bindings>
         <simple name="java:global/zanata/security/auth-policy-names/internal" value="zanata.internal"/>
         <simple name="java:global/zanata/security/admin-users" value="admin"/>
+        <simple name="java:global/zanata/files/document-storage-directory" value="/example/path"/>
         <simple name="java:global/zanata/email/default-from-address" value="no-reply@zanata.org"/>
     </bindings>
     <remote-naming/>
