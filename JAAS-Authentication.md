@@ -9,7 +9,7 @@ Open `$JBOSS_HOME/standalone/configuration/standalone.xml` and look for the `nam
 <subsystem xmlns="urn:jboss:domain:naming:1.3">
     ...
     <bindings>
-        <simple name="java:global/zanata/security/auth-policy-names/<aythtype>" value="<policy-name>"/>
+        <simple name="java:global/zanata/security/auth-policy-names/<authtype>" value="<policy-name>"/>
         <simple name="java:global/zanata/security/admin-users" value="<list of usernames>"/>
     </bindings>
     ...
