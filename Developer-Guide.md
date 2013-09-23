@@ -14,27 +14,7 @@
 
 # Code style (for new files)
 
-NB: Please don't reformat existing files: we want to do them all at once to keep the history manageable.
-
-General:
-* NO TABS!
-* line width: 80 (allows side-by-side diffs) (NB: IDEA formatters use the same length for all file types)
-
-Java, Groovy code:
-* 4 space indent
-* cuddle braces
-
-JavaScript code:
-* 2 space indent
-* cuddle braces
-
-XML/XHTML/CSS/XML:
-* 2 space indent
-* format comments, but don't join lines
-* insert whitespace before closing empty end-tags
-* don't let IDEA align attributes (Eclipse formatter doesn't have this option)
-
-TODO: find some existing (standard) Eclipse code formatter profiles and link to them.
+See [[Coding Guide]].
 
 # Zanata Developer Setup Guide
 
