@@ -22,7 +22,7 @@ public class JavaStyleExample extends Example<Java> implements VeryStylish {
     private int indentSpaces = 4;
     private boolean useTabs = false;
 
-    private String longDescription = "TODO"
+    private String longDescription = "TODO";
 
     @Override
     public String getDescription() {
