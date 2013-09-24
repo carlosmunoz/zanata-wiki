@@ -23,7 +23,7 @@ A set of code formatter preferences can be found in Zanata's source tree, curren
 * 2 space indent
 * cuddle braces
 
-### XML/XHTML/CSS/XML
+### XML/XHTML/CSS
 * 2 space indent
 * format comments, but don't join lines
 * insert whitespace before closing empty end-tags
