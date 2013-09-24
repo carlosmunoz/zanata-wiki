@@ -89,10 +89,19 @@ public class JavaStyleExample {
 
 ## JavaScript Coding Style
 
+```javascript
+(function TODO (when) {
+  return 'I will do this ' + when + '.';
+})('later');
+```
 
-# General coding standards and style
+## CSS Coding Style
 
-- See Seam's coding style
+```css
+#todo {
+  display: none;
+}
+```
 
 # The MVP pattern for GWT
 
