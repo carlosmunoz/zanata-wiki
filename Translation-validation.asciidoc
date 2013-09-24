@@ -40,9 +40,9 @@ Related bug: https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - R
    ** Translated invalid translation is save as translated.
    ** Fuzzy invalid translation is save as fuzzy.
    . Warning: 
-   ** Translated invalid translation is save as translated, but shows "[Warn] Validation <ValidateionName> fail on line XXX of <Filename>"
-   ** Fuzzy invalid translation is save as fuzzy, but shows "[Warn] Validation <ValidateionName> fail on line XXX of <Filename>"
+   ** Translated invalid translation is save as translated, but shows _[Warn] Validation <ValidateionName> fail on line XXX of <Filename>_
+   ** Fuzzy invalid translation is save as fuzzy, but shows _[Warn] Validation <ValidateionName> fail on line XXX of <Filename>_
    . Error:
-   ** Invalid translation (Translated or Fuzzy) is skipped, and shows "[Error] Validation <ValidateionName> fail on line XXX of <Filename>".
+   ** Invalid translation (Translated or Fuzzy) is skipped, and shows _[Error] Validation <ValidateionName> fail on line XXX of <Filename>_.
 
 === Decision Table
