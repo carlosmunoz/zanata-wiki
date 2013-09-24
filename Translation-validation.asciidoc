@@ -1,0 +1,48 @@
+:numbered:
+
+In order to prevent ill-format translation be putted to Zanata which might break on build stage or execution time, a project maintainer can suggest or even enforced the translation validation.
+
+Related bug: https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - RFE: Enforcing validation],
+
+== Test Basis
+=== Terminology
+ * Validation items: Validation to be performed.
+ ** HTML/XML tags: HTML/XML tags should be consistent.
+ ** XML entity reference: XML entry in correct format.
+ ** Java variables: java style ('\{x}\') variables are consistent.
+ ** Positional printf (XSI extension): positional printf style (+%n$x+) variables are consistent. It is conflict with printf.
+ ** Printf variables: print style (%x) variables are consistent. It is conflict with positional printf.
+ ** Leading/trailing newline (\n): Number of leading and trailing newline should be the same.
+ ** Tab characters: Number of tab character (\t) should be the same.
+ * Validation levels: The degree of the validation is enforced. Default is +Warning+, except positional printf, which is +Off+.
+   . Off: Validation item is disabled.
+   . Warning: Validation is recommended and enabled by default, translator can turn it off.
+   . Error: Validation is enforced. Translator cannot save invalid messages.
+ * Invalid translation: A translation message that did not pass at least one enabled validation item.
+
+=== Permission and Behavior
+ * Only project maintainer role can set the Validation level for each validation item.
+ * Translator validation options on each validation level:
+   . Off: 
+   ** Validation is disabled by default.
+   ** Translator can enable and disable validation item. 
+   ** Translator can save invalid translation as translated.
+   . Warning: 
+   ** Validation is enabled by default.
+   ** Translator can enable and disable validation item. 
+   ** Translator can save invalid translation as translated.
+   . Error:
+   ** Validation is enabled.
+   ** Translator CANNOT disable validation item. 
+   ** Translator CANNOT save invalid translation as translated.
+ * Client push:
+   . Off: 
+   ** Translated invalid translation is save as translated.
+   ** Fuzzy invalid translation is save as fuzzy.
+   . Warning: 
+   ** Translated invalid translation is save as translated, but shows "[Warn] Validation <ValidateionName> fail on line XXX of <Filename>"
+   ** Fuzzy invalid translation is save as fuzzy, but shows "[Warn] Validation <ValidateionName> fail on line XXX of <Filename>"
+   . Error:
+   ** Invalid translation (Translated or Fuzzy) is skipped, and shows "[Error] Validation <ValidateionName> fail on line XXX of <Filename>".
+
+=== Decision Table
