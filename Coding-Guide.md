@@ -70,7 +70,21 @@ public class JavaStyleExample {
 ## XML Coding Style
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xmlStyleExample xmlns="http://www.example.com/xmlStyleExample">
+  <indent tabs="false">2 spaces</indent>
 
+  <!-- Comments may be formatted, but auto-formatter should never
+       join comment lines. -->
+
+  <attributes wrap="true" align="false"
+    description="Attributes can be wrapped to keep line length at or below 80 characters."
+    amount="Always indent wrapped attributes 2 spaces more than their tag."
+    note="Do not change indentation to align with attributes on the line above." />
+
+  <emptyTags note="Leave a space before closing an empty tag with '/>'" />
+
+</xmlStyleExample>
 ```
 
 ## JavaScript Coding Style
