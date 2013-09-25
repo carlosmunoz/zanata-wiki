@@ -24,27 +24,17 @@ Related bug: https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - R
 === Permission
  * Only project maintainer role can set the validation level for each validator.
  * Only translator role can toggle translator validation toggle.
+
 .Decision Table of Translator Validation Toggle
 [options="header",cols=",s,s"]
 |====
-| Validation Level | Translation Validation Toggle Default | Can Translator Toggle?
+| Validation Level | Translation Validation Toggle Default | Can Translator Toggle
 | Off | Disabled | Yes
 | Warning | Enabled | Yes 
 | Error | Enabled | No
 |====
 
 === Invalid Translation Handling
-
-.Error Message Template
-----
-[Error] Validation <ValidatorName> failed: File: <Filename>, Message:  "message" 
-----
-
-.Warning Message Template
-----
-[Warn] Validation <ValidatorName> failed: File: <Filename>, Message:  "message" 
-----
-
 ==== Invalid Translation Handling in Translation Editor
 .Decision Table of Invalid Translation Handling in Translation Editor
 [options="header",cols=",,s,s"]
@@ -57,10 +47,26 @@ Related bug: https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - R
 | Error   | Enabled Only |  As Error| No
 |====
 
-==== Invalid Translation Handling with Translation Upload and Push
- * How invalid translation be handled with translation upload and push
-.Decision Table of Invalid Translation Handling with Translation Upload and Push
-[options="header",cols=",,s,s"]
+==== Invalid Translation Handling with Upload and Push
+During WebUI upload or client push, if an invalid translation is detected, depending on the validation level, following actions should be taken:
+ * Level Off: No validation is executed, thus save as original state (Fuzzy is saved as fuzzy, Translated is saved as translated).
+ * Level Warning: Warning is displayed, but still save as original state.
+ * Level Error: Error is displayed, and invalid translation is skipped.
+
+.Error Message Template
+----
+[Error] Validation <ValidatorName> failed: File: <Filename>, Message:  "message" 
+----
+
+.Warning Message Template
+----
+[Warn] Validation <ValidatorName> failed: File: <Filename>, Message:  "message" 
+----
+
+However, valid translations in the same file should be save as original state. Following decision table summarizes the behavior:
+
+.Decision Table of Invalid Translation Handling with Upload and Push
+[width="100%",options="header",cols=",,s,s"]
 |====
 | Validation Level | Message State | Show Invalid Message | Save as
 | Off     | Fuzzy | No  | Fuzzy
