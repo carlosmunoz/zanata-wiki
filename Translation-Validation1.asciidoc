@@ -1,0 +1,73 @@
+:numbered:
+
+In order to prevent ill-format translation be putted to Zanata which might break on build stage or execution time, a project maintainer can suggest or even enforced the translation validation.
+
+Related bug: https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - RFE: Enforcing validation],
+
+== Test Basis
+=== Terminology
+ * Validators: Validation to be performed.
+ ** HTML/XML tags: HTML/XML tags should be consistent.
+ ** XML entity reference: XML entry in correct format.
+ ** Java variables: java style ('\{x}\') variables are consistent.
+ ** Positional printf (XSI extension): positional printf style (+%n$x+) variables are consistent. It is conflict with printf.
+ ** Printf variables: print style (%x) variables are consistent. It is conflict with positional printf.
+ ** Leading/trailing newline (\n): Number of leading and trailing newline should be the same.
+ ** Tab characters: Number of tab character (\t) should be the same.
+ * Validation levels: The degree of the validation is enforced. Default is +Warning+, except positional printf, which is +Off+.
+   . Off: Validator is disabled.
+   . Warning: Validation is recommended and enabled by default, translator can turn it off.
+   . Error: Validation is enforced. Translator cannot save invalid messages.
+ * Translator Validation Toggle: A toggle for translator to enable/disable Validator.
+ * Invalid translation: A translation message that did not pass at least one enabled Validator.
+
+=== Permission
+ * Only project maintainer role can set the validation level for each validator.
+ * Only translator role can toggle translator validation toggle.
+.Decision Table of Translator Validation Toggle
+[options="header",cols=",s,s"]
+|====
+| Validation Level | Translation Validation Toggle Default | Can Translator Toggle?
+| Off | Disabled | Yes
+| Warning | Enabled | Yes 
+| Error | Enabled | No
+|====
+
+=== Invalid Translation Handling
+
+.Error Message Template
+----
+[Error] Validation <ValidatorName> failed: File: <Filename>, Message:  "message" 
+----
+
+.Warning Message Template
+----
+[Warn] Validation <ValidatorName> failed: File: <Filename>, Message:  "message" 
+----
+
+==== Invalid Translation Handling in Translation Editor
+.Decision Table of Invalid Translation Handling in Translation Editor
+[options="header",cols=",,s,s"]
+|====
+| Validation Level | Translation Validation Toggle | Show Invalid Message | Save as Translated
+| Off     | Disabled | No  | Yes
+| Off     | Enabled  | As Warning | Yes
+| Warning | Disabled | No  | Yes
+| Warning | Enabled  | As Warning | Yes
+| Error   | Enabled Only |  As Error| No
+|====
+
+==== Invalid Translation Handling with Translation Upload and Push
+ * How invalid translation be handled with translation upload and push
+.Decision Table of Invalid Translation Handling with Translation Upload and Push
+[options="header",cols=",,s,s"]
+|====
+| Validation Level | Message State | Show Invalid Message | Save as
+| Off     | Fuzzy | No  | Fuzzy
+| Off     | Translated | No  | Translated
+| Warning | Fuzzy | As Warning | Fuzzy
+| Warning | Translated | As Warning | Translated
+| Error | Fuzzy | As Error | Not Saved
+| Error | Translated | As Error  | Not Saved
+|====
+
