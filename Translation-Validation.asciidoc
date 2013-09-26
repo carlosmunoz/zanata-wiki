@@ -9,7 +9,7 @@ Related bug: https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - R
  * Validators: Validation to be performed.
  ** HTML/XML tags: HTML/XML tags should be consistent.
  ** XML entity reference: XML entry in correct format.
- ** Java variables: java style ('\{x}\') variables are consistent.
+ ** Java variables: java style ('\{x}') variables are consistent.
  ** Positional printf (XSI extension): positional printf style (+%n$x+) variables are consistent. It is conflict with printf.
  ** Printf variables: print style (%x) variables are consistent. It is conflict with positional printf.
  ** Leading/trailing newline (\n): Number of leading and trailing newline should be the same.
@@ -49,6 +49,7 @@ Related bug: https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - R
 
 ==== Invalid Translation Handling with Upload and Push
 During WebUI upload or client push, if an invalid translation is detected, depending on the validation level, following actions should be taken:
+
  * Level Off: No validation is executed, thus save as original state (Fuzzy is saved as fuzzy, Translated is saved as translated).
  * Level Warning: Warning is displayed, but still save as original state.
  * Level Error: Error is displayed, and invalid translation is skipped.
