@@ -97,9 +97,23 @@ public class JavaStyleExample {
 
 ## CSS Coding Style
 
+For more detail, see [CSS Guidelines](https://github.com/lukebrooker/CSS-Guidelines)
+
 ```css
-#todo {
-  display: none;
+.selector-1,
+.selector-2,
+.selector-3[type="text"] {
+  box-sizing: border-box;
+  display: block;
+  font-family: helvetica, arial, sans-serif;
+  color: #333;
+  background: #fff;
+  background: linear-gradient(#fff, rgba(0, 0, 0, .8));
+}
+
+.selector-a,
+.selector-b {
+  padding: 1em;
 }
 ```
 
