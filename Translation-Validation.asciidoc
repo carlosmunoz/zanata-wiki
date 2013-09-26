@@ -78,3 +78,15 @@ However, valid translations in the same file should be save as original state. F
 | Error | Translated | As Error  | Not Saved
 |====
 
+==== Existing Invalid Translations After Changing Validation Level to "Error" or "Warning"
+Translations of the Project-Version are not automatically rescan for system performance reason.
+However, validators should be run during the pull and download.
+
+.Decision Table of Invalid Translation Download and Pull
+[width="100%",options="header",cols=",s,s"]
+|====
+| Validation Level | Show Invalid Message | Save to File
+| Off     |  No  |  Yes
+| Warning | As Warning | Yes
+| Error | As Error | No
+|====
