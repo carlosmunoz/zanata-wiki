@@ -1,12 +1,14 @@
-We aim to maintain a consistent coding style for the Zanata project. Keeping style consistent helps keep our code easy to read, helps avoid unnecessary merge conflicts, and ensures that a diff between commits will usually only show what has actually changed. It makes everyone's life a little better.
+We aim to maintain a consistent coding style for the Zanata project. Keeping style consistent helps keep our code easy to read, helps avoid unnecessary merge conflicts, and ensures that a diff between commits will usually only show what has actually changed. It makes everyone's life a little better, and makes pull requests manageable.
 
-*Note:* We have recently changed our style preferences. At the time of writing, not all source code has been updated to the new style. Please don't reformat existing files: we want to do them all at once to keep the history manageable.
+Please don't reformat existing files unnecessarily.  Watch out for IDEs which do reformatting unasked.
+
+*Note:* We have recently changed our style preferences, so older branches don't use this scheme.
 
 ## Copy existing style
 The simplest way to use a consistent coding style is to copy the style in the file you are editing, or in nearby files.
 
 ## Use an automatic formatter
-A set of code formatter preferences can be found in Zanata's source tree, currently located at [zanata-server/zanata-war/eclipse/eclipse-code-formatter-profile.xml](https://github.com/zanata/zanata-server/blob/master/zanata-war/eclipse/eclipse-code-formatter-profile.xml). This can be used by Eclipse and IDEA to automatically format Java code to be consistent with the rest of Zanata code.
+A set of code formatter preferences can be found in Zanata's source tree, under https://github.com/zanata/zanata-parent/ . These can be used by Eclipse and IDEA to automatically format Java code to be consistent with the rest of Zanata code.
 
 
 ## Current Styles
@@ -28,9 +30,6 @@ A set of code formatter preferences can be found in Zanata's source tree, curren
 * format comments, but don't join lines
 * insert whitespace before closing empty end-tags
 * don't let IDEA align attributes (Eclipse formatter doesn't have this option)
-
-TODO: find some existing (standard) Eclipse code formatter profiles and link to them.
-
 
 
 ## Examples
@@ -58,7 +57,7 @@ public class JavaStyleExample {
 
     @Getter
     private String longDescription = "Lines should not exceed 80 characters. Long strings can be " +
-                                     "wrapped as shown here to stay below the limit.";
+            "wrapped as shown here to stay below the limit.";
 
     @Override
     public String toString() {
