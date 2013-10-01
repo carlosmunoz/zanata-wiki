@@ -46,8 +46,8 @@ _**Workaround:** Only upload translation documents that are completely translate
 The following instructions assume you have signed in to the Zanata website and have appropriate permissions for the relevant project or locale. If this is not the case, you will not see the buttons or icons referred to in the instructions.
 
 For illustration purposes, these instructions use a sample .odt document and a translated version as shown here:
-![Sample document used in examples](http://zanata.org/images/screenshots/raw-files/sample-document.png)
-![Sample translated document used in examples](http://zanata.org/images/screenshots/raw-files/sample-document-trans.png)
+![Sample document used in examples](img/screenshots/raw-files/sample-document.png)
+![Sample translated document used in examples](img/screenshots/raw-files/sample-document-trans.png)
 
 
 
