@@ -55,13 +55,13 @@ For illustration purposes, these instructions use a sample .odt document and a t
 ### Uploading Source Documents Using the Web Interface
 Use the 'Source Documents' page to upload new source documents. Navigate to a project-version and click 'Source Documents' in the 'Actions' box.
 
-![Source Documents button](http://zanata.org/images/screenshots/raw-files/source-documents-button.png)
+![Source Documents button](img/screenshots/raw-files/source-documents-button.png)
 
 
 * To upload a new document, use the 'Upload Document' button in the 'Actions' box.
 * To upload a new version of an existing document, locate the document in the summary table and click the 'Upload' link in the right-hand column.
 
-![Source Upload button](http://zanata.org/images/screenshots/raw-files/source-upload-button.png)
+![Source Upload button](img/screenshots/raw-files/source-upload-button.png)
 
 
 The dialogue for uploading a source document is similar for both upload methods, with an additional text box for 'path' when uploading a new document. Select the document to be uploaded, ensuring that it has the appropriate file extension as shown in Supported Formats above. For new documents, enter a path or leave the path field blank to have the document at the top level of the project in Zanata. If the document name and path are the same as an existing document in the table, the uploaded document will replace the existing document.
@@ -69,11 +69,11 @@ The uploaded file name is only used for new documents, and will be ignored when 
 You can also specify a set of custom parsing parameters that will affect how the source document is parsed after upload. This is an advanced feature. For more information, see [[Custom Document Parameters]].
 
 
-![Source Upload dialogue](http://zanata.org/images/screenshots/raw-files/source-upload-dialog.png)
+![Source Upload dialogue](img/screenshots/raw-files/source-upload-dialog.png)
 
 
 Documents will appear in the document table upon successful upload. Note path matches the entered value, and document name uses the name of the uploaded file:
-![Source document in table after successful upload](http://zanata.org/images/screenshots/raw-files/source-upload-success.png)
+![Source document in table after successful upload](img/screenshots/raw-files/source-upload-success.png)
 
 
 
@@ -85,16 +85,16 @@ Source documents can be downloaded from the same page on which they are uploaded
 Translated documents are uploaded from the 'Documents' page for the relevant locale. Navigate to a project-version and click the icon in the 'Documents' column on the row for the locale of choice. Translated documents should be of the same file format as the raw source document, which is reflected in the document name and the raw download link.
 
 
-![Translated Documents link](http://zanata.org/images/screenshots/raw-files/trans-documents-link.png)
+![Translated Documents link](img/screenshots/raw-files/trans-documents-link.png)
 
 To upload a translated version of a document, locate the document in the summary table and click the 'Upload' icon under the 'Actions' column. A popup is shown with the name of the document at the top and a button to select the translated version of the document. It is recommended to keep the 'Merge?' option selected to avoid losing existing translations.
 
-![Translated Document upload link](http://zanata.org/images/screenshots/raw-files/trans-upload-link.png)
+![Translated Document upload link](img/screenshots/raw-files/trans-upload-link.png)
 
-![Translated Document upload dialogue](http://zanata.org/images/screenshots/raw-files/trans-upload-dialog.png)
+![Translated Document upload dialogue](img/screenshots/raw-files/trans-upload-dialog.png)
 
 Upon successful upload, the translation statistics for the document should reflect the addition of the uploaded translations, and the translation strings will be visible in the translation editor:
-![Translations visible in translation editor](http://zanata.org/images/screenshots/raw-files/webtrans-uploaded.png)
+![Translations visible in translation editor](img/screenshots/raw-files/webtrans-uploaded.png)
 
 Please be aware of the current issues with raw translation upload. See 'Known Issues' on this page.
 
@@ -103,11 +103,11 @@ Translated documents can be downloaded from the 'Documents' page for the relevan
 
 The raw download link will generate a translated document that has the structure of the raw source document, but with source strings replaced with _Approved_ translations for the locale if they are available. For any text flow that does not have an approved translation in Zanata, no substitution is made so the source text will remain.
 
-![Translated Document download link](http://zanata.org/images/screenshots/raw-files/trans-download-link.png)
+![Translated Document download link](img/screenshots/raw-files/trans-download-link.png)
 
 It is also possible to generate a preview document that has both _Approved_ and _Fuzzy/Needs Review_ translations. Currently there is no link for this 'preview' functionality, so the URL must be modified manually. To do so, copy the normal download link and paste it to the browser address bar, find the part of the URL with '/baked?' and insert 'half-' to make that part '/half-baked?'. Navigate to the modified URL (usually by pressing _Enter_) to download the preview document.
 
-![Modifying Translated Document link to generate a preview document](http://zanata.org/images/screenshots/raw-files/trans-download-preview.png)
+![Modifying Translated Document link to generate a preview document](img/screenshots/raw-files/trans-download-preview.png)
 
 
 ## Instructions for Maven Client
@@ -124,4 +124,4 @@ Check Maven Plugin help for 'pull' command.
 ### Inline Tags
 Some parts of raw documents are not intended for direct translation. These are converted to xml-style inline tags such as "&lt;g1>&lt;g2>&lt;/g2>&lt;/g1>" in the place of the image in the example document. It is recommended that these tags be included in translations with no modifications. The "XML/HTML tags" validator can help detect accidental changes to inline tags. If unsure, you can also download a preview document to ensure that there are no errors or layout problems associated with treatment of tags - see last paragraph of "Downloading Translations through Web Interface"
 
-![XML/HTML validator works for inline tags](http://zanata.org/images/screenshots/raw-files/inline-tags-validation.png)
+![XML/HTML validator works for inline tags](img/screenshots/raw-files/inline-tags-validation.png)
