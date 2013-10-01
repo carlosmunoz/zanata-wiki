@@ -2,11 +2,11 @@
 
 Zanata 2.0 now fully supports Open Id. When logging into an Open ID enabled Zanata instance, the user will be presented with an option to log in like this:
 
-![Open Id Login Screen](http://www.zanata.org/images/screenshots/openid/openid-login.png)
+![Open Id Login Screen](img/screenshots/openid/openid-login.png)
 
 By default, Zanata will offer some commonly used Open Id providers (Fedora, Google, My Open Id, and others...) but will also allow for any Open Id provider to be used. By selecting the provider of choice, users can now enter their credentials for authentication.
 
-![Open Id Login Screen](http://www.zanata.org/images/screenshots/openid/openid-login-creds.png)
+![Open Id Login Screen](img/screenshots/openid/openid-login-creds.png)
 
 The user can now be authenticated against the Open Id provider of their choice.
 

@@ -2,14 +2,14 @@
 
 'Role assignment rules' are Zanata's way of dynamically assigning security roles and even Project access to users. To configure Role Assignment Rules, admin users must go to the Administration section and select the option below.
 
-![Role Assignment Rules Location](http://www.zanata.org/images/screenshots/role-assignment-rules/admin-role-assignment-rules.png)
+![Role Assignment Rules Location](img/screenshots/role-assignment-rules/admin-role-assignment-rules.png)
 
 
 ### Configuration
 
 Role Assignment Rules have the following fields:
 
-![Role Assignment Rules](http://www.zanata.org/images/screenshots/role-assignment-rules/role-assignment-rules.png)
+![Role Assignment Rules](img/screenshots/role-assignment-rules/role-assignment-rules.png)
 
 **Policy Name:** This is the type of authentication system that a user logs in with (Open Id, Internal Authentication, etc).
 
@@ -30,6 +30,6 @@ Role Assignment Rules have the following fields:
 
 To complement the dynamic role assignment described above, Zanata can now restrict project access by roles. To restrict project access, simply edit the project and tick the checkbox asking to "restrict access to the project to certain User roles".
 
-![Project Restriction by User Roles](http://www.zanata.org/images/screenshots/role-assignment-rules/restrict-project.png)
+![Project Restriction by User Roles](img/screenshots/role-assignment-rules/restrict-project.png)
 
 Save the project. Any role restrictions will now be seen on the project's page and only users belonging to that role will be able to work on the project.
