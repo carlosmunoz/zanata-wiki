@@ -7,6 +7,7 @@ Related bug:
  * https://bugzilla.redhat.com/show_bug.cgi?id=1006063[Bug 1006063 - RFE: Enforcing validation for translation update].
  * https://bugzilla.redhat.com/show_bug.cgi?id=1012706[Bug 1012706 - RFE: when pulling or downloading, warning or error messages when invalid translations are discovered]
  * https://bugzilla.redhat.com/show_bug.cgi?id=1013942[Bug 1013942 - RFE: Warning should be shown WebUI when encounter invalid translation in warning validation level]
+ * https://bugzilla.redhat.com/show_bug.cgi?id=1014423[Bug 1014423 - RFE: Warning should be shown when pushing invalid translation at warning validation level]
 
 == Test Basis
 === Terminology
