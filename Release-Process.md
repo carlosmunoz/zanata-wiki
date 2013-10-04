@@ -51,10 +51,9 @@ Make sure you have the latest version (head) from the repository, and that you a
       release:clean release:prepare release:perform &&
     # close and release on OSSRH
     mvn nexus-staging:release -Psonatype-oss-release \
-        -DaltStagingDirectory=target/checkout/target/nexus-staging
+        -DstagingRepositoryId=$(grep -oP '^stagingRepository\.id=\K.*' target/checkout/target/nexus-staging/staging/*.properties)
 
-Note that the release process might work, but nexus-staging:release fail.  If so, you will need to release the repo manually.  
-You can release manually in Nexus here: https://oss.sonatype.org/index.html#stagingRepositories
+Note that the release process might work, but nexus-staging:release fail.  If you get an error, check to see if that is what happened.  If so, you will need to release the repo manually in Nexus here: https://oss.sonatype.org/index.html#stagingRepositories
 
 ## Releasing Tennera (JGettext) ##
     cd tennera; git pull
