@@ -64,6 +64,7 @@
  * [[Repositories]]
  * [[Where is the code for X?]]
 - [[Testing]]
+ * [[Web UI Terminology]]
  * [[JBoss EAP 6.1.0 Support]]
  * [[Messages Review]]
  * [[Translation Validation]]
