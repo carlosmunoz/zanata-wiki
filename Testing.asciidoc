@@ -1,5 +1,8 @@
 This page lists documents for testing, such as requirements, test conditions, decision tables, and so on.
 
+== Taxonomy
+ * link:Web-UI-Taxonomy[Web UI Taxonomy]
+
 == Request For Enhancement (RFE)
  * link:JBoss-EAP-6.1.0-Support[JBoss EAP 6.1.0 Support]
  * link:Messages-Review[Messages Review]
