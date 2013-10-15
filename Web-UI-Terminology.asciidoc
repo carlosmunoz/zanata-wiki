@@ -1,0 +1,44 @@
+= Web UI Terminology
+The propose of this terminology are providing a set of terms to describe user actions and components that user are likely to interact with. So we can build defect taxonomy on top of this.
+
+== Web Generic
+[glossary]
+Autocomplete::
+  An action on text field or text area that it predicts the complete word by typing only part of the word.
+
+Element::
+  A UI component. Usually used to describe the user-operable ones. E.g. buttons, hyperlinks.
+
+Hyperlink::
+  A UI element that point to a web page or anchor of a web page.
+
+List::
+  An ordered group of items of same kind. E.g. Project List, Document List.
+
+Page::
+  A part of list shown in the same web page. Available actions are: Go to first page, go to next page, go to page [n],  go to next page, and go to last page. 
+
+Password Field::
+  A text field for password input.  
+
+Search Field::
+  A text field for searching.
+
+Text Field::
+  An element for one-line text input.
+
+Text Area::
+  An element for multi-line text input.
+
+Web Page::
+  A web document 
+
+View:: 
+  A web page that show a certain functionality, like Home View, Project View, Dashboard View.
+
+== Translation Editor
+== Dashboard
+== Project
+== Language
+== Group
+== Gro
