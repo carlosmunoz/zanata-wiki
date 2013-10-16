@@ -64,9 +64,10 @@
  * [[Repositories]]
  * [[Where is the code for X?]]
 - [[Testing]]
- * [[Web UI Terminology]]
- * RFE
-   * [[JBoss EAP 6.1.0 Support]]
-   * [[Messages Review]]
-   * [[Translation Validation]]
+ * Taxonomy
+   + [[Web UI Terminology]]
+ * Request For Enhancement (RFE)
+   + [[JBoss EAP 6.1.0 Support]]
+   + [[Messages Review]]
+   + [[Translation Validation]]
 - [[Change Log]]
