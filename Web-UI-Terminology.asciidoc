@@ -6,6 +6,9 @@ The propose of this terminology are providing a set of terms to describe user ac
 Autocomplete::
   An action on text field or text area that it predicts the complete word by typing only part of the word.
 
+Breadcrumb::
+  An widget for keeping track their locations.
+
 Checkbox::
   A widget for binary choice.
 
@@ -62,8 +65,29 @@ View::
 
 == Translation
 [glossary]
+Chat room Panel::
+  A panel that shows chat room log and text area for chat message.
+
+Copy Source::
+  Copy source texts to translation entries.
+
 Entry::
   A data structure that holding the relation between an source text, plural from, context, flags, comments, and translated texts. (Definition from gettext). In message list view, it represent a row. An entry may contains multiple source texts and translation texts.
+
+Entry Row (Row)::
+  A row in the message list that hold an entry. The top row is row 1 and so on. Note that a row may contain multiple source and translation entries if plural is required.
+
+Glossary Panel::
+  A panel that shows the glossary.
+
+Keyboard shortcut dialog::
+  A dialog that shows the enabled keyboard shortcut.
+
+Notification Panel::
+  A panel that displays notification.
+
+Option Panel::
+  A panel that shows configuration options.
 
 Source Entry::
   A text area that hold a source text.
@@ -71,6 +95,8 @@ Source Entry::
 Source Text::
   A string to be translated. In terms of gettext, it represents msgid or msgid_plural.
 
+State Filter::
+  A set of checkboxes for filtering the translation texts by its state.
 
 Translation Entry::
   A text area that hold a translation text.
@@ -80,6 +106,13 @@ Translation State::
 
 Translation Text::
   A string of translation. In terms of gettext, it represents msgstr or msgstr[n].
+
+Translation Memory (TM) Panel::
+  A panel that shows translation memory.
+
+Validation Option Panel::
+  A panel that shows validation options.
+
 
 == Dashboard
 == Project
