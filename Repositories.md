@@ -4,7 +4,8 @@ Most of Zanata uses Maven for dependency and build management, and this page ass
 
 # Repositories
 At the time of writing there are 15 repositories under the Zanata group on github, however  this overview will focus on only 7 of these: zanata-parent, zanata-api, zanata-common, zanata, zanata-client, zanata-python-client and zanataj.
-![Repositories overview](http://zanata.org/images/diagrams/zanata-2.0-repositories-overview.svg)
+
+![Repositories overview](img/diagrams/zanata-2.0-repositories-overview.svg)
 
 ## zanata-parent
 This repository simply holds the parent pom inherited by other Zanata modules.
