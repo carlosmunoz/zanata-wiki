@@ -90,7 +90,7 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
     git push origin release integration/master
 
 # Merging release to legacy and master to release (for Server)
-**NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
+**NB: If you want to automate this, make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
 You may need to perform a similar operation with the branches in [zanata-deploy](https://github.com/zanata/zanata-deploy/).
 
@@ -103,7 +103,7 @@ You may need to perform a similar operation with the branches in [zanata-deploy]
     git merge origin/master --ff-only --quiet
     git checkout integration/master
     git merge origin/integration/master --ff-only --quiet
-    mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=${developmentVersion}
+    mvn release:update-versions -DautoVersionSubmodules=true #-DdevelopmentVersion=${developmentVersion}
     git commit pom.xml */pom.xml -m "prepare for next development iteration"
     # push all the changes back to the server
     git push origin legacy release integration/master
