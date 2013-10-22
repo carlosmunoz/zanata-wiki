@@ -33,8 +33,11 @@ Menu::
 Modal Dialog::
   A dialog that block the actions to parent web page until it close.
 
-Page::
-  A part of list shown in the same web page. Available actions are: Go to first page, go to next page, go to page [n],  go to next page, and go to last page. 
+Pager List::
+  A List that will show more items whenever user clicks "more".
+
+Paged List::
+  A List that will be split in to different pages if its length reached a given length.
 
 Panel::
   A widget that contains other widgets and occupies an area in view. E.g. Setting Panel, Translation Memory Panel.
@@ -70,6 +73,12 @@ Chat room Panel::
 
 Copy Source::
   Copy source strings to translation entries.
+
+Document List::
+  A Paged List that shows documents.
+
+Document List View::
+  The view that show document list.
 
 Entry::
   A data structure that holding the relation between an source string, plural from, context, flags, comments, and translated texts. (Definition from gettext). In message list view, it represent a row. An entry may contains multiple source strings and translation strings.
@@ -117,9 +126,29 @@ Translation Unit Detail::
   Data about an entry. E.g. Message Context, entry Serial number, and REST id.
 
 == Dashboard
-== Project
-== Language
+Activity List::
+  A Pager List for activities.
+
+Maintained Project List::
+  A Pager List for user maintained projects.
+
+== Projects
+Project List::
+  A Paged List for projects.
+
+Project Search Field::
+  A search field for searching projects.
+
+Version List::
+  A Paged List for versions.
+
+== Languages
+
+
 == Group
 == Glossary
 == Administration Menus 
+== Setting
+== Login
+== Register
 
