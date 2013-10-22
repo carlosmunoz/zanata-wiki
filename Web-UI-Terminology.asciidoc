@@ -133,14 +133,35 @@ Maintained Project List::
   A Pager List for user maintained projects.
 
 == Projects
+Copy Trans Options View::
+  A View for configure copy trans options.
+
+Maintainer Managing View::
+  A View for managing maintainer.
+
 Project List::
   A Paged List for projects.
+
+Project Creating View::
+  A View for creating project.
+
+Project Editing View::
+  A view for editing project.
 
 Project Search Field::
   A search field for searching projects.
 
+Source Documents View::
+  A View for Uploading and Downloading source document.
+
 Version List::
   A Paged List for versions.
+
+Version Creating View::
+  A View for creating version.
+
+Version Editing View::
+  A View for editing version.
 
 == Languages
 
