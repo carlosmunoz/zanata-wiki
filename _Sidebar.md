@@ -65,9 +65,9 @@
  * [[Where is the code for X?]]
 - [[Testing]]
  * Taxonomy
-   - [[Web UI Terminology]]
+     - [[Web UI Terminology]]
  * Request For Enhancement (RFE)
-   - [[JBoss EAP 6.1.0 Support]]
-   - [[Messages Review]]
-   - [[Translation Validation]]
+     - [[JBoss EAP 6.1.0 Support]]
+     - [[Messages Review]]
+     - [[Translation Validation]]
 - [[Change Log]]
