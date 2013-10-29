@@ -65,12 +65,17 @@ You should probably also ensure freshclam is set to run at least once per day, t
 
 To override the default behaviour above, you can set the system property `virusScanner` when running the server.  `DISABLED` means no virus scanning will be performed; all files will be assumed safe.  Any other value will be treated as the name of a virus scanner command: the command will be called with the name of a file to scan.
 
-=== Fonts (For CAPTCHA to Work)
+=== Fonts 
+For CAPTCHA to Work
 
 [source,sh]
-----
 sudo yum install "dejavu*"
-----
+
+Some administration functions are localized, so you may need to install, for
+example, Chinese fonts for Chinese administrator by using following command:
+
+[source,sh]
+sudo yum install "cjk*fonts"
 
 == Installation
 === Create Zanata database
