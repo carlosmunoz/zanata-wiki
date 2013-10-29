@@ -1,6 +1,7 @@
 = Web UI Terminology
 The propose of this terminology are providing a set of terms to describe user actions and components that user are likely to interact with. So we can build defect taxonomy on top of this.
 
+
 == Web Generic
 [glossary]
 Autocomplete::
@@ -12,50 +13,15 @@ Breadcrumb::
 Checkbox::
   A widget for binary choice.
 
-Dialog::
-  A windowed widget that prompt user for an acknowledgment. It closes after acknowledgment received. It should also close when move away from current web page.
-
-Drop-down::
-  A widget for selecting exactly one option. It expands to show a set of options when clicked; it clasped when user move focus or select an option.
-
 Focus::
   The widget that currently receiving keyboard input.
 
 Hyperlink::
   A UI widget that point to a web page or anchor of a web page.
 
-List::
-  An ordered group of items of same kind. E.g. Project List, Document List.
-
 Menu::
   A collection of options or commands for user to click from.
 
-Modal Dialog::
-  A dialog that block the actions to parent web page until it close.
-
-Pager List::
-  A List that will show more items whenever user clicks "more".
-
-Paged List::
-  A List that will be split in to different pages if its length reached a given length.
-
-Panel::
-  A widget that contains other widgets and occupies an area in view. E.g. Setting Panel, Translation Memory Panel.
-
-Password Field::
-  A text field for password input.  
-
-Radio button:
-  A widget for choosing exactly on of a predefined set of options.
-
-Search Field::
-  A text field for searching.
-
-Text Field::
-  A widget for one-lined text input.
-
-Text Box::
-  A widget for multi-lined text input.
 
 Web Page::
   A web document that can be identified with URL.
@@ -63,22 +29,9 @@ Web Page::
 Widget::
   A UI element for viewing or interacting.
 
-View:: 
-  A web page that show a certain functionality, like Home View, Project View, Dashboard View.
-
 == Translation
-[glossary]
-Chat room Panel::
-  A panel that shows chat room log and text box for chat message.
-
 Copy Source::
   Copy source strings to translation entries.
-
-Document List::
-  A Paged List that shows documents.
-
-Document List View::
-  The view that show document list.
 
 Entry::
   A data structure that holding the relation between an source string, plural from, context, flags, comments, and translated texts. (Definition from gettext). In message list view, it represent a row. An entry may contains multiple source strings and translation strings.
@@ -86,35 +39,11 @@ Entry::
 Entry Row (Row)::
   A row in the message list that hold an entry. The top row is row 1 and so on. Note that a row may contain multiple source and translation entries if plural is required.
 
-Glossary Panel::
-  A panel that shows the glossary.
-
-Keyboard shortcut dialog::
-  A dialog that shows the enabled keyboard shortcut.
-
-Notification Panel::
-  A panel that displays notification.
-
-Option Panel::
-  A panel that shows configuration options.
-
-Source Box::
-  A text box that hold a source string.
-
 Source String::
   A string to be translated. In terms of gettext, it represents msgid or msgid_plural.
 
 State Filter::
   A set of checkboxes for filtering the translation strings by its state.
-
-Translation Box::
-  A text box that hold a translation string.
-
-Translation Memory (TM) Panel::
-  A panel that shows translation memory.
-
-Validation Option Panel::
-  A panel that shows validation options.
 
 Translation State::
   The state of translation. It can be new, fuzzy, translated, rejected or approved.
@@ -125,51 +54,81 @@ Translation String::
 Translation Unit Detail::
   Data about an entry. E.g. Message Context, entry Serial number, and REST id.
 
-== Dashboard
-Activity List::
-  A Pager List for activities.
+== Dialog
+Dialog:: A windowed widget that prompt user for an acknowledgement. It closes after acknowledgement received. It should also close when move away from current web page.
+  Modal Dialog;; A dialog that block the actions to parent web page until it close.
+  Keyboard shortcut dialog;; A dialog that shows the enabled keyboard shortcut.
 
-Maintained Project List::
-  A Pager List for user maintained projects.
+== List
+List:: An ordered group of items of same kind. E.g. Project List, Document List.
+  Pager List;; A List that will show more items whenever user clicks "more".
+    Activity List::: A Pager List for activities.
+    Maintained Project List::: A Pager List for user maintained projects.
+  Paged List;; A List that will be split in to different pages if its length reached a given length.
+    Document List:::  A Paged List that shows documents.
+    Group List::: A Paged List that shows groups.
+    Language List:::  A Paged List that shows languages.
+      Server Language List;;;  A Paged List that shows server supported languages.
+      Project-Version Language List;;;  A Paged List that shows languages enabled in the project-version.
+    Project List::: A Paged List for projects.
+    Project-Version Language List:::  A Paged List that shows languages enabled in the project-version.
+    Version List::: A Paged List that shows versions.
+    Glossary List::: A Paged List that shows glossaries.
 
-== Projects
-Copy Trans Options View::
-  A View for configure copy trans options.
+== Panel
+Panel:: A widget that contains other widgets and occupies an area in view. E.g. Setting Panel, Translation Memory Panel.
+  Chat room Panel;; A panel that shows chat room log and text box for chat message.
+  Glossary Panel;;  A panel that shows the glossary.
+  Notification Panel;;  A panel that displays notification.
+  Option Panel;; A panel that shows configuration options.
+  Validation Option Panel;; A panel that shows validation options.
+  Translation Memory (TM) Panel;; A panel that shows translation memory.
 
-Maintainer Managing View::
-  A View for managing maintainer.
+== Selection
+Radio button:: A widget for choosing exactly on of a predefined set of options.
 
-Project List::
-  A Paged List for projects.
+Drop-down:: A widget for selecting exactly one option. It expands to show a set of options when clicked; it clasped when user move focus or select an option.
 
-Project Creating View::
-  A View for creating project.
+List Box:: A widget that allows the user to select one or more items from a list contained within a static, multiple line text box.
 
-Project Editing View::
-  A view for editing project.
+== Text Input
+Text Box:: A widget for text editing and display.
+  Text Editor;; A widget that is capable of multi-lined text editing.
+    Highlighting Editor::: The Text Editor that offer syntax highlighting.
+    Source Editor:: A read-only text editor that hold a source string. Mi
+    Translation Editor: A text editor that hold a translation string.
+  Text Field;;  A widget that is capable of one-lined text inputting.
+    Password Field::: A text field for password input.  
+    Search Field::: A text field for searching.
+      Project Search Field;;;  A search field for searching projects.
+    Combo Field::: A widget that has both Text Field and an Drop-Down.
 
-Project Search Field::
-  A search field for searching projects.
+== View
+View:: A web page that show a certain functionality, like Project View, Dashboard View.
+  Dashboard View;; A View that shows dashboard.
+  Form View;; A View that have multiple input widget and as for confirmation before go to next view.
+    Account Merging View::: A Form View that shows account merging form.
+    Copy Trans Options View:::  A Form View that shows Copy trans options.
+    Login Form View::: A Form View that shows Login Form.
+    Profile Editing View::: A Form View that shows profile editing form.
+    Project Creating View::: A Form View that shows project creating form.
+    Project Editing View:::  A Form View that shows project editing form.
+    Password Changing View:: A Form View that shows password changing form.
+    Registration Form View::: A Form View that shows Registration Form.
+    Identity Managing View::: A Form View that shows identity managing form.
+    Version Creating View::: A Form View that shows version creating form.
+    Version Editing View::: A Form View that shows version creating form.
 
-Source Documents View::
-  A View for Uploading and Downloading source document.
-
-Version List::
-  A Paged List for versions.
-
-Version Creating View::
-  A View for creating version.
-
-Version Editing View::
-  A View for editing version.
-
-== Languages
-
-
-== Group
-== Glossary
-== Administration Menus 
-== Setting
-== Login
-== Register
-
+  List View;; A View that contains a List.
+    Document List View::: A View that shows Document List.
+    Entry List View:::
+    Translation Editor View:::  A View that shows Entry List.
+    Group List View::: A View that shows Group List.
+    Language List View::: A View that shows Language List.
+      Server Language List View::: A View that shows Server Language List.
+      Project-Version Language List View::: A View that shows Project-Version Language List.
+  Language Adding View;; A View for adding new language.
+  Maintainer Managing View;; A View for managing maintainer.
+  Profile View;; A View that shows profile of a user.
+  Project View;; A View that shows project overview.
+  Source Documents View;; A View for Uploading and Downloading source document.
