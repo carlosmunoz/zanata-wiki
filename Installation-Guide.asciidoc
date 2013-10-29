@@ -72,7 +72,7 @@ For CAPTCHA to Work
 sudo yum install "dejavu*"
 
 Some administration functions are localized, so you may need to install, for
-example, Chinese fonts for Chinese administrator by using following command:
+example, Chinese fonts on server for Chinese administrators by using following command:
 
 [source,sh]
 sudo yum install "cjk*fonts"
