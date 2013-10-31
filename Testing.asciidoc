@@ -1,6 +1,7 @@
 This page lists documents for testing, such as requirements, test conditions, decision tables, and so on.
 
-== Terminology
+== Taxonomy
+
  * link:Web-UI-Terminology[Web UI Terminilogy]
 
 == Request For Enhancement (RFE)
