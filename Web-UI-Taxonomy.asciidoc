@@ -24,31 +24,41 @@ List:: An ordered group of items of same kind. E.g. Project List, Document List.
 
 == Panel
 Panel:: A widget that contains other widgets and occupies an area in view. E.g. Setting Panel, Translation Memory Panel.
-  Chat room Panel;; A panel that shows chat room log and text box for chat message.
-  Glossary Panel;;  A panel that shows the glossary.
-  Notification Panel;;  A panel that displays notification.
-  Option Panel;; A panel that shows configuration options.
-  Validation Option Panel;; A panel that shows validation options.
-  Translation Memory (TM) Panel;; A panel that shows translation memory.
+  Chat Room Panel;; A Panel that shows chat room log and text box for chat message.
+  Glossary Panel;;  A Panel that shows the glossary.
+  Notification Panel;;  A Panel that displays notification.
+  Option Panel;; A Panel that shows configuration options.
+  Validation Option Panel;; A Panel that shows validation options.
+  Translation Memory (TM) Panel;; A Panel that shows translation memory.
+
+== Progress Indicators
+Progress Indicator:: A Widget that showing that some action is currently undertaken.
+  Progress Bar;; A Progress Indicator that show the percentage of completion.
 
 == Selection
-Radio button:: A widget for choosing exactly on of a predefined set of options.
+Radio Button:: A Widget for choosing exactly on of a predefined set of options.
 
-Drop-down:: A widget for selecting exactly one option. It expands to show a set of options when clicked; it clasped when user move focus or select an option.
+Drop-Down:: A Widget for selecting exactly one option. It expands to show a set of options when clicked; it clasped when user move focus or select an option.
 
-List Box:: A widget that allows the user to select one or more items from a list contained within a static, multiple line text box.
+List Box:: A Widget that allows the user to select one or more items from a list contained within a static, multiple line text box.
+
+== Statistics 
+Percentage Bar:: A Widget that shows the percentage of given items. Like percentage of words are translated.
+
+Translation Statistics Table:: A Widget that shows the translation statistics in table.
 
 == Text Input
-Text Box:: A widget for text editing and display.
-  Text Editor;; A widget that is capable of multi-lined text editing.
-    Highlighting Editor::: The Text Editor that offer syntax highlighting.
-    Source Editor:: A read-only text editor that hold a source string. Mi
-    Translation Editor: A text editor that hold a translation string.
-  Text Field;;  A widget that is capable of one-lined text inputting.
-    Password Field::: A text field for password input.  
-    Search Field::: A text field for searching.
-      Project Search Field;;;  A search field for searching projects.
-    Combo Field::: A widget that has both Text Field and an Drop-Down.
+Text Box:: A Widget that allows text editing or displaying.
+  Text Editor;; A Text Box that allows multi-lined text editing.
+    Highlighting Editor::: The Text Editor that does syntax highlighting.
+    Source Editor::: A read-only Text Editor that holds Source String.
+    Translation Editor;;; A Text Editor that holds Translation String.
+       Translation Entry::: A set of Translation Editors that belongs to an Entry.
+  Text Field;;  A Text Box that allows one-lined text editing or displaying.
+    Password Field::: A Text Field that masks input string for password input.  
+    Search Field::: A Text Field that trigger the search on input term by pressing "enter".
+      Project Search Field;;;  A Search Field that searchs projects.
+    Combo Field::: A Widget that has both Text Field and an Drop-Down.
 
 == View
 View:: A web page that show a certain functionality, like Project View, Dashboard View.
