@@ -24,6 +24,7 @@
  * [[Project Types]]
  * Clients
      - [[Client Configuration Files|Client Configuration]]
+       - [[Client Command Hooks]]
      - [[Python Client (No longer supported!)|Zanata Python Client]]
      - [[Python Client Troubleshooting|Python Client Troubleshooting]]
      - [[Maven Integration|Zanata Maven Integration]]
