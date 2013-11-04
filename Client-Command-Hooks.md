@@ -11,16 +11,25 @@ To specify one or more custom commands:
 For example, the following elements within the top-level <config> element will generate a .pot file from a man page before push, clean up the generated file after push, and will generate a translated German man page after pull then remove all downloaded .po files.
 
 ```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config xmlns="http://zanata.org/namespace/config/">
+
+...
+
   <hooks>
     <hook command="push">
-        <before>po4a-gettextize -f man -m google-chrome.1 -p goog-chrome.pot</before>
-        <after>rm -f goog-chrome.pot</after>
+        <before>po4a-gettextize -f man -m manpage.1 -p manpage.pot</before>
+        <after>rm -f manpage.pot</after>
     </hook>
     <hook command="pull">
-        <after>po4a-translate -f man -m google-chrome.1 -p trans/de/goog-chrome.po -l google-chrome.de.1 --keep 1</after>
+        <after>po4a-translate -f man -m manpage.1 -p trans/de/manpage.po -l manpage.de.1 --keep 1</after>
         <after>rm -rf trans</after>
     </hook>
   </hooks>
+
+...
+
+</config>
 ```
 
 Multiple commands of the same type (i.e. "before" or "after") within a hook will be run in the order that they are specified in zanata.xml. e.g. when running pull with the above config, po4a will always run before rm. If any of these commands fails, the whole operation is aborted. e.g. when running push, if po4a fails then push and rm will not be run, and if push fails then rm will not be run.
