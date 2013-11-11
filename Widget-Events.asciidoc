@@ -1,0 +1,87 @@
+= Widget Events
+List of events on widgets that are relevant to test Zanata.
+
+== ClipboardEvent
+The ClipboardEvent interface represents events providing information related to modification of the clipboard, that is cut, copy, and paste events.
+
+copy:: The text selection has been added to the clipboard.
+
+cut:: The text selection has been removed from the document and added to the clipboard.
+
+paste:: Data has been transfered from the system clipboard to the document.
+
+== Event
+The Event interface is used to provide contextual information about an event to the handler processing the event. 
+
+change:: An element loses focus and its value changed since gaining focus.
+
+checking:: The user agent is checking for an update, or attempting to download the cache manifest for the first time.
+
+downloading:: The user agent has found an update and is fetching it, or is downloading the resources listed by the cache manifest for the first time.
+
+error::  A request caused an error and failed.
+
+input::  The value of an element changes or the content of an element with the attribute contenteditable is modified.
+
+invalid:: A submittable element has been checked and doesn't satisfy its constraints.
+
+submit:: A form is submitted.
+
+success:: A request successfully completed.
+
+== FocusEvent
+The FocusEvent interface represents focus-related events like focus, blur, focusin, or focusout.
+
+focus:: An element has received focus (does not bubble).
+
+focusin:: An element is about to receive focus (bubbles).
+
+focusout:: An element is about to lose focus (bubbles).
+
+== KeyboardEvent
+KeyboardEvent objects describe a user interaction with the keyboard.
+
+keydown:: A key is pressed down.
+
+keypress:: A key is pressed down and that key normally produces a character value (use input instead).
+
+keyup::	A key is released.
+
+== MouseEvent
+The DOM MouseEvent interface represents events that occur due to the user interacting with a pointing device (such as a mouse).
+click:: A pointing device button has been pressed and released on an element.
+
+dblclick:: A pointing device button is clicked twice on an element.
+
+mousedown:: A pointing device button (usually a mouse) is pressed on an element.
+
+mouseenter:: A pointing device is moved onto the element that has the listener attached.
+
+mouseleave:: A pointing device is moved off the element that has the listener attached.
+
+mouseup:: A pointing device button is released over an element.
+
+== ProgressEvent
+The ProgressEvent interface represents events measuring progress of an underlying process, like an HTTP request (for an XMLHttpRequest, or the loading of the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
+
+abort:: Progression has been terminated (not due to an error).
+
+load:: Progression has been successful.
+
+progress:: In progress.
+
+== UIEvent
+A basic event interface for all user interface events.
+
+abort:: The loading of a resource has been aborted.
+
+load:: A resource and its dependent resources have finished loading.
+
+select:: Some text is being selected.
+
+unload:: The document or a dependent resource is being unloaded.
+
+show:: A contextmenu event was fired on/bubbled to an element that has a contextmenu attribute
+
+error:: A resource failed to load.
+
