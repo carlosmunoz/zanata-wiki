@@ -68,6 +68,7 @@
  * Taxonomy
      - [[General Terminology]]
      - [[Web UI Taxonomy]]
+     - [[Widget Events]]
  * Request For Enhancement (RFE)
      - [[JBoss EAP 6.1.0 Support]]
      - [[Messages Review]]
