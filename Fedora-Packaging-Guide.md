@@ -73,6 +73,7 @@ Summary note for new package review
 
 4. Once git repo is created, [import your package into SCM](http://fedoraproject.org/wiki/Using_git_FAQ_for_package_maintainers#How_do_I_import_a_SRPM_package.3F)
 
+        $fedora-packager-setup # you only need to run this once to enable your access to fedora git repo
         $fedpkg clone <package>
         $git checkout master # should already in master
         $fedpkg import ~/rpmbuild/SRPM/myspec-1.0-1.fc17.src.rpm
