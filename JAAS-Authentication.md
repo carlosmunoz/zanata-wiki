@@ -117,6 +117,9 @@ standalone.xml:
 
 ## Kerberos/SPNEGO
 
+Kerberos authentication allows for both ticket based and form based authentication. Zanata will first check for a valid Kerberos ticket (if the browser supports it). If it is not possible to obtain a valid ticket, then Zanata will show a form to enter a user name and password to be authenticated using Kerberos.
+**Note:** It is recommended to use SSL when dealing with form based Kerberos authentication.
+
 Make sure `standalone.xml` has the following jndi property 
 
 ```xml
@@ -140,15 +143,24 @@ standalone.xml:
       ...
       <security-domain name="zanata.kerberos">
         <authentication>
-          <login-module code="org.jboss.security.negotiation.spnego.SPNEGOLoginModule" flag="optional">
+          <login-module code="org.jboss.security.negotiation.spnego.SPNEGOLoginModule" flag="sufficient">
             <module-option name="password-stacking" value="useFirstPass" />
             <module-option name="serverSecurityDomain" value="host" />
             <module-option name="removeRealmFromPrincipal" value="true" />
-          </login-module>
-          <login-module code="com.sun.security.auth.module.Krb5LoginModule" flag="optional">
-            <module-option name="storePass" value="true" />
+            <module-option name="usernamePasswordDomain" value="krb5"/>
           </login-module>
         </authentication>
+      </security-domain>
+
+      <security-domain name="krb5">
+        <authentication>
+          <login-module code="com.sun.security.auth.module.Krb5LoginModule" flag="sufficient">
+            <module-option name="storePass" value="false"/>
+            <module-option name="clearPass" value="true"/>
+            <module-option name="debug" value="true"/>
+            <module-option name="doNotPrompt" value="false"/>
+          </login-module>
+        <authentication>
       </security-domain>
     
       <security-domain name="host">
