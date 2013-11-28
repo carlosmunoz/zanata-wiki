@@ -71,7 +71,7 @@ Note that the release process might work, but nexus-staging:release fail.  If yo
 
 # Branch management after a release
 
-Note: This applies to api, common, client and server. Parent don't have release or legacy branches.
+Note: This applies to api, common, client and server. Parent doesn't have release or legacy branches.
 
 Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
 
