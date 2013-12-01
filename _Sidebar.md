@@ -74,4 +74,5 @@
      - [[Messages Review]]
      - [[Translation Validation]]
 - [[Security]]
+     - [[Security Advisories]]
 - [[Change Log]]
