@@ -52,6 +52,7 @@
  * [[Selenium Web Driver Automated Tests]]
  * [[Writing Selenium Tests|Web Test With Selenium]]
  * [[Database Tricks]]
+ * [[Localize Zanata]]
 - [[Zanata Structure]] (for developers)
  * [[Architecture]]
      - [[Project Pages Architecture]]
