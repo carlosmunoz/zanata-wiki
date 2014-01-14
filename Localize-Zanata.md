@@ -58,7 +58,7 @@ It will prevent GWT compiler to compile again with error:
 ```log
 [ERROR] Incorrect number of selector forms for showingResultsForProjectWideSearch - 'few'
 ```
-We can manually fix this (at the moment only 3 such strings). I haven't figure out an automated way to clean this up. So I remove all generated plurals. GWT compiler will give a warning saying missing plural form but it will work.
+We can manually fix this (at the moment only 3 such strings). I haven't figured out an automated way to clean this up and Zanata doesn't support mismatch source and target either. So I remove all generated plurals. GWT compiler will give a warning saying missing plural form but it will work.
 
 #### Steps to generate GWT properties file and push pull:
 
