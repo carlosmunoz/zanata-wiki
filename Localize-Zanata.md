@@ -21,11 +21,46 @@ In a nutshell, we use annotated java interfaces in code for resource strings. GW
 
 2. GWT properties file is UTF8 encoded not ascii
 
-3. GWT properties files (even for translation files) can not have empty translations. GWT compiler will generate translation skeleton with default strings in it. That's why the project on zanata.org has near 100% translation statistics but when you open it it's all in English.
+3. GWT properties files support plural forms. If there is no properties file for a given locale, GWT compiler will generate translation skeleton with default strings in it. Our script will then copy this skeleton into correct location and available on classpath. If GWT compiler then sees this on classpath, it will complement that existing translation properties with required plural form and comments.
+```properties
+# 0=numDocs (Plural Count)
+# - Default plural form
+searchFoundResultsInDocuments=Search found results in {0} documents
+# - plural form 'one': Count ends in 1 but not 11
+searchFoundResultsInDocuments[one]=
+# - plural form 'few': Count ends in 2-4 but not 12-14
+searchFoundResultsInDocuments[few]=
+```
+But for complex plural definition i.e. having multiple @PluralCount in parameters (see org.zanata.webtrans.client.resources.WebTransMessages.showingResultsForProjectWideSearch), it needs to have matching number of plural category in the [] just like how you define it in java interface.
+i.e.
+```java
+    @DefaultMessage("Showing results for search \"{0}\" ({1} text flows in {2} documents)")
+    // @formatter:off
+    @AlternateMessage({
+            "one|one", "Showing results for search \"{0}\" (1 text flow in 1 document)",
+            "other|one", "Showing results for search \"{0}\" ({1} text flows in 1 document)"
+    })
+    // @formatter:on
+            String showingResultsForProjectWideSearch(String searchString,
+                    @PluralCount int textFlows, @PluralCount int documents);
+```
+The generated plural form below does not match what we have in interface. i.e. not [one|one] and [few|few]
+```properties
+# 0=searchString, 1=textFlows (Plural Count), 2=documents (Plural Count)
+# - Default plural form
+showingResultsForProjectWideSearch=Showing results for search "{0}" ({1} text flows in {2} documents)
+# - plural form 'one': Count ends in 1 but not 11
+showingResultsForProjectWideSearch[one]=
+# - plural form 'few': Count ends in 2-4 but not 12-14
+showingResultsForProjectWideSearch[few]=
+```
+It will prevent GWT compiler to compile again with error:
+```log
+[ERROR] Incorrect number of selector forms for showingResultsForProjectWideSearch - 'few'
+```
+We can manually fix this (at the moment only 3 such strings). I haven't figure out an automated way to clean this up. So I remove all generated plurals. GWT compiler will give a warning saying missing plural form but it will work.
 
-4. GWT properties supports plural form. You will notice some string has comment "Plural form (one)" etc. Some even don't have any content. 
-
-Steps to generate GWT properties file and push pull:
+#### Steps to generate GWT properties file and push pull:
 
 1. cd into zanata-war
 
