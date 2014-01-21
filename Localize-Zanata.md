@@ -21,7 +21,7 @@ In a nutshell, we use annotated java interfaces in code for resource strings. GW
 
 2. GWT properties file is UTF8 encoded not ascii
 
-3. GWT properties files support plural forms. If there is no properties file for a given locale, GWT compiler will generate translation skeleton with default strings in it. Our script will then copy this skeleton into correct location and available on classpath. If GWT compiler then sees this on classpath, it will complement that existing translation properties with required plural form and comments.
+3. GWT properties files support plural forms. If there is no properties file for a given locale, GWT compiler will generate translation skeleton with default strings in it. If GWT compiler then sees a properties file on classpath, it will complement that existing translation properties with required plural form and comments.
 ```properties
 # 0=numDocs (Plural Count)
 # - Default plural form
@@ -60,24 +60,19 @@ It will prevent GWT compiler to compile again with error:
 ```
 We can manually fix this (at the moment only 3 such strings). I haven't figured out an automated way to clean this up and Zanata doesn't support mismatch source and target either. So I remove all generated plurals. GWT compiler will give a warning saying missing plural form but it will work.
 
+GWT also use different fall back rule then normal java properties localization. If in GWT module (i.e. Applciatin.gwt.xml) you specified some supported locale(s), i.e. ja, the properties file XXX_ja.properties must be available and compelete at compile time(so that GWT can generate the permutation). It will only fall back to English if user requested locale is NOT listed in gwt.xml. Therefore even if the translation is not 100% complete, you ought to have English strings as placeholders in the translation file. GWT generate skeleton contains all the English placeholder. Currently we have a script to combine Zanata translation and the skeleton to make sure it won't break the build.
+
 #### Steps to generate GWT properties file and push pull:
 
 1. cd into zanata-war
 
-2. mvn process-test-resources -Dgwt-i18n
- > This will trigger profile gwt-i18n and ask GWT compiler to generate resource bundle for us. It will also copy those properties files into correct location. Enabled locales will have translation skeleton and it will REPLACE existing translation. This is to make sure translation files are pre-filled with contents which is necessary for GWT compiler to compile later on.
+2. mvn zanata:push
+ > This has command hook to trigger profile gwt-i18n and ask GWT compiler to generate resource bundle for us. It will also rename and move those properties files into correct location. Enabled locales will have translation skeleton. This is to make sure translation files are pre-filled with contents which is necessary for GWT compiler to compile later on.
 
-3. mvn zanata:push -Dzanata.pushType=both
- > Push type must set to both so that no translation is left empty. Hence merge type MUST be auto (default) so that existing translation won't get wiped. 
-
-4. mvn zanata:pull
+3. mvn zanata:pull
+ > This will again has command hook to trigger profile gwt-i18n to generate resource skeletons before pull. After pull there is another command hook to combine pulled translation (may not be 100% complete) and generated skeleton file and put it under target/classes. Subsequent build without "clean" will see these files on classpath.
 
 #### Things to note
-* GWT properties are pre-filled with English therefore it's hard to know whether it has been actually translated or not. Thus the project require review. This can be used to filter as well as QA.
-
-* We use command hook to copy GWT generated xxx_default.properties to java convention xxx.properties before push. There is also a command hook to remove those after push. If you abort the push, those files will stay. It will prevent GWT compiler to work. To remove them manually, run 
- > mvn -Dgwt-i18n groovy:execute -Dgroovy.script=RemoveJavaDefaultProperties.groovy
-
 * At the moment only a few locales are enabled on Zanata server. Those are with high percentage translation rate in ["Zanata server" project](https://translate.zanata.org/zanata/project/view/zanata-server). This is configured in faces-config.xml. GWT follows the same. To enable more locales:
 
     * edit faces-config.xml
