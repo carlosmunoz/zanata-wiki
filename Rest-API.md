@@ -1,0 +1,1 @@
+Go to [zanata.org](zanata.org) and click [REST API docs](https://zanata.ci.cloudbees.com/job/zanata-api-site/site/zanata-common-api/rest-api-docs/index.html) under footer.
