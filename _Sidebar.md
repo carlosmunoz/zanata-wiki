@@ -2,6 +2,7 @@
 
 - [[Home]]
 - [[New in 3.0]]
+ * [[Custom document parameters]]
 - [[New in 2.3]]
 - [[New in 2.0]]
  * [[Raw Documents]]
