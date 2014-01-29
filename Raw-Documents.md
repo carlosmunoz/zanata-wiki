@@ -9,13 +9,13 @@ Supported formats include:
 * plain-text (*.txt)
 * Document Type Definition (*.dtd)
 * Open Document Format (LibreOffice):
-  * Open Document Text (*.odt, *.fodt)
-  * Open Document Presentation (*.odp, *.fodp)
-  * Open Document Spreadsheet (*.ods, *.fods)
-  * Open Document Graphics (*.odg, *.fodg)
+  * Open Document Text (*.odt, *~~.fodt~~)
+  * Open Document Presentation (*.odp, *~~.fodp~~)
+  * Open Document Spreadsheet (*.ods, *~~.fods~~)
+  * Open Document Graphics (*.odg, *~~.fodg~~)
 * InDesign Markup Language (*.idml)
 
-_Open Document Formula (*.odf) and Open Document Database (*.odb) formats may also work, but have not been tested._
+_Open Document Formula (*.odf) and Open Document Database (*.odb) ~~formats may also work, but have not been tested~~ are not supported._
 
 ## Known Issues
 This is an experimental feature, and several issues exist that should be considered when using this feature:
