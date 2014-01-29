@@ -26,7 +26,7 @@ Handles non-standard java properties files that use UTF-8 encoding, and do not u
 
 ### Partial / Limited Support
 #### Xliff
-Not actively supported. _(Details on file schema to hopefully forthcoming...)_
+Not actively supported. _(Details on file schema hopefully forthcoming...)_
 #### Xml
-Not actively supported. _(Details on file schema to hopefully forthcoming...)_
+Not actively supported. _(Details on file schema hopefully forthcoming...)_
 
