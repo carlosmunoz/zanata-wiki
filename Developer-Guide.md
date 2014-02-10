@@ -21,7 +21,7 @@ See [[Coding Guide]].
 
 1. install JDK 1.6 (see above)
 1. install git
-1. get Zanata source [[GitHubSetup]]
+1. get Zanata source [[GitHub Setup]]
 1. [install Maven](Working-With-Maven#Installing_Maven_on_Fedora)
 1. [install MySQL client and server](Database-Setup#Install_MySQL)
 1. [create database: zanata](Database-Setup#Setup_for_Zanata)
