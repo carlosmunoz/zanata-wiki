@@ -1,4 +1,5 @@
-# Everything about I18N.
+
+This information may be outdated: please see [[Localize-Zanata]].
 
 # Introduction
 
