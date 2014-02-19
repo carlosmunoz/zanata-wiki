@@ -92,7 +92,7 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
 # Merging release to legacy and master to release (for Server)
 **NB: If you want to automate this, make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
-You may need to perform a similar operation with the branches in [zanata-deploy](https://github.com/zanata/zanata-deploy/).
+If Zanata's version of JBoss EAP has been updated recently, you may need to update the configuration management manifests, to ensure that the correct version of EAP is deployed to each test machine.  In some cases you may also need to change .config/zanata-deploy.conf on the build machine, to ensure that zanata.war is still deployed correctly on each test machine and that the jbossas service is managed correctly.
 
     git fetch
     git checkout legacy
