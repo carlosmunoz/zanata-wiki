@@ -95,15 +95,20 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
 If Zanata's version of JBoss EAP has been updated recently, you may need to update the configuration management manifests, to ensure that the correct version of EAP is deployed to each test machine.  In some cases you may also need to change .config/zanata-deploy.conf on the build machine, to ensure that zanata.war is still deployed correctly on each test machine and that the jbossas service is managed correctly.
 
     git fetch
+    git checkout integration/master && git reset --hard origin/integration/master
+    git branch -D legacy release || true
+
     git checkout legacy
-    git merge origin/legacy --ff-only --quiet
-    git merge origin/release --ff-only --quiet
+    git merge origin/release --ff-only --quiet ||
+    (echo please check for cherry-picked commits in legacy which were never merged into release; exit 1)
+
     git checkout release
-    git merge origin/release --ff-only --quiet
-    git merge origin/master --ff-only --quiet
+    git merge origin/master --ff-only --quiet ||
+    (echo please check for cherry-picked commits in release which were never merged into master; exit 1)
+
     git checkout integration/master
-    git merge origin/integration/master --ff-only --quiet
-    mvn release:update-versions -DautoVersionSubmodules=true #-DdevelopmentVersion=${developmentVersion}
+    mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=${developmentVersion}
     git commit pom.xml */pom.xml -m "prepare for next development iteration"
+
     # push all the changes back to the server
     git push origin legacy release integration/master
