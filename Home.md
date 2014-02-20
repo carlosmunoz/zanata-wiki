@@ -1,4 +1,4 @@
-*Note: we are refreshing Zanata's user documentation. You can preview the new documentation at [New Zanata Help Preview](http://zanata.org/new/help/). The new documentation is for translators, reviewers and maintainers using Zanata - documentation for development of Zanata itself will stay on this wiki.*
+*Note: we are refreshing Zanata's user documentation. You can preview the new documentation at [New Zanata Help Preview](http://zanata.org/help/). The new documentation is for translators, reviewers and maintainers using Zanata - documentation for development of Zanata itself will stay on this wiki.*
 
 # Welcome to the Zanata project
 
