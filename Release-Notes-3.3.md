@@ -1,5 +1,3 @@
-### Server version 3.3.0 Release Notes
-====
 ##### Infrastructure change
 * Now requires (i.e. is tested on) [JBoss EAP](http://www.jboss.org/products/eap) 6.2.0 instead of 6.1.1
 
