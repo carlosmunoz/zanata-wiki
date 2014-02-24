@@ -1,14 +1,13 @@
-## Red Hat JBoss Enterprise Application Platform 6.1 Alpha
+## JBoss EAP 6.2
 
-Red Hat JBoss Enterprise Application Platform 6 Alpha versions are freely distributed. Download a copy at [jboss.org](http://www.jboss.org/jbossas/downloads). Once finished, extract the archive's contents. This location will be referenced as JBOSS7_HOME throughout the rest of the document.
+You can [download JBoss EAP 6.2](http://www.jboss.org/jbossas/downloads/) to use with Zanata. Extract the archive. This location will be known as JBOSS_HOME for here on. You can start JBoss by typing the following on your command line.
 
-JBoss EAP 6.1 Alpha contains the wrong Hibernate libraries for Zanata development. Download Hibernate 4.2.0.Final from [hibernate.org](www.hibernate.org) and replace Jboss hibernate libraries with these. In JBoss EAP 6.1, the Hibernate module libraries are located at /usr/share/jbossas/modules/system/layers/base/org/hibernate/main
+```sh
+$ cd $JBOSS_HOME
+$ ./bin/standalone.sh
+```
 
-Replace the Hibernate files labeled as 4.2.0.RC1 with their equivalent ones for 4.2.0.Final.
-
-## JBoss EAP 6.1
-
-For developers on Red Hat Enterprise Linux, you can install JBoss EAP 6.1 by typing the following command on the terminal:
+For developers on Red Hat Enterprise Linux, you can install JBoss EAP 6.2 by typing the following command on the terminal:
 
 ```sh
 $ yum -y groupinstall "jboss-eap6"
