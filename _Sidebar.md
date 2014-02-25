@@ -51,6 +51,7 @@
  * [[Eclipse configuration|Eclipse Setup]]
  * [[GWT DevMode|DevMode]]
  * [[Coding Guidelines|Coding Guide]]
+ * [[License Compatibility]]
  * [[Selenium Web Driver Automated Tests]]
  * [[Writing Selenium Tests|Web Test With Selenium]]
  * [[Database Tricks]]
