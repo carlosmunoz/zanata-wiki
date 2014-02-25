@@ -1,4 +1,6 @@
-## Disclaimer
+A quick-reference for developers checking whether a library can be linked/copied in Zanata under the current license.
+
+### Disclaimer
 
 This page is intended only as a quick-reference to speed up investigating licenses for libraries used in Zanata. It does not constitute legal advice, and license decisions should only be made with appropriate investigation and legal advice.
 
