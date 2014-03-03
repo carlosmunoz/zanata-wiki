@@ -1,6 +1,6 @@
 :numbered:
 :toc2:
-:standaloneXml: /var/lib/jbossas/standalone/standalone.xml
+:standaloneXml: /var/lib/jbossas/standalone/configuration/standalone.xml
 :deploymentsDir: /var/lib/jbossas/deployments/
 
 This document shows the steps to install Zanata-3.X on JBoss Enterprise Application Platform (EAP) 6.2.1, MySQL, and Red Hat Enterprise Linux (RHEL) 6.4. Please make corresponding changes for other configuration.
