@@ -1,9 +1,9 @@
 :numbered:
 :toc2:
-:standaloneXml: /etc/jbossas/standalone/standalone.xml
-:deploymentsDir: /etc/jbossas/deployments/
+:standaloneXml: /var/lib/jbossas/standalone/standalone.xml
+:deploymentsDir: /var/lib/jbossas/deployments/
 
-This document shows the steps to install Zanata-3.0 on JBoss Enterprise Application Platform (EAP) 6.1.0, MySQL, and Red Hat Enterprise Linux (RHEL) 6.4. Please make corresponding changes for other configuration.
+This document shows the steps to install Zanata-3.X on JBoss Enterprise Application Platform (EAP) 6.2.1, MySQL, and Red Hat Enterprise Linux (RHEL) 6.4. Please make corresponding changes for other configuration.
 
 == Preparation
 === JBoss EAP
@@ -32,23 +32,15 @@ To start JBoss EAP:
 sudo service jbossas start
 ----
 ==== From http://www.jboss.org/jbossas/downloads/[JBoss Application Server 7]
- 1. Download EAP 6.1.0 and Corresponding Quick starts 
+ 1. Download EAP 6.2.0 and Corresponding Quick starts 
  2. Follow the instruction of Quick starts
 
-=== MySQL
-Install MySQL server and client:
+=== MySQL and driver
+Install MySQL server, client and java connector:
 [source,sh]
 ----
-sudo yum install mysql mysql-server
-----
-
-=== MySQL driver
-Install MySQL java connector:
-
-[source,sh]
-----
-sudo yum install mysql-connector-java
-ln -s /usr/share/java/mysql-connector-java-`rpm -q --qf "%{version}\n" mysql-connector-java`.jar /etc/jbossas/deployments/mysql-connector-java.jar
+sudo yum install mysql mysql-server mysql-connector-java
+ln -s /usr/share/java/mysql-connector-java.jar /etc/jbossas/deployments/mysql-connector-java.jar
 ----
 
 === Virus scanner
