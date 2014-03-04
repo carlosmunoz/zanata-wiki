@@ -2,6 +2,7 @@
 :toc2:
 :standaloneXml: /var/lib/jbossas/standalone/configuration/standalone.xml
 :deploymentsDir: /var/lib/jbossas/deployments/
+:namingVer: 1.4
 
 This document shows the steps to install Zanata-3.X on JBoss Enterprise Application Platform (EAP) 6.2.1, MySQL, and Red Hat Enterprise Linux (RHEL) 6.4. Please make corresponding changes for other configuration.
 
@@ -40,7 +41,7 @@ Install MySQL server, client and java connector:
 [source,sh]
 ----
 sudo yum install mysql mysql-server mysql-connector-java
-ln -s /usr/share/java/mysql-connector-java.jar /etc/jbossas/deployments/mysql-connector-java.jar
+ln -s /usr/share/java/mysql-connector-java.jar {deploymentsDir}/mysql-connector-java.jar
 ----
 
 === Virus scanner
@@ -86,16 +87,22 @@ In other word, if your war file is +zanata-3.0.war+, your zanata server URL is +
 
 === Configure JBoss
 ==== Add JNDI in standalone.xml
-In +{standaloneXml}+, search subsystem `xmlns="urn:jboss:domain:naming:1.3"` and add bindings as following. Adjust the value accordingly. 
+In +{standaloneXml}+, search subsystem `xmlns="urn:jboss:domain:naming:{namingVer}"` and add bindings as following. Adjust the value accordingly. 
 [source,xml]
-<subsystem xmlns="urn:jboss:domain:naming:1.3">
+<subsystem xmlns="urn:jboss:domain:naming:{namingVer}">
     <bindings>
-        <simple name="java:global/zanata/security/auth-policy-names/internal" value="zanata.internal"/>
-        <simple name="java:global/zanata/security/admin-users" value="admin"/>
-        <simple name="java:global/zanata/email/default-from-address" value="no-reply@zanata.org"/>
-    </bindings>
+        <simple name="java:global/zanata/security/auth-policy-names/internal" value="zanata.internal"/> # <1>
+        <simple name="java:global/zanata/security/admin-users" value="admin"/>                          # <2>
+        <simple name="java:global/zanata/email/default-from-address" value="no-reply@zanata.org"/>      # <3>
+        <simple name="java:global/zanata/files/document-storage-directory" value="/example/path"/>      # <4>
+   </bindings>
     <remote-naming/>
 </subsystem>
+
+<1> Replace +zanata.internal+ with your authentication type.
+<2> Replace +admin+ with the lists of users that will become the admin once they finished registration. Use with care!
+<3> Replace +no-reply@zanata.org+ with the email address you want your user to see as "From:".
+<3> Replace +/example/path+ with the absolute path to the directory for document storage.
 
 Optional entries that can be defined in JNDI please refer to source https://github.com/zanata/zanata-server/blob/master/zanata-war/src/main/java/org/zanata/config/JndiBackedConfig.java[org.zanata.config.JndiBackedConfig].
 
