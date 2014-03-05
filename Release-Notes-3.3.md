@@ -3,11 +3,11 @@
 
 ##### New Features
 * [978072](https://bugzilla.redhat.com/show_bug.cgi?id=978072) - RFE: support roff as an input/output format
-    * This feature is implemented on the client side only with [1038449 - command hook](https://bugzilla.redhat.com/show_bug.cgi?id=1038449). Users who wish to push .roff file can use command hook to invoke external tool (po4a) before push to convert .roff into .pot. Invokeing po4a again after pull to convert translated .po into .roff. 
+    * This feature is implemented on the client side only with [1038449 - command hook](https://bugzilla.redhat.com/show_bug.cgi?id=1038449). Users who wish to push .roff file can use a command hook to invoke external tool (po4a) before push to convert .roff into .pot. Invoke po4a again after pull to convert translated .po into .roff. 
 
 * [1036435](https://bugzilla.redhat.com/show_bug.cgi?id=1036435) - RFE: Upgrade to Liquibase 3.x
 * [980670](https://bugzilla.redhat.com/show_bug.cgi?id=980670) - [RFE] Add HTML as an input method to be translated
-    * .html or .htm files now is supported in Zanata for translation.
+    * .html and .htm files are now supported in Zanata for translation.
 
 * [1067253](https://bugzilla.redhat.com/show_bug.cgi?id=1067253) - RFE:/Tech Debt - Propagate translation done by upload and copyTrans to editor
     * Prior to this implementation, editor will not receive translation updates done by CopyTrans or REST, i.e. upload translation file though web UI or push from client. Now translation done by any of the above will be broadcast to any open editors. This includes latest translation and statistics.
