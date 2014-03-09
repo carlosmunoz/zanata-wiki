@@ -59,12 +59,7 @@ You should probably also ensure freshclam is set to run at least once per day, t
 To override the default behaviour above, you can set the system property `virusScanner` when running the server.  `DISABLED` means no virus scanning will be performed; all files will be assumed safe.  Any other value will be treated as the name of a virus scanner command: the command will be called with the name of a file to scan.
 
 === Fonts 
-For CAPTCHA to Work
-
-[source,sh]
-sudo yum install "dejavu*"
-
-Some administration functions are localized, so you may need to install, for
+Some administration functions (ie JavaMelody) are partially localized, so you may need to install, for
 example, Chinese fonts on server for Chinese administrators by using following command:
 
 [source,sh]
@@ -82,7 +77,7 @@ Download zanata.war, then copy it to `/etc/jbossas/deployments/zanata.war`. Such
 cp zanata-<version>.war /etc/jbossas/deployments/zanata.war
 
 [NOTE]
-By default, the filename of the war file in {deploymentsDir} determine the URL of your zanata server.
+By default, the filename of the war file in {deploymentsDir} determines the URL of your zanata server.
 In other word, if your war file is +zanata-3.0.war+, your zanata server URL is +http://<zanataHost>:8080/zanata-3.0+
 
 === Configure JBoss
