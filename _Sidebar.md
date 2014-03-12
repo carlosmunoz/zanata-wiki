@@ -2,7 +2,7 @@
 
 - [[Home]]
 - [[Release Notes]]
- * [[Release Notes 3.3]]
+ * [[Release Notes 3.3.2]]
 - [[New in 3.0]]
  * [[Custom document parameters]]
 - [[New in 2.3]]
