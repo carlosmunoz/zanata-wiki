@@ -6,8 +6,6 @@ This page lists all security vulnerabilities fixed in zanata. Each vulnerability
 
 A flaw was found in the way RichFaces ResourceBuilderImpl handled deserialization. A remote attacker could use this flaw to trigger the execution of the deserialization methods in any serializable class deployed on the server. This could lead to a variety of security impacts depending on the deserialization logic of these classes. The fix for this issue introduces a whitelist to limit classes that can be deserialized by RichFaces.
 
-There are not any security advisories currently available. Below is a placeholder showing the format for advisory records.
-
 ### Affected versions
 
 3.0.0-3.1.2
