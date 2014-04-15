@@ -6,12 +6,6 @@ You can see examples under functional-test module.
 ##### Why do we use it? 
 You can find more information [here](http://docs.seleniumhq.org/docs/03_webdriver.jsp). But in short this is a better way to write your test and easier to maintain you test code. And it can integrate well into maven build life cycle.
 
-##### What is Concordion? 
-[Acceptance test specification for java](http://www.concordion.org)
-
-##### Why do we use it? 
-We want our tests to become our documentation.
-
 ### Structure of Zanata server/functional-test module
 * src/main/java/org/zanata/page/**/*Page.java
     * all the web driver mapped page objects.
