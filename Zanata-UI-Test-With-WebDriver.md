@@ -1,4 +1,3 @@
-
 ## TestCase
 This will be an ever-evolving example along with our test quality and design decisions / improvements.
 
@@ -81,8 +80,8 @@ Execute a number of discrete steps resulting in either:<br>
 >                .as("The page error is displayed");
 
 The assertion should be in the form `expected <> condition` as `human readable expectation`, eg.
-* `assert(user.isIn(page.listOfUsers().as("The user shows in the list"))`
-* `assert(page.isInheritCheckboxChecked().isTrue().as("The inherit checkbox is checked"))`
+* `assert(user).isIn(page.listOfUsers().as("The user shows in the list")`
+* `assert(page.isInheritCheckboxChecked()).isTrue().as("The inherit checkbox is checked")`
 * As part of a test precondition
 ```
     assert(new LoginWorkFlow()
