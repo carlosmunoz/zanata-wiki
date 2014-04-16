@@ -112,8 +112,9 @@ Test suites are the collections of tests for packages and other suites, and cate
 * A package level suite contains a list of the `*Test.java` files in the local package
 * The AggregateTestSuite lists all of the package suites
 * BasicAcceptanceTestSuite, DetailedTestSuite etc extend the AggregateTestSuite and interface to the @Category annotations
+
 ### Package Level Test Suite
-Within the package is the test suite class. From Zanata CI standpoint.
+Within the package is the test suite class. From Zanata CI standpoint, any class not listed in the package suite will _not_ be run.
 ```
 /* Licence */
 package org.zanata.feature.myfeature;
@@ -131,30 +132,21 @@ public class MyFeatureTestSuite {
 ```
 
 ### AggregateTestSuite
-Simp
+Simply a list of all the package level test suites. This can be run directly to execute every test in Zanata functional-test or indirectly via the BasicAcceptance/DetailedTestSuite classes for categorised execution. Again, those not listed here will be ignored by Zanata CI.
+
 ```
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        AccountTestSuite.class,
-        AdministrationTestSuite.class,
-        ClientServerTestSuite.class,
-        ConcurrentEditTestSuite.class,
-        DashboardTestSuite.class,
-        DocumentTestSuite.class,
-        EditorTestSuite.class,
-        GlossaryTestSuite.class,
-        GoogleOpenIDTestSuite.class,
-        InfrastructureTestSuite.class,
-        LanguageTestSuite.class,
-        MiscTestSuite.class,
-        ProjectTestSuite.class,
-        ProjectVersionTestSuite.class,
-        SearchTestSuite.class,
-        SecurityTestSuite.class,
-        VersionGroupTestSuite.class,
-        CreateSampleProjectTestSuite.class })
+        MyFeatureTestSuite.class,
+        ...
+})
 public class AggregateTestSuite {
 }
+```
+
+### Category Test Interfaces
+These utilise the `@Category` annotation in tests to run a subset of the functional test suite. For example, the `BasicAcceptanceTestSuite` class is used by the GitHub merge test rules to run the high priority tests only.<br>
+These do not need to be altered by simple test development - only if new test categories are introduced.
 
 ***
 
