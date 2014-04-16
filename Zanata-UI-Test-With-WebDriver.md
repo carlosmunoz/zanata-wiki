@@ -96,6 +96,8 @@ The assertion should be in the form assert the `expected <> condition` as `human
     // Rest of test...
 ```
 
+***
+
 ## Test Rules
 
 `SampleProjectRule` Sets up a database with the user set and a test project with data.<br>
@@ -103,11 +105,58 @@ The assertion should be in the form assert the `expected <> condition` as `human
 `CleanDocumentStorageRule` A rule for clearing out the document storage locations.<br>
 `HasEmailRule` For checking email composition and sending, eg. register emails.<br>
 
+***
+
 ## Test Suites
 Test suites are the collections of tests for packages and other suites, and categorised execution of said suite. That is:
 * A package level suite contains a list of the `*Test.java` files in the local package
 * The AggregateTestSuite lists all of the package suites
 * BasicAcceptanceTestSuite, DetailedTestSuite etc extend the AggregateTestSuite and interface to the @Category annotations
+### Package Level Test Suite
+Within the package is the test suite class. From Zanata CI standpoint.
+```
+/* Licence */
+package org.zanata.feature.myfeature;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+/**
+ * @author Me <a href="mailto:me@example.com">me@example.com</a>
+ */
+@RunWith(Suite.class)
+@Suite.SuiteClasses({ MyFeatureTest.class })
+public class MyFeatureTestSuite {
+}
+```
+
+### AggregateTestSuite
+Simp
+```
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+        AccountTestSuite.class,
+        AdministrationTestSuite.class,
+        ClientServerTestSuite.class,
+        ConcurrentEditTestSuite.class,
+        DashboardTestSuite.class,
+        DocumentTestSuite.class,
+        EditorTestSuite.class,
+        GlossaryTestSuite.class,
+        GoogleOpenIDTestSuite.class,
+        InfrastructureTestSuite.class,
+        LanguageTestSuite.class,
+        MiscTestSuite.class,
+        ProjectTestSuite.class,
+        ProjectVersionTestSuite.class,
+        SearchTestSuite.class,
+        SecurityTestSuite.class,
+        VersionGroupTestSuite.class,
+        CreateSampleProjectTestSuite.class })
+public class AggregateTestSuite {
+}
+
+***
 
 ## Data Driven Tests
 The Zanata test suite uses Theories for executing data driven test. The least subtle difference between this and Paramaterized is that Theories runs by its definition - all points are true else the Theory is false - so the tests will halt on the first encountered failure. Parameterized will execute all data points regardless of result.<br>
