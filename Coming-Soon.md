@@ -15,3 +15,4 @@
 * [1033375](https://bugzilla.redhat.com/show_bug.cgi?id=1033375) - Copy and Paste does not work when typing Italian in msgstr
 * [1088737](https://bugzilla.redhat.com/show_bug.cgi?id=1088737) - Project type for a version is null after creation if the project type setting is not touched
 * [1086036](https://bugzilla.redhat.com/show_bug.cgi?id=1086036) - Project / version language listing and inheritance issue
+* [1025645](https://bugzilla.redhat.com/show_bug.cgi?id=1025645) - Both GPL and LGPL license files are required for LGPLv2+ project
