@@ -14,14 +14,18 @@ The zanata plugin provides several goals under the zanata: prefix. For example:
 
 # Installing Apache Maven
 
-For F14/F15: `yum install maven2`
+For F16+ and RHEL 7+: `yum install maven`
 
-For F16+: `yum install maven`
+For RHEL5/6, follow the following commands:
+   
+   sudo wget -O /etc/yum.repo.d/epel-apache-maven.repo  http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+   yum install apache-maven
 
-For RHEL5/6, put this repo in /etc/yum.repos.d: http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo and then: `yum install apache-maven`
 
-The above packages provide the executable 'mvn' which can invoke zanata-maven-plugin.
+The above packages provide the executable `mvn` which can invoke zanata-maven-plugin.
 
+# Configuring the Maven Plugin
+See http://zanata.org/help/maven-plugin/maven-plugin-config/ for more detail
 
 # Activating the plugin
 Note that zanata-maven-plugin 2.0.0 requires Zanata server 2.0+.  If you need to connect to Zanata 1.6/1.7, use 1.7.5 instead.
