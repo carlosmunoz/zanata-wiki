@@ -54,7 +54,7 @@
  * [[Coding Guidelines|Coding Guide]]
  * [[License Compatibility]]
  * [[WebDriver Automated Tests]]
- * [[Writing Selenium Tests|Zanata UI Test With WebDriver]]
+     - [[Writing WebDriver Tests]]
  * [[Database Tricks]]
  * [[Localize Zanata]]
 - [[Zanata Structure]] (for developers)
