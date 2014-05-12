@@ -112,6 +112,7 @@ The assertion should be in the form assert the `target` has `expected <> conditi
 Test suites are the collections of tests for packages and other suites, and categorised execution of said suite. That is:
 * A top level suite - TestPlan - containing a list of the `*Test.java` files in the functional test module and documentation for test types
 * BasicAcceptanceTestSuite, DetailedTestSuite etc extend the TestPlan and interface to the @Category annotations
+
 The choice for a flat file, rather than a set of package level suites, stems from the difficulty in maintaining links from test to suite to top level suite - too many layers.
 
 ### The Test Plan
@@ -172,7 +173,7 @@ public class BadUsernameTest extends ZanataTestCase {
                 .enterEmail("test@test.com")
                 .clickSubmitExpectFailure();
 
-        assertThat(errorMessage).isIn(myRegisterPage.getPageErrors())
+        assertThat(myRegisterPage.getPageErrors()).contains(errorMessage)
                 .as("The user name invalid error is displayed");
     }
         
