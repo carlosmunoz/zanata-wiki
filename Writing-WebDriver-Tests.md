@@ -39,7 +39,7 @@ public class MyTest extends ZanataTestCase {
                 .goToMyPage()
                 .enterSomeTextIntoBox();
 
-        assertThat(errorMessage).isIn(myPage.getPageErrors())
+        assertThat(myPage.getPageErrors()).contains(errorMessage)
                 .as("The page error is displayed");
     }
         
