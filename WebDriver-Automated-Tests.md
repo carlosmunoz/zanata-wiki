@@ -12,8 +12,10 @@ You can find more information [here](http://docs.seleniumhq.org/docs/03_webdrive
     * all the web driver mapped page objects.
 * src/main/java/org/zanata/workflow/*.*.java
     * these map to actual Zanata workflows. It encapsulates common page interactions.
-* src/test/java/org/zanata/feature/*TestSuite.java
-    * Top level test suite and Categories
+* src/test/java/org/zanata/feature/testharness/TestPlan.java
+    * The Test Plan. Any test to be run by Zanata CI needs to be listed in this file.
+* src/test/java/org/zanata/feature/testharness/*TestSuite.java
+    * Test suite Categories, e.g. BasicAcceptance, for categorised test execution
 * src/test/java/org/zanata/feature/**/*Test.java
     * tests run by junit runners that use WebDriver to perform our automated tests
 * src/main/java/org/zanata/page/WebDriverFactory.java
