@@ -80,11 +80,11 @@ Execute a number of discrete steps resulting in either:<br>
 * A page ready for testing data or entities
 * A quantifiable value that can be evaluated, wrapped in an assertion<p/>
 
->        assertThat(errorMessage).isIn(myPage.getPageErrors())
+>        assertThat(myPage.getPageErrors()).contains(errorMessage)
 >                .as("The page error is displayed");
 
-The assertion should be in the form assert the `expected <> condition` as `human readable expectation` is true, eg.
-* `assertThat(user).isIn(page.listOfUsers().as("The user shows in the list")`
+The assertion should be in the form assert the `target` has `expected <> condition`, as `human readable expectation` eg.
+* `assertThat(page.listOfUsers()).contains(user).as("The user shows in the list")`
 * `assertThat(page.isInheritCheckboxChecked()).isTrue().as("The inherit checkbox is checked")`
 * As part of a test precondition
 ```
@@ -104,43 +104,26 @@ The assertion should be in the form assert the `expected <> condition` as `human
 `AddUsersRule` Adds the users only, for test that need their own data or the users only.<br>
 `CleanDocumentStorageRule` A rule for clearing out the document storage locations.<br>
 `HasEmailRule` For checking email composition and sending, eg. register emails.<br>
+`RetryRule` For giving tests a "second chance" on failure.
 
 ***
 
-## Test Suites
+## Test Plan and Suites
 Test suites are the collections of tests for packages and other suites, and categorised execution of said suite. That is:
-* A package level suite contains a list of the `*Test.java` files in the local package
-* The AggregateTestSuite lists all of the package suites
-* BasicAcceptanceTestSuite, DetailedTestSuite etc extend the AggregateTestSuite and interface to the @Category annotations
+* A top level suite - TestPlan - containing a list of the `*Test.java` files in the functional test module and documentation for test types
+* BasicAcceptanceTestSuite, DetailedTestSuite etc extend the TestPlan and interface to the @Category annotations
+The choice for a flat file, rather than a set of package level suites, stems from the difficulty in maintaining links from test to suite to top level suite - too many layers.
 
-### Package Level Test Suite
-Within the package is the test suite class. From Zanata CI standpoint, any class not listed in the package suite will _not_ be run.
-```
-/* Licence */
-package org.zanata.feature.myfeature;
-
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-
-/**
- * @author Me <a href="mailto:me@example.com">me@example.com</a>
- */
-@RunWith(Suite.class)
-@Suite.SuiteClasses({ MyFeatureTest.class })
-public class MyFeatureTestSuite {
-}
-```
-
-### AggregateTestSuite
-Simply a list of all the package level test suites. This can be run directly to execute every test in Zanata functional-test or indirectly via the BasicAcceptance/DetailedTestSuite classes for categorised execution. Again, those not listed here will be ignored by Zanata CI.
+### The Test Plan
+Simply a list of all the test cases available to Zanata. This can be run directly to execute every test in Zanata functional-test or indirectly via the BasicAcceptance/DetailedTestSuite classes for categorised execution. Tests not listed here will be ignored by Zanata CI.
 
 ```
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        MyFeatureTestSuite.class,
+        MyFeatureTest.class,
         ...
 })
-public class AggregateTestSuite {
+public class TestPlan {
 }
 ```
 
