@@ -8,6 +8,7 @@
 * [1077439](https://bugzilla.redhat.com/show_bug.cgi?id=1077439) - RFE: Use lucene indexes to do Copy Trans.
 * [1094106](https://bugzilla.redhat.com/show_bug.cgi?id=1094106) - As project maintainer, I would like to select copyTrans option before running it
 * [1094100](https://bugzilla.redhat.com/show_bug.cgi?id=1094100) - RFE: As a user, I would like to be able to bookmark language and document selections on version page
+* [882770](https://bugzilla.redhat.com/show_bug.cgi?id=882770) - RFE: Filter translation units by multiple fields in the editor
 
 ##### Bug fixes
 * [1065790](https://bugzilla.redhat.com/show_bug.cgi?id=1065790) - Admin manage search no longer shows time estimates
