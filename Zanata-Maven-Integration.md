@@ -40,7 +40,6 @@ Note that zanata-maven-plugin 2.0.0 requires Zanata server 2.0+.  If you need to
 
 To activate the "zanata:" prefix, you should create/edit your Maven project's pom.xml like this:
 
-For better performance with Zanata 2.x servers:
     <project>
     ...
       <build>
@@ -48,28 +47,13 @@ For better performance with Zanata 2.x servers:
           <plugin>
             <groupId>org.zanata</groupId>
             <artifactId>zanata-maven-plugin</artifactId>
-            <version>2.0.1</version>
+            <version>3.3.2</version>
           </plugin>
         </plugins>
       </build>
     ...
     </project>
 
-For older Zanata 1.x servers:
-
-    <project>
-    ...
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.zanata</groupId>
-            <artifactId>zanata-maven-plugin</artifactId>
-            <version>1.7.5</version>
-          </plugin>
-        </plugins>
-      </build>
-    ...
-    </project>
 
 for instance, here's a complete sample pom.xml you can use:
 
@@ -86,7 +70,7 @@ for instance, here's a complete sample pom.xml you can use:
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>2.0.1</version>
+                <version>3.3.2</version>
                 <configuration>
                    <srcDir>.</srcDir>
                 </configuration>
@@ -118,7 +102,7 @@ Note: Maven 2.2 does **not** support overriding pom configuration with system pr
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>2.0.1</version>
+                <version>3.3.2</version>
                 <configuration>
                    <srcDir>${zanata.srcDir}</srcDir>
                 </configuration>
