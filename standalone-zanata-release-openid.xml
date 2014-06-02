@@ -26,9 +26,10 @@
         <extension module="org.jboss.as.weld"/>
     </extensions>
     <system-properties>
+ 	  <property name="hibernate.search.default.indexBase" value="/var/lib/zanata/index"/>
+	  <property name="ehcache.disk.store.dir" value="/var/lib/zanata/ehcache"/>
         <property name="javamelody.storage-directory" value="/var/lib/zanata/stats"/>
-        <property name="hibernate.search.default.indexBase" value="/var/lib/zanata/index"/>
-    </system-properties>
+   </system-properties>
     <management>
         <security-realms>
             <security-realm name="ManagementRealm">
