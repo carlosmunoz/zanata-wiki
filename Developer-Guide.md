@@ -2,6 +2,12 @@
 
  * [[JBoss AS 7|JBoss AS 7]]
 
+# Build Status (Travis, master branch)
+
+- zanata-parent [![Build Status](https://travis-ci.org/zanata/zanata-parent.svg?branch=master)](https://travis-ci.org/zanata/zanata-parent)
+- zanata-api [![Build Status](https://travis-ci.org/zanata/zanata-api.svg?branch=master)](https://travis-ci.org/zanata/zanata-api)
+- zanata-common [![Build Status](https://travis-ci.org/zanata/zanata-common.svg?branch=master)](https://travis-ci.org/zanata/zanata-common)
+- zanata-client [![Build Status](https://travis-ci.org/zanata/zanata-client.svg?branch=master)](https://travis-ci.org/zanata/zanata-client)
 
 # Development tools
 

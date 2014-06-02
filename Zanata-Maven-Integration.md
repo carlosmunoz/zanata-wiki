@@ -14,21 +14,32 @@ The zanata plugin provides several goals under the zanata: prefix. For example:
 
 # Installing Apache Maven
 
-For F14/F15: `yum install maven2`
+For F16+ and RHEL 7+: `yum install maven`
 
-For F16+: `yum install maven`
+For RHEL5/6, follow the following commands:
+   
+```bash
+sudo wget -O /etc/yum.repo.d/epel-apache-maven.repo  http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+yum install apache-maven
+```
 
-For RHEL5/6, put this repo in /etc/yum.repos.d: http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo and then: `yum install apache-maven`
 
-The above packages provide the executable 'mvn' which can invoke zanata-maven-plugin.
+The above packages provide the executable `mvn` which can invoke zanata-maven-plugin.
 
+# Configuring the Maven Plugin
+To use shorthand command like `mvn zanata:help` instead of long command like `mvn org.zanata:zanata-maven-plugin:help` 
+
+Download the [settings.xml](https://raw.github.com/wiki/zanata/zanata-server/m2/settings.xml) as `~/.m2/settings.xml by:
+```bash
+wget -O ~/.m2/settings.xml https://raw.github.com/wiki/zanata/zanata-server/m2/settings.xml
+```
+See [Configuring Maven Plugin](http://zanata.org/help/maven-plugin/maven-plugin-config/) for details.
 
 # Activating the plugin
 Note that zanata-maven-plugin 2.0.0 requires Zanata server 2.0+.  If you need to connect to Zanata 1.6/1.7, use 1.7.5 instead.
 
 To activate the "zanata:" prefix, you should create/edit your Maven project's pom.xml like this:
 
-For better performance with Zanata 2.x servers:
     <project>
     ...
       <build>
@@ -36,28 +47,13 @@ For better performance with Zanata 2.x servers:
           <plugin>
             <groupId>org.zanata</groupId>
             <artifactId>zanata-maven-plugin</artifactId>
-            <version>2.0.1</version>
+            <version>3.3.2</version>
           </plugin>
         </plugins>
       </build>
     ...
     </project>
 
-For older Zanata 1.x servers:
-
-    <project>
-    ...
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.zanata</groupId>
-            <artifactId>zanata-maven-plugin</artifactId>
-            <version>1.7.5</version>
-          </plugin>
-        </plugins>
-      </build>
-    ...
-    </project>
 
 for instance, here's a complete sample pom.xml you can use:
 
@@ -74,7 +70,7 @@ for instance, here's a complete sample pom.xml you can use:
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>2.0.1</version>
+                <version>3.3.2</version>
                 <configuration>
                    <srcDir>.</srcDir>
                 </configuration>
@@ -106,7 +102,7 @@ Note: Maven 2.2 does **not** support overriding pom configuration with system pr
              <plugin>
                 <groupId>org.zanata</groupId>
                 <artifactId>zanata-maven-plugin</artifactId>
-                <version>2.0.1</version>
+                <version>3.3.2</version>
                 <configuration>
                    <srcDir>${zanata.srcDir}</srcDir>
                 </configuration>

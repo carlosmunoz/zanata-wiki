@@ -53,8 +53,8 @@
  * [[GWT DevMode|DevMode]]
  * [[Coding Guidelines|Coding Guide]]
  * [[License Compatibility]]
- * [[Selenium Web Driver Automated Tests]]
- * [[Writing Selenium Tests|Web Test With Selenium]]
+ * [[WebDriver Automated Tests]]
+     - [[Writing WebDriver Tests]]
  * [[Database Tricks]]
  * [[Localize Zanata]]
 - [[Zanata Structure]] (for developers)

@@ -4,29 +4,22 @@ You can see examples under functional-test module.
 [Introduction](http://docs.seleniumhq.org/projects/webdriver/)
 
 ##### Why do we use it? 
-You can find more information [here](http://docs.seleniumhq.org/docs/03_webdriver.jsp). But in short this is a better way to write your test and easier to maintain you test code. And it can integrate well into maven build life cycle.
-
-##### What is Concordion? 
-[Acceptance test specification for java](http://www.concordion.org)
-
-##### Why do we use it? 
-We want our tests to become our documentation.
+WebDriver is a great solution to write and maintain test code. It integrates well into maven build life cycle.
+You can find more information [here](http://docs.seleniumhq.org/docs/03_webdriver.jsp).
 
 ### Structure of Zanata server/functional-test module
 * src/main/java/org/zanata/page/**/*Page.java
     * all the web driver mapped page objects.
+* src/main/java/org/zanata/workflow/*.*.java
+    * these map to actual Zanata workflows. It encapsulates common page interactions.
+* src/test/java/org/zanata/feature/testharness/TestPlan.java
+    * The Test Plan. Any test to be run by Zanata CI needs to be listed in this file.
+* src/test/java/org/zanata/feature/testharness/*TestSuite.java
+    * Test suite Categories, e.g. BasicAcceptance, for categorised test execution
+* src/test/java/org/zanata/feature/**/*Test.java
+    * tests run by junit runners that use WebDriver to perform our automated tests
 * src/main/java/org/zanata/page/WebDriverFactory.java
     * this is the factor to create a singleton web driver instance to use. It will read in a properties file and based on the value it will create different driver (i.e. firefox, chrome, htmlUnit).
-* src/main/java/org/zanata/workflow/*.*.java
-    * these mapped to actual Zanata workflow. It encapsulate common page interactions.
-* src/test/java/org/zanata/concordion
-    * concordion extensions
-* src/test/java/org/zanata/feature/*TestSuite.java
-    * Top level test suite and Categories
-* src/test/java/org/zanata/feature/**/*Test*.java
-    * tests run by concordion and junit runners that use web driver to perform our automated tests
-* src/test/resources/concordion/org/zanata/feature/**/*.html
-    * concordion specifications
 * src/test/resources/setup.properties
     * this file is the properties file being used in WebDriverFactory. It will be filtered by maven.
 * src/test/resources/zanata-user-config/*.ini
@@ -68,7 +61,7 @@ All the command line arguments you can change when running functional-test can b
     mvn verify -Dfunctional-test -Dwebdriver.display=:1
 
 ### Using the test Categories
-The tests are assigned to a ${Category}TestSuite, i.e. **BasicAcceptance**, **Detailed** and **Concordion** TestSuite. Running:
+The tests are assigned to a ${Category}TestSuite, i.e. **BasicAcceptance**, **Detailed** and **Unstable** TestSuite. Running:
 
     mvn verify -Dfunctional-test -Dinclude.test.patterns="**/BasicAcceptanceTestSuite.java"
 
