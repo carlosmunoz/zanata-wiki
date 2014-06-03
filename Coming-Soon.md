@@ -15,3 +15,4 @@
 * [1097552](https://bugzilla.redhat.com/show_bug.cgi?id=1097552) - Obsolete groups sometimes not visible to maintainer
 * [1102488](https://bugzilla.redhat.com/show_bug.cgi?id=1102488) - \[zanata:stat\] Failed to return proper error message when getting stat for non-exists projects and versions
 * [1101803](https://bugzilla.redhat.com/show_bug.cgi?id=1101803) - TMX clear function doesn't work from UI
+* [1103547](https://bugzilla.redhat.com/show_bug.cgi?id=1103547) - Empty document statistic should show "No content" in version tabs
