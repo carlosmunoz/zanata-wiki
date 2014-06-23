@@ -3,6 +3,8 @@
 ##### New Features
 * [1062835](https://bugzilla.redhat.com/show_bug.cgi?id=1062835) - SubRip Text (.srt) subtitle format support
 * [1110048](https://bugzilla.redhat.com/show_bug.cgi?id=1110048) - Redesign account merge page
+* [1110959](https://bugzilla.redhat.com/show_bug.cgi?id=1110959) - Add in more sorting options in version page
+* [1110175](https://bugzilla.redhat.com/show_bug.cgi?id=1110175) - Add a JBoss SSO Login module
 
 ##### Bug fixes
 * [971652](https://bugzilla.redhat.com/show_bug.cgi?id=971652) - \[Document List\] Clicking column header "Complete" mistakenly sort by other column you sort
@@ -20,3 +22,6 @@
 * [1101803](https://bugzilla.redhat.com/show_bug.cgi?id=1101803) - TMX clear function doesn't work from UI
 * [1103547](https://bugzilla.redhat.com/show_bug.cgi?id=1103547) - Empty document statistic should show "No content" in version tabs
 * [978618](https://bugzilla.redhat.com/show_bug.cgi?id=978618) - Accidental broken feature - admin can change usernames
+* [1067288](https://bugzilla.redhat.com/show_bug.cgi?id=1067288) - reduce size of zanata.war; exclude unused dependencies
+* [1110599](https://bugzilla.redhat.com/show_bug.cgi?id=1110599) - remove unused page in Zanata
+* [1103940](https://bugzilla.redhat.com/show_bug.cgi?id=1103940) - Remove info level notification popup from the editor
