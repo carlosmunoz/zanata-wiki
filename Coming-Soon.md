@@ -2,6 +2,7 @@
 
 ##### New Features
 * [1062835](https://bugzilla.redhat.com/show_bug.cgi?id=1062835) - SubRip Text (.srt) subtitle format support
+* [1110048](https://bugzilla.redhat.com/show_bug.cgi?id=1110048) - Redesign account merge page
 
 ##### Bug fixes
 * [971652](https://bugzilla.redhat.com/show_bug.cgi?id=971652) - \[Document List\] Clicking column header "Complete" mistakenly sort by other column you sort
