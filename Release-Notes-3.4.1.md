@@ -7,6 +7,7 @@
 * [1066701](https://bugzilla.redhat.com/show_bug.cgi?id=1066701) - RFE: As a Zanata user, I would like to be able to bookmark language and project selections in the groups page
   * Now is possible to bookmark a project version, language, or setting item for communication or later reference. 
 * [1066756](https://bugzilla.redhat.com/show_bug.cgi?id=1066756) - RFE: Merge user settings pages into dashboard
+* [1066796](https://bugzilla.redhat.com/show_bug.cgi?id=1066796) - RFE: Implement new project page
 * [1077439](https://bugzilla.redhat.com/show_bug.cgi?id=1077439) - RFE: Use lucene indexes to do Copy Trans.
 * [1094100](https://bugzilla.redhat.com/show_bug.cgi?id=1094100) - RFE: As a user, I would like to be able to bookmark language and document selections on version page
 * [1094106](https://bugzilla.redhat.com/show_bug.cgi?id=1094106) - RFE: As project maintainer, I would like to select copyTrans option before running it
@@ -19,7 +20,6 @@
 * [1043720](https://bugzilla.redhat.com/show_bug.cgi?id=1043720) - The project search field failed to found existing project using the project name
 * [1062508](https://bugzilla.redhat.com/show_bug.cgi?id=1062508) - Spell check changes are not saved after replacement
 * [1065790](https://bugzilla.redhat.com/show_bug.cgi?id=1065790) - Admin manage search no longer shows time estimates
-* [1066796](https://bugzilla.redhat.com/show_bug.cgi?id=1066796) - Implement new project page
 * [1080770](https://bugzilla.redhat.com/show_bug.cgi?id=1080770) - Empty group "Add Project" button on languages tab doesn't work
 * [1086036](https://bugzilla.redhat.com/show_bug.cgi?id=1086036) - Project / version language listing and inheritance issue
 * [1088651](https://bugzilla.redhat.com/show_bug.cgi?id=1088651) - New About tab does not handle existing project Seam text
@@ -35,3 +35,10 @@
 * [1100079](https://bugzilla.redhat.com/show_bug.cgi?id=1100079) - Activity containing tags causes a broken dashboard
 * [1100092](https://bugzilla.redhat.com/show_bug.cgi?id=1100092) - Filter translation units by multiple fields in the editor should use ISO 8601 date format
 * [1100131](https://bugzilla.redhat.com/show_bug.cgi?id=1100131) - \[webTran\] filter translation by last modified date returns wrong result
+* [1102964](https://bugzilla.redhat.com/show_bug.cgi?id=1102964) - CopyTrans takes excessively long hours to complete copying translations
+* [1103930](https://bugzilla.redhat.com/show_bug.cgi?id=1103930) - Noticeable delay on right column when selection are made on left column (ui design)
+* [1103940](https://bugzilla.redhat.com/show_bug.cgi?id=1103940) - Remove info level notification popup from the editor
+* [1103947](https://bugzilla.redhat.com/show_bug.cgi?id=1103947) - \[Translation Editor\] Dialog "Invalid translation" failed to obtain input focus.
+* [1107882](https://bugzilla.redhat.com/show_bug.cgi?id=1107882) - translate.zanata.org admin manage users screen can not be loaded
+* [1109611]https://bugzilla.redhat.com/show_bug.cgi?id=1109611) - Version drop down with quick actions not shown on Project page
+* [1109653]https://bugzilla.redhat.com/show_bug.cgi?id=1109653) - \[Project Version\] Failed to load language list for source file name that contains space " "
