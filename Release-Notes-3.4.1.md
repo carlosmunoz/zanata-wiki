@@ -40,6 +40,6 @@
 * [1103940](https://bugzilla.redhat.com/show_bug.cgi?id=1103940) - Remove info level notification popup from the editor
 * [1103947](https://bugzilla.redhat.com/show_bug.cgi?id=1103947) - \[Translation Editor\] Dialog "Invalid translation" failed to obtain input focus.
 * [1107882](https://bugzilla.redhat.com/show_bug.cgi?id=1107882) - translate.zanata.org admin manage users screen can not be loaded
-* [1109611]https://bugzilla.redhat.com/show_bug.cgi?id=1109611) - Version drop down with quick actions not shown on Project page
-* [1109653]https://bugzilla.redhat.com/show_bug.cgi?id=1109653) - \[Project Version\] Failed to load language list for source file name that contains space " "
-* [1111449]https://bugzilla.redhat.com/show_bug.cgi?id=1111449) - Hold active tasks in a map, but cache finished tasks briefly
+* [1109611](https://bugzilla.redhat.com/show_bug.cgi?id=1109611) - Version drop down with quick actions not shown on Project page
+* [1109653](https://bugzilla.redhat.com/show_bug.cgi?id=1109653) - \[Project Version\] Failed to load language list for source file name that contains space " "
+* [1111449](https://bugzilla.redhat.com/show_bug.cgi?id=1111449) - Hold active tasks in a map, but cache finished tasks briefly
