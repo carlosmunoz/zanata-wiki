@@ -75,6 +75,7 @@
      - [[General Terminology]]
      - [[Web UI Taxonomy]]
      - [[Widget Events]]
+ * [[User Modeling]]
  * Request For Enhancement (RFE)
      - [[JBoss EAP 6.1.0 Support]]
      - [[Messages Review]]
