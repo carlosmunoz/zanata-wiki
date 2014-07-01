@@ -1,0 +1,11 @@
+The main goal of user modeling is customization and adaptation of systems to the user's specific needs. The system needs to "say the 'right' thing at the 'right' time in the 'right' way".
+
+== Modelling
+[format="csv",options="header"]
+|=====
+include::UserModeling.csv[]
+|=====
+
+== Stereotype Users
+=== Translators 
+Alice:: Can translated Portuguese-Portugal, she works from both office and home with fast internet connection.
