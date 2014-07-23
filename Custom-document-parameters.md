@@ -12,4 +12,4 @@ newTuOnBr.b=false
 ```
 
 You can use this as a base and change any of the `true`, `false` or number values.
-Zanata uses Okapi IDML Filter to process IDML documents, so the use of each parameter can be found on the [Okapi IDML Filter page](http://www.opentag.com/okapi/wiki/index.php?title=IDML_Filter)
+Zanata uses Okapi IDML Filter to process IDML documents, so the usage details of each parameter can be found on the [Okapi IDML Filter page](http://www.opentag.com/okapi/wiki/index.php?title=IDML_Filter)
