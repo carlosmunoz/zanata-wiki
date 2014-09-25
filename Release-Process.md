@@ -89,6 +89,13 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
     # push all the changes back to the server
     git push origin release integration/master
 
+The `--ff-only` merges will not work if release has not been merged to master, which may happen if release has had its version advanced in preparation for development, but has not been patched and so has not been merged into master. This situation can be fixed by merging release into master using "ours" merge strategy to ensure the version in release does not overwrite the version in master:
+
+    git checkout master
+    git merge -s ours release
+
+This should ideally be done as soon as the versions have been advanced for release and master, so that there is no danger of overwriting versions when patches on release are merged into master.
+
 ### Merging release to legacy and master to release (for Server)
 **NB: If you want to automate this, make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
