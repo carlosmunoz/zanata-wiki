@@ -1,6 +1,6 @@
-# Release process for Zanata
+## Release process for Zanata
 
-# Release and deploy modules to Maven Central (not zanata-server) ##
+### Release and deploy modules to Maven Central (not zanata-server) ###
 
 You will need a GPG key, and you will need the GPG agent running.  You may want to tell the GPG agent to sign without asking temporarily, or else it will ask you over and over.  
 
@@ -55,27 +55,27 @@ Make sure you have the latest version (head) from the repository, and that you a
 
 Note that the release process might work, but nexus-staging:release fail.  If you get an error, check to see if that is what happened.  If so, you will need to release the repo manually in Nexus here: https://oss.sonatype.org/index.html#stagingRepositories
 
-## Releasing Tennera (JGettext) ##
+### Releasing Tennera (JGettext) ###
     cd tennera; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       -Dgpg.useagent \
       release:clean release:prepare release:perform &&
     mvn nexus-staging:close nexus-staging:release
 
-## Releasing OpenProps ##
+### Releasing OpenProps ###
     cd openprops; git pull
     mvn -Dmaven.repo.local=$HOME/NotBackedUp/maven-central-release-repo \
       -Dgpg.useagent \
       release:clean release:prepare release:perform &&
     mvn nexus-staging:close nexus-staging:release
 
-# Branch management after a release
+## Branch management after a release
 
 Note: This applies to api, common, client and server. Parent doesn't have release or legacy branches.
 
 Note: make sure any fixes to legacy/release have been merged to the later branches, because `git reset --hard` will throw them away.
 
-# Merging master to release (for API, common, Client). Only needed when you want to start a new x.y release.
+### Merging master to release (for API, common, Client). Only needed when you want to start a new x.y release.
 **NB: Make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
     git fetch
@@ -89,7 +89,7 @@ Note: make sure any fixes to legacy/release have been merged to the later branch
     # push all the changes back to the server
     git push origin release integration/master
 
-# Merging release to legacy and master to release (for Server)
+### Merging release to legacy and master to release (for Server)
 **NB: If you want to automate this, make sure you fill in ${developmentVersion}, eg 3.1-SNAPSHOT**
 
 If Zanata's version of JBoss EAP has been updated recently, you may need to update the configuration management manifests, to ensure that the correct version of EAP is deployed to each test machine.  In some cases you may also need to change .config/zanata-deploy.conf on the build machine, to ensure that zanata.war is still deployed correctly on each test machine and that the jbossas service is managed correctly.
