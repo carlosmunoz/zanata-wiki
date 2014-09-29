@@ -1,4 +1,3 @@
-
 :author: Ding-Yi Chen
 :revdate: 2014-06-02
 :revnumber: 8
@@ -274,7 +273,7 @@ In +{standalone_xml}+, search subsystem `xmlns="urn:jboss:domain:naming:"` and a
   <remote-naming/>
 </subsystem>
 
-<1> Replace +/example/path+ with the absolute path to the directory for document storage.
+<1> Replace +/var/lib/zanata/documents+ with the absolute path to the directory for document storage. See also [[Document Storage Directory]].
 <2> Remove this line to disable internal authentication.
 <2> Remove this line to disable OpenId authentication.
 <4> Replace +admin+ with the lists of users that will become the admin once they finished registration. Use with care!
