@@ -203,3 +203,21 @@ standalone.xml:
        </security-domain>
       ...
 ```
+
+### Single Provider
+
+_( As of version 3.5.1 )_
+It's possible to configure Zanata to use a single pre-defined Open Id authentication provider. To do this, just add an extra `module-option` to the `login-module` element, like this:
+
+```xml
+      ...
+      <security-domain name="zanata.openid">
+         <authentication>
+           <login-module code="org.zanata.security.OpenIdLoginModule"
+             flag="required">
+               <module-option name="providerURL" value="http://my.provider.org" />
+           </login-module>
+         </authentication>
+       </security-domain>
+      ...
+```
