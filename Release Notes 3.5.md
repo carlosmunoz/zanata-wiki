@@ -1,4 +1,5 @@
 ##### Infrastructure change
+* Now requires (i.e. is tested on) OpenJDK 7
 
 ##### New Features
 * [1066694](https://bugzilla.redhat.com/show_bug.cgi?id=1066694) - As a project maintainer I would like to upload multiple source files simultaneously
