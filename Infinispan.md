@@ -62,7 +62,7 @@ The following is the recommended configuration for the Hibernate search index ca
             </property>
             <binary-keyed-table prefix="HSI">
                 <id-column name="id" type="VARCHAR(255)"/>
-                <data-column name="datum" type="BLOB"/>
+                <data-column name="datum" type="LONGBLOB"/>
                 <timestamp-column name="version" type="BIGINT(20)"/>
             </binary-keyed-table>
         </binary-keyed-jdbc-store>
@@ -77,7 +77,7 @@ The following is the recommended configuration for the Hibernate search index ca
             </property>
             <binary-keyed-table prefix="HSI">
                 <id-column name="id" type="VARCHAR(255)"/>
-                <data-column name="datum" type="BLOB"/>
+                <data-column name="datum" type="LONGBLOB"/>
                 <timestamp-column name="version" type="BIGINT(20)"/>
             </binary-keyed-table>
         </binary-keyed-jdbc-store>
