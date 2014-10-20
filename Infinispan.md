@@ -52,37 +52,38 @@ The following is the recommended configuration for the Hibernate search index ca
 ```xml
 ...
 <cache-container name="hibernate-search" default-cache="indexes" jndi-name="java:jboss/infinispan/container/hibernate-search" start="EAGER"  module="org.jboss.as.clustering.web.infinispan">
-<local-cache name="LuceneIndexesMetadata" start="EAGER" batching="false">
-    <locking isolation="REPEATABLE_READ" striping="false" acquire-timeout="20000" concurrency-level="500"/>
-    <transaction mode="NONE"/>
-    <eviction strategy="NONE"/>
-    <binary-keyed-jdbc-store datasource="java:jboss/datasources/zanataDatasource" passivation="false" purge="false">
-        <property name="databaseType">
-            MYSQL
-        </property>
-        <binary-keyed-table prefix="HSI">
-            <id-column name="id" type="VARCHAR(255)"/>
-            <data-column name="datum" type="BLOB"/>
-            <timestamp-column name="version" type="BIGINT(20)"/>
-        </binary-keyed-table>
-    </binary-keyed-jdbc-store>
-</local-cache>
-<local-cache name="LuceneIndexesData" start="EAGER" batching="false">
-    <locking isolation="REPEATABLE_READ" striping="false" acquire-timeout="20000" concurrency-level="500"/>
-    <transaction mode="NONE"/>
-    <eviction strategy="NONE"/>
-    <binary-keyed-jdbc-store datasource="java:jboss/datasources/zanataDatasource" passivation="false" purge="false">
-        <property name="databaseType">
-            MYSQL
-        </property>
-        <binary-keyed-table prefix="HSI">
-            <id-column name="id" type="VARCHAR(255)"/>
-            <data-column name="datum" type="BLOB"/>
-            <timestamp-column name="version" type="BIGINT(20)"/>
-        </binary-keyed-table>
-    </binary-keyed-jdbc-store>
-</local-cache>
-<local-cache name="LuceneIndexesLocking" start="EAGER" batching="false"/>
+    <local-cache name="LuceneIndexesMetadata" start="EAGER" batching="false">
+        <locking isolation="REPEATABLE_READ" striping="false" acquire-timeout="20000" concurrency-level="500"/>
+        <transaction mode="NONE"/>
+        <eviction strategy="NONE"/>
+        <binary-keyed-jdbc-store datasource="java:jboss/datasources/zanataDatasource" passivation="false" purge="false">
+            <property name="databaseType">
+                MYSQL
+            </property>
+            <binary-keyed-table prefix="HSI">
+                <id-column name="id" type="VARCHAR(255)"/>
+                <data-column name="datum" type="BLOB"/>
+                <timestamp-column name="version" type="BIGINT(20)"/>
+            </binary-keyed-table>
+        </binary-keyed-jdbc-store>
+    </local-cache>
+    <local-cache name="LuceneIndexesData" start="EAGER" batching="false">
+        <locking isolation="REPEATABLE_READ" striping="false" acquire-timeout="20000" concurrency-level="500"/>
+        <transaction mode="NONE"/>
+        <eviction strategy="NONE"/>
+        <binary-keyed-jdbc-store datasource="java:jboss/datasources/zanataDatasource" passivation="false" purge="false">
+            <property name="databaseType">
+                MYSQL
+            </property>
+            <binary-keyed-table prefix="HSI">
+                <id-column name="id" type="VARCHAR(255)"/>
+                <data-column name="datum" type="BLOB"/>
+                <timestamp-column name="version" type="BIGINT(20)"/>
+            </binary-keyed-table>
+        </binary-keyed-jdbc-store>
+    </local-cache>
+    <local-cache name="LuceneIndexesLocking" start="EAGER" batching="false"/>
+</cache-container>
 ...
 ```
 
