@@ -104,3 +104,19 @@ The datasource name can be the same one used in Zanata, but a different one may 
 </cache-container>
 ...
 ```
+
+## MySQL configuration
+If you see something like the following  in `server.log`, you need to increase `max_allowed_packet`.
+```
+com.mysql.jdbc.PacketTooBigException: Packet for query is too large (1056610 > 1048576). You can change this value on the server by setting the max_allowed_packet' variable.
+```
+
+Edit `/etc/my.cnf`, and make sure max_allowed_packed is big enough like following.
+Then restart MySQL.
+
+```
+[mysqld]
+max_allowed_packet=64M
+...
+
+```
