@@ -11,7 +11,7 @@
 
 # Development tools
 
-- Java Development Kit (JDK) 1.6 - yum install java-1.6.0-openjdk-devel
+- Java Development Kit (JDK) 1.7 - yum install java-1.7.0-openjdk-devel
 - GIT - Source code repository
 - Eclipse IDE for J2EE (Kepler 4.2)
 - MySQL database
