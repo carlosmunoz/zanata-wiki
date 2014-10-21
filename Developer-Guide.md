@@ -25,7 +25,7 @@ See [[Coding Guide]].
 # Zanata Developer Setup Guide
 
 
-1. install JDK 1.6 (see above)
+1. install JDK 1.7 (see above)
 1. install git
 1. get Zanata source [[GitHub Setup]]
 1. [install Maven](Working-With-Maven#Installing_Maven_on_Fedora)
