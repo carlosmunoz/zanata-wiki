@@ -9,20 +9,35 @@ This is about https://bugzilla.redhat.com/show_bug.cgi?id=1092193[Bug 1092193 - 
  * When a reviewer Person B starts to translate an empty translation, and save as approved/rejected, statistic count goes to Person B. (Person B translated a string).
  * When a reviewer Person B change a not empty translation done by Person A, and save as approved/rejected, statistic count goes to Person B. Person A count should not be affected. (We are assuming reviewer should not make any changes on translation while in review process)
 
-== Decision Tables
+== Decision Table
+Definitions:
+
+THIS USER:: The user that is current login and do the action
+LAST USER:: The user who made the latest change before THIS USER.
+Same with LAST USER:: LAST USER is also THIS USER, in other word, THIS USER changes his own works.
+Credit for THIS USER:: The new statistics THIS USER should obtain.
+Credit for LAST USER:: The new statistics LAST USER should obtain.
+N/A:: Not applicable, means the combination is not possible.
+
 [format="csv",frame="topbot",options="header"]
 [cols="4*,s,s"]
 |====
-"Original State","New State","String modified",  "Different to last user", "Stat for changer", "Stat for last user"
-Untrans,Untrans,-,-,-,-
-Untrans,NeedWork,-,-,+NeedWork,-
-Untrans,Translated,-,-,+Translated,-
-Untrans,Approved,-,-,+Approved,-
-Untrans,Reject,-,-,N/A,N/A
-NeedWork,Untrans,-,-,-,-
-NeedWork,NeedWork,T,-,+NeedWork,-
-NeedWork,NeedWork,F,-,-,-
-NeedWork,Translated,-,-,+Translated,-
-NeedWork,Approved,-,-,-,-,+Approved
-NeedWork,Reject,-,-,-,+Reject
+"Original State","New State","Same with LAST USER","String Change", "Credit for THIS USER", "Credit for LAST USER"
+-,Untrans,-,-,"All 0",-
+-,NeedWork,-,-,"+NeedWork,0 for others",-
+-,Trans,-,-,"+Trans,0 for others",-
+Untrans,Approved,-, -,"+Approved,0 for others",-
+NeedWork,Approved,-,T,"+Approved,0 for others",-
+NeedWork,Approved,-,F, -, "+Approved,0 for others"
+Trans,Approved,-,T, "+Approved,0 for others",-
+Trans,Approved,-,F, -, "+Approved,0 for others"
+Approved,Approved,-,T, "+Approved,0 for others",-
+Approved,Approved,-,F, -, -
+Reject,Approved,-,T, "+Approved,0 for others",-
+Reject,Approved,-,F, -, "+Approved,0 for others"
+-,Reject,-,T,N/A,N/A
+NeedWork,Reject,-,F,-,"+Reject,0 for others"
+Translated,Reject,-,F,-,"+Reject,0 for others"
+Approved,Reject,-,F,-,"+Reject,0 for others"
+Reject,Reject,-,F,N/A,N/A
 |====
