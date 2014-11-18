@@ -9,7 +9,7 @@ This is about https://bugzilla.redhat.com/show_bug.cgi?id=1092193[Bug 1092193 - 
  * When a reviewer Person B starts to translate an empty translation, and save as approved/rejected, statistic count goes to Person B. (Person B translated a string).
  * When a reviewer Person B change a not empty translation done by Person A, and save as approved/rejected, statistic count goes to Person B. Person A count should not be affected. (We are assuming reviewer should not make any changes on translation while in review process)
 
-== Decision Table
+== Decision Table (rev 2)
 Definitions:
 
 THIS USER:: The user that is current login and do the action
@@ -19,25 +19,31 @@ Credit for THIS USER:: The new statistics THIS USER should obtain.
 Credit for LAST USER:: The new statistics LAST USER should obtain.
 N/A:: Not applicable, means the combination is not possible.
 
+The decision table is for the each text flow (string).
 [format="csv",frame="topbot",options="header"]
 [cols="4*,s,s"]
 |====
 "Original State","New State","Same with LAST USER","String Change", "Credit for THIS USER", "Credit for LAST USER"
 -,Untrans,-,-,"All 0",-
--,NeedWork,-,-,"+NeedWork,0 for others",-
--,Trans,-,-,"+Trans,0 for others",-
-Untrans,Approved,-, -,"+Approved,0 for others",-
-NeedWork,Approved,-,T,"+Approved,0 for others",-
-NeedWork,Approved,-,F, -, "+Approved,0 for others"
-Trans,Approved,-,T, "+Approved,0 for others",-
-Trans,Approved,-,F, -, "+Approved,0 for others"
-Approved,Approved,-,T, "+Approved,0 for others",-
+-,NeedWork,-,-,"+NeedWork,reset other stat",-
+Untrans,Trans,-,-,"+Trans,reset other stat",-
+NeedWork,Trans,-,-,"+Trans,reset other stat",-
+Trans,Trans,-,F,N/A, N/A
+Trans,Trans,-,T,"+Trans,reset other stat",-
+Approved,Trans,-,-,"+Trans,reset other stat",-
+Reject,Trans,-,-,"+Trans,reset other stat",-
+Untrans,Approved,-, -,"+Approved,reset other stat",-
+NeedWork,Approved,-,T,"+Approved,reset other stat",-
+NeedWork,Approved,-,F, -, "+Approved,reset other stat"
+Trans,Approved,-,T, "+Approved,reset other stat",-
+Trans,Approved,-,F, -, "+Approved,reset other stat"
+Approved,Approved,-,T, "+Approved,reset other stat",-
 Approved,Approved,-,F, -, -
-Reject,Approved,-,T, "+Approved,0 for others",-
-Reject,Approved,-,F, -, "+Approved,0 for others"
+Reject,Approved,-,T, "+Approved,reset other stat",-
+Reject,Approved,-,F, -, "+Approved,reset other stat"
 -,Reject,-,T,N/A,N/A
-NeedWork,Reject,-,F,-,"+Reject,0 for others"
-Translated,Reject,-,F,-,"+Reject,0 for others"
-Approved,Reject,-,F,-,"+Reject,0 for others"
+NeedWork,Reject,-,F,-,"+Reject,reset other stat"
+Translated,Reject,-,F,-,"+Reject,reset other stat"
+Approved,Reject,-,F,-,"+Reject,reset other stat"
 Reject,Reject,-,F,N/A,N/A
 |====
