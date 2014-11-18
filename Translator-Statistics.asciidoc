@@ -1,0 +1,28 @@
+:numbered:
+
+This is about https://bugzilla.redhat.com/show_bug.cgi?id=1092193[Bug 1092193 - Bug 1092193 - RFE: Individual Translator Statistics]
+
+== Test Basis
+ * Contribution stats only consists of translated, needReview, approved, rejected.
+ * When Person A update translation X, contribution stats should +1 on whichever state Person A last save translation X as.
+ * When a reviewer Person B approve or reject a translation of Person A, statistic count goes to Person A. (only translation statistic)
+ * When a reviewer Person B starts to translate an empty translation, and save as approved/rejected, statistic count goes to Person B. (Person B translated a string).
+ * When a reviewer Person B change a not empty translation done by Person A, and save as approved/rejected, statistic count goes to Person B. Person A count should not be affected. (We are assuming reviewer should not make any changes on translation while in review process)
+
+== Decision Tables
+[format="csv",frame="topbot",options="header"]
+[cols="4*,s,s"]
+|====
+"Original State","New State","String modified",  "Different to last user", "Stat for changer", "Stat for last user"
+Untrans,Untrans,-,-,-,-
+Untrans,NeedWork,-,-,+NeedWork,-
+Untrans,Translated,-,-,+Translated,-
+Untrans,Approved,-,-,+Approved,-
+Untrans,Reject,-,-,N/A,N/A
+NeedWork,Untrans,-,-,-,-
+NeedWork,NeedWork,T,-,+NeedWork,-
+NeedWork,NeedWork,F,-,-,-
+NeedWork,Translated,-,-,+Translated,-
+NeedWork,Approved,-,-,-,-,+Approved
+NeedWork,Reject,-,-,-,+Reject
+|====
