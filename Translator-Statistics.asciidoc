@@ -24,7 +24,7 @@ The decision table is for the each text flow (string).
 [cols="4*,s,s"]
 |====
 "Original State","New State","Same with LAST USER","String Change", "Credit for THIS USER", "Credit for LAST USER"
--,Untrans,-,-,"All 0",-
+-,Untrans,-,-,"All stats reset to 0",-
 -,NeedWork,-,-,"+NeedWork,reset other stat",-
 Untrans,Trans,-,-,"+Trans,reset other stat",-
 NeedWork,Trans,-,-,"+Trans,reset other stat",-
