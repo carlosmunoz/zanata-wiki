@@ -29,6 +29,9 @@ Untrans,NeedWork,-,T,"+Trans,reset other stat",-
 Untrans,NeedWork,-,F,N/A,N/A
 NeedWork,NeedWork,-,T,"+NeedWork,reset other stat",-
 NeedWork,NeedWork,-,F,-,-
+Translated,NeedWork,-,-,"+NeedWork,reset other stat",-
+Approved,NeedWork,-,-,"+NeedWork,reset other stat",-
+Reject,NeedWork,-,-,"+NeedWork,reset other stat",-
 Untrans,Trans,-,-,"+Trans,reset other stat",-
 NeedWork,Trans,-,-,"+Trans,reset other stat",-
 Trans,Trans,-,F,N/A, N/A
