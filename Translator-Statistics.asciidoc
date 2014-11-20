@@ -25,7 +25,10 @@ The decision table is for the each text flow (string).
 |====
 "Original State","New State","Same with LAST USER","String Change", "Credit for THIS USER", "Credit for LAST USER"
 -,Untrans,-,-,"All stats reset to 0",-
--,NeedWork,-,-,"+NeedWork,reset other stat",-
+Untrans,NeedWork,-,T,"+Trans,reset other stat",-
+Untrans,NeedWork,-,F,N/A,N/A
+NeedWork,NeedWork,-,T,"+NeedWork,reset other stat",-
+NeedWork,NeedWork,-,F,-,-
 Untrans,Trans,-,-,"+Trans,reset other stat",-
 NeedWork,Trans,-,-,"+Trans,reset other stat",-
 Trans,Trans,-,F,N/A, N/A
