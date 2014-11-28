@@ -2,9 +2,8 @@
 
 _This section is still under review and is about features that have not been released yet_
 
-Zanata uses Infinispan to manage its internal data caches and search indexes. Configuration for these caches happens in JBoss' `standalone/configuration/standalone.xml`. There are three different caches that need to be configured for Zanata:
+Zanata uses Infinispan to manage its internal data caches and search indexes. Configuration for these caches happens in JBoss' `standalone/configuration/standalone.xml`. There are two different caches that need to be configured for Zanata:
 
-1. Hibernate Cache
 1. Hibernate search Indexes
 1. Other internal data caches
 
@@ -44,50 +43,6 @@ The following is the recommended configuration for the Hibernate cache:
 ```
 
 Depending on your JBoss installation, the hibernate cache might already be present in the configuration, in which case there is no need to create another one, but just modify it.
-
-### Hibernate Search indexes
-
-The following is the recommended configuration for the Hibernate search index cache:
-
-```xml
-...
-<cache-container name="hibernate-search" default-cache="indexes" jndi-name="java:jboss/infinispan/container/hibernate-search" start="EAGER"  module="org.jboss.as.clustering.web.infinispan">
-    <local-cache name="LuceneIndexesMetadata" start="EAGER" batching="false">
-        <locking isolation="REPEATABLE_READ" striping="false" acquire-timeout="20000" concurrency-level="500"/>
-        <transaction mode="NONE"/>
-        <eviction strategy="NONE"/>
-        <binary-keyed-jdbc-store datasource="java:jboss/datasources/zanataDatasource" passivation="false" purge="false">
-            <property name="databaseType">
-                MYSQL
-            </property>
-            <binary-keyed-table prefix="HSI">
-                <id-column name="id" type="VARCHAR(255)"/>
-                <data-column name="datum" type="LONGBLOB"/>
-                <timestamp-column name="version" type="BIGINT(20)"/>
-            </binary-keyed-table>
-        </binary-keyed-jdbc-store>
-    </local-cache>
-    <local-cache name="LuceneIndexesData" start="EAGER" batching="false">
-        <locking isolation="REPEATABLE_READ" striping="false" acquire-timeout="20000" concurrency-level="500"/>
-        <transaction mode="NONE"/>
-        <eviction strategy="NONE"/>
-        <binary-keyed-jdbc-store datasource="java:jboss/datasources/zanataDatasource" passivation="false" purge="false">
-            <property name="databaseType">
-                MYSQL
-            </property>
-            <binary-keyed-table prefix="HSI">
-                <id-column name="id" type="VARCHAR(255)"/>
-                <data-column name="datum" type="LONGBLOB"/>
-                <timestamp-column name="version" type="BIGINT(20)"/>
-            </binary-keyed-table>
-        </binary-keyed-jdbc-store>
-    </local-cache>
-    <local-cache name="LuceneIndexesLocking" start="EAGER" batching="false"/>
-</cache-container>
-...
-```
-
-The datasource name can be the same one used in Zanata, but a different one may be selected. In this case, it's assumed it's the same main Zanata datasource.
 
 ### Other internal data caches
 
