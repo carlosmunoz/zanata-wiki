@@ -26,6 +26,7 @@
  * [[JAAS Authentication]]
  * [[Document Storage Directory]]
  * [[Infinispan]]
+ * [[JMS Messaging]]
  * [[Wildfly]]
 - [[Integration Guide]]
  * [[Project Types]]
