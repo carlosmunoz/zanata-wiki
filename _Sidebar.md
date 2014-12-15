@@ -25,6 +25,7 @@
  * [[Installation Guide for JBoss EWP 5.1 (Deprecated)]]
  * [[JAAS Authentication]]
  * [[Document Storage Directory]]
+ * [[Email]]
  * [[Infinispan]]
  * [[JMS Messaging]]
  * [[Wildfly]]
