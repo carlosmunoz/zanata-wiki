@@ -12,7 +12,7 @@ Run
 
     jboss-cli.sh --file=path/to/standalone.cli.messaging.config
 
-Verify the result is successful. You should have the configuration file looks like below:
+Verify the result is successful. You should have the configuration file looks like below (**NOTE:** xmlns will vary depending on which version of EAP or wildfly you are using.):
 
 ```xml
 <server xmlns="urn:jboss:domain:1.4">
