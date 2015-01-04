@@ -1,0 +1,3 @@
+site_name: Zanata Documentation
+pages:
+- ['Architecture.md', 'Architecture']
